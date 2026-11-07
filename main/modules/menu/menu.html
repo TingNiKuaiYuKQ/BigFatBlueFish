@@ -246,6 +246,9 @@
       cap.addEventListener('click', () => {
         if (closing) return
         if (it.children && it.children.length) { pushLayer(it, layer.depth + 1); return }
+        // 留一行痕迹：菜单项点下去到底有没有进到主进程。没有这行时，
+        // 「点了没反应」只能猜是命中问题还是执行问题（run.log 里一行都不留）。
+        console.log('[menu] 选中 ' + it.id + ' ' + (it.label || ''))
         window.menuApi.pick(it.id)
         dismiss()
       })
@@ -440,7 +443,12 @@
     document.addEventListener('pointerdown', swallowCovered, true)
     document.addEventListener('click', swallowCovered, true)
     document.addEventListener('pointerdown', (e) => {
-      if (!e.target.closest('.cap')) dismiss()
+      if (!e.target.closest('.cap')) {
+        // 点空白收场也留痕：如果用户「点了某项」却只看到这一行，说明点击落到了
+        // 空白处（窗口比内容高，底下那片透明区就是收场区），不是在点指令。
+        console.log('[menu] 点空白收场 ← ' + ((e.target && (e.target.className || e.target.tagName)) || '?'))
+        dismiss()
+      }
     })
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') dismiss()

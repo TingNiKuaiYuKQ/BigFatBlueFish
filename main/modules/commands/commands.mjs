@@ -218,7 +218,13 @@ export function runCommand(item, extraArgs = [], o = {}) {
 
     const t0 = Date.now()
     const source = o.source || 'menu'
+    // 一次运行只结算一次。以前 finish 可以被调用两遍：GUI 类命令 1.2s 先报「已启动」，
+    // 30s 后定时器又把它 SIGKILL 掉、再结算一次「超时」—— 同一次点击写两条审计，
+    // 而且用户看到的是「控制面板开了半分钟自己关了」。
+    let settled = false
     const finish = (r) => {
+      if (settled) return
+      settled = true
       running.delete(item.id)
       const out = {
         ...r,
@@ -258,17 +264,24 @@ export function runCommand(item, extraArgs = [], o = {}) {
     const { exe, argv, shellMode } = buildSpawn(item, extra)
     if (!exe) return finish({ ok: false, error: '无法构造启动参数' })
 
+    // 工作目录先自己验一遍：cwd 不存在时 spawn 在 Windows 上只会给一个
+    // ENOENT（还指着 exe，看着像「命令找不到」），排错时极容易被带到沟里。
+    const cwd = item.cwd || MAIN_ROOT
+    if (!existsSync(cwd)) {
+      return finish({ ok: false, error: `工作目录不存在：${cwd}` })
+    }
+
     running.set(item.id, { startedAt: t0, source })
     let child
     try {
       child = spawn(exe, argv, {
-        cwd: item.cwd || MAIN_ROOT,
+        cwd,
         windowsHide: !item.visible,
         shell: shellMode,
         env: process.env,
       })
     } catch (e) {
-      return finish({ ok: false, error: String((e && e.message) || e) })
+      return finish({ ok: false, error: explainSpawnError(e, exe, cwd) })
     }
 
     // 输出按字节收，退出时再解码：中文 Windows 的 cmd/dir 吐的是 GBK（代码页 936），
@@ -319,6 +332,10 @@ export function runCommand(item, extraArgs = [], o = {}) {
     let quick = null
     if (!item.capture) {
       quick = setTimeout(() => {
+        // 报「已启动」之后就别再管它了：收掉 30s 的超时定时器，否则 30 秒后
+        // 会把用户刚打开的程序（控制面板、记事本…）当成卡死直接 SIGKILL 掉。
+        clearTimeout(timer)
+        try { child.unref() } catch { /* 已经退出 */ }
         finish({ ok: true, state: 'running', pid: child.pid })
       }, 1200)
       if (quick.unref) quick.unref()
@@ -327,11 +344,22 @@ export function runCommand(item, extraArgs = [], o = {}) {
     child.on('error', (e) => {
       clearTimeout(timer)
       if (quick) clearTimeout(quick)
-      finish({ ok: false, error: String((e && e.message) || e) })
+      finish({ ok: false, error: explainSpawnError(e, exe, cwd) })
     })
     child.on('exit', (code) => {
       clearTimeout(timer)
       if (quick) clearTimeout(quick)
+      if (settled) {
+        // 已经报过「已启动」：只补一条「起来就崩」的痕迹，不再冒第二个气泡。
+        const c = Number(code) || 0
+        if (c >= 0xc0000000) {
+          audit({
+            source, id: item.id, args: extra, code: c, ok: false,
+            ms: Date.now() - t0, error: explainExitCode(c), late: true, output: null,
+          })
+        }
+        return
+      }
       const out = decode(outChunks)
       const err = decode(errChunks)
       const output = [out.trim(), err.trim()].filter(Boolean).join('\n')
@@ -363,6 +391,21 @@ export function expandEnv(text) {
     const hit = process.env[name] ?? process.env[name.toUpperCase()]
     return hit === undefined ? m : hit
   })
+}
+
+/**
+ * 启动失败翻成人话。
+ *
+ * 用户报「命令没生效」时最常问的就是「是不是工作目录权限被挡了」——
+ * 直接把 cwd / 是哪一段出的问题写进气泡，比留一个裸 errno 有用。
+ */
+export function explainSpawnError(e, exe, cwd) {
+  const code = String((e && (e.code || e.errno)) || '')
+  const msg = String((e && e.message) || e)
+  if (code === 'ENOENT') return `找不到程序「${exe}」：确认它装了、或在 PATH 里（当前工作目录 ${cwd}）`
+  if (code === 'EACCES' || code === 'EPERM') return `没有权限启动「${exe}」（工作目录 ${cwd}）`
+  if (code === 'EINVAL') return `启动参数不合法：「${exe}」（工作目录 ${cwd}）`
+  return `${msg}（工作目录 ${cwd}）`
 }
 
 /** 把 NTSTATUS 失败码翻成人话（只覆盖真踩过的几个） */
