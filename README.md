@@ -19,7 +19,7 @@
 
 ## 30 秒上手
 
-1. **拿到代码**：`git clone <本仓库地址>` 或下载 zip 解压（目录名随意，路径别带空格最省事）。
+1. **拿到代码**：`git clone https://github.com/TingNiKuaiYuKQ/BigFatBlueFish.git`，或下载 zip 解压（目录名随意，路径别带空格最省事）。
 2. **放模型**：按 `main/model/README.md` 向模型原作者获取，解压进 `main/model/runtime/`
    （这一层直接能看到 `*.model3.json`）。
 3. **双击 `start.cmd`**：第一次会装依赖、构建渲染包、启动；之后再双击根目录的 `launcher.lnk` 即可无黑框启动。
@@ -101,7 +101,7 @@ node plugins/install.mjs           # 预览插件安装路径（加 --apply 才�
 
 ## 许可
 
-分三行写清楚，别混：
+分三类写清楚：
 
 1. **代码**（`main/`、`plugins/` 下的源码与文档）：**MIT**，署名 `TingNiKuaiYuKQ`，见 [LICENSE](LICENSE)。
 2. **Live2D 模型与美术素材**（`main/model/`）：**不随本仓库分发**，版权归模型原作者，
@@ -112,9 +112,9 @@ node plugins/install.mjs           # 预览插件安装路径（加 --apply 才�
 
 > ✦ **模型信息**
 >
-> 模型名称：DeepSeek免费公皮
-> 原画及拆分：神宫凉子
-> Live2D 建模：霓虹猫_NeonNeko
+> 模型名称：DeepSeek免费公皮<br>
+> 原画及拆分：神宫凉子<br>
+> Live2D 建模：霓虹猫_NeonNeko<br>
 > 模型来源：神宫凉子免费配布模型
 >
 > 模型版权归原作者所有，本程序不附带模型，请到原作者处获取。
