@@ -11,7 +11,7 @@
 | [install-agent.md](install-agent.md) | 用户 / 自动化助手 | 让 AI 助手装：每步带成功信号与失败处理 |
 | [commands-examples.md](commands-examples.md) | 用户 | 五种快捷指令类型的完整 JSON 模板 |
 | [images/](images/README.md) | 用户 / 维护者 | 教程配图与截图清单 |
-| [media/](media/) | 用户 | 演示 GIF（README 首屏用）；成片 mp4 在仓库根目录 |
+| [media/](media/) | 用户 | README 首屏两个演示 GIF：`demo-chat.gif`（对话）、`demo-command.gif`（快捷指令） |
 | [persona-guide.md](persona-guide.md) | 人设作者 | 人设卡与行为规划怎么写 |
 | [config-reference.md](config-reference.md) | 维护者 | `config.json` / `commands.json` 字段说明 |
 | [dsh-api.md](dsh-api.md) | 插件开发者 | DSH 宿主契约的入口索引 |

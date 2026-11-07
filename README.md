@@ -1,13 +1,15 @@
 # BigFatBlueFish · 开源的 Windows Live2D 桌宠
 
-<p align="center"><img src="main/docs/media/demo.gif" width="760" alt="演示：右键菜单三级层叠、换表情、跟随 AI 会话"></p>
+<p align="center"><img src="main/docs/media/demo-chat.gif" width="560" alt="对话演示：在菜单底部输入框里打字，她会回你一句"></p>
+
+<p align="center"><img src="main/docs/media/demo-command.gif" width="560" alt="快捷指令演示：右键菜单 → 快捷操作 → 现在几点，结果直接冒泡"></p>
+
+**想让 AI 助手帮你装？把仓库地址 <https://github.com/TingNiKuaiYuKQ/BigFatBlueFish> 丢给它，然后说一句：`照着 main/docs/install-agent.md 把 BigFatBlueFish 装好`**
+（人自己装也就三步，见下。）
 
 一只住在桌面角落的 Live2D 角色：**透明无边框窗口**、始终置顶、不占任务栏、不用管理员权限。
 她的表情和姿势由自己的状态机驱动（呼吸、眨眼、待机小动作），右键就能使唤；
 接上 AI 助手后还能跟着会话状态变脸 —— 思考、干活、等你确认、完成、出错，看一眼就知道跑到哪了。
-
-**想让 AI 助手帮你装？** 把这句丢给它：`照着 main/docs/install-agent.md 把 BigFatBlueFish 装好`
-（人自己装也就三步，见下）。
 
 - **透明无边框 + 参数直驱**：不是贴一张动图，而是 PixiJS 直接推 Cubism 模型参数，姿势/表情/物理都在跑
 - **右键三级胶囊菜单**：表情、姿势、快捷指令、设置，全部两三下点到
