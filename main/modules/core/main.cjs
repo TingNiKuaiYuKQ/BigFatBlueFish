@@ -1010,7 +1010,12 @@ async function main() {
   // 每次右键现填 —— 加个表情/改条指令不用重启，也不会和配置各说各话。
   function menuTreeNow() {
     // 不加分组标题：分组标题也要占一行，会把「只显示 4 条」挤成 3 条半。
-    const faces = Object.keys(expressions).map((n) => ({ label: n, action: 'expr:' + n }))
+    // 第一项固定是「恢复默认状态」：表情/姿势点乱了（叠加、半路打断）时，
+    // 不用一个个摘，一发回到最干净的样子 —— 渲染层收到 action=reset 走 resetToInitial()。
+    const faces = [
+      { label: '恢复默认状态', action: 'reset' },
+      ...Object.keys(expressions).map((n) => ({ label: n, action: 'expr:' + n })),
+    ]
     const poses = Object.keys(config.raw?.poses || {})
       .filter((k) => !k.startsWith('_'))
       .map((k) => ({ label: POSE_LABEL[k] || k, action: 'pose:' + k }))

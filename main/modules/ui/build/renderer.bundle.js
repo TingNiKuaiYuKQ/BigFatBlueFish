@@ -93658,6 +93658,12 @@ async function boot() {
   });
   api.onMenuAction?.((a2) => {
     log("[menu] \u6E32\u67D3\u5C42\u6267\u884C", a2);
+    if (a2 === "reset") {
+      resetToInitial();
+      say("\u56DE\u5230\u9ED8\u8BA4\u72B6\u6001\uFF5E", 1600);
+      if (cfg.perf?.minimal) renderOnce();
+      return;
+    }
     if (a2 === "skirt") return toggleSkirt();
     if (a2 === "expr-random") return onTap2();
     if (a2 === "pose-cycle") {

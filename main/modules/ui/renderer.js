@@ -2494,6 +2494,15 @@ async function boot() {
   // 胶囊菜单：主进程处理不了的项（换装/换表情/换姿势）转到这里
   api.onMenuAction?.((a) => {
     log('[menu] 渲染层执行', a)
+    // 「恢复默认状态」：表情层第一条。整只复位（表情栈清空、姿势回 default、
+    // 常驻配件撤销、参数写回初始值并固化存档），等价于驾驶员发 kind=reset。
+    // 放在表情/姿势判断之前：它必须一刀切干净，不能被「再点一次就摘掉」的逻辑拦下。
+    if (a === 'reset') {
+      resetToInitial()
+      say('回到默认状态～', 1600)
+      if (cfg.perf?.minimal) renderOnce()
+      return
+    }
     if (a === 'skirt') return toggleSkirt()
     if (a === 'expr-random') return onTap()
     if (a === 'pose-cycle') {
