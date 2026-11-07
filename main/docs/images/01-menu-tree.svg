@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="'Microsoft YaHei','PingFang SC',system-ui,sans-serif">
+  <rect width="720" height="400" rx="14" fill="#ffffff"/>
+  <text x="86" y="38" font-size="13" fill="#8aa0bf" text-anchor="middle">一级</text>
+  <text x="330" y="38" font-size="13" fill="#8aa0bf" text-anchor="middle">二级</text>
+  <text x="600" y="38" font-size="13" fill="#8aa0bf" text-anchor="middle">三级</text>
+
+  <!-- 连线 -->
+  <g fill="none" stroke="#c9dcff" stroke-width="2">
+    <path d="M156 200 C200 200 206 105 250 105"/>
+    <path d="M156 200 C200 200 206 165 250 165"/>
+    <path d="M156 200 C200 200 206 225 250 225"/>
+    <path d="M156 200 C200 200 206 285 250 285"/>
+    <path d="M400 285 C452 285 458 135 510 135"/>
+    <path d="M400 285 C452 285 462 190 510 190"/>
+    <path d="M400 285 C452 285 462 245 510 245"/>
+    <path d="M400 285 C452 285 462 300 510 300"/>
+  </g>
+
+  <!-- 一级 -->
+  <rect x="20" y="182" width="136" height="36" rx="18" fill="#5686fe"/>
+  <text x="88" y="205" font-size="15" fill="#ffffff" text-anchor="middle">做点什么……</text>
+
+  <!-- 二级 -->
+  <g fill="#eef4ff" stroke="#b7d0ff" stroke-width="1.5">
+    <rect x="250" y="87" width="150" height="36" rx="18"/>
+    <rect x="250" y="147" width="150" height="36" rx="18"/>
+    <rect x="250" y="207" width="150" height="36" rx="18"/>
+    <rect x="250" y="267" width="150" height="36" rx="18"/>
+  </g>
+  <g font-size="15" fill="#24406e" text-anchor="middle">
+    <text x="325" y="110">表情和姿势</text>
+    <text x="325" y="170">快捷操作</text>
+    <text x="325" y="230">打开设置</text>
+    <text x="325" y="290">其他</text>
+  </g>
+  <g font-size="11" fill="#8aa0bf" text-anchor="start">
+    <text x="408" y="110">模型扫到的全部</text>
+    <text x="408" y="170">commands.json</text>
+    <text x="408" y="230">设置页</text>
+  </g>
+
+  <!-- 三级 -->
+  <g fill="#ffffff" stroke="#b7d0ff" stroke-width="1.5">
+    <rect x="510" y="117" width="180" height="36" rx="18"/>
+    <rect x="510" y="172" width="180" height="36" rx="18"/>
+    <rect x="510" y="227" width="180" height="36" rx="18"/>
+    <rect x="510" y="282" width="180" height="36" rx="18"/>
+  </g>
+  <g font-size="15" fill="#24406e" text-anchor="middle">
+    <text x="600" y="140">使用教程</text>
+    <text x="600" y="195">重置引导</text>
+    <text x="600" y="250">省电模式</text>
+    <text x="600" y="305">退下吧</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="20" y="368" font-size="12" fill="#8aa0bf">第三级里倒数第二颗永远是「返回」，最底下那颗永远是输入框</text>
+</svg>

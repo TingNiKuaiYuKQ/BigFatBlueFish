@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pet stage</title>
+  <link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+  <!-- 画布容器：模型挂这里 -->
+  <div id="stage"></div>
+
+  <!-- 气泡：独立于 WebGL 画布的 DOM 层，比在画布里画文字便宜得多 -->
+  <div id="bubble" class="hidden"><span id="bubble-text"></span></div>
+
+  <!-- 启动/错误提示 -->
+  <div id="hint" class="hidden"></div>
+
+  <!-- 打包产物：pixi.js / untitled-pixi-live2d-engine 全部内联，
+       浏览器不需要解析裸包名，也就没有 import map 的传递依赖问题。
+       改了 renderer.js 或 engine.js 后跑 npm run build 重新生成。 -->
+  <script type="module" src="/ui/build/renderer.bundle.js"></script>
+</body>
+</html>

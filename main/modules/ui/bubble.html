@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>bubble</title>
+<style>
+  /* 独立的对话气泡窗口。
+   *
+   * 为什么要单独开一个窗口：气泡原来画在舞台上，`max-width: 88%` 是相对舞台的 ——
+   * 舞台一缩到 300px，一句话就被切成五六行，读起来像竖排。气泡必须有自己的
+   * 可用宽度（这里 420px），跟人物多大无关。
+   *
+   * 窗口尺寸由内容决定：先摆好文字 → 量出宽高 → 告诉主进程改窗口大小 →
+   * 再淡入。顺序反了会看到窗口先大后小地跳一下。
+   */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    /* 系统字体：跟主舞台保持一致 */
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #bubble {
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    transform: translateX(-50%) translateY(4px);
+    /* 尺寸钉死，不跟舞台走：
+       · 高度 84 = 右键菜单胶囊的高度，两个 UI 放在一起才是同一套比例；
+       · 字号 22 比菜单的 30 略小一档：气泡常有一二十个字，30 号会顶到 3~4 行，
+         视觉上比人物还抢；22 号一行约 18 字，常见台词仍是一行，撑满 84；
+       · max-width 420 是文字排版宽度，跟舞台尺寸无关 —— 舞台缩多小都不影响换行。 */
+    max-width: 420px;
+    width: max-content;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    border-radius: 999px;
+    box-sizing: border-box;
+    background-color: rgba(236, 243, 255, 0.96);
+    background-image:
+      url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'>%3Cpath d='M6.5 0 Q8.13 4.87 13 6.5 Q8.13 8.13 6.5 13 Q4.87 8.13 0 6.5 Q4.87 4.87 6.5 0 Z' fill='%23A0B8FE' fill-opacity='0.42'/%3E%3Cpath d='M19.5 13 Q21.13 17.87 26 19.5 Q21.13 21.13 19.5 26 Q17.87 21.13 13 19.5 Q17.87 17.87 19.5 13 Z' fill='%23A0B8FE' fill-opacity='0.42'/%3E%3C/svg%3E");
+    background-size: 26px 26px;
+    background-repeat: repeat;
+    box-shadow:
+      inset 0 0 0 2px rgba(86, 134, 254, 0.55),
+      inset 0 0 14px rgba(86, 134, 254, 0.18);
+    filter: drop-shadow(0 6px 14px rgba(40, 80, 180, 0.20));
+    color: #2f5aa8;
+    font-size: 22px;
+    line-height: 1.35;
+    text-align: center;
+    word-break: break-word;
+    white-space: pre-wrap;
+    opacity: 0;
+    transition: opacity 150ms ease, transform 150ms ease;
+    pointer-events: none;
+  }
+
+  #bubble.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* 尾巴：和主舞台那版同一套画法 —— 只描两条斜边、顶部留空，
+     这样斜边能和气泡底边的蓝线在同一个点接上。 */
+  #bubble::after {
+    content: '';
+    position: absolute;
+    /* --tail-x 由主进程按「头顶中心」算出来（见 placeBubble）。
+       没有它时退回 50%，也就是老行为。 */
+    left: var(--tail-x, 50%);
+    bottom: -14px;
+    width: 28px;
+    height: 16px;
+    margin-left: -14px;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='16' viewBox='0 0 28 16'%3E%3Cpath d='M0 0 H28 L14 16 Z' fill='%23ECF3FF' fill-opacity='0.96'/%3E%3Cpath d='M0 0 L14 16 L28 0' fill='none' stroke='%235686FE' stroke-opacity='0.55' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  }
+</style>
+</head>
+<body>
+  <div id="bubble"><span id="bubble-text"></span></div>
+  <script>
+    const el = document.getElementById('bubble')
+    const tx = document.getElementById('bubble-text')
+    let hideTimer = 0
+
+    /** 量出「气泡 + 尾巴 + 一圈留给投影」的像素尺寸 */
+    function measure() {
+      const r = el.getBoundingClientRect()
+      // 左右各 12 给 drop-shadow 留位；下边 14 是尾巴 + 4px 余量；上边 6
+      return {
+        w: Math.ceil(r.width) + 24,
+        h: Math.ceil(r.height) + 6 + 14 + 6,
+      }
+    }
+
+    window.bubbleApi.onShow(({ text, ms }) => {
+      clearTimeout(hideTimer)
+      el.classList.remove('show')
+      tx.textContent = String(text || '')
+
+      // 先量再改窗口尺寸，最后才淡入 —— 否则会看到窗口跳一下
+      const size = measure()
+      window.bubbleApi.resize(size.w, size.h)
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('show')))
+
+      if (ms > 0) {
+        hideTimer = setTimeout(() => {
+          el.classList.remove('show')
+          setTimeout(() => window.bubbleApi.done(), 180)
+        }, ms)
+      }
+    })
+
+    // 尾巴横向位置：跟着人物头顶走，气泡被夹到屏幕边时也不会指偏
+    window.bubbleApi.onTail((x) => {
+      const r = el.getBoundingClientRect()
+      const px = Math.max(26, Math.min(r.width - 26, Number(x) || 0))
+      el.style.setProperty('--tail-x', px + 'px')
+    })
+
+    window.bubbleApi.onHide(() => {
+      clearTimeout(hideTimer)
+      el.classList.remove('show')
+    })
+  </script>
+</body>
+</html>

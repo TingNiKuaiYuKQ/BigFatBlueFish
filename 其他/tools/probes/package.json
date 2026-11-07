@@ -1,0 +1,6 @@
+{
+  "name": "pet-probe",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js"
+}

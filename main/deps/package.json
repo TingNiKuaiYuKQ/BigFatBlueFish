@@ -1,0 +1,19 @@
+{
+  "name": "bigfatbluefish-deps",
+  "version": "0.6.0",
+  "private": true,
+  "description": "桌宠运行时依赖实体（node_modules + vendor）",
+  "type": "module",
+  "scripts": {
+    "start": "node ../launch.mjs",
+    "build": "node ../scripts/build-renderer.mjs"
+  },
+  "dependencies": {
+    "pixi.js": "^8.22.0",
+    "untitled-pixi-live2d-engine": "^1.4.0"
+  },
+  "devDependencies": {
+    "electron": "^37.10.3",
+    "esbuild": "^0.28.2"
+  }
+}

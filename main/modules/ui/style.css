@@ -1,0 +1,212 @@
+/* 透明窗口里的全部样式。要点：body 必须彻底透明，否则窗口会有一层灰底。 */
+
+:root {
+  /* 编辑虚线框离窗口边多远。interact.js 会读这个值来算「指针离框线多近算抓住」，
+     所以改这里就够了，不要在两处分别写死。 */
+  --frame-inset: 6px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+  cursor: default;
+  font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  /* 固定定位：任何子元素都不可能把 body 撑大，从根上断掉
+     「canvas 变大 → body 变大 → 窗口 resize」的正反馈 */
+  position: fixed;
+  inset: 0;
+}
+
+#stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+#stage canvas {
+  display: block;
+  /* !important：PIXI 的 autoDensity 会写 style.width/height，
+     这里强制成 100%，让画布永远不参与布局尺寸计算 */
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+  /* 拖动窗口时不要触发浏览器的原生拖拽 */
+  -webkit-user-drag: none;
+}
+
+/* ---------- 气泡（胶囊风格，跟右键菜单同一套语言） ---------- */
+/* 底色比菜单更浅一档：菜单是纯白 + 蓝描边，气泡用极浅蓝，
+   这样两者放在一起时气泡「退后一层」，不会跟菜单抢注意力。
+   星纹沿用菜单那张 SVG（26px 一格、对角两星），只是压淡到 0.42。 */
+#bubble {
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%) translateY(-6px);
+  max-width: 88%;
+  padding: 10px 22px;
+  border-radius: 999px;
+  box-sizing: border-box;
+  background-color: rgba(236, 243, 255, 0.96);
+  background-image:
+    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'>%3Cpath d='M6.5 0 Q8.13 4.87 13 6.5 Q8.13 8.13 6.5 13 Q4.87 8.13 0 6.5 Q4.87 4.87 6.5 0 Z' fill='%23A0B8FE' fill-opacity='0.42'/%3E%3Cpath d='M19.5 13 Q21.13 17.87 26 19.5 Q21.13 21.13 19.5 26 Q17.87 21.13 13 19.5 Q17.87 17.87 19.5 13 Z' fill='%23A0B8FE' fill-opacity='0.42'/%3E%3C/svg%3E");
+  background-size: 26px 26px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  box-shadow:
+    inset 0 0 0 2px rgba(86, 134, 254, 0.55),
+    inset 0 0 14px rgba(86, 134, 254, 0.18);
+  /* 投影必须用 drop-shadow 而不是 box-shadow：
+     box-shadow 画在元素盒子外侧，会正好盖在尾巴（伪元素）上，把尾巴染成一块
+     比气泡深的色块 —— 那就是「贴了个箭头」的观感来源。drop-shadow 沿整个
+     alpha 轮廓投，气泡 + 尾巴被当成一个形状，影子只落在它们外面。 */
+  filter: drop-shadow(0 6px 14px rgba(40, 80, 180, 0.20));
+  color: #2f5aa8;
+  font-size: var(--bubble-font, 15px);
+  line-height: 1.45;
+  text-align: center;
+  word-break: break-word;
+  opacity: 0;
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+  -webkit-app-region: no-drag;
+}
+
+#bubble.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+#bubble.hidden {
+  display: none;
+}
+
+/* 气泡小尾巴 —— 关键是「描边要接上」。
+ *
+ * 形状用 SVG 画：填充是一块底边 28、高 16 的三角，再单独描两条斜边，
+ * 顶部留空不描 —— 于是尾巴的两条侧边和气泡底边的蓝线在同一个点上相接，
+ * 看起来是一根线拐下去又拐回来，而不是「一个箭头贴上去」。
+ *
+ * 尖端刻意用直线收（不用 Q 曲线）：30x18 的尺寸下，Q 的圆角半径约 2px，
+ * 渲染出来是颗小圆球，放大看很怪。直线尖 + stroke-linejoin:round 正好留 1px 圆角。
+ *
+ * 尺寸和偏移是配套的：
+ *   · 宽 28 → 气泡底边那 2px 蓝线在正中 28px 断开，断口正好等于尾巴顶边；
+ *   · 高 16 + bottom:-14 → 顶边藏进气泡 2px，盖住断口两侧的线头；
+ *   · 填充用和气泡同一支 #ECF3FF（fill-opacity .96），靠斜面描边勾形状，
+ *     不靠色差 —— 用不同颜色一定会有一块「补丁」感。
+ */
+#bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 28px;
+  height: 16px;
+  margin-left: -14px;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='16' viewBox='0 0 28 16'%3E%3Cpath d='M0 0 H28 L14 16 Z' fill='%23ECF3FF' fill-opacity='0.96'/%3E%3Cpath d='M0 0 L14 16 L28 0' fill='none' stroke='%235686FE' stroke-opacity='0.55' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+}
+
+/* ---------- 提示 ---------- */
+#hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 88%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(20, 22, 28, 0.94);
+  border: 1px solid rgba(255, 120, 120, 0.35);
+  color: #ffd9d9;
+  font-size: var(--hint-font, 12.5px);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  -webkit-app-region: no-drag;
+}
+
+#hint.hidden {
+  display: none;
+}
+
+/* ---------- 右键长按：加载扫过指示器 ---------- */
+/* 8 条放射短棒，用 conic-gradient 遮罩做「时钟扫过」。
+   位置由 interact.js 写成 left/top（已减半宽高，即以指针为中心）。 */
+.sweep {
+  position: fixed;
+  width: 76px;
+  height: 76px;
+  pointer-events: none;
+  z-index: 40;
+  /* 让 left/top 指向中心 */
+  margin-left: -38px;
+  margin-top: -38px;
+  transform: scale(0.9);
+  opacity: 0.95;
+  -webkit-mask-image: conic-gradient(from -90deg, #000 0deg, #000 var(--deg, 0deg), transparent var(--deg, 0deg), transparent 360deg);
+  mask-image: conic-gradient(from -90deg, #000 0deg, #000 var(--deg, 0deg), transparent var(--deg, 0deg), transparent 360deg);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.sweep.hidden {
+  display: none;
+}
+
+/* ---------- 编辑模式：虚线框 ---------- */
+/* 不接收指针：拖动/缩放的判定全在窗口坐标里算（见 interact.js 的 nearFrame），
+   这样即使指针落在框内透明区域，事件也不会丢。
+   圆角是为了跟气泡/菜单的胶囊语言一致，也让「框线整段都能抓」看起来合理。 */
+.eframe {
+  position: fixed;
+  inset: var(--frame-inset);
+  border: 2px dashed rgba(110, 165, 255, 0.9);
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 0 1px rgba(60, 110, 200, 0.25);
+  pointer-events: none;
+  z-index: 30;
+  animation: eframe-in 140ms ease-out;
+}
+
+.eframe.hidden {
+  display: none;
+}
+
+@keyframes eframe-in {
+  from { opacity: 0; transform: scale(0.985); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+/* 编辑模式提示条：进模式时出现 2.6 秒后淡出。
+   放舞台左上角：气泡占住顶部中间，提示放左上不会撞，也不会挡脸。 */
+.ehint {
+  position: fixed;
+  left: 14px;
+  top: 14px;
+  transform: translateY(-6px);
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(30, 38, 56, 0.86);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 36;
+  opacity: 0;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.ehint.show {
+  opacity: 1;
+  transform: translateY(0);
+}

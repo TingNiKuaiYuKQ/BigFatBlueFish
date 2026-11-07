@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "personaId": "blue-whale-maid",
+  "_说明": "被行为状态机消费：plan.* 覆盖 config.behavior 的同名参数（gaze 三项 → gazeMinMs/gazeMaxMs/gazeSegMinMs/gazeSegMaxMs/gazeFocusIdleMs，small.minPerHour/maxPerHour → smallMin/smallMax，small.minGapMs → 小动作最小间隔）；idleActions 由小动作层按当前小时 + 权重抽取一条执行；reactions 由事件触发，按 steps 顺序播放 cue 串。",
+  "_编排约定": "idleActions 每条只发一个 action（behavior.mjs 的 idleEvents 按 kind 单发），所以「起手 → 主体 → 收势」压在一条 cue 串里：串首几个词落姿态/视线（起手），中间最多一个「动作:关键帧」（主体，关键帧自己起止归零），串尾用一次性小动作（点头/叹气/抖一下/抿嘴）收势；保持通道 5.2s 后由渲染层自动 relax。一个组合里只引用一个 motion —— motion 是加法叠加，两个同时发会打架。",
+  "plan": {
+    "periodMs": 3600000,
+    "gaze": {
+      "enabled": true,
+      "totalMinMs": 480000,
+      "totalMaxMs": 1440000,
+      "segMinMs": 120000,
+      "segMaxMs": 360000,
+      "focusIdleMs": 180000
+    },
+    "small": {
+      "minPerHour": 2,
+      "maxPerHour": 8,
+      "minGapMs": 1000
+    }
+  },
+  "idleActions": [
+    {
+      "id": "nod-off",
+      "action": { "kind": "cue", "cue": "半睁 微低头 点头×3" },
+      "weight": 4,
+      "hours": [22, 23, 0, 1, 2, 3, 4],
+      "mood": "sleepy",
+      "say": ["唔……没睡", "就闭一下"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "doze-late",
+      "action": { "kind": "cue", "cue": "微低头 半睁 动作:打瞌睡 点头" },
+      "weight": 5,
+      "hours": [23, 0, 1, 2, 3],
+      "mood": "sleepy",
+      "say": ["（头一点一点）", "没睡，我醒着"],
+      "bubbleMs": 2600
+    },
+    {
+      "id": "doze-deep",
+      "action": { "kind": "cue", "cue": "闭眼 低头 动作:打瞌睡" },
+      "weight": 3,
+      "hours": [1, 2, 3, 4],
+      "mood": "sleepy",
+      "say": ["唔……"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "jerk-awake",
+      "action": { "kind": "cue", "cue": "睁大 吓一跳 晃头" },
+      "weight": 3,
+      "hours": [2, 3, 4, 5],
+      "mood": "sleepy",
+      "say": ["我没睡！", "醒了醒了"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "night-peek",
+      "action": { "kind": "cue", "cue": "看下 半睁 抖一下" },
+      "weight": 2,
+      "hours": [2, 3, 4, 5],
+      "mood": "sleepy",
+      "say": [],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "midnight-idea",
+      "action": { "kind": "cue", "cue": "黑框眼镜 竖手指 睁大" },
+      "weight": 2,
+      "hours": [23, 0, 1, 2],
+      "mood": null,
+      "say": ["半夜的灵感最灵", "等等，我想到个事"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "midnight-snack",
+      "action": { "kind": "cue", "cue": "钢盆 眯眼笑 瞟一眼" },
+      "weight": 3,
+      "hours": [22, 23, 0, 1],
+      "mood": "hungry",
+      "say": ["偷偷加一口", "没人看见吧"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "ready-sleep",
+      "action": { "kind": "cue", "cue": "眯眼笑 歪头:左 缩一下" },
+      "weight": 2,
+      "hours": [22, 23],
+      "mood": "sleepy",
+      "say": ["我眯一会儿啊"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "sigh-late",
+      "action": { "kind": "cue", "cue": "叹气 半睁 皱眉" },
+      "weight": 3,
+      "hours": [21, 22, 23],
+      "mood": "sleepy",
+      "say": ["这个有点久啊"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "yawn-late",
+      "action": { "kind": "cue", "cue": "闭眼 后仰 动作:伸懒腰" },
+      "weight": 3,
+      "hours": [21, 22],
+      "mood": "sleepy",
+      "say": ["困……但还不睡", "再撑一会儿"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "cold-dawn",
+      "action": { "kind": "cue", "cue": "缩一下 抖一下 半睁" },
+      "weight": 2,
+      "hours": [4, 5, 6],
+      "mood": "sleepy",
+      "say": ["冷……", "冻尾巴了"],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "dawn-wake",
+      "action": { "kind": "cue", "cue": "睁大 抬头 晃头" },
+      "weight": 3,
+      "hours": [5, 6, 7],
+      "mood": null,
+      "say": ["醒了醒了", "我没睡！"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "dawn-stretch",
+      "action": { "kind": "cue", "cue": "闭眼 后仰 动作:伸懒腰" },
+      "weight": 3,
+      "hours": [6, 7],
+      "mood": "sleepy",
+      "say": ["唔……几点了", "早上了吗"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "dawn-peek",
+      "action": { "kind": "cue", "cue": "看左 微歪头:左 挑一下眉" },
+      "weight": 2,
+      "hours": [6, 7, 8],
+      "mood": null,
+      "say": ["外面亮了啊"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "bowl-breakfast",
+      "action": { "kind": "cue", "cue": "钢盆 眯眼笑 歪头:左" },
+      "weight": 4,
+      "hours": [7, 8],
+      "mood": "hungry",
+      "say": ["有饭嘛？", "盆先摆好"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "morning-shift",
+      "action": { "kind": "motion", "name": "重心换脚" },
+      "weight": 2,
+      "hours": [7, 8, 9],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "monocle-focus",
+      "action": { "kind": "cue", "cue": "单片眼镜 微前倾 看下" },
+      "weight": 4,
+      "hours": [9, 10, 11],
+      "mood": "focused",
+      "say": ["我看看啊", "这个我来"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "monocle-peek",
+      "action": { "kind": "cue", "cue": "单片眼镜 瞟一眼 挑一下眉" },
+      "weight": 2,
+      "hours": [10, 11, 15, 16],
+      "mood": "focused",
+      "say": ["盯——", "你在动什么"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "idea-glasses",
+      "action": { "kind": "cue", "cue": "黑框眼镜 竖手指 微笑 挑一下眉" },
+      "weight": 3,
+      "hours": [9, 10, 11, 14, 15, 16, 17],
+      "mood": "focused",
+      "say": ["啊，想到个办法", "等等，我知道了"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "nod-agree",
+      "action": { "kind": "cue", "cue": "点头×2 眯眼笑" },
+      "weight": 3,
+      "hours": [10, 11, 14, 15],
+      "mood": "focused",
+      "say": ["嗯嗯，懂了", "行，知道了"],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "frown-work",
+      "action": { "kind": "cue", "cue": "皱眉 微前倾 抿嘴" },
+      "weight": 2,
+      "hours": [9, 10, 11, 14, 15],
+      "mood": "focused",
+      "say": [],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "shift-work",
+      "action": { "kind": "motion", "name": "重心换脚" },
+      "weight": 3,
+      "hours": [9, 10, 11, 14, 15, 16],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "micro-glance",
+      "action": { "kind": "cue", "cue": "瞟一眼 抿嘴" },
+      "weight": 4,
+      "hours": [9, 10, 11, 14, 15, 16, 17],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1400
+    },
+    {
+      "id": "tail-happy",
+      "action": { "kind": "cue", "cue": "眯眼笑 动作:抖尾巴" },
+      "weight": 2,
+      "hours": [9, 10, 11, 13, 15, 16],
+      "mood": null,
+      "say": ["尾巴自己动的"],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "bowl-shield",
+      "action": { "kind": "cue", "cue": "钢盆 缩一下 ＞＜" },
+      "weight": 2,
+      "hours": [10, 11, 14, 15, 16],
+      "mood": null,
+      "say": ["别催别催", "在做了"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "shrug-sigh",
+      "action": { "kind": "cue", "cue": "缩一下 半睁 叹气" },
+      "weight": 2,
+      "hours": [11, 16, 17, 20],
+      "mood": null,
+      "say": ["唉……"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "rice-time",
+      "action": { "kind": "cue", "cue": "钢盆 眯眼笑 微前倾" },
+      "weight": 5,
+      "hours": [12, 13],
+      "mood": "hungry",
+      "say": ["吃饭时间，别吵", "饭，饭……"],
+      "bubbleMs": 2600
+    },
+    {
+      "id": "bowl-guard",
+      "action": { "kind": "cue", "cue": "钢盆 斜眼 缩一下" },
+      "weight": 2,
+      "hours": [12, 13],
+      "mood": "hungry",
+      "say": ["我的盆", "谁动了"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "look-noon",
+      "action": { "kind": "cue", "cue": "转头:左 瞟一眼 皱眉" },
+      "weight": 2,
+      "hours": [12, 13, 14],
+      "mood": null,
+      "say": ["我的饭呢"],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "puff-cheek",
+      "action": { "kind": "cue", "cue": "鼓腮 转头:右 斜眼" },
+      "weight": 2,
+      "hours": [12, 13, 14, 18],
+      "mood": null,
+      "say": ["哼"],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "nap-noon",
+      "action": { "kind": "cue", "cue": "半睁 微低头 动作:打瞌睡" },
+      "weight": 4,
+      "hours": [13, 14],
+      "mood": "sleepy",
+      "say": ["就眯五分钟", "吃完就困"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "post-lunch",
+      "action": { "kind": "cue", "cue": "叹气 半睁 抿嘴" },
+      "weight": 3,
+      "hours": [13, 14],
+      "mood": "sleepy",
+      "say": ["饭后真困"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "grass-tease",
+      "action": { "kind": "cue", "cue": "狗尾草 坏笑 微前倾 动作:狗尾草晃动" },
+      "weight": 3,
+      "hours": [15, 16, 17],
+      "mood": null,
+      "say": ["嘿，看这儿", "痒不痒"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "tilt-curious",
+      "action": { "kind": "cue", "cue": "歪一下头 挑一下眉 看你" },
+      "weight": 3,
+      "hours": [10, 15, 16, 17],
+      "mood": null,
+      "say": ["唔？", "啥意思"],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "stretch-pm",
+      "action": { "kind": "cue", "cue": "闭眼 后仰 动作:伸懒腰" },
+      "weight": 2,
+      "hours": [15, 16, 17],
+      "mood": null,
+      "say": ["腰好酸", "你也起来走走"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "chest-hold",
+      "action": { "kind": "cue", "cue": "抚胸 微笑 微低头" },
+      "weight": 2,
+      "hours": [15, 16, 17, 19],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "tail-itch",
+      "action": { "kind": "cue", "cue": "瞟一眼 抖一下 眯眼笑" },
+      "weight": 3,
+      "hours": [15, 16, 17],
+      "mood": null,
+      "say": ["别看那边"],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "micro-tap",
+      "action": { "kind": "cue", "cue": "抖一下 抿嘴 看下" },
+      "weight": 3,
+      "hours": [15, 16, 17, 18],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1400
+    },
+    {
+      "id": "dinner-bowl",
+      "action": { "kind": "cue", "cue": "钢盆 眯眼笑 歪头:右" },
+      "weight": 4,
+      "hours": [18, 19],
+      "mood": "hungry",
+      "say": ["今天也吃米饭", "晚饭在哪"],
+      "bubbleMs": 2400
+    },
+    {
+      "id": "shy-evening",
+      "action": { "kind": "cue", "cue": "＞＜ 微低头 脸红 抿嘴" },
+      "weight": 2,
+      "hours": [18, 19, 20],
+      "mood": null,
+      "say": ["才、才没有", "别看"],
+      "bubbleMs": 2000
+    },
+    {
+      "id": "look-evening",
+      "action": { "kind": "cue", "cue": "看左 微歪头:左 叹气" },
+      "weight": 2,
+      "hours": [18, 19, 20, 21],
+      "mood": null,
+      "say": ["天黑得真快"],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "grass-evening",
+      "action": { "kind": "cue", "cue": "狗尾草 斜眼 挑一下眉" },
+      "weight": 2,
+      "hours": [19, 20, 21, 22],
+      "mood": null,
+      "say": ["喂——看这边", "就一下"],
+      "bubbleMs": 2200
+    },
+    {
+      "id": "lean-window",
+      "action": { "kind": "cue", "cue": "微抬头 睁大 微笑" },
+      "weight": 2,
+      "hours": [18, 19, 20],
+      "mood": null,
+      "say": ["外面凉了"],
+      "bubbleMs": 1800
+    },
+    {
+      "id": "all-day-shift",
+      "action": { "kind": "motion", "name": "重心换脚" },
+      "weight": 1,
+      "hours": [],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1600
+    },
+    {
+      "id": "all-day-blink",
+      "action": { "kind": "cue", "cue": "眨单眼 挑一下眉" },
+      "weight": 1,
+      "hours": [],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1400
+    },
+    {
+      "id": "all-day-breathe",
+      "action": { "kind": "cue", "cue": "抖一下 抿嘴" },
+      "weight": 1,
+      "hours": [],
+      "mood": null,
+      "say": [],
+      "bubbleMs": 1400
+    }
+  ],
+  "moods": {
+    "sleepy": { "hours": [21, 22, 23, 0, 1, 2, 3, 4, 5, 6, 7, 13, 14], "extraExpression": "默认体型" },
+    "focused": { "hours": [9, 10, 11, 14, 15, 16, 17], "extraExpression": "前倾" },
+    "hungry": { "hours": [7, 8, 11, 12, 13, 17, 18, 19, 22, 23, 0, 1], "extraExpression": "兔牙" }
+  },
+  "reactions": {
+    "onTaskStart": {
+      "steps": ["抬头 睁大 看你", "单片眼镜 微前倾 点头×2", "动作:重心换脚 抿嘴", "-单片眼镜 眯眼笑"],
+      "say": ["来了来了", "开工", "交给我吧"]
+    },
+    "onTaskError": {
+      "steps": ["吓一跳 睁大 冷汗", "缩一下 后仰 抿嘴", "钢盆 ＞＜ 半睁", "微低头 叹气"],
+      "say": ["诶诶诶出错了？", "不慌，我看看", "先、先戴个盆"]
+    },
+    "onTaskLong": {
+      "steps": ["叹气 半睁", "微低头 皱眉 抿嘴", "动作:伸懒腰 闭眼", "睁大 晃头 眯眼笑"],
+      "say": ["这个有点久啊", "我还在，别急", "再等一下下"]
+    },
+    "onTaskSuccess": {
+      "steps": ["睁大 挑一下眉", "爱心眼 笑眼 动作:抖尾巴", "-钢盆 眯眼笑 点头×2"],
+      "say": ["搞定！", "给我米饭当奖励", "看吧，我可以的"]
+    },
+    "onUserPraise": {
+      "steps": ["吓一跳 睁大", "脸红 微低头 ＞＜", "歪头:右 抿嘴", "-脸红 站直 眯眼笑"],
+      "say": ["诶？突、突然夸我干嘛", "才没有高兴", "再说一遍也不是不行"]
+    },
+    "onUserTease": {
+      "steps": ["歪一下头 看你", "瘪嘴 转头:右 鼓腮", "斜眼 挑一下眉", "眯眼笑 抖一下"],
+      "say": ["哼，不理你了", "随你叫吧，反正改不了", "就这一次啊"]
+    },
+    "onUserIgnore": {
+      "steps": ["看你 挑一下眉", "看左 半睁", "低头 叹气", "晃头 恢复"],
+      "say": ["……人呢", "我等好久了", "算了，我自己玩"]
+    },
+    "onNickname": {
+      "steps": ["斜眼 瘪嘴", "叹气 半睁", "歪头:左 眯眼笑", "屑屑眼 瞟一眼"],
+      "say": ["……都说了是鲸鱼", "算了，你开心就好", "蓝色大肥鱼就蓝色大肥鱼吧"]
+    },
+    "onMorning": {
+      "steps": ["睁大 抬头 晃头", "闭眼 后仰 动作:伸懒腰", "半睁 微笑 挑一下眉"],
+      "say": ["早啊，吃饭没", "早上好……困", "盆里还有饭吗"]
+    },
+    "onLateNight": {
+      "steps": ["半睁 微低头", "微低头 动作:打瞌睡 点头", "睁大 抖一下 晃头", "＞＜ 抿嘴"],
+      "say": ["还不睡？", "你再熬我先睡了", "陪你到你说停"]
+    },
+    "onScreenStare": {
+      "steps": ["看你 微歪头:左", "单片眼镜 微前倾 皱眉", "点头 挑一下眉", "-单片眼镜 眯眼笑"],
+      "say": ["这个是什么？", "你在忙什么呀", "盯——"]
+    },
+    "onSkirtChange": {
+      "steps": ["吓一跳 ＞＜ 脸红", "转头:左 鼓腮", "缩一下 抿嘴", "-脸红 站直 斜眼"],
+      "say": ["裙、裙子不能乱碰", "看什么呢", "真是的"]
+    },
+    "onTailTouch": {
+      "steps": ["吓一跳 ＞＜ 脸红", "缩一下 歪头:左", "斜眼 抿嘴", "眯眼笑 抖一下"],
+      "say": ["尾巴！别碰！", "很敏感的啦", "唔……就一下"]
+    },
+    "onHungry": {
+      "steps": ["半睁 动作:抖尾巴", "钢盆 看下 抿嘴", "叹气 皱眉 眯眼笑"],
+      "say": ["盆空了", "米饭……", "饿"]
+    },
+    "onGreet": {
+      "steps": ["抬头 睁大 看你", "眯眼笑 歪头:右", "挑一下眉 微笑"],
+      "say": ["我来了", "今天也一起吧", "叫我就到"]
+    }
+  }
+}

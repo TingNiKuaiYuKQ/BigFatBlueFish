@@ -1,0 +1,9 @@
+{
+  "name": "bigfatbluefish",
+  "version": "1.0.0",
+  "description": "Live2D 桌宠舞台：透明窗口 + 参数直驱，读 DSH 状态文件演出，反向 API 接收说话/表情/快捷指令",
+  "type": "module",
+  "main": "modules/core/main.cjs",
+  "private": true,
+  "license": "MIT"
+}

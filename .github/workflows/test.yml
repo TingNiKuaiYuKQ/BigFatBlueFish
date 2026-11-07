@@ -1,0 +1,32 @@
+name: test
+
+# 五套离线测试：syntax / menu / sequence / projection / delivery。
+# 它们只跑纯 node，不开窗口、不碰 Electron 运行时 —— 所以 CI 里可以跳过
+# electron 那 100 MB 的二进制下载（ELECTRON_SKIP_BINARY_DOWNLOAD=1）。
+# 哪天有测试开始 require('electron') 或起 BrowserWindow，把这个变量删掉即可。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: main/deps/package-lock.json
+
+      - name: 安装依赖（跳过 electron 二进制）
+        run: npm --prefix main/deps ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+
+      - name: 跑测试
+        run: node 其他/tests/run-all.mjs

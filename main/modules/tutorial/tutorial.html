@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>桌宠使用教程</title>
+<style>
+  /* 不透明窗口：教程是要认真读的，透明叠字在浅色壁纸上会看不清。
+   *
+   * 字号口径（1.0.0）：正文 21px / 行高 1.8，是 0.6.x 的 1.5 倍。
+   * 为什么不直接 body{zoom:1.5}：窗口也一起放大后 zoom 会把可视内容压掉一半，
+   * 而且行高、圆角、间距没法各自微调。这里所有尺寸按同一套比例写死，
+   * 改字号时把下面所有 px 一起乘同一个系数即可（基准 14px → 21px，×1.5）。 */
+  html, body { margin: 0; height: 100%; background: #f6f8ff; color: #24406e;
+    font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif; }
+  body { display: flex; flex-direction: column; }
+  header {
+    display: flex; align-items: center; gap: 18px;
+    padding: 22px 32px; border-bottom: 1px solid rgba(86, 134, 254, 0.18);
+  }
+  header h1 { font-size: 27px; margin: 0; font-weight: 700; letter-spacing: 0.6px; }
+  header .spacer { flex: 1; }
+  .btn {
+    font-size: 19px; padding: 10px 24px; border-radius: 24px; cursor: pointer;
+    background: #fff; box-shadow: inset 0 0 0 2.5px rgba(86, 134, 254, 0.45);
+    user-select: none;
+  }
+  .btn:hover { box-shadow: inset 0 0 0 2.5px rgba(86, 134, 254, 0.8); }
+  .btn.primary { background: #5686fe; color: #fff; box-shadow: none; }
+  main { flex: 1; display: flex; min-height: 0; }
+  nav {
+    width: 300px; flex: 0 0 auto; padding: 20px 12px;
+    overflow-y: auto; scrollbar-width: none;
+    border-right: 1px solid rgba(86, 134, 254, 0.14);
+  }
+  nav::-webkit-scrollbar { width: 0; display: none; }
+  nav a {
+    display: block; padding: 11px 16px; border-radius: 14px; font-size: 19px;
+    color: #35507e; text-decoration: none; margin-bottom: 6px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  nav a:hover { background: rgba(86, 134, 254, 0.10); }
+  nav a.active { background: rgba(86, 134, 254, 0.16); font-weight: 600; }
+  article {
+    flex: 1; padding: 30px 44px 60px; overflow-y: auto; line-height: 1.8; font-size: 21px;
+    scrollbar-width: thin;
+  }
+  article h2 { font-size: 26px; margin: 34px 0 14px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(86, 134, 254, 0.16); }
+  article h3 { font-size: 22px; margin: 26px 0 10px; }
+  /* 文档标题（# 一级标题）：窗口 header 已经写了「桌宠使用教程」，
+     正文里再出现一次就是重复标题。字号放大后这块尤其碍眼，直接不显示。 */
+  article h2.doc-title { display: none; }
+  article p { margin: 12px 0; }
+  article ul, article ol { margin: 12px 0 12px 32px; padding: 0; }
+  article li { margin: 7px 0; }
+  article code {
+    background: rgba(86, 134, 254, 0.12); border-radius: 7px;
+    padding: 2px 8px; font-family: ui-monospace, Consolas, monospace; font-size: 18px;
+  }
+  article pre {
+    background: #fff; border-radius: 16px; padding: 20px 22px; overflow-x: auto;
+    box-shadow: inset 0 0 0 1px rgba(86, 134, 254, 0.18);
+  }
+  article pre code { background: none; padding: 0; }
+  article blockquote {
+    margin: 14px 0; padding: 12px 20px; border-left: 4px solid rgba(86, 134, 254, 0.5);
+    background: rgba(86, 134, 254, 0.06); border-radius: 0 14px 14px 0; opacity: 0.9;
+  }
+  article a { color: #2f6fd0; }
+  /* 配图（1.0.0）：教程要给别人看，图比字省事。
+     截图按 1280 宽录制、缩到 960 入库；窄窗时靠 max-width 自适应，不横向滚动。 */
+  article figure { margin: 20px 0 24px; }
+  article img {
+    display: block; max-width: 100%; height: auto;
+    border-radius: 14px; margin: 8px 0;
+    box-shadow: 0 0 0 1px rgba(86, 134, 254, 0.16);
+  }
+  article figcaption { font-size: 18px; opacity: 0.65; text-align: center; margin-top: 2px; }
+  /* 表格（1.0.0）：md 里写 | a | b | 即可。默认允许换行 —— 横向滚动的表
+     看起来像「被裁掉了」，不如让文字折行。长路径/代码另给 nowrap。 */
+  article table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 19px; table-layout: auto; }
+  article th, article td {
+    padding: 11px 14px; text-align: left; vertical-align: top; word-break: break-word;
+    border-bottom: 1px solid rgba(86, 134, 254, 0.16);
+  }
+  article th { font-weight: 600; color: #35507e; background: rgba(86, 134, 254, 0.07); }
+  article td code { white-space: nowrap; }
+  /* 第一列是行标题（状态名 / 字段名），折行会很难看；让它独占一行，
+     正文列负责折行 —— 窄窗口下这样比全表横向滚动正常得多。 */
+  article th:first-child, article td:first-child { white-space: nowrap; }
+  article tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>桌宠使用教程</h1>
+    <div class="spacer"></div>
+    <div class="btn" id="skip">已读，不再提示</div>
+    <div class="btn" id="close">关闭</div>
+  </header>
+  <main>
+    <nav id="toc"></nav>
+    <article id="content">正在加载…</article>
+  </main>
+
+<script>
+  const params = new URLSearchParams(location.search)
+  const token = params.get('token') || ''
+
+  /** 图片地址归一：tutorial.md 里写的是相对文档的 `images/xx.png`，
+   *  但窗口在 /tutorial/ 下，相对解析会跑到 /tutorial/images/ —— 所以统一改写成
+   *  服务端挂的 /docs/images/。绝对地址（http/data/根路径）原样放过。 */
+  function imgSrc(s) {
+    const v = String(s || '').trim()
+    if (!v) return ''
+    if (/^(https?:|data:|\/)/i.test(v)) return v
+    return '/docs/images/' + v.replace(/^\.?\/*/, '').replace(/^images\//, '')
+  }
+
+  /** 极简 Markdown：标题 / 列表 / 代码块 / 引用 / 表格 / 粗体 / 行内代码 / 链接 / 图片，
+   *  外加「原始 HTML 块」直通。只覆盖 tutorial.md 用到的语法，不引第三方库
+   *  （教程窗口不该为渲染拖一个依赖）。写不动的复杂版式就直接在 md 里写 HTML —— 
+   *  md 是主源，HTML 是逃生门，两者可以混排。 */
+  function mdToHtml(src) {
+    const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    const inline = (s) => esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+    const lines = String(src).replace(/\r\n/g, '\n').split('\n')
+    const out = []
+    let inCode = false
+    let inUl = false
+    let inOl = false
+    const closeLists = () => {
+      if (inUl) { out.push('</ul>'); inUl = false }
+      if (inOl) { out.push('</ol>'); inOl = false }
+    }
+    // 表格：| a | b | 后面跟 |---|---| 才算，否则当普通段落（避免误伤正文里的竖线）
+    const cells = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((s) => s.trim())
+    const isSep = (l) => /^\s*\|?[\s:|-]*-[\s:|-]*\|?\s*$/.test(l) && l.includes('-')
+    let inHtml = false
+    for (let i = 0; i < lines.length; i += 1) {
+      const line = lines[i]
+      if (line.startsWith('```')) {
+        closeLists()
+        if (inCode) { out.push('</code></pre>'); inCode = false } else { out.push('<pre><code>'); inCode = true }
+        continue
+      }
+      if (inCode) { out.push(esc(line)); continue }
+      // 原始 HTML 块：行首是标签就整段直通，直到遇到空行。
+      // 内容由本仓库作者维护、只在本机窗口里渲染，不存在外部注入面。
+      if (!inHtml && /^\s*</.test(line)) { closeLists(); inHtml = true; out.push(line); continue }
+      if (inHtml) {
+        if (!line.trim()) { inHtml = false; continue }
+        out.push(line)
+        continue
+      }
+      const h = /^(#{1,3})\s+(.*)$/.exec(line)
+      if (h) {
+        closeLists()
+        // 一级标题是文档标题（窗口标题已经有一份），只渲染不进目录；## 进目录，### 是子标题
+        if (h[1].length === 1) { out.push(`<h2 class="doc-title">${inline(h[2])}</h2>`); continue }
+        const lv = h[1].length === 2 ? 2 : 3
+        out.push(`<h${lv}>${inline(h[2])}</h${lv}>`)
+        continue
+      }
+      // 表格（1.0.0）
+      if (line.includes('|') && i + 1 < lines.length && isSep(lines[i + 1])) {
+        closeLists()
+        const head = cells(line)
+        const rows = []
+        let j = i + 2
+        while (j < lines.length && lines[j].includes('|') && lines[j].trim()) { rows.push(cells(lines[j])); j += 1 }
+        const th = head.map((c) => `<th>${inline(c)}</th>`).join('')
+        const tb = rows.map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join('')}</tr>`).join('')
+        out.push(`<table><thead><tr>${th}</tr></thead><tbody>${tb}</tbody></table>`)
+        i = j - 1
+        continue
+      }
+      // 独占一行的图片：![说明](images/01-launch.png) → <figure> + <figcaption>
+      const img = /^\s*!\[([^\]]*)\]\(([^)]+)\)\s*$/.exec(line)
+      if (img) {
+        closeLists()
+        const src = esc(imgSrc(img[2])).replace(/"/g, '&quot;')
+        const alt = esc(img[1]).replace(/"/g, '&quot;')
+        const cap = img[1].trim() ? `<figcaption>${inline(img[1])}</figcaption>` : ''
+        out.push(`<figure><img src="${src}" alt="${alt}" loading="lazy">${cap}</figure>`)
+        continue
+      }
+      if (/^\s*[-*]\s+/.test(line)) {
+        if (!inUl) { closeLists(); out.push('<ul>'); inUl = true }
+        out.push(`<li>${inline(line.replace(/^\s*[-*]\s+/, ''))}</li>`)
+        continue
+      }
+      if (/^\s*\d+\.\s+/.test(line)) {
+        if (!inOl) { closeLists(); out.push('<ol>'); inOl = true }
+        out.push(`<li>${inline(line.replace(/^\s*\d+\.\s+/, ''))}</li>`)
+        continue
+      }
+      if (/^>\s?/.test(line)) {
+        closeLists()
+        out.push(`<blockquote>${inline(line.replace(/^>\s?/, ''))}</blockquote>`)
+        continue
+      }
+      if (!line.trim()) { closeLists(); continue }
+      closeLists()
+      out.push(`<p>${inline(line)}</p>`)
+    }
+    closeLists()
+    if (inCode) out.push('</code></pre>')
+    return out.join('\n')
+  }
+
+  function buildToc() {
+    const toc = document.getElementById('toc')
+    const heads = [...document.querySelectorAll('#content h2:not(.doc-title)')]
+    toc.textContent = ''
+    heads.forEach((h) => {
+      const a = document.createElement('a')
+      a.textContent = h.textContent
+      a.href = '#' + h.id
+      a.addEventListener('click', (e) => {
+        e.preventDefault()
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        ;[...toc.children].forEach((x) => x.classList.toggle('active', x === a))
+      })
+      toc.appendChild(a)
+    })
+  }
+
+  async function load() {
+    try {
+      const r = await fetch('/api/tutorial', { headers: { 'x-stage-token': token } })
+      const j = await r.json()
+      const html = mdToHtml(j?.text || '# 教程为空\n\n没有找到 tutorial.md')
+      document.getElementById('content').innerHTML = html
+      // 给每个 h2 一个 id，目录才能跳
+      ;[...document.querySelectorAll('#content h2:not(.doc-title)')].forEach((h, i) => { h.id = 'ch' + i })
+      buildToc()
+    } catch (e) {
+      document.getElementById('content').textContent = '加载失败：' + (e && e.message)
+    }
+  }
+
+  document.getElementById('close').addEventListener('click', () => window.tutorialApi.close())
+  document.getElementById('skip').addEventListener('click', () => {
+    window.tutorialApi.markSeen()
+    window.tutorialApi.close()
+  })
+  load()
+</script>
+</body>
+</html>

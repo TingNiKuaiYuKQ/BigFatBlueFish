@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>pet menu</title>
+<style>
+  /* 透明菜单窗口：白色胶囊 + 淡蓝四角星纹 + 蓝色发光边。
+     布局约定（0.5.2 定稿）：
+       · 最下方的大输入胶囊**永远是输入框**，不参与多级菜单，任何层级都不变；
+       · 层级只影响它上面那一摞按钮；
+       · 返回按钮固定占「倒数第二个」位置（一级时那是「做点什么……」，二级/三级时是「返回」）。
+     动画原则：像抽屉一样「浮现 → 抽出」；星纹用固定尺寸 repeat，宽度动画时不跳位。 */
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    user-select: none;
+    font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+  }
+
+  /* 输入胶囊：固定贴底，和层级无关 */
+  #inputWrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    display: flex;
+    padding: 0 18px;
+    box-sizing: border-box;
+    transform: translateX(0);
+  }
+  body.to-right #inputWrap { justify-content: flex-start; }
+  body.to-left  #inputWrap { justify-content: flex-end; }
+
+  /* 每一层按钮摞在输入胶囊上方；层与层之间用 --shift 做鱼鳞偏移 */
+  .layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(18px + 168px + 15px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    transform: translateX(var(--shift, 0px));
+    transition: opacity 160ms ease, transform 200ms cubic-bezier(.22,.86,.25,1);
+  }
+  .layer.hidden { opacity: 0; pointer-events: none; }
+  /* 鱼鳞层叠（0.5.7.1）：被盖住的层**不隐藏**，保持显示、被上层天然遮挡。
+     整层 pointer-events 关掉，但露出来的「鳞边」要能接住点击并吞掉 ——
+     否则点到鳞边会穿到 body 触发「点空白收菜单」。 */
+  .layer.covered { pointer-events: none; }
+  .layer.covered .cap { pointer-events: auto; cursor: default; }
+  .layer.covered .cap:hover::after { background: rgba(86, 134, 254, 0); }
+
+  body.to-right .layer { align-items: flex-start; }
+  body.to-left  .layer { align-items: flex-end; }
+
+  /* 层内滚动：超过行数上限就滚，窗口高度自始至终不变；滚动条不画出来。
+     0.5.7：可滚动的是「列表」这一段，「返回」被拎到 stack 外面固定住 ——
+     它待在原来「做点什么……」那一格（输入胶囊正上方），列表在它上面滚。 */
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: var(--stack-max, 480px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2px 0;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+  }
+  .stack::-webkit-scrollbar { width: 0; height: 0; display: none; }
+  /* 还能滚的一侧给一点渐隐，暗示「下面/上面还有」；不可滚时不加，避免误以为被裁掉 */
+  .stack.can-up { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16px); }
+  .stack.can-down { -webkit-mask-image: linear-gradient(to top, transparent 0, #000 16px); }
+  .stack.can-up.can-down {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
+  }
+
+  /* 分组标题（三级列表里用，避免再开第四级） */
+  .group-label {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: rgba(47, 90, 168, 0.55);
+    padding: 2px 26px 0;
+    line-height: 26px;
+  }
+
+  .cap {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    flex: 0 0 auto;
+    border-radius: 42px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.97);
+    background-image:
+      url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'>%3Cpath d='M6.5 0 Q8.13 4.87 13 6.5 Q8.13 8.13 6.5 13 Q4.87 8.13 0 6.5 Q4.87 4.87 6.5 0 Z' fill='%23A0B8FE' fill-opacity='0.5'/%3E%3Cpath d='M19.5 13 Q21.13 17.87 26 19.5 Q21.13 21.13 19.5 26 Q17.87 21.13 13 19.5 Q17.87 17.87 19.5 13 Z' fill='%23A0B8FE' fill-opacity='0.5'/%3E%3C/svg%3E");
+    background-size: 26px 26px;
+    background-position: 0 0;
+    background-repeat: repeat;
+    box-shadow:
+      inset 0 0 0 2px rgba(86, 134, 254, 0.9),
+      inset 0 0 14px rgba(86, 134, 254, 0.40),
+      0 4px 18px rgba(40, 80, 180, 0.22);
+    will-change: width, opacity;
+  }
+  body.to-left .cap { background-position: 100% 0; }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #2f5aa8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    opacity: 0;
+  }
+  body.to-left .label { justify-content: flex-end; padding: 0 30px; }
+
+  .cap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(86, 134, 254, 0);
+    transition: background 120ms ease;
+    pointer-events: none;
+  }
+  .cap:hover::after { background: rgba(86, 134, 254, 0.12); }
+
+  /* 输入胶囊：其他按钮的 2 倍长宽（660×168） */
+  .input-cap { height: 168px; border-radius: 84px; }
+  .input-cap input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    background: transparent;
+    padding: 0 36px;
+    font: inherit;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #2f5aa8;
+    caret-color: #5686fe;
+  }
+  .input-cap input::placeholder { color: rgba(47, 90, 168, 0.55); font-weight: 600; }
+  .input-cap input:disabled { color: rgba(47, 90, 168, 0.45); }
+  .input-cap.disabled { box-shadow: inset 0 0 0 2px rgba(120, 140, 180, 0.55), 0 4px 18px rgba(40, 80, 180, 0.12); }
+</style>
+</head>
+<body>
+  <div id="inputWrap"></div>
+  <script>
+    const params = new URLSearchParams(location.search)
+    const data = (() => {
+      try { return JSON.parse(decodeURIComponent(params.get('d') || '%7B%7D')) } catch { return {} }
+    })()
+    const tree = Array.isArray(data.tree) ? data.tree : []
+    const status = data.status || { kind: 'input', text: '请输入文本 > _ ', disabled: false }
+    const MAX_ROWS = Number(data.rows) || 6
+    const CAP_W = Number(data.capW) || 330
+    const CAP_H = 84
+    const IN_W = CAP_W * 2
+    const IN_H = CAP_H * 2
+    const GAP = 15
+    const SHIFT = 22            // 鱼鳞偏移：每深一层向屏幕可用一侧偏 22px
+    const STAGGER = 70
+    const POP = 100
+    const DRAW = 260
+    const SPAN = POP + DRAW
+    const FACES_AUTO_CLOSE_MS = 8000   // 「表情和姿势」长时间没人选就自动收场
+
+    document.body.className = data.side === 'to-left' ? 'to-left' : 'to-right'
+    const dir = data.side === 'to-left' ? -1 : 1
+
+    /* ---------------- 输入胶囊（固定最底，不参与层级） ---------------- */
+
+    const inputCap = document.createElement('div')
+    inputCap.className = 'cap input-cap'
+    const input = document.createElement('input')
+    input.type = 'text'
+    input.placeholder = status.text
+    input.maxLength = 200
+    input.spellcheck = false
+    if (status.disabled) { input.disabled = true; inputCap.classList.add('disabled') }
+    inputCap.appendChild(input)
+    document.getElementById('inputWrap').appendChild(inputCap)
+    const inputNode = { cap: inputCap, label: input, item: null, shown: false, input: true }
+
+    input.addEventListener('keydown', (e) => {
+      e.stopPropagation()
+      if (e.key === 'Enter') {
+        const t = input.value.trim()
+        if (t) window.menuApi.input(t)
+        dismiss()
+      } else if (e.key === 'Escape') dismiss()
+    })
+
+    /* ---------------- 层栈 ---------------- */
+
+    let closing = false
+    let facesTimer = 0
+    const layers = []           // { el, stack, nodes, depth }
+
+    function clearFacesTimer() {
+      if (!facesTimer) return
+      clearTimeout(facesTimer)
+      facesTimer = 0
+    }
+
+    function armFacesTimer(item) {
+      clearFacesTimer()
+      if (!item || item.source !== 'faces') return
+      facesTimer = setTimeout(() => { facesTimer = 0; dismiss() }, FACES_AUTO_CLOSE_MS)
+    }
+
+    function capNode(it, layer) {
+      const cap = document.createElement('div')
+      cap.className = 'cap'
+      const label = document.createElement('span')
+      label.className = 'label'
+      label.textContent = it.label
+      cap.appendChild(label)
+      layer.stack.appendChild(cap)
+
+      const node = { cap, label, item: it, shown: false, input: false }
+      cap.addEventListener('click', () => {
+        if (closing) return
+        if (it.children && it.children.length) { pushLayer(it, layer.depth + 1); return }
+        window.menuApi.pick(it.id)
+        dismiss()
+      })
+      return node
+    }
+
+    /** 返回按钮：固定放在「倒数第二个胶囊」的位置（就是一级时「做点什么……」那一格）。
+     *  0.5.7 起它挂在 layer 上而不是 stack 里 —— 列表能滚，它不动。 */
+    function backNode(layer) {
+      const cap = document.createElement('div')
+      cap.className = 'cap'
+      const label = document.createElement('span')
+      label.className = 'label'
+      label.textContent = '返回'
+      cap.appendChild(label)
+      layer.el.appendChild(cap)
+      cap.addEventListener('click', () => { if (!closing) popLayer() })
+      return { cap, label, item: null, shown: false, input: false }
+    }
+
+    function play(node, opening, delay) {
+      const wEnd = node.input ? IN_W : CAP_W
+      const wPop = node.input ? IN_H : CAP_H
+      node.cap.getAnimations().forEach((a) => a.cancel())
+      if (node.label.getAnimations) node.label.getAnimations().forEach((a) => a.cancel())
+      const a1 = node.cap.animate(
+        opening
+          ? [
+              { width: wPop + 'px', opacity: 0 },
+              { width: wPop + 'px', opacity: 1, offset: POP / SPAN },
+              { width: wEnd + 'px', opacity: 1, offset: 1 },
+            ]
+          : [
+              { width: wEnd + 'px', opacity: 1 },
+              { width: wPop + 'px', opacity: 1, offset: DRAW / SPAN },
+              { width: wPop + 'px', opacity: 0, offset: 1 },
+            ],
+        { duration: SPAN, delay, easing: 'cubic-bezier(.22,.86,.25,1)', fill: 'both' },
+      )
+      const a2 = node.label.animate(
+        opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+        { duration: 180, delay: opening ? delay + POP + 50 : delay, easing: 'ease-out', fill: 'both' },
+      )
+      Promise.all([a1.finished, a2.finished])
+        .then(() => {
+          try { a1.commitStyles(); a2.commitStyles() } catch { /* 已被下一段接管 */ }
+          node.cap.getAnimations().forEach((a) => a.cancel())
+        })
+        .catch(() => { /* 被取消：接手的那段自己收尾 */ })
+      return delay + SPAN
+    }
+
+    function playGroup(nodes, opening) {
+      let end = 0
+      // 长列表要收窄错峰：27 个表情按固定 70ms 排，最后一条要等 1.8 秒才出现，
+      // 中间那 1.8 秒画面基本是空的（0.5.7 实测：进「表情和姿势」只看到分组标题）。
+      // 现在总错峰封顶 ~420ms，条目再多也是「唰」一下铺开。
+      const stagger = nodes.length > 6
+        ? Math.max(14, Math.round(420 / nodes.length))
+        : STAGGER
+      nodes.forEach((n, i) => {
+        n.shown = opening
+        const d = opening ? (nodes.length - 1 - i) * stagger : i * stagger
+        end = Math.max(end, play(n, opening, d))
+      })
+      return end
+    }
+
+    function buildLayer(items, depth, parentItem) {
+      const el = document.createElement('div')
+      el.className = 'layer hidden'
+      el.style.setProperty('--shift', (dir * SHIFT * depth) + 'px')
+      // 按钮区可用高度 = 行数 * 行高 + 间隙。深层要留一格给固定的「返回」，
+      // 剩下的才是可滚动列表（行数上限 5 时 = 4 行列表 + 1 行返回）。
+      const listRows = Math.max(1, MAX_ROWS - (depth > 0 ? 1 : 0))
+      el.style.setProperty('--stack-max', (listRows * (CAP_H + GAP) - GAP) + 'px')
+
+      const stack = document.createElement('div')
+      stack.className = 'stack'
+      el.appendChild(stack)
+      document.body.appendChild(el)
+
+      const layer = { el, stack, nodes: [], depth, parentItem }
+      let lastGroup = null
+      for (const it of items) {
+        if (it.groupLabel && it.groupLabel !== lastGroup) {
+          const g = document.createElement('div')
+          g.className = 'group-label'
+          g.textContent = it.groupLabel
+          stack.appendChild(g)
+          lastGroup = it.groupLabel
+        }
+        layer.nodes.push(capNode(it, layer))
+      }
+      // 深层：返回固定贴在输入胶囊正上方那一格，不参与滚动
+      if (depth > 0) layer.nodes.push(backNode(layer))
+      updateScrollHint(layer)
+      return layer
+    }
+
+    /** 内容超出才加渐隐提示；滚到顶/底就去掉对应那一侧 */
+    function updateScrollHint(layer) {
+      const s = layer.stack
+      if (!s) return
+      const more = s.scrollHeight > s.clientHeight + 2
+      s.classList.toggle('can-up', more && s.scrollTop > 2)
+      s.classList.toggle('can-down', more && s.scrollTop + s.clientHeight < s.scrollHeight - 2)
+    }
+
+    function pushLayer(item, depth) {
+      if (depth > 3 || closing) return          // 三级封顶
+      const cur = layers[layers.length - 1]
+      const layer = buildLayer(item.children || [], depth, item)
+      layers.push(layer)
+      // 鱼鳞层叠：被盖住的层保持显示（被上层天然遮挡），只是不再响应鼠标。
+      // 之前是整层 hidden —— 0.5.7.1 改成 covered，下层露出 22px 鳞边。
+      if (cur) cur.el.classList.add('covered')
+      layer.el.classList.remove('hidden')
+      layer.stack.scrollTop = 0          // 每次进来都从头看，别带着上一次的滚动位置
+      playGroup(layer.nodes, true)
+      armFacesTimer(item)
+    }
+
+    function popLayer() {
+      if (layers.length <= 1) return
+      clearFacesTimer()
+      const top = layers.pop()
+      const end = playGroup(top.nodes, false)
+      top.el.classList.add('hidden')
+      setTimeout(() => { try { top.el.remove() } catch { /* 已移除 */ } }, end + 40)
+      const back = layers[layers.length - 1]
+      if (back) {
+        // 鱼鳞层叠：下层一直可见，不用重播展开动画，恢复交互即可
+        back.el.classList.remove('covered')
+      }
+    }
+
+    function dismiss() {
+      if (closing) return
+      closing = true
+      clearFacesTimer()
+      // 输入胶囊永远在，收场时和其它胶囊一起缩回去
+      const all = [...layers.flatMap((l) => l.nodes), inputNode]
+      const end = playGroup(all, false)
+      setTimeout(() => window.menuApi.close(), end + 40)
+    }
+
+    /* ---------------- 启动 ---------------- */
+
+    // 验收钩子：逐层下钻 / 返回（真实右键手势没法自动化）
+    window.__menuGo = (depth) => {
+      let layer = layers[0]
+      for (let d = 1; d <= depth; d += 1) {
+        const host = layer.nodes.find((n) => n.item && n.item.children && n.item.children.length)
+        if (!host) return false
+        pushLayer(host.item, d)
+        layer = layers[layers.length - 1]
+      }
+      return true
+    }
+    window.__menuPop = () => { popLayer(); return layers.length }
+
+    const root = buildLayer(tree, 0, null)
+    layers.push(root)
+    const firstEnd = playGroup([...root.nodes, inputNode], true)
+    root.el.classList.remove('hidden')
+
+    setTimeout(() => {
+      window.menuApi.armed()
+      if (!status.disabled) input.focus()
+      // --debug-menu-sub：自动跑一遍「进二级 → 进三级 → 返回」用于截图验收
+      if (params.get('open2') === '1') {
+        const more = root.nodes.find((n) => n.item && n.item.children && n.item.children.length)
+        if (more) {
+          setTimeout(() => pushLayer(more.item, 1), 400)
+          const sub = (more.item.children || []).find((c) => c.children && c.children.length)
+          if (sub) setTimeout(() => pushLayer(sub, 2), 1200)
+          setTimeout(() => popLayer(), 2000)
+          setTimeout(() => popLayer(), 2600)
+        }
+      }
+    }, firstEnd)
+
+    // 捕获阶段先拦「被盖住的层」：鳞边上的点击吞掉（不动作、也不当成点空白收菜单）。
+    // pointerdown 和 click 都要拦 —— 只吞 pointerdown 拦不住 click 触发胶囊的动作。
+    const swallowCovered = (e) => {
+      if (e.target.closest && e.target.closest('.layer.covered')) {
+        e.stopPropagation()
+        e.preventDefault()
+      }
+    }
+    document.addEventListener('pointerdown', swallowCovered, true)
+    document.addEventListener('click', swallowCovered, true)
+    document.addEventListener('pointerdown', (e) => {
+      if (!e.target.closest('.cap')) dismiss()
+    })
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') dismiss()
+    })
+    // 滚轮/拖拽滚动时更新「上面/下面还有内容」的渐隐提示
+    document.addEventListener('scroll', (e) => {
+      const s = e.target
+      if (!s || !s.classList || !s.classList.contains('stack')) return
+      const l = layers.find((x) => x.stack === s)
+      if (l) updateScrollHint(l)
+    }, true)
+
+    /* ---------------- 通信状态：菜单开着也要跟着变 ----------------
+     * 0.5.7 修的两件事：
+     *   ① 主进程那边 health 没时间戳 → 永远判「离线」（已修）；
+     *   ② 就算修好了，弹窗那一刻拍的是快照 —— 打开 DSH 之后菜单还写着离线。
+     * 现在 1.2s 问一次，只在这个窗口活着的时候跑。 */
+    let statusKind = status.kind
+    const statusTimer = setInterval(async () => {
+      try {
+        const s = await window.menuApi.status()
+        if (!s || s.kind === statusKind) return
+        statusKind = s.kind
+        input.placeholder = s.text
+        input.disabled = !!s.disabled
+        inputCap.classList.toggle('disabled', !!s.disabled)
+        if (!s.disabled) input.focus()
+      } catch { /* 老主进程没有这个通道：保持快照 */ }
+    }, 1200)
+    window.addEventListener('beforeunload', () => clearInterval(statusTimer))
+
+    window.menuApi.onDismiss(dismiss)
+  </script>
+</body>
+</html>

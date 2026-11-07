@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>pet settings</title>
+<style>
+  /* ============================================================
+     设置页 —— 沿用胶囊菜单的视觉语言（蓝边 + 四角星底纹），
+     但做了三处刻意调整（用户要求）：
+       1. 边框的「模糊发光」减弱：菜单是 inset 0 0 14px 的柔光，
+          设置页只留 2px 实边 + 极淡的内阴影，否则大窗口上会糊成一片；
+       2. 星纹用极浅蓝，并且用 mask + background-color 画 —— 颜色要能被
+          「主题色2」实时改，写死在 SVG data URI 里就改不动了；
+       3. 窗口大得多，所有尺寸按「设置页」重新给，不复用菜单的 84px 胶囊。
+
+     尺寸基准：字体 15px，行高 64，胶囊半径 999。UI 缩放靠 body 的 zoom，
+     窗口尺寸不变 —— 「不影响舞台尺寸」指的就是这个。
+     ============================================================ */
+
+  :root {
+    /* 三个主题色，由「外观」页实时改 */
+    --ui-bg: #ffffff;          /* 主题色1：背景 */
+    --ui-star: #e6efff;        /* 主题色2：底纹（极浅蓝） */
+    --ui-edge: #5686fe;        /* 主题色3：边框 */
+    --ui-text: #2f5aa8;        /* 文字：跟随边框色系的深蓝，不单独提供设置 */
+    --ui-scale: 1;
+    --radius: 28px;
+  }
+
+  /* 主题色的透明变体统一在这里派生，避免散落一堆 rgba() 写死 */
+  :root {
+    --edge-strong: var(--ui-edge);
+    --edge-mid: color-mix(in srgb, var(--ui-edge) 55%, transparent);
+    --edge-soft: color-mix(in srgb, var(--ui-edge) 18%, transparent);
+    --star-deep: color-mix(in srgb, var(--ui-star) 70%, var(--ui-edge) 30%);
+  }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    user-select: none;
+    font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+    color: var(--ui-text);
+  }
+
+  /* 注意：这里不写死 zoom。窗口是「物理像素」在跑的（主进程用
+     --force-device-scale-factor=1），所以 15px 的字在 175% 屏幕上只有 8.6 个逻辑点，
+     看起来像蚂蚁。zoom 由 JS 设成「用户倍率 × 系统 DPI」，1.0× 时视觉大小才和
+     主窗口的气泡一致。 */
+
+  /* ---------- 主体卡片 ---------- */
+
+  .sheet {
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: var(--ui-bg);
+    /* 边框不能写在这里：inset box-shadow 会被下面的 ::before（星纹）盖住。
+       拆成独立的 ::after 画在最上层，pointer-events:none 不影响交互。
+
+       外投影也去掉了：窗口是透明的，投影会画到圆角外侧那四个小三角区域里，
+       看起来就像「圆角外面还蒙了一层」。要层次感就用边框本身的粗细/颜色做，
+       不要让阴影跑到透明区外。 */
+    box-shadow: none;
+    /* 星纹：铺在内容底下，用 mask 保证颜色可被主题色驱动 */
+    will-change: width, height, border-radius, opacity;
+  }
+
+  .sheet::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--ui-star);
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath d='M7.5 0 Q9.375 5.625 15 7.5 Q9.375 9.375 7.5 15 Q5.625 9.375 0 7.5 Q5.625 5.625 7.5 0 Z' fill='%23000'/%3E%3Cpath d='M22.5 15 Q24.375 20.625 30 22.5 Q24.375 24.375 22.5 30 Q20.625 24.375 15 22.5 Q20.625 20.625 22.5 15 Z' fill='%23000'/%3E%3C/svg%3E");
+    -webkit-mask-size: 30px 30px;
+    -webkit-mask-repeat: repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* 边框层：必须在星纹（::before）和内容之上，否则大窗口下边框会被底纹吃掉一截。
+     用 border 而不是 inset box-shadow —— 圆角上 border 的描边是实心栅格化，
+     inset 阴影会在内圈多糊一层半透明（之前那圈 --edge-soft 的光环），
+     在透明窗口的圆角处看起来就是「边缘没切干净」。 */
+  .sheet::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    border: 2px solid var(--edge-strong);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* 动画结束后才允许内容显示：展开过程中卡片边缘是裁切的，内容直接露出来会很跳 */
+  .sheet-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 22px 30px 26px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 160ms ease;
+  }
+  body.ready .sheet-inner { opacity: 1; }
+
+  /* ---------- 页签 ---------- */
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex: 0 0 auto;
+  }
+
+  .tab {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--ui-text);
+    padding: 11px 34px;
+    border-radius: 999px;
+    /* 透明 + 只画框：星纹由整张卡片铺一次，胶囊透过去，图案才是连续的。
+       每个胶囊各自铺一份图案，边界处必然错位（这就是「衔接对不上」的根因）。 */
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+  }
+  .tab:hover { box-shadow: inset 0 0 0 2px var(--edge-strong); }
+  .tab.active {
+    box-shadow: inset 0 0 0 2px var(--edge-strong), 0 4px 14px rgba(40, 80, 180, 0.18);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- 面板：交叉淡入淡出（手机桌面切页那种） ---------- */
+
+  .panels {
+    position: relative;
+    flex: 1 1 auto;
+    margin-top: 20px;
+    min-height: 0;
+  }
+
+  .panel {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px) scale(0.995);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+  }
+  .panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .panel::-webkit-scrollbar { width: 10px; }
+  .panel::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--edge-soft);
+  }
+  .panel::-webkit-scrollbar-thumb:hover { background: var(--edge-mid); }
+
+  /* ---------- 行 ---------- */
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    /* 分隔线加粗的同时把行距也拉开（样式优化 1：宽度提升，间隔也提升） */
+    padding: 19px 4px;
+    /* 窗口是屏幕 70% 宽，全宽铺开会把标签和控件拉到两头、中间空一大截。
+       限制在 880 并居中，阅读动线才收得住。 */
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .row + .row { border-top: 3px dashed var(--edge-soft); }
+
+  /* 左侧设置项标题：文本块胶囊样式（样式优化 2），但文字右对齐、
+     淡化在左侧 —— 和右侧文本块（右侧淡化）互为镜像。 */
+  .row-label {
+    flex: 0 0 190px;
+    box-sizing: border-box;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    -webkit-mask-image: linear-gradient(270deg, #000 62%, transparent 98%);
+  }
+
+  /* 可点击的标题（如「绑定对话 ⟳」）：普通胶囊，无淡化，点击有反馈 */
+  .row-label-btn {
+    -webkit-mask-image: none;
+    cursor: pointer;
+    transition: box-shadow 140ms ease, transform 100ms ease;
+  }
+  .row-label-btn:hover { box-shadow: inset 0 0 0 2px var(--edge-strong); }
+  .row-label-btn:active { transform: scale(0.96); }
+
+  .row-ctl.start {
+    justify-content: flex-start;
+  }
+
+  .row-ctl {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  /* ---------- 复选框：四角星 ---------- */
+  /* 尺寸取「底纹星星视觉大小的 3 倍」——底纹一格 30px、星占 15px，3 倍即 45。
+     空心/实心用两张 mask 切换，颜色跟着 --ui-text 走。 */
+
+  .check {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .check input { position: absolute; opacity: 0; pointer-events: none; }
+
+  .check .star {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    background-color: var(--ui-text);
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 Q13.2 10.8 22 12 Q13.2 13.2 12 22 Q10.8 13.2 2 12 Q10.8 10.8 12 2 Z' fill='none' stroke='%23000' stroke-width='1.7' stroke-linejoin='round'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    transition: transform 140ms cubic-bezier(.22,.86,.25,1);
+  }
+  .check input:checked + .star {
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 Q13.2 10.8 22 12 Q13.2 13.2 12 22 Q10.8 13.2 2 12 Q10.8 10.8 12 2 Z' fill='%23000'/%3E%3C/svg%3E");
+    transform: scale(1.06);
+  }
+  .check:active .star { transform: scale(0.94); }
+
+  .check .check-label { font-size: 15px; }
+
+  /* ---------- 文本块：胶囊，右侧淡出 ---------- */
+
+  .textblock {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 9px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    /* 右侧淡出：mask 连带背景和边框一起渐隐，视觉上像是「延伸出画面」 */
+    -webkit-mask-image: linear-gradient(90deg, #000 62%, transparent 98%);
+  }
+
+  /* 单侧淡出只作用在「末尾留白」上：短句整句看得清，长文本仍会在右边自然渐隐
+     （和列表里其它文本块同一套观感，但不会把字的最后一笔裁掉）。
+     min-width 取「低频率 + 中频率」两颗胶囊的总宽，和上一行对齐，
+     不然这一行会缩成一小截，看着像没长齐。 */
+  .textblock.tail-fade {
+    flex: 0 0 auto;
+    min-width: 340px;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 26px), transparent 100%);
+    padding-right: 30px;
+  }
+
+  /* ---------- 滑块 ---------- */
+
+  .slider-wrap {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1 1 auto;
+    height: 46px;
+    margin: 0;
+    border-radius: 999px;
+    box-sizing: border-box;
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    outline: none;
+    cursor: pointer;
+  }
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 46px;
+    background: transparent;
+    border-radius: 999px;
+  }
+  /* 滑块头：实心四角星，和复选框同一支 mask 形状 */
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 38px;
+    height: 38px;
+    margin-top: 4px;
+    border: 0;
+    /* 颜色走 --thumb-img：data URI 里没法写 var()，所以由 JS 按 --ui-text 重新生成。
+       下面这条是没跑 JS 时的兜底（默认蓝）。 */
+    background-color: transparent;
+    background-image: var(--thumb-img, url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 Q13.2 10.8 22 12 Q13.2 13.2 12 22 Q10.8 13.2 2 12 Q10.8 10.8 12 2 Z' fill='%232f5aa8'/%3E%3C/svg%3E"));
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 5px rgba(30, 60, 140, 0.35));
+    cursor: grab;
+  }
+  input[type='range']:active::-webkit-slider-thumb { cursor: grabbing; }
+
+  .slider-value {
+    flex: 0 0 auto;
+    min-width: 58px;
+    text-align: right;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  /* ---------- 颜色选择器 ---------- */
+  /* 外层胶囊比底纹深一档，里面放圆角色块；点色块开系统取色器 */
+
+  .color-pick {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px 5px 5px;
+    border-radius: 999px;
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+  }
+
+  .color-pick .swatch {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(30, 60, 140, 0.25), inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+    transition: transform 120ms ease;
+  }
+  .color-pick .swatch:hover { transform: scale(1.06); }
+  .color-pick .swatch:active { transform: scale(0.96); }
+
+  .color-pick .swatch-text {
+    min-width: 78px;
+    padding: 0 10px 0 12px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  /* ---------- 绑定对话：复用右键菜单的胶囊 ---------- */
+
+  .chatmenu {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 6 项 = 316，再露出第 7 项的前半截（约 30px），把「下面还有」演出来。
+       这组数值和下面的 46px 行高是配套的：总高度必须让「主动说话」也落在
+       可视区内，否则整页要滚动，第 7 项的渐隐提示就白做了。 */
+    max-height: 348px;
+    overflow-y: auto;
+    padding: 2px 0;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+  }
+  .chatmenu::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+  .chatcap {
+    position: relative;
+    flex: 0 0 auto;
+    height: 46px;
+    border-radius: 23px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 22px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    transition: box-shadow 140ms ease;
+  }
+  .chatcap:hover { box-shadow: inset 0 0 0 2px var(--edge-strong); }
+
+  /* 标题可能很长（自动生成的一句话），必须单行省略，否则胶囊会被撑高、
+     「只露 6.5 项」的窗口就不准了。 */
+  .chatcap .cap-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* 「未打开」= 会话不在内存里，事件要等用户点开它才会送达。低调但看得见。 */
+  .chatcap .cap-tag {
+    flex: 0 0 auto;
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    opacity: 0.38;
+  }
+  .chatcap.is-off .cap-title { opacity: 0.62; }
+
+  /* 频率选项：星星在胶囊外，只有文本用胶囊包（右侧淡化，同「主动说话」文本块）。
+     之前星星和文本一起包在胶囊里，星星被边框挤得没有分量 —— 现在星是控制件、
+     胶囊只是标签，职责分开。 */
+  .freq-row {
+    display: flex;
+    gap: 18px;
+    /* 0.5.7：整行要占满 row-ctl 的宽度。以前是「内容宽」，三颗按 1/3 均分的是
+       这个内容宽，算出来刚好差一点 —— 最后一颗的尾巴被 mask 吃掉（用户截图）。 */
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .freq-item {
+    flex: 1 1 0;
+    min-width: 0;
+    cursor: pointer;
+  }
+  /* 星星保持原尺寸（.check 的默认），只把文本变成短胶囊 */
+  .freq-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    -webkit-mask-image: linear-gradient(90deg, #000 62%, transparent 98%);
+    transition: box-shadow 140ms ease;
+  }
+  .freq-item input:checked ~ .freq-text { box-shadow: inset 0 0 0 2px var(--edge-strong); }
+  .freq-item:hover .freq-text { box-shadow: inset 0 0 0 2px var(--edge-strong); }
+
+  /* 滚动边缘渐隐：mask 由 JS 按 scrollTop 动态算 —— 到顶不遮上边，到底不遮下边，
+     所以永远是「正在滑出去的那一项」在淡，而不是写死某一项。
+     滚动条全程隐藏（下面两条 + overflow-y:auto），靠渐隐本身暗示可滑。 */
+
+  /* ---------- 提示气泡（toast） ---------- */
+
+  .toast {
+    position: absolute;
+    left: 50%;
+    bottom: 34px;
+    transform: translate(-50%, 12px);
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    color: var(--ui-text);
+    background: var(--ui-bg);
+    box-shadow: inset 0 0 0 2px var(--edge-strong), 0 10px 30px rgba(30, 60, 140, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    z-index: 9;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  /* ---------- 关闭按钮 ---------- */
+
+  .close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    z-index: 5;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 1;
+    color: var(--ui-text);
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--edge-soft);
+    transition: box-shadow 140ms ease, background 140ms ease;
+  }
+  .close:hover { background: var(--edge-soft); box-shadow: inset 0 0 0 2px var(--edge-mid); }
+
+  /* ---------- 指令页（0.5.3） ---------- */
+  .cmd-warn {
+    font-size: 12.5px;
+    line-height: 1.5;
+    opacity: 0.62;
+    padding: 2px 6px 10px;
+  }
+  .cmd-layout { display: flex; gap: 18px; align-items: flex-start; }
+  .cmd-side { width: 320px; flex: 0 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .cmd-list {
+    display: flex; flex-direction: column; gap: 8px;
+    max-height: 520px; overflow-y: auto; padding-right: 4px;
+    /* 滚轮/触控板照常，但不画滚动条：系统滚动条在这套白胶囊里非常突兀 */
+    scrollbar-width: none;
+  }
+  .cmd-list::-webkit-scrollbar { width: 0; height: 0; display: none; }
+  .cmd-group { font-size: 12px; opacity: 0.5; margin: 6px 0 0 6px; }
+  .cmd-item {
+    height: 38px; border-radius: 19px; padding: 0 16px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; cursor: pointer;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .cmd-item.active { box-shadow: inset 0 0 0 3px var(--edge-strong); }
+  .cmd-item .tag { font-size: 11px; opacity: 0.5; margin-left: auto; flex: 0 0 auto; }
+  .cmd-form { flex: 1 1 auto; min-width: 0; }
+  .cmd-field { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .cmd-field > label { width: 86px; flex: 0 0 auto; font-size: 13px; }
+  .cmd-field input[type=text],
+  .cmd-field input[type=number],
+  .cmd-field select,
+  .cmd-field textarea {
+    flex: 1 1 auto; min-width: 0;
+    font: inherit; font-size: 13px; color: var(--ui-text);
+    background: rgba(255, 255, 255, 0.85);
+    border: 0; outline: none;
+    box-shadow: inset 0 0 0 2px var(--edge-mid);
+    border-radius: 14px; padding: 8px 14px;
+  }
+  .cmd-field textarea { resize: vertical; border-radius: 12px; }
+  /* 三个独立开关沿用频率胶囊的 .freq-item / .freq-text 样式，等宽排布。
+     .cmd-field > label 的 width:86px 是给左侧字段标题的，这里必须清掉；
+     文字保持 nowrap，放不下时整颗胶囊换行（0.5.7 的竖排坑）。 */
+  .cmd-checks { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: flex-start; }
+  .cmd-checks > .check { width: auto; }
+  .cmd-checks .check { min-width: 0; align-items: center; }
+  .cmd-checks .freq-item { flex: 1 1 0; }
+  .cmd-checks .freq-text { white-space: nowrap; }
+  .cmd-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cmd-out {
+    margin-top: 10px; font-size: 12px; white-space: pre-wrap;
+    max-height: 170px; overflow: auto; opacity: 0.78;
+    font-family: ui-monospace, Consolas, monospace;
+  }
+  .cmd-empty { font-size: 13px; opacity: 0.55; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <button class="close" title="关闭">✕</button>
+    <div class="sheet-inner">
+      <div class="tabs">
+        <button class="tab active" data-tab="look">外观</button>
+        <button class="tab" data-tab="behavior">行为</button>
+        <button class="tab" data-tab="commands">指令</button>
+      </div>
+
+      <div class="panels">
+        <!-- ================= 外观 ================= -->
+        <section class="panel active" data-panel="look">
+          <div class="row">
+            <div class="row-label">界面尺寸</div>
+            <div class="row-ctl">
+              <div class="slider-wrap">
+                <input type="range" id="ui-scale" min="0.2" max="3" step="0.1" value="1">
+                <span class="slider-value" id="ui-scale-val">1.0×</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 帧率限制（0.5.7）：30 / 60 / 无限制。省电模式不受这里影响（固定 24） -->
+          <div class="row">
+            <div class="row-label">帧率限制</div>
+            <div class="row-ctl start">
+              <div class="freq-row">
+                <label class="check freq-item">
+                  <input type="checkbox" name="fps" value="30">
+                  <i class="star"></i>
+                  <span class="freq-text">30 帧 · 省电</span>
+                </label>
+                <label class="check freq-item">
+                  <input type="checkbox" name="fps" value="60">
+                  <i class="star"></i>
+                  <span class="freq-text">60 帧 · 顺滑</span>
+                </label>
+                <label class="check freq-item">
+                  <input type="checkbox" name="fps" value="0">
+                  <i class="star"></i>
+                  <span class="freq-text">无限制</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row-label">主题色 1 · 背景</div>
+            <div class="row-ctl">
+              <div class="color-pick">
+                <button class="swatch" data-color="ui-bg" style="background:#ffffff"></button>
+                <span class="swatch-text" data-hex="ui-bg">#FFFFFF</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row-label">主题色 2 · 底纹</div>
+            <div class="row-ctl">
+              <div class="color-pick">
+                <button class="swatch" data-color="ui-star" style="background:#e6efff"></button>
+                <span class="swatch-text" data-hex="ui-star">#E6EFFF</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row-label">主题色 3 · 边框</div>
+            <div class="row-ctl">
+              <div class="color-pick">
+                <button class="swatch" data-color="ui-edge" style="background:#5686fe"></button>
+                <span class="swatch-text" data-hex="ui-edge">#5686FE</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 行为 ================= -->
+        <section class="panel" data-panel="behavior">
+          <div class="row" style="align-items:flex-start">
+            <!-- 标题本身就是刷新按钮：点一下重新拉会话清单（普通胶囊，无淡化） -->
+            <div class="row-label row-label-btn" id="bindRefresh" title="点击刷新会话列表">绑定 DSH 对话 ⟳</div>
+            <div class="row-ctl start">
+              <div class="chatmenu" id="chatmenu"></div>
+            </div>
+          </div>
+
+          <div class="row" style="align-items:flex-start">
+            <div class="row-label" style="padding-top:14px">主动说话</div>
+            <div class="row-ctl start" style="flex-direction:column; align-items:stretch; gap:14px">
+              <label class="check" style="justify-content:flex-start">
+                <input type="checkbox" id="proactive">
+                <i class="star"></i>
+                <span class="textblock">主动说话</span>
+              </label>
+
+              <!-- 频率：胶囊只包文本（右侧淡化），星星在胶囊外；
+                   三档互斥且总有一档选中，是否生效由上面的开关决定 -->
+              <div class="freq-row">
+                <label class="check freq-item">
+                  <input type="checkbox" name="freq" value="low">
+                  <i class="star"></i>
+                  <span class="freq-text">低频率 · 25%</span>
+                </label>
+
+                <label class="check freq-item">
+                  <input type="checkbox" name="freq" value="mid">
+                  <i class="star"></i>
+                  <span class="freq-text">中频率 · 66%</span>
+                </label>
+
+                <label class="check freq-item">
+                  <input type="checkbox" name="freq" value="high">
+                  <i class="star"></i>
+                  <span class="freq-text">高频率 · 100%</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 开机自启（0.5.1）：真相是 Startup 里那个 .lnk 存在与否，勾选状态现场读盘，
+               默认关闭 —— 首次启动不写任何登录项 -->
+          <div class="row">
+            <div class="row-label">开机自启</div>
+            <div class="row-ctl start" style="flex-direction:row; align-items:center; gap:14px; width:100%; box-sizing:border-box">
+              <label class="check" style="gap:10px">
+                <input type="checkbox" id="autostart">
+                <i class="star"></i>
+                <span class="textblock tail-fade">登录 Windows 后自动打开桌宠</span>
+              </label>
+              <div class="chatcap" id="reinstallShortcut" style="font-size:13px; height:40px; padding:0 20px; border-radius:20px; flex:0 0 auto; margin-left:auto">重建桌面快捷方式</div>
+            </div>
+          </div>
+
+          <!-- 全屏自动省电（0.5.4 的自动低打扰，0.5.7 改名） -->
+          <div class="row">
+            <div class="row-label">省电模式</div>
+            <div class="row-ctl start" style="flex-direction:column; align-items:flex-start; gap:8px">
+              <label class="check" style="gap:10px">
+                <input type="checkbox" id="autoLow">
+                <i class="star"></i>
+                <span class="textblock tail-fade">全屏应用/游戏时自动进入省电模式</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 指令（0.5.3） ================= -->
+        <section class="panel" data-panel="commands">
+          <div class="cmd-warn">指令以 <b>当前用户权限</b> 执行，只添加你信得过的命令。驾驶员（也就是你绑定的 AI 会话）要改这份列表时，桌面会弹确认框，并显示完整命令行。</div>
+          <div class="cmd-layout">
+            <div class="cmd-side">
+              <div class="cmd-actions">
+                <div class="chatcap" id="cmdNew" style="font-size:13px; height:36px; padding:0 16px; border-radius:18px">＋ 新建</div>
+                <div class="chatcap" id="cmdRefresh" style="font-size:13px; height:36px; padding:0 16px; border-radius:18px">刷新</div>
+              </div>
+              <div class="cmd-list" id="cmdList"></div>
+            </div>
+            <div class="cmd-form" id="cmdForm">
+              <div class="cmd-empty" id="cmdEmpty">左边选一条指令，或点「＋ 新建」。<br>不知道怎么写？看 main/docs/commands-examples.md，五种类型各有一条可抄的。</div>
+              <div id="cmdFields" style="display:none">
+                <div class="cmd-field"><label>名称</label><input id="fLabel" type="text" placeholder="打开记事本"></div>
+                <div class="cmd-field"><label>id</label><input id="fId" type="text" placeholder="open_notepad（字母/数字/_/-）"></div>
+                <div class="cmd-field"><label>类型</label>
+                  <select id="fType">
+                    <option value="exe">exe</option>
+                    <option value="cmd">cmd</option>
+                    <option value="powershell">powershell</option>
+                    <option value="bat">bat</option>
+                    <option value="shortcut">快捷方式</option>
+                  </select>
+                </div>
+                <div class="cmd-field"><label>命令</label><input id="fCmd" type="text" placeholder="explorer.exe 或脚本绝对路径"></div>
+                <div class="cmd-field"><label>参数</label><textarea id="fArgs" rows="2" placeholder="每行一个参数，按 argv 传递（不拼 shell）"></textarea></div>
+                <div class="cmd-field"><label>工作目录</label><input id="fCwd" type="text" placeholder="留空 = 舞台目录"></div>
+                <div class="cmd-field"><label>模式</label>
+                  <select id="fMode"><option value="exec">exec（推荐，不经过 shell）</option><option value="shell">shell（整串命令）</option></select>
+                </div>
+                <div class="cmd-field"><label>超时</label><input id="fTimeout" type="number" min="1000" max="600000" step="1000" style="width:120px"> <span style="opacity:.6">ms</span></div>
+                <div class="cmd-field cmd-checks">
+                  <label class="check freq-item"><input type="checkbox" id="fCapture"><i class="star"></i><span class="freq-text">捕获输出</span></label>
+                  <label class="check freq-item"><input type="checkbox" id="fVisible"><i class="star"></i><span class="freq-text">显示窗口</span></label>
+                  <label class="check freq-item"><input type="checkbox" id="fAllowArgs"><i class="star"></i><span class="freq-text">允许运行时参数</span></label>
+                </div>
+                <div class="cmd-actions" style="margin-top:6px">
+                  <div class="chatcap" id="cmdSave" style="font-size:13px; height:36px; padding:0 16px; border-radius:18px">保存</div>
+                  <div class="chatcap" id="cmdTest" style="font-size:13px; height:36px; padding:0 16px; border-radius:18px">试运行</div>
+                  <div class="chatcap" id="cmdDelete" style="font-size:13px; height:36px; padding:0 16px; border-radius:18px">删除</div>
+                </div>
+                <div class="cmd-out" id="cmdOut"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+  const params = new URLSearchParams(location.search)
+  const fromLeft = params.get('from') !== 'right'
+  // 系统 DPI 补偿：窗口按物理像素建，不补偿的话字会小到看不清
+  const DPI = Number(params.get('dpi')) || 1
+  window.__from = fromLeft ? 'left' : 'right'
+
+  /* ---------------- 出场动画 ----------------
+     0 → 0.1s   圆形浮现（只在角落冒出一个小圆，透明度 0 → 1）
+     0.1 → 0.3s 从那个角展开到最大（宽高等比涨，圆角同步收到 28px）
+     0.3s       内容淡入
+     起点角落由舞台位置决定：舞台在左 → 左下角，在右 → 右下角。 */
+  const sheet = document.querySelector('.sheet')
+  const S = 150
+  sheet.style.left = fromLeft ? '0' : 'auto'
+  sheet.style.right = fromLeft ? 'auto' : '0'
+  sheet.style.bottom = '0'
+  sheet.style.width = S + 'px'
+  sheet.style.height = S + 'px'
+  sheet.style.borderRadius = '50%'
+  sheet.style.opacity = '0'
+
+  requestAnimationFrame(() => {
+    sheet.style.transition = 'opacity 100ms linear'
+    sheet.style.opacity = '1'
+  })
+
+  setTimeout(() => {
+    sheet.style.transition =
+      'width 200ms cubic-bezier(.22,.86,.25,1), height 200ms cubic-bezier(.22,.86,.25,1), border-radius 200ms ease-out'
+    sheet.style.width = '100%'
+    sheet.style.height = '100%'
+    sheet.style.borderRadius = '28px'
+  }, 105)
+
+  setTimeout(() => document.body.classList.add('ready'), 300)
+
+  /* ---------------- 关闭 ---------------- */
+  function closeSelf() {
+    sheet.style.transition = 'opacity 130ms ease, transform 130ms ease'
+    sheet.style.opacity = '0'
+    sheet.style.transform = 'scale(.985)'
+    setTimeout(() => window.settingsApi?.close(), 140)
+  }
+  document.querySelector('.close').addEventListener('click', closeSelf)
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSelf() })
+
+  /* ---------------- 页签切换（交叉淡入淡出） ---------------- */
+  const tabs = [...document.querySelectorAll('.tab')]
+  const panels = [...document.querySelectorAll('.panel')]
+  function selectTab(name) {
+    tabs.forEach((x) => x.classList.toggle('active', x.dataset.tab === name))
+    panels.forEach((p) => p.classList.toggle('active', p.dataset.panel === name))
+  }
+  tabs.forEach((t) => t.addEventListener('click', () => selectTab(t.dataset.tab)))
+  // 调试入口：?tab=behavior 直接落在行为页（截图/回归脚本用，不影响正常打开）
+  const wantTab = params.get('tab')
+  if (wantTab && tabs.some((t) => t.dataset.tab === wantTab)) selectTab(wantTab)
+
+  /* ---------------- 主题色 ---------------- */
+  const root = document.documentElement.style
+
+  function applyColor(key, hex) {
+    root.setProperty('--' + key, hex)
+    const sw = document.querySelector('.swatch[data-color="' + key + '"]')
+    const tx = document.querySelector('.swatch-text[data-hex="' + key + '"]')
+    if (sw) sw.style.background = hex
+    if (tx) tx.textContent = hex.toUpperCase()
+    syncThumb()
+    // 用户改色才存：初始装载走的也是这里，但值相同，落盘幂等无害
+    if (hex !== DEFAULT_THEME[key]) {
+      const theme = {}
+      for (const k of Object.keys(DEFAULT_THEME)) theme[k] = getComputedStyle(document.documentElement).getPropertyValue('--' + k).trim()
+      saveSettings({ theme })
+    }
+  }
+
+  // 主题四色的出厂值：用来区分「用户改过」和「初始装载」
+  const DEFAULT_THEME = {
+    'ui-bg': '#ffffff',
+    'ui-star': '#e6efff',
+    'ui-edge': '#5686fe',
+    'ui-text': '#2f5aa8',
+  }
+
+  /** 滑块把手是 SVG 图，颜色不能写 var() —— 每次换色重生成一份 data URI */
+  function syncThumb() {
+    const c = getComputedStyle(document.documentElement).getPropertyValue('--ui-text').trim() || '#2f5aa8'
+    const svg = "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 Q13.2 10.8 22 12 Q13.2 13.2 12 22 Q10.8 13.2 2 12 Q10.8 10.8 12 2 Z' fill='" + encodeURIComponent(c) + "'/%3E%3C/svg%3E"
+    document.querySelectorAll("input[type='range']").forEach((el) => {
+      el.style.setProperty('--thumb-img', 'url("' + svg + '")')
+    })
+  }
+  syncThumb()
+
+  document.querySelectorAll('.swatch').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.color
+      const cur = getComputedStyle(document.documentElement).getPropertyValue('--' + key).trim()
+      const input = document.createElement('input')
+      input.type = 'color'
+      // <input type=color> 只吃 #RRGGBB，把命名色/简写统一一下
+      input.value = /^#[0-9a-f]{6}$/i.test(cur) ? cur : rgbToHex(cur)
+      input.style.cssText = 'position:fixed;left:-999px;top:-999px'
+      document.body.appendChild(input)
+      input.addEventListener('change', () => { applyColor(key, input.value); input.remove() })
+      input.addEventListener('blur', () => setTimeout(() => input.remove(), 300))
+      input.click()
+    })
+  })
+
+  function rgbToHex(v) {
+    const m = String(v).match(/\d+/g)
+    if (!m) return '#ffffff'
+    return '#' + m.slice(0, 3).map((n) => Number(n).toString(16).padStart(2, '0')).join('')
+  }
+
+  /* ---------------- 界面尺寸 ---------------- */
+  const range = document.getElementById('ui-scale')
+  const rangeVal = document.getElementById('ui-scale-val')
+  function applyScale(v) {
+    root.setProperty('--ui-scale', v)
+    // zoom 单独设，不用 CSS 变量：zoom 的插值和继承在嵌套场景下容易出意外
+    document.body.style.zoom = String(Number(v) * DPI)
+    rangeVal.textContent = Number(v).toFixed(1) + '×'
+  }
+  range.addEventListener('input', () => {
+    applyScale(range.value)
+    saveSettings({ uiScale: Number(range.value) })
+  })
+  applyScale(range.value)
+
+  /* ---------------- 帧率限制（30 / 60 / 无限制） ----------------
+     和频率一样是「单选语义用 checkbox 画」，永远有一档选中。 */
+  const fpsInputs = [...document.querySelectorAll('input[name="fps"]')]
+  let boundFps = 0
+  function setFps(v) {
+    boundFps = Number(v)
+    fpsInputs.forEach((f) => { f.checked = Number(f.value) === boundFps })
+  }
+  fpsInputs.forEach((f) => f.addEventListener('change', () => {
+    const v = f.checked ? Number(f.value) : boundFps
+    setFps(v)
+    saveSettings({ fpsCap: v })
+  }))
+  setFps(0)
+
+  /* ---------------- 单侧淡化：胶囊曲线刚好消失（⊃ / ⊂ 形） ----------------
+     以前 mask 是固定百分比（62%→98% 或末尾 26px），淡化会切进曲线段，
+     看起来像胶囊被斜着削掉一截。现在按每个元素的实际高度算：
+     曲线宽 = 高/2（border-radius:999px 的半圆端），让 alpha 在「曲线开始处」
+     归零、曲线整段全透明 —— 剩下的轮廓 = 另一侧半圆 + 直段渐隐，
+     正好像 ⊃（右淡出）/ ⊂（左淡出）开口侧消失的样子。 */
+  function applyCurveFade() {
+    const fadeOne = (el, side) => {
+      const h = el.offsetHeight || 40
+      const c = Math.max(8, Math.ceil(h / 2))
+      if (side === 'left') {
+        el.style.webkitMaskImage = `linear-gradient(90deg, transparent ${c}px, #000 ${c * 2}px)`
+      } else {
+        el.style.webkitMaskImage = `linear-gradient(90deg, #000 calc(100% - ${c * 2}px), transparent calc(100% - ${c}px))`
+      }
+    }
+    // 右淡出（⊃）：文本块 / 帧率档位文字；CSS 里 mask:none 的（指令页开关等）跳过
+    document.querySelectorAll('.textblock, .freq-text').forEach((el) => {
+      if ((getComputedStyle(el).webkitMaskImage || 'none') === 'none') return
+      fadeOne(el, 'right')
+    })
+    // 左淡出（⊂）：左侧标题胶囊（「可点击标题」btn 是普通胶囊，无淡化）
+    document.querySelectorAll('.row-label').forEach((el) => {
+      if (el.classList.contains('row-label-btn')) return
+      if ((getComputedStyle(el).webkitMaskImage || 'none') === 'none') return
+      fadeOne(el, 'left')
+    })
+  }
+  applyCurveFade()
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(applyCurveFade)
+  window.addEventListener('resize', applyCurveFade)
+
+  /* ---------------- 服务端通信 ----------------
+     设置项全部持久化在舞台侧（main/runtime/app/settings.json）。页面从 URL 拿 token，
+     GET 拉初始值，改动后防抖 POST。token 只在本页用（本地回环 + 本页作用域）。 */
+  const TOKEN = params.get('token') || ''
+  const api = (path, opts = {}) => fetch(path, {
+    ...opts,
+    headers: { 'x-stage-token': TOKEN, 'content-type': 'application/json', ...(opts.headers || {}) },
+  }).then((r) => r.json()).catch(() => null)
+
+  let saveTimer = 0
+  function saveSettings(patch) {
+    clearTimeout(saveTimer)
+    saveTimer = setTimeout(() => { api('/api/settings', { method: 'POST', body: JSON.stringify(patch) }) }, 350)
+  }
+
+  /* ---------------- 绑定对话菜单（数据由插件上报，点击即绑定/解绑） ----------------
+     清单来自宿主的全部历史对话（插件扫 sessionQuery），不是「此刻开着的那个」。
+     未打开的会话也能绑：事件先排队，等用户在 DSH 里点开它就会送到。
+     列表高度固定 6.5 项，超出的部分靠滚动 + 上下渐隐提示（见 updateChatMask）。 */
+  const chatmenu = document.getElementById('chatmenu')
+  let currentBind = null
+  let sessionList = []
+
+  function renderChatmenu() {
+    chatmenu.textContent = ''
+    if (!sessionList.length) {
+      const empty = document.createElement('div')
+      empty.className = 'chatcap'
+      empty.style.opacity = '0.6'
+      empty.style.cursor = 'default'
+      empty.textContent = '还没有可用会话（插件会上报）'
+      chatmenu.appendChild(empty)
+      return
+    }
+    for (const s of sessionList) {
+      const cap = document.createElement('div')
+      const bound = currentBind === s.id
+      cap.className = 'chatcap' + (s.live === false ? ' is-off' : '')
+      const title = document.createElement('span')
+      title.className = 'cap-title'
+      title.textContent = (bound ? '✓ ' : '') + String(s.title || s.id || '')
+      cap.appendChild(title)
+      // 「未打开」不挡绑定，只是提醒：这句话要等会话被点开才送得进去。
+      if (s.live === false) {
+        const tag = document.createElement('span')
+        tag.className = 'cap-tag'
+        tag.textContent = '未打开'
+        cap.appendChild(tag)
+      }
+      if (bound) cap.style.boxShadow = 'inset 0 0 0 3px var(--edge-strong)'
+      cap.addEventListener('click', () => {
+        const next = bound ? null : s.id
+        currentBind = next
+        saveSettings({ bind: next })
+        renderChatmenu()
+        showToast(next
+          ? `已绑定「${s.title || s.id}」${s.live === false ? '（打开这个对话后事件才送达）' : ''}`
+          : '已解绑')
+      })
+      chatmenu.appendChild(cap)
+    }
+  }
+
+  async function refreshSessions(showTip = false) {
+    const j = await api('/api/sessions')
+    const list = Array.isArray(j?.sessions) ? j.sessions : []
+    // 比较要带 live：标题是分批补读的，id 没变但标题刚补到时必须重画
+    const sig = (arr) => arr.map((s) => `${s.id}|${s.title}|${s.live === false ? 0 : 1}`).join('\n')
+    if (sig(list) !== sig(sessionList)) {
+      sessionList = list
+      renderChatmenu()
+      requestAnimationFrame(updateChatMask)
+    }
+    if (showTip) {
+      const off = list.filter((s) => s.live === false).length
+      showToast(list.length
+        ? `已刷新，共 ${list.length} 个对话${off ? `（${off} 个未打开）` : ''}`
+        : '没有找到会话（插件离线？）')
+    }
+  }
+  setInterval(refreshSessions, 5000)
+  // 标题即刷新按钮：点「绑定对话 ⟳」立即重拉清单
+  document.getElementById('bindRefresh').addEventListener('click', () => refreshSessions(true))
+
+  /* ---------------- 列表的滚动边缘渐隐 ----------------
+     不用固定某一项做提示：那样只对「初始位置」有效，用户一滚就假了。
+     改成量 scrollTop —— 到顶不遮上边、到底不遮下边，永远是正滑出去的那一项在淡。 */
+  const chatScroller = document.getElementById('chatmenu')
+
+  function updateChatMask() {
+    const el = chatScroller
+    const max = el.scrollHeight - el.clientHeight
+    if (max <= 1) {
+      el.style.webkitMaskImage = 'none'
+      return
+    }
+    const top = el.scrollTop <= 1 ? 0 : 52
+    const bottom = el.scrollTop >= max - 1 ? 0 : 60
+    el.style.webkitMaskImage =
+      'linear-gradient(180deg, transparent 0px, #000 ' + top + 'px, #000 calc(100% - ' + bottom + 'px), transparent 100%)'
+  }
+
+  chatScroller.addEventListener('scroll', updateChatMask, { passive: true })
+  window.addEventListener('resize', updateChatMask)
+  requestAnimationFrame(updateChatMask)
+
+  /* ---------------- 提示 ---------------- */
+  let toastTimer = 0
+  const toastEl = document.getElementById('toast')
+  function showToast(text) {
+    toastEl.textContent = text
+    toastEl.classList.add('show')
+    clearTimeout(toastTimer)
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200)
+  }
+
+  /* ---------------- 主动说话 + 频率（互斥单选，总有一档选中） ----------------
+     三档是单选语义但用 checkbox 画；默认低频率，且永远保持一档选中 ——
+     是否生效由「主动说话」开关决定（舞台侧门控），所以这里不再禁用/清空频率。 */
+  const freqs = [...document.querySelectorAll('input[name="freq"]')]
+  const proactiveEl = document.getElementById('proactive')
+
+  function setFreq(v) {
+    freqs.forEach((f) => { f.checked = f.value === v })
+  }
+
+  freqs.forEach((f) => f.addEventListener('change', () => {
+    // checkbox 不像 radio 那样天然互斥：勾 A 时 B 的勾还在，必须手动清。
+    // 取消勾选（点在已选档上）也不允许全空 —— 弹回当前档。
+    const v = f.checked ? f.value : (boundFreq || 'low')
+    boundFreq = v
+    setFreq(v)
+    saveSettings({ freq: v })
+  }))
+
+  proactiveEl.addEventListener('change', () => {
+    saveSettings({ proactive: proactiveEl.checked })
+  })
+
+  /* ---------------- 开机自启（0.5.1）：勾选状态读 Startup 目录，不存第二份配置 ---------------- */
+  const autostartEl = document.getElementById('autostart')
+  autostartEl.addEventListener('change', async () => {
+    const want = autostartEl.checked
+    autostartEl.disabled = true
+    try {
+      const r = await api('/api/autostart', { method: 'POST', body: JSON.stringify({ on: want }) })
+      if (r?.ok) {
+        autostartEl.checked = !!r.on
+        showToast(autostartEl.checked ? '已开启开机自启' : '已关闭开机自启')
+      } else {
+        autostartEl.checked = !want
+        showToast('设置失败：' + (r?.error || '未知错误'))
+      }
+    } catch (e) {
+      autostartEl.checked = !want
+      showToast('设置失败：' + (e && e.message))
+    } finally {
+      autostartEl.disabled = false
+    }
+  })
+
+  /* ---------------- 初始值拉取：主题 / 缩放 / 主动说话 / 频率 / 绑定 ---------------- */
+  let boundFreq = 'low'
+  ;(async () => {
+    const j = await api('/api/settings')
+    const s = j?.settings
+    if (s) {
+      // 存的是驼峰（uiBg），CSS 变量是短横线（ui-bg）：这里翻译一次。
+      // 不翻译的话 setProperty('--uiBg') 是无效变量，主题永远回不到上次的样子。
+      if (s.theme) {
+        for (const [k, v] of Object.entries(s.theme)) {
+          applyColor(k.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase()), v)
+        }
+      }
+      if (Number(s.uiScale) > 0) { range.value = String(s.uiScale); applyScale(range.value) }
+      setFps([30, 60, 0].includes(Number(s.fpsCap)) ? Number(s.fpsCap) : 0)
+      proactiveEl.checked = !!s.proactive
+      boundFreq = ['low', 'mid', 'high'].includes(s.freq) ? s.freq : 'low'
+      setFreq(boundFreq)
+      currentBind = s.bind || null
+      autoLowEl.checked = !!s.autoLowInterrupt
+    }
+    await refreshSessions()
+    requestAnimationFrame(updateChatMask)
+    // 开机自启状态：现场读 Startup 目录（可能在设置页开着的时候被外部删掉）
+    try {
+      const a = await api('/api/autostart')
+      if (a?.ok) autostartEl.checked = !!a.on
+    } catch { /* 老版本舞台没有这个接口，保持未勾选 */ }
+  })()
+
+  /* ---------------- 指令页（0.5.3） ----------------
+     数据全在舞台（commands.json），这里只做「读 → 改 → 整份写回」。
+     保存走 /api/commands/save：用户本人操作，不需要二次确认；
+     驾驶员改同一份文件走 /api/commands/propose，那条路才会弹确认框。 */
+  const $id = (id) => document.getElementById(id)
+  let cmdGroups = []
+  let cmdSelId = null
+
+  function cmdFlat() {
+    const out = []
+    for (const g of cmdGroups) for (const it of g.items || []) out.push({ ...it, group: g.id })
+    return out
+  }
+
+  function renderCmdList() {
+    const el = $id('cmdList')
+    el.textContent = ''
+    for (const g of cmdGroups) {
+      const t = document.createElement('div')
+      t.className = 'cmd-group'
+      t.textContent = g.label || g.id
+      el.appendChild(t)
+      for (const it of g.items || []) {
+        const row = document.createElement('div')
+        row.className = 'cmd-item' + (cmdSelId === it.id ? ' active' : '')
+        const name = document.createElement('span')
+        name.textContent = it.label || it.id
+        const tag = document.createElement('span')
+        tag.className = 'tag'
+        tag.textContent = it.type + (it.capture ? ' · 捕获' : '')
+        row.appendChild(name)
+        row.appendChild(tag)
+        row.title = `${it.cmd} ${(it.args || []).join(' ')}`
+        row.addEventListener('click', () => selectCmd(it.id))
+        el.appendChild(row)
+      }
+    }
+  }
+
+  function selectCmd(id) {
+    const it = cmdFlat().find((x) => x.id === id)
+    if (!it) return
+    cmdSelId = id
+    $id('cmdEmpty').style.display = 'none'
+    $id('cmdFields').style.display = ''
+    $id('fLabel').value = it.label || ''
+    $id('fId').value = it.id || ''
+    $id('fType').value = it.type || 'exe'
+    $id('fCmd').value = it.cmd || ''
+    $id('fArgs').value = (it.args || []).join('\n')
+    $id('fCwd').value = it.cwd || ''
+    $id('fMode').value = it.mode || 'exec'
+    $id('fTimeout').value = it.timeoutMs || 30000
+    $id('fCapture').checked = !!it.capture
+    $id('fVisible').checked = !!it.visible
+    $id('fAllowArgs').checked = !!it.allowArgs
+    $id('cmdOut').textContent = ''
+    renderCmdList()
+  }
+
+  function readCmdForm() {
+    return {
+      id: $id('fId').value.trim(),
+      label: $id('fLabel').value.trim(),
+      type: $id('fType').value,
+      cmd: $id('fCmd').value.trim(),
+      args: $id('fArgs').value.split('\n').map((s) => s.trim()).filter(Boolean),
+      cwd: $id('fCwd').value.trim() || null,
+      mode: $id('fMode').value,
+      capture: $id('fCapture').checked,
+      visible: $id('fVisible').checked,
+      timeoutMs: Number($id('fTimeout').value) || 30000,
+      allowArgs: $id('fAllowArgs').checked,
+    }
+  }
+
+  async function loadCmdGroups(silent) {
+    try {
+      const j = await api('/api/commands')
+      cmdGroups = (j?.groups || []).map((g) => ({ ...g, items: [...(g.items || [])] }))
+      if (!cmdSelId && cmdGroups.length && cmdGroups[0].items.length) cmdSelId = cmdGroups[0].items[0].id
+      renderCmdList()
+      if (cmdSelId) selectCmd(cmdSelId)
+      if (!silent) showToast(`已载入 ${cmdFlat().length} 条指令`)
+    } catch (e) {
+      if (!silent) showToast('载入指令失败：' + (e && e.message))
+    }
+  }
+
+  async function saveCmdGroups(msg) {
+    const r = await api('/api/commands/save', { method: 'POST', body: JSON.stringify({ groups: cmdGroups }) })
+    if (r?.ok) { showToast(msg || '已保存'); await loadCmdGroups(true) } else showToast('保存失败：' + (r?.error || '未知错误'))
+    return r
+  }
+
+  $id('cmdNew').addEventListener('click', () => {
+    let g = cmdGroups.find((x) => x.id === 'user')
+    if (!g) { g = { id: 'user', label: '我添加的', items: [] }; cmdGroups.push(g) }
+    const id = 'cmd_' + Date.now().toString(36)
+    g.items.push({
+      id, label: '新指令', type: 'exe', cmd: '', args: [], cwd: null,
+      mode: 'exec', capture: false, visible: false, timeoutMs: 30000, allowArgs: false,
+    })
+    cmdSelId = id
+    renderCmdList()
+    selectCmd(id)
+    $id('fLabel').focus()
+  })
+
+  $id('cmdRefresh').addEventListener('click', () => loadCmdGroups())
+
+  $id('cmdSave').addEventListener('click', async () => {
+    const form = readCmdForm()
+    if (!form.id || !form.label || !form.cmd) { showToast('名称 / id / 命令都得填'); return }
+    const prevId = cmdSelId
+    let found = false
+    for (const g of cmdGroups) {
+      for (let i = 0; i < (g.items || []).length; i += 1) {
+        if (g.items[i].id === prevId) { g.items[i] = { ...g.items[i], ...form }; found = true }
+      }
+    }
+    if (!found) { showToast('找不到这条指令'); return }
+    cmdSelId = form.id
+    await saveCmdGroups('已保存「' + form.label + '」')
+  })
+
+  $id('cmdDelete').addEventListener('click', async () => {
+    if (!cmdSelId) return
+    const it = cmdFlat().find((x) => x.id === cmdSelId)
+    if (!it) return
+    if (!confirm(`删除指令「${it.label}」？`)) return
+    for (const g of cmdGroups) g.items = (g.items || []).filter((x) => x.id !== cmdSelId)
+    cmdSelId = null
+    $id('cmdFields').style.display = 'none'
+    $id('cmdEmpty').style.display = ''
+    await saveCmdGroups('已删除')
+  })
+
+  $id('cmdTest').addEventListener('click', async () => {
+    if (!cmdSelId) { showToast('先保存再试运行'); return }
+    // 先保存，避免「改了没存就试跑」的错位
+    const form = readCmdForm()
+    for (const g of cmdGroups) {
+      for (let i = 0; i < (g.items || []).length; i += 1) {
+        if (g.items[i].id === cmdSelId) g.items[i] = { ...g.items[i], ...form }
+      }
+    }
+    const saved = await saveCmdGroups('已保存，正在试运行…')
+    if (!saved?.ok) return
+    $id('cmdOut').textContent = '运行中…'
+    try {
+      const r = await api('/api/commands/run', { method: 'POST', body: JSON.stringify({ id: form.id || cmdSelId, source: 'menu' }) })
+      $id('cmdOut').textContent = r?.ok ? ('✔ ' + (r.ms || 0) + 'ms\n' + (r.output || '（无输出）'))
+        : ('✘ ' + (r?.error || '失败') + (r?.output ? '\n' + r.output : ''))
+      showToast(r?.ok ? '运行成功' : ('运行失败：' + (r?.error || '')))
+    } catch (e) {
+      $id('cmdOut').textContent = '✘ ' + (e && e.message)
+    }
+  })
+
+  loadCmdGroups(true)
+
+  // 全屏自动省电：这里只存开关，真正的全屏检测在舞台（observer.ps1）
+  const autoLowEl = document.getElementById('autoLow')
+  autoLowEl.addEventListener('change', () => saveSettings({ autoLowInterrupt: autoLowEl.checked }))
+
+  // 重建快捷方式（换目录、快捷方式被误删时用；参数与 --install-shortcut 完全一致）
+  document.getElementById('reinstallShortcut').addEventListener('click', async (e) => {
+    const btn = e.currentTarget
+    btn.style.opacity = '0.5'
+    try {
+      const r = await api('/api/shortcut/install', { method: 'POST', body: '{}' })
+      showToast(r?.ok ? '快捷方式已重建' : ('失败：' + (r?.failed?.[0]?.error || '未知错误')))
+    } catch (err) {
+      showToast('失败：' + (err && err.message))
+    } finally {
+      btn.style.opacity = ''
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# pet-bridge bundle 层：把桌宠桥接插件挂进 DSH。
+# 只有一行 insert —— 不 disabled 任何宿主组件，因此不会和其它插件争服务。
+- insert:
+    - id: pet-bridge
+      name: 'pet-bridge'

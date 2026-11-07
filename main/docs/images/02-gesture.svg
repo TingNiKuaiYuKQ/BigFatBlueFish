@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" font-family="'Microsoft YaHei','PingFang SC',system-ui,sans-serif">
+  <rect width="720" height="300" rx="14" fill="#ffffff"/>
+
+  <!-- 卡片 1：左键单击 -->
+  <rect x="18" y="24" width="216" height="252" rx="12" fill="#f7faff" stroke="#dfe9fd" stroke-width="1.5"/>
+  <circle cx="126" cy="86" r="26" fill="#5686fe" opacity="0.14"/>
+  <circle cx="126" cy="86" r="10" fill="#5686fe"/>
+  <text x="126" y="140" font-size="16" fill="#24406e" text-anchor="middle">左键单击</text>
+  <g font-size="12.5" fill="#5b7396" text-anchor="middle">
+    <text x="126" y="170">点头 / 摸头 / 换裙子</text>
+    <text x="126" y="192">按点到的部位决定</text>
+    <text x="126" y="228" fill="#8aa0bf">省电时 = 退出省电</text>
+  </g>
+
+  <!-- 卡片 2：右键短按 -->
+  <rect x="252" y="24" width="216" height="252" rx="12" fill="#f7faff" stroke="#dfe9fd" stroke-width="1.5"/>
+  <circle cx="360" cy="86" r="26" fill="#ff9ec4" opacity="0.18"/>
+  <circle cx="360" cy="86" r="10" fill="#f2749f"/>
+  <path d="M348 62 l8 -14 l8 14" fill="none" stroke="#f2749f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="360" y="140" font-size="16" fill="#24406e" text-anchor="middle">右键短按</text>
+  <g font-size="12.5" fill="#5b7396" text-anchor="middle">
+    <text x="360" y="170">弹出胶囊菜单</text>
+    <text x="360" y="192">再点空白处或 Esc 收起</text>
+    <text x="360" y="228" fill="#8aa0bf">最常用的入口</text>
+  </g>
+
+  <!-- 卡片 3：右键长按 -->
+  <rect x="486" y="24" width="216" height="252" rx="12" fill="#f7faff" stroke="#dfe9fd" stroke-width="1.5"/>
+  <circle cx="594" cy="86" r="26" fill="#8ad3a0" opacity="0.2"/>
+  <circle cx="594" cy="86" r="10" fill="#4fae74"/>
+  <path d="M594 86 m 0 -18 a 18 18 0 0 1 12 31" fill="none" stroke="#4fae74" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="594" y="140" font-size="16" fill="#24406e" text-anchor="middle">右键按住 0.5 秒</text>
+  <g font-size="12.5" fill="#5b7396" text-anchor="middle">
+    <text x="594" y="170">扫过一圈光 → 编辑模式</text>
+    <text x="594" y="192">拖框内移动，拖框线缩放</text>
+    <text x="594" y="228" fill="#8aa0bf">松手 1 秒后虚线框消失</text>
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "builtin",
+      "label": "内置",
+      "items": [
+        {
+          "id": "open_control",
+          "label": "打开控制面板",
+          "type": "exe",
+          "cmd": "control.exe",
+          "args": [],
+          "cwd": null,
+          "mode": "exec",
+          "capture": false,
+          "visible": true,
+          "timeoutMs": 30000,
+          "allowArgs": false
+        },
+        {
+          "id": "open_temp",
+          "label": "打开临时文件夹",
+          "type": "shortcut",
+          "cmd": "%TEMP%",
+          "args": [],
+          "cwd": null,
+          "mode": "exec",
+          "capture": false,
+          "visible": false,
+          "timeoutMs": 30000,
+          "allowArgs": false
+        },
+        {
+          "id": "list_downloads",
+          "label": "列出下载文件夹",
+          "type": "cmd",
+          "cmd": "dir",
+          "args": [
+            "%USERPROFILE%\\Downloads"
+          ],
+          "cwd": null,
+          "mode": "exec",
+          "capture": true,
+          "visible": false,
+          "timeoutMs": 30000,
+          "allowArgs": false
+        },
+        {
+          "id": "current_time",
+          "label": "现在几点",
+          "type": "powershell",
+          "cmd": "powershell -NoProfile -Command \"Get-Date -Format 'yyyy-MM-dd HH:mm:ss'\"",
+          "args": [],
+          "cwd": null,
+          "mode": "shell",
+          "capture": true,
+          "visible": false,
+          "timeoutMs": 30000,
+          "allowArgs": false
+        }
+      ]
+    }
+  ]
+}

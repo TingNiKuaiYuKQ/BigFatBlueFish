@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" font-family="'Microsoft YaHei','PingFang SC',system-ui,sans-serif">
+  <rect width="720" height="360" rx="14" fill="#ffffff"/>
+  <text x="24" y="36" font-size="13" fill="#8aa0bf">绑定三步</text>
+  <text x="390" y="36" font-size="13" fill="#8aa0bf">输入胶囊的三种状态</text>
+
+  <!-- 左：三步 -->
+  <g>
+    <rect x="24" y="52" width="300" height="56" rx="12" fill="#f7faff" stroke="#dfe9fd" stroke-width="1.5"/>
+    <circle cx="52" cy="80" r="13" fill="#5686fe"/>
+    <text x="52" y="85" font-size="13" fill="#fff" text-anchor="middle">1</text>
+    <text x="76" y="76" font-size="14" fill="#24406e">打开设置 → 行为页签</text>
+    <text x="76" y="96" font-size="11.5" fill="#8aa0bf">右键 → 做点什么…… → 打开设置</text>
+
+    <path d="M174 108 v 18" stroke="#c9dcff" stroke-width="2"/>
+    <path d="M168 122 l6 7 l6 -7" fill="none" stroke="#c9dcff" stroke-width="2" stroke-linecap="round"/>
+
+    <rect x="24" y="132" width="300" height="56" rx="12" fill="#f7faff" stroke="#dfe9fd" stroke-width="1.5"/>
+    <circle cx="52" cy="160" r="13" fill="#5686fe"/>
+    <text x="52" y="165" font-size="13" fill="#fff" text-anchor="middle">2</text>
+    <text x="76" y="156" font-size="14" fill="#24406e">点「绑定 DSH 对话」的 ⟳</text>
+    <text x="76" y="176" font-size="11.5" fill="#8aa0bf">重新拉一次当前打开的会话</text>
+
+    <path d="M174 188 v 18" stroke="#c9dcff" stroke-width="2"/>
+    <path d="M168 202 l6 7 l6 -7" fill="none" stroke="#c9dcff" stroke-width="2" stroke-linecap="round"/>
+
+    <rect x="24" y="212" width="300" height="56" rx="12" fill="#f7faff" stroke="#dfe9fd" stroke-width="1.5"/>
+    <circle cx="52" cy="240" r="13" fill="#5686fe"/>
+    <text x="52" y="245" font-size="13" fill="#fff" text-anchor="middle">3</text>
+    <text x="76" y="236" font-size="14" fill="#24406e">点一个会话就绑上了</text>
+    <text x="76" y="256" font-size="11.5" fill="#8aa0bf">再点一次即取消绑定</text>
+
+    <text x="24" y="308" font-size="11.5" fill="#8aa0bf">绑定后才会跟随会话状态；不绑也能独立运行</text>
+  </g>
+
+  <!-- 右：三态胶囊 -->
+  <g>
+    <rect x="390" y="60" width="300" height="40" rx="20" fill="#eef4ff" stroke="#5686fe" stroke-width="1.8"/>
+    <text x="410" y="86" font-size="13.5" fill="#2f6fd0">请输入文本 &gt; _</text>
+    <text x="390" y="120" font-size="11.5" fill="#8aa0bf">已绑定且在线：可以打字</text>
+
+    <rect x="390" y="146" width="300" height="40" rx="20" fill="#f4f6fb" stroke="#d5dfef" stroke-width="1.8"/>
+    <text x="410" y="172" font-size="13.5" fill="#7c8ba6">未绑定驾驶员</text>
+    <text x="390" y="206" font-size="11.5" fill="#8aa0bf">还没选会话：打了字也没人接</text>
+
+    <rect x="390" y="232" width="300" height="40" rx="20" fill="#f4f6fb" stroke="#d5dfef" stroke-width="1.8" stroke-dasharray="5 4"/>
+    <text x="410" y="258" font-size="13.5" fill="#7c8ba6">驾驶员离线</text>
+    <text x="390" y="292" font-size="11.5" fill="#8aa0bf">会话关了，或插件没在跑</text>
+
+    <text x="390" y="326" font-size="11.5" fill="#8aa0bf">驾驶员 = 你绑定的那个 AI 会话</text>
+  </g>
+</svg>

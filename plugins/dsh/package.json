@@ -1,0 +1,24 @@
+{
+  "name": "pet-bridge",
+  "version": "1.0.0",
+  "description": "DSH 桌宠桥接：会话事件投影成状态文件（零 token），并按需提供说话/动作/序列/预设与白名单快捷指令工具",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.1.7-rc.2"
+  }
+}
