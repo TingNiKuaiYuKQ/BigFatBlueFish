@@ -17,6 +17,10 @@ NVIDIA Corporation/
 其他/tools/probes/.userdata/
 _scratch/
 
+# 演示视频的中间素材（分段录屏 / 标题卡 / 录制脚本 / 背景板）。
+# 成片 demo.mp4 在仓库根目录，那个要发，不在忽略之列。
+temp/
+
 # 模型：不随仓库分发（版权归原作者，获取方式见 main/model/README.md）
 main/model/runtime/
 main/model/source/
