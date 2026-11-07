@@ -1051,6 +1051,30 @@ async function main() {
     }, 1500)
   })
 
+  // 动画遥测（1.0.0）：开关单向下发、快照请求-应答，和参数转储同一套桥。
+  // 为什么要它：判「动画流不流畅」只能看逐帧 dt 与参数变化量，/api/params 是某一刻的快照，
+  // 掉帧和补间断档在快照里完全看不出来。
+  let framesDumpWaiter = null
+  ipcMain.on('pet:frames-dump', (_e, payload) => {
+    if (!framesDumpWaiter) return
+    const r = framesDumpWaiter
+    framesDumpWaiter = null
+    r(payload && typeof payload === 'object' ? payload : null)
+  })
+  const requestFramesDump = () => new Promise((resolve) => {
+    if (!win || win.isDestroyed()) return resolve(null)
+    framesDumpWaiter = resolve
+    win.webContents.send('pet:dump-frames')
+    setTimeout(() => {
+      if (framesDumpWaiter === resolve) { framesDumpWaiter = null; resolve(null) }
+    }, 1500)
+  })
+  const setTelemetry = (o) => {
+    try {
+      if (win && !win.isDestroyed()) win.webContents.send('pet:telemetry-set', o || {})
+    } catch { /* 窗口没起来就忽略 */ }
+  }
+
   server = await startStageServer({
     modulesRoot: paths.MODULES_DIR,
     modelDir: config.modelDir,
@@ -1188,6 +1212,7 @@ async function main() {
     eventsFile: EVENTS_FILE,
     ackEvents: ackDriverEvents,
     getParams: requestParamsDump,
+    getFrames: requestFramesDump, setTelemetry,
     // /api/health：外部探活 + 插件健康（详见 server.mjs 里那段注释）
     version: app.getVersion(),
     getBridgeHealth: () => bridgeHealth,

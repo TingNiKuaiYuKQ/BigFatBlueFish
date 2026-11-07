@@ -241,6 +241,9 @@ pnpm install             # 装 @deepseek-ai/dsh-tools 等依赖
 | POST | `/api/shortcut` | 执行 run_shortcut（插件通道，读 `~/.dsh/live2d/shortcuts.json` 投影） |
 | POST | `/api/commands/run` | 执行一条指令（菜单通道，直接读 `commands.json`，支持 `cmd` 内置命令） |
 | GET | `/api/params` | 读当前模型参数 |
+| GET | `/api/debug/frames` | **仅调试 token**：逐帧遥测快照 `?n=600`，返回 `{dt, act, mx, arg, pose, expr, mot}` 数组 |
+| POST | `/api/debug/frames` | **仅调试 token**：遥测开关 `{on, clear, cap}`（默认只记 dt，`on:true` 后才算参数变化量） |
+| POST | `/api/debug/cue` | **仅调试 token**：原样重放一条 cue 串 `{cue}`（人设卡的 idleAction / reaction 都是 cue 串） |
 | POST | `/api/debug/params` | **仅调试 token**：参数直写 `{set, parts, hold, clear, save}`，做 A/B 实验用 |
 | POST | `/api/debug/tap` | **仅调试 token**：触点模拟 |
 

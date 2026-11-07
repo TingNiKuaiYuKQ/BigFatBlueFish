@@ -136,6 +136,9 @@ export async function startStageServer(o = {}) {
     ackEvents = null,
     // 调试：实时参数/部件转储（main 桥接到渲染层）
     getParams = null,
+    // 动画遥测（1.0.0）：getFrames 取最近若干帧，setTelemetry 开关采集。
+    // 都由 main 桥接到渲染层 —— server 只暴露 HTTP 面，不认 IPC。
+    getFrames = null, setTelemetry = null,
     // v0.4 端口策略：首选固定端口（0 = 保持随机）。实际端口仍以 endpoint.json 为准。
     preferredPort = 0,
     // 版本号与「插件健康」注入：/api/health 要把「舞台活着、插件活着、绑定链路通不通」
@@ -364,6 +367,18 @@ export async function startStageServer(o = {}) {
           const params = getParams ? await getParams() : []
           return send(200, { ok: true, params })
         }
+        // 动画遥测快照（1.0.0 · 仅调试 token）：返回最近 N 帧的 dt / 参数变化量。
+        // 存在的意义 = 让「流畅不流畅」变成可算的数，而不是「我觉得有点卡」。
+        // 开关走 POST 同路径（见下）；不开也能取，只是没有 act/mx 两项。
+        if (method === 'GET' && path === '/api/debug/frames') {
+          if (!isDebug) return send(403, { ok: false, error: '这个接口只认调试 token' })
+          if (!getFrames) return send(501, { ok: false, error: '遥测未注入' })
+          const dump = await getFrames()
+          if (!dump) return send(503, { ok: false, error: '渲染层没有响应（窗口没起来？）' })
+          const n = Math.max(1, Math.min(6000, Number(url.searchParams.get('n')) || 600))
+          const frames = Array.isArray(dump.frames) ? dump.frames.slice(-n) : []
+          return send(200, { ok: true, ...dump, frames, returned: frames.length })
+        }
         if (method === 'POST') {
           const body = await readBody(req)
 
@@ -557,6 +572,34 @@ export async function startStageServer(o = {}) {
           if (path === '/api/bridge-health') {
             if (typeof setBridgeHealth === 'function') setBridgeHealth(body)
             return send(200, { ok: true })
+          }
+
+          // 调试：原样播一条 cue 串（仅调试 token）。
+          // 为什么单独开一个口子：人设卡的 idleActions / reactions 全是 cue 串
+          // （例如「半睁 微低头 点头×3」），要评审「这套演出流不流畅」就必须能
+          // 原样重放某一条，而不是等调度器按小时/权重恰好抽到它。
+          if (path === '/api/debug/cue') {
+            if (!isDebug) return send(403, { ok: false, error: '这个接口只认调试 token' })
+            const cue = String(body?.cue || '').trim()
+            if (!cue) return send(400, { ok: false, error: '需要 cue（空格分隔的 cue 串）' })
+            const evt = { kind: 'cue', cue: Array.from(cue).slice(0, 400).join(''), prio: 0, at: Date.now() }
+            record({ kind: 'cue', cue: evt.cue, at: evt.at })
+            onEvent(evt)
+            return send(200, { ok: true, accepted: 'cue', cue: evt.cue })
+          }
+
+          // 动画遥测开关（1.0.0 · 仅调试 token）：{ on?, clear?, cap? }
+          // 打开后渲染层才开始逐帧算参数变化量；默认只记 dt（代价接近 0）。
+          if (path === '/api/debug/frames') {
+            if (!isDebug) return send(403, { ok: false, error: '这个接口只认调试 token' })
+            if (!setTelemetry) return send(501, { ok: false, error: '遥测未注入' })
+            const cap = Number(body?.cap)
+            setTelemetry({
+              on: typeof body?.on === 'boolean' ? body.on : undefined,
+              clear: body?.clear === true,
+              cap: Number.isFinite(cap) && cap > 0 ? cap : undefined,
+            })
+            return send(200, { ok: true, on: typeof body?.on === 'boolean' ? body.on : null })
           }
 
           // 调试参数直写（仅调试 token）：{ set:{参数:值}, parts:{部件:不透明度}, hold?, clear? }

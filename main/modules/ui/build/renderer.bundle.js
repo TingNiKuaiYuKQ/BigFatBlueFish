@@ -92049,6 +92049,9 @@ function pumpTweens() {
 }
 var motionDefs = () => cfg.motions || {};
 var motion = null;
+var motionLast = null;
+var motionRel = null;
+var MOTION_REL_MS = 170;
 var gazeHoldUntil = 0;
 var trackEnabled = false;
 var animationHold = false;
@@ -92100,11 +92103,14 @@ function playMotion(name, prio = PRIO.RANDOM, inline = null) {
   }
   const ms = Math.max(160, Number(def.ms) || 3e3);
   if (!claim("motion", prio, ms + 120)) return false;
+  if (motion) endMotion(performance.now());
   motion = {
     name: name || "inline",
     ms,
     tracks: def.tracks,
     t0: performance.now(),
+    armed: false,
+    // 第一次真正应用时把 t0 对齐到那一帧，保证从 p=0 起步
     fadeIn: Math.max(0, Number(def.fadeIn) || 0),
     fadeOut: Math.max(0, Number(def.fadeOut) || 0)
   };
@@ -92226,38 +92232,11 @@ function playAnimation(name, o2 = {}) {
 }
 function settleSwitch(touched, ends) {
   if (!touched?.length || !ends) return;
-  const from = /* @__PURE__ */ new Map();
-  const to = /* @__PURE__ */ new Map();
-  for (const id3 of touched) {
-    if (!Object.prototype.hasOwnProperty.call(ends, id3)) continue;
-    const v2 = Number(ends[id3]);
-    if (!Number.isFinite(v2)) continue;
-    to.set(id3, v2);
-    const cur = stage.param.get(id3);
-    if (cur != null && Math.abs(cur - v2) > 1e-3) from.set(id3, cur);
-  }
-  if (!to.size) return;
-  const applyBaseline = () => {
-    for (const [id3, v2] of to) {
-      stage.param.set(id3, v2);
-      baseline?.set(id3, v2);
-    }
-    try {
-      stage.core?.saveParameters?.();
-    } catch {
-    }
-    log("[anim] \u5207\u6362\u6001\u56FA\u5316", to.size, "\u4E2A\u53C2\u6570\uFF08\u5199\u5165\u66F2\u7EBF\u672B\u503C\uFF09");
-  };
-  if (!from.size) {
-    applyBaseline();
-    return;
-  }
   try {
     stage.stopMotions?.();
   } catch {
   }
-  const t0 = performance.now();
-  animRestore = { t0, ms: 200, holdUntil: t0 + 300, from, to, onDone: applyBaseline };
+  animRestore = { pending: "switch", kind: "switch", touched: touched.slice(), ends };
 }
 function perform(o2 = {}) {
   const prio = o2.prio ?? PRIO.USER;
@@ -92313,74 +92292,129 @@ function startAnimRestore(touched) {
     stage.stopMotions();
   } catch {
   }
-  const skip = liveParamIds();
+  animRestore = { pending: "restore", kind: "restore", touched: touched.slice() };
+}
+function resolveAnimRestore(now) {
+  const ar = animRestore;
+  if (!ar || !ar.pending) return;
   const from = /* @__PURE__ */ new Map();
   const to = /* @__PURE__ */ new Map();
-  for (const id3 of touched) {
-    if (skip.has(id3)) continue;
-    const target = baseline.get(id3);
-    if (target == null) continue;
-    const cur = stage.param.get(id3);
-    if (cur == null || Math.abs(cur - target) < 1e-3) continue;
-    from.set(id3, cur);
-    to.set(id3, target);
+  if (ar.pending === "switch") {
+    for (const id3 of ar.touched || []) {
+      if (!Object.prototype.hasOwnProperty.call(ar.ends || {}, id3)) continue;
+      const v2 = Number(ar.ends[id3]);
+      if (!Number.isFinite(v2)) continue;
+      to.set(id3, v2);
+      const cur = stage.param.get(id3);
+      if (cur != null && Math.abs(cur - v2) > 1e-3) from.set(id3, cur);
+    }
+  } else {
+    const skip = liveParamIds();
+    for (const id3 of ar.touched || []) {
+      if (skip.has(id3)) continue;
+      const target = baseline?.get(id3);
+      if (target == null) continue;
+      const cur = stage.param.get(id3);
+      if (cur == null || Math.abs(cur - target) < 1e-3) continue;
+      from.set(id3, cur);
+      to.set(id3, target);
+    }
   }
-  if (!from.size) return;
-  const t0 = performance.now();
-  animRestore = { t0, ms: 500, holdUntil: t0 + 900, from, to };
-  log("[anim] \u6B8B\u5E27\u8FD8\u539F", from.size, "\u4E2A\u53C2\u6570 \u2192 \u56FA\u5B9A\u57FA\u51C6\uFF08500ms \u8865\u95F4 + \u4FDD\u6301\u5230 0.9s \u56FA\u5316\uFF09");
+  if (!to.size) {
+    animRestore = null;
+    return;
+  }
+  if (!from.size) {
+    animRestore = { t0: now - 1e6, ms: 1, holdUntil: 0, from: /* @__PURE__ */ new Map(), to, kind: ar.kind, onDone: null };
+    return;
+  }
+  const ms = ar.pending === "switch" ? 200 : 500;
+  animRestore = { t0: now, ms, holdUntil: now + ms + 400, from, to, kind: ar.kind };
+  log(ar.pending === "switch" ? "[anim] \u5207\u6362\u6001\u8865\u95F4 " + from.size + " \u4E2A\u53C2\u6570\uFF08\u5199\u5165\u66F2\u7EBF\u672B\u503C\uFF09" : "[anim] \u6B8B\u5E27\u8FD8\u539F " + from.size + " \u4E2A\u53C2\u6570 \u2192 \u56FA\u5B9A\u57FA\u51C6\uFF08500ms \u8865\u95F4 + \u4FDD\u6301\u540E\u56FA\u5316\uFF09");
 }
 function finalizeAnimRestore() {
   if (!animRestore) return;
-  const done = animRestore.onDone;
-  for (const [id3, v2] of animRestore.to) stage.param.set(id3, v2);
+  const ar = animRestore;
+  for (const [id3, v2] of ar.to) {
+    stage.param.set(id3, v2);
+    if (ar.kind === "switch") baseline?.set(id3, v2);
+  }
   try {
     stage.core?.saveParameters?.();
   } catch {
   }
   animRestore = null;
-  if (done) {
+  log(ar.kind === "switch" ? "[anim] \u5207\u6362\u6001\u56FA\u5316 " + ar.to.size + " \u4E2A\u53C2\u6570\uFF08\u5199\u5165\u66F2\u7EBF\u672B\u503C\uFF09" : "[anim] \u6B8B\u5E27\u56FA\u5316 " + ar.to.size + " \u4E2A\u53C2\u6570");
+  if (ar.onDone) {
     try {
-      done();
+      ar.onDone();
     } catch {
     }
   }
 }
+function endMotion(now = performance.now()) {
+  if (motionLast && motionLast.size) {
+    motionRel = { ids: motionLast, t0: now, ms: MOTION_REL_MS };
+  }
+  motion = null;
+  motionLast = null;
+}
 function applyMotion(now) {
-  if (!motion) return;
-  if (!motion.probed && now - motion.t0 > 300) {
-    motion.probed = true;
-    for (const id3 of Object.keys(motion.tracks)) {
-      const info = stage.param.info(id3);
-      log("[motion-probe]", id3, info ? `min=${info.min} max=${info.max} default=${info.default} cur=${stage.param.get(id3)}` : "info=null\uFF08\u53C2\u6570\u4E0D\u5B58\u5728\uFF0C\u5199\u5165\u88AB\u8DF3\u8FC7\uFF09");
+  const offs = /* @__PURE__ */ new Map();
+  if (motion) {
+    if (!motion.armed) {
+      motion.armed = true;
+      motion.t0 = now;
+    }
+    if (!motion.probed && now - motion.t0 > 300) {
+      motion.probed = true;
+      for (const id3 of Object.keys(motion.tracks)) {
+        const info = stage.param.info(id3);
+        log("[motion-probe]", id3, info ? `min=${info.min} max=${info.max} default=${info.default} cur=${stage.param.get(id3)}` : "info=null\uFF08\u53C2\u6570\u4E0D\u5B58\u5728\uFF0C\u5199\u5165\u88AB\u8DF3\u8FC7\uFF09");
+      }
+    }
+    const elapsed = now - motion.t0;
+    const p2 = elapsed / motion.ms;
+    if (p2 >= 1) {
+      endMotion(now);
+    } else {
+      let env = 1;
+      if (motion.fadeIn > 0 && elapsed < motion.fadeIn) {
+        const k2 = Math.max(0, elapsed / motion.fadeIn);
+        env *= k2 * k2 * (3 - 2 * k2);
+      }
+      if (motion.fadeOut > 0) {
+        const left = motion.ms - elapsed;
+        if (left < motion.fadeOut) {
+          const k2 = Math.max(0, Math.min(1, left / motion.fadeOut));
+          env *= k2 * k2 * (3 - 2 * k2);
+        }
+      }
+      for (const id3 in motion.tracks) {
+        const d2 = sampleTrack(motion.tracks[id3], p2);
+        if (!d2) continue;
+        if (!stage.param.info(id3)) continue;
+        offs.set(id3, d2 * env);
+      }
     }
   }
-  const p2 = (now - motion.t0) / motion.ms;
-  if (p2 >= 1) {
-    motion = null;
-    return;
-  }
-  const elapsed = now - motion.t0;
-  let env = 1;
-  if (motion.fadeIn > 0 && elapsed < motion.fadeIn) {
-    const k2 = Math.max(0, elapsed / motion.fadeIn);
-    env *= k2 * k2 * (3 - 2 * k2);
-  }
-  if (motion.fadeOut > 0) {
-    const left = motion.ms - elapsed;
-    if (left < motion.fadeOut) {
-      const k2 = Math.max(0, Math.min(1, left / motion.fadeOut));
-      env *= k2 * k2 * (3 - 2 * k2);
+  if (motionRel) {
+    const t2 = (now - motionRel.t0) / motionRel.ms;
+    if (t2 >= 1 || t2 < 0) {
+      motionRel = null;
+    } else {
+      const k2 = 1 - t2;
+      const s2 = k2 * k2 * (3 - 2 * k2);
+      for (const [id3, v2] of motionRel.ids) offs.set(id3, (offs.get(id3) || 0) + v2 * s2);
     }
   }
-  for (const id3 in motion.tracks) {
-    const d2 = sampleTrack(motion.tracks[id3], p2);
-    if (!d2) continue;
+  motionLast = offs.size ? offs : null;
+  for (const [id3, d2] of offs) {
     const info = stage.param.info(id3);
     if (!info) continue;
     const cur = stage.param.get(id3);
     if (cur == null) continue;
-    stage.param.set(id3, Math.max(info.min, Math.min(info.max, cur + d2 * env)));
+    stage.param.set(id3, Math.max(info.min, Math.min(info.max, cur + d2)));
   }
 }
 function poseValues(now) {
@@ -92868,6 +92902,9 @@ function resetToInitial() {
   trackEnabled = false;
   bowlState = "off";
   animRestore = null;
+  motion = null;
+  motionRel = null;
+  motionLast = null;
   paramTweens.clear();
   tweenPrev = /* @__PURE__ */ new Set();
   editExprSnap = null;
@@ -92920,6 +92957,120 @@ function scheduleMask() {
     if (mask) api.sendMask({ w: mask.w, h: mask.h, data: mask.data });
   }, 260);
 }
+var tele = {
+  on: false,
+  cap: 900,
+  n: 0,
+  t: [],
+  dt: [],
+  act: [],
+  mx: [],
+  arg: [],
+  pose: [],
+  expr: [],
+  mot: [],
+  lastT: 0,
+  primed: false,
+  prevVals: null
+};
+function teleClear(cap) {
+  const c2 = Math.max(60, Math.min(6e3, Number(cap) || tele.cap || 900));
+  tele.cap = c2;
+  tele.n = 0;
+  tele.t.length = 0;
+  tele.dt.length = 0;
+  tele.act.length = 0;
+  tele.mx.length = 0;
+  tele.arg.length = 0;
+  tele.pose.length = 0;
+  tele.expr.length = 0;
+  tele.mot.length = 0;
+  tele.lastT = 0;
+  tele.primed = false;
+  tele.prevVals = null;
+}
+function teleSet(o2) {
+  if (!o2) return;
+  if (o2.clear) teleClear(o2.cap);
+  if (typeof o2.on === "boolean") {
+    tele.on = o2.on;
+    tele.prevVals = null;
+    tele.primed = false;
+    if (o2.on) teleClear(o2.cap || tele.cap);
+  }
+}
+function teleSample(now) {
+  const ids = stage?.param?.ids;
+  if (!ids || !ids.length) return;
+  const dt = tele.lastT ? now - tele.lastT : 0;
+  tele.lastT = now;
+  let act = 0;
+  let mx = 0;
+  let arg = "";
+  if (tele.on) {
+    if (!tele.prevVals || tele.prevVals.length !== ids.length) {
+      tele.prevVals = new Float64Array(ids.length);
+      tele.primed = false;
+    }
+    if (!tele.primed) {
+      for (let i3 = 0; i3 < ids.length; i3 += 1) tele.prevVals[i3] = stage.param.get(ids[i3]);
+      tele.primed = true;
+    } else {
+      const pv = tele.prevVals;
+      for (let i3 = 0; i3 < ids.length; i3 += 1) {
+        const v2 = stage.param.get(ids[i3]);
+        const d2 = v2 > pv[i3] ? v2 - pv[i3] : pv[i3] - v2;
+        pv[i3] = v2;
+        if (d2 > 0) act += d2;
+        if (d2 > mx) {
+          mx = d2;
+          arg = ids[i3];
+        }
+      }
+    }
+  }
+  const i2 = tele.n % tele.cap;
+  tele.t[i2] = now;
+  tele.dt[i2] = dt;
+  tele.act[i2] = act;
+  tele.mx[i2] = mx;
+  tele.arg[i2] = arg;
+  tele.pose[i2] = boundPose || "default";
+  tele.expr[i2] = tapExpr || stateExpr || "";
+  tele.mot[i2] = motion && motion.name || "";
+  tele.n += 1;
+}
+function teleDump() {
+  const n3 = Math.min(tele.n, tele.cap);
+  const start = tele.n - n3;
+  const t0 = n3 ? tele.t[start % tele.cap] : 0;
+  const frames = [];
+  for (let k2 = 0; k2 < n3; k2 += 1) {
+    const i2 = (start + k2) % tele.cap;
+    frames.push({
+      t: Math.round(tele.t[i2] - t0),
+      dt: Math.round(tele.dt[i2] * 100) / 100,
+      act: Math.round(tele.act[i2] * 1e4) / 1e4,
+      mx: Math.round(tele.mx[i2] * 1e4) / 1e4,
+      arg: tele.arg[i2],
+      pose: tele.pose[i2],
+      expr: tele.expr[i2],
+      mot: tele.mot[i2]
+    });
+  }
+  return {
+    on: tele.on,
+    cap: tele.cap,
+    count: tele.n,
+    returned: frames.length,
+    // 报「实际在跑的帧率上限」而不是配置值：设置页改帧率是运行时生效的，
+    // 配置里那份只在重启后才知道，拿它判断 dt 该是多少会一直判错。
+    fpsCap: Number(stage?.ticker?.maxFPS) || Number(cfg?.perf?.fpsCap) || 0,
+    minimal: !!cfg?.perf?.minimal,
+    now: Math.round(performance.now()),
+    frames
+  };
+}
 function setupRenderLoop() {
   const perf = cfg.perf || {};
   const fps = Number(perf.fpsCap) || 0;
@@ -92940,17 +93091,20 @@ function setupRenderLoop() {
     applyMotion(performance.now());
     if (animRestore) {
       const nowA = performance.now();
-      const t2 = (nowA - animRestore.t0) / animRestore.ms;
-      if (t2 < 1) {
-        const s2 = t2 * t2 * (3 - 2 * t2);
-        for (const [id3, v2] of animRestore.to) {
-          const a2 = animRestore.from.get(id3) ?? v2;
-          stage.param.set(id3, a2 + (v2 - a2) * s2);
+      if (animRestore.pending) resolveAnimRestore(nowA);
+      if (animRestore) {
+        const t2 = (nowA - animRestore.t0) / animRestore.ms;
+        if (t2 < 1) {
+          const s2 = t2 * t2 * (3 - 2 * t2);
+          for (const [id3, v2] of animRestore.to) {
+            const a2 = animRestore.from.get(id3) ?? v2;
+            stage.param.set(id3, a2 + (v2 - a2) * s2);
+          }
+        } else if (nowA >= animRestore.holdUntil) {
+          finalizeAnimRestore();
+        } else {
+          for (const [id3, v2] of animRestore.to) stage.param.set(id3, v2);
         }
-      } else if (nowA >= animRestore.holdUntil) {
-        finalizeAnimRestore();
-      } else {
-        for (const [id3, v2] of animRestore.to) stage.param.set(id3, v2);
       }
     }
     if (!baseInitial && !poseAnim && stage.param?.ids?.length) {
@@ -92971,6 +93125,7 @@ function setupRenderLoop() {
       sample.bodyX = stage.param.get("ParamBodyAngleX");
       sample.breath = stage.param.get("ParamBreath");
     }
+    teleSample(performance.now());
   });
   stage.onBeforePhysics(() => {
     applyModelParams();
@@ -93361,6 +93516,14 @@ async function boot() {
       list.push({ kind: "part", id: id3, value: stage.part.get(id3) });
     }
     api.dumpParams(list);
+  });
+  api.onTelemetry?.((o2) => teleSet(o2));
+  api.onDumpFrames?.(() => {
+    try {
+      api.dumpFrames(teleDump());
+    } catch (e2) {
+      api.dumpFrames(null);
+    }
   });
   api.onResized?.((sz) => {
     if (!sz || !stage) return;

@@ -49,6 +49,19 @@ contextBridge.exposeInMainWorld('pet', {
     return () => ipcRenderer.removeListener('pet:dump-params', h)
   },
   dumpParams: (list) => ipcRenderer.send('pet:params-dump', list),
+  // 动画遥测（1.0.0 调试 /api/debug/frames 用）：开关走主动下发，快照走请求-应答。
+  // 平滑度问题（一顿一顿、跳帧）只有逐帧数据能定位，参数转储是「某一刻」的，不够。
+  onTelemetry: (cb) => {
+    const h = (_e, o) => { try { cb(o) } catch { /* 开关失败不影响演出 */ } }
+    ipcRenderer.on('pet:telemetry-set', h)
+    return () => ipcRenderer.removeListener('pet:telemetry-set', h)
+  },
+  onDumpFrames: (cb) => {
+    const h = () => { try { cb() } catch { /* 采集失败不影响主流程 */ } }
+    ipcRenderer.on('pet:dump-frames', h)
+    return () => ipcRenderer.removeListener('pet:dump-frames', h)
+  },
+  dumpFrames: (payload) => ipcRenderer.send('pet:frames-dump', payload),
   // 交互/观察类事件上报：主进程按「主动说话」频率门控后写 pet-events.json，
   // 插件轮询转发到绑定的驾驶员会话
   driverEvent: (payload) => ipcRenderer.send('pet:driver-event', payload),

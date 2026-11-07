@@ -469,7 +469,14 @@ function pumpTweens() {
  * 上游的 ROUTINES 也是增量（起点归零、终点归零），道理一样。
  */
 const motionDefs = () => (cfg.motions || {})
-let motion = null        // { name, ms, tracks, t0 }
+let motion = null        // { name, ms, tracks, t0, armed }
+// 动作轨道是**增量**写入：每帧 set(base + 曲线值)。曲线消失的那一刻（演完、
+// 被下一个动作顶掉、被下一组 cue 覆盖），增量从「上一帧的值」直接跳到 0 ——
+// 那是肉眼可见的"闪一下"。motionLast 记住上一帧真正写进去的增量，
+// motionRel 在 170ms 内把它平滑放掉，让"消失"变成"收回"。
+let motionLast = null    // Map<参数id, 上一帧写入的增量>
+let motionRel = null     // { ids: Map<id, 增量>, t0, ms }
+const MOTION_REL_MS = 170   // 交接淡出时长：比 cue 的 180ms 略短，避免和下一段起手打架
 
 /**
  * 追踪冻结：播 LLM/用户的动作时，暂停视线追踪对头/身体/眼珠的写入。
@@ -564,11 +571,14 @@ function playMotion(name, prio = PRIO.RANDOM, inline = null) {
   if (!def || !def.tracks) { log('[motion] 没有这个动作：', name); return false }
   const ms = Math.max(160, Number(def.ms) || 3000)
   if (!claim('motion', prio, ms + 120)) return false
+  // 顶掉上一段时先让它交接出去（170ms 收回残差），不要直接抹掉。
+  if (motion) endMotion(performance.now())
   motion = {
     name: name || 'inline',
     ms,
     tracks: def.tracks,
     t0: performance.now(),
+    armed: false,   // 第一次真正应用时把 t0 对齐到那一帧，保证从 p=0 起步
     fadeIn: Math.max(0, Number(def.fadeIn) || 0),
     fadeOut: Math.max(0, Number(def.fadeOut) || 0),
   }
@@ -692,31 +702,11 @@ function playAnimation(name, o = {}) {
  */
 function settleSwitch(touched, ends) {
   if (!touched?.length || !ends) return
-  const from = new Map()
-  const to = new Map()
-  for (const id of touched) {
-    if (!Object.prototype.hasOwnProperty.call(ends, id)) continue
-    const v = Number(ends[id])
-    if (!Number.isFinite(v)) continue
-    to.set(id, v)
-    const cur = stage.param.get(id)
-    if (cur != null && Math.abs(cur - v) > 0.001) from.set(id, cur)
-  }
-  if (!to.size) return
-  const applyBaseline = () => {
-    for (const [id, v] of to) {
-      stage.param.set(id, v)
-      baseline?.set(id, v)
-    }
-    try { stage.core?.saveParameters?.() } catch { /* 拿不到就退回持续写入 */ }
-    log('[anim] 切换态固化', to.size, '个参数（写入曲线末值）')
-  }
-  if (!from.size) { applyBaseline(); return }
   // 先停掉引擎动作队列：它播完后还会继续写参数（我们实测会停在曲线中段），
   // 不停的话这 200ms 补间会被它逐帧压回去，残帧就留住了
   try { stage.stopMotions?.() } catch { /* 没有这个 API 就退回纯写入 */ }
-  const t0 = performance.now()
-  animRestore = { t0, ms: 200, holdUntil: t0 + 300, from, to, onDone: applyBaseline }
+  // 同上：from 必须在帧内取（帧外读到的是已还原值，会退化成 0→1 一帧拍上）
+  animRestore = { pending: 'switch', kind: 'switch', touched: touched.slice(), ends }
 }
 
 /* ------------------------------------------------------------------ 演出信封 perform */
@@ -793,74 +783,153 @@ function perform(o = {}) {
 function startAnimRestore(touched) {
   if (!baseline || !touched?.length) return
   try { stage.stopMotions() } catch { /* 引擎没有这个 API 就算了 */ }
-  const skip = liveParamIds()
+  // 这里**不能**读 stage.param.get：本函数由 setInterval / 引擎回调触发，帧外读到的
+  // 是「引擎已经还原过」的值 —— 脱捕的 Param11 末值 8 会被读成 0，from 于是为空，
+  // 还原退化成"下一帧直接跳回"。快照推迟到下一帧帧内（resolveAnimRestore）。
+  animRestore = { pending: 'restore', kind: 'restore', touched: touched.slice() }
+}
+
+/** 帧内解析挂起的还原：此刻读到的才是动画真正留下的值 */
+function resolveAnimRestore(now) {
+  const ar = animRestore
+  if (!ar || !ar.pending) return
   const from = new Map()
   const to = new Map()
-  for (const id of touched) {
-    if (skip.has(id)) continue
-    const target = baseline.get(id)
-    if (target == null) continue           // 基准里没有的（不该发生）不乱写
-    const cur = stage.param.get(id)
-    if (cur == null || Math.abs(cur - target) < 0.001) continue
-    from.set(id, cur)
-    to.set(id, target)
+  if (ar.pending === 'switch') {
+    for (const id of ar.touched || []) {
+      if (!Object.prototype.hasOwnProperty.call(ar.ends || {}, id)) continue
+      const v = Number(ar.ends[id])
+      if (!Number.isFinite(v)) continue
+      to.set(id, v)
+      const cur = stage.param.get(id)
+      if (cur != null && Math.abs(cur - v) > 0.001) from.set(id, cur)
+    }
+  } else {
+    const skip = liveParamIds()
+    for (const id of ar.touched || []) {
+      if (skip.has(id)) continue
+      const target = baseline?.get(id)
+      if (target == null) continue           // 基准里没有的（不该发生）不乱写
+      const cur = stage.param.get(id)
+      if (cur == null || Math.abs(cur - target) < 0.001) continue
+      from.set(id, cur)
+      to.set(id, target)
+    }
   }
-  if (!from.size) return
-  const t0 = performance.now()
-  animRestore = { t0, ms: 500, holdUntil: t0 + 900, from, to }
-  log('[anim] 残帧还原', from.size, '个参数 → 固定基准（500ms 补间 + 保持到 0.9s 固化）')
+  if (!to.size) { animRestore = null; return }
+  if (!from.size) {
+    // 已经落在目标值上：不用补间，直接收尾（切换态仍要固化进基准）
+    animRestore = { t0: now - 1e6, ms: 1, holdUntil: 0, from: new Map(), to, kind: ar.kind, onDone: null }
+    return
+  }
+  const ms = ar.pending === 'switch' ? 200 : 500
+  animRestore = { t0: now, ms, holdUntil: now + ms + 400, from, to, kind: ar.kind }
+  log(ar.pending === 'switch'
+    ? '[anim] 切换态补间 ' + from.size + ' 个参数（写入曲线末值）'
+    : '[anim] 残帧还原 ' + from.size + ' 个参数 → 固定基准（500ms 补间 + 保持后固化）')
 }
 
 /** 还原收尾：写最终值并把缓冲固化为新存档（详见 startAnimRestore 注释） */
 function finalizeAnimRestore() {
   if (!animRestore) return
-  const done = animRestore.onDone
-  for (const [id, v] of animRestore.to) stage.param.set(id, v)
+  const ar = animRestore
+  for (const [id, v] of ar.to) {
+    stage.param.set(id, v)
+    // 切换类（掏出/收回持物）的结束态是刻意保持的：固化进基准，
+    // 之后的一次性动画就还原到这个「当前自然态」而不是开机态。
+    if (ar.kind === 'switch') baseline?.set(id, v)
+  }
   try { stage.core?.saveParameters?.() } catch { /* 拿不到就退回纯持续写入 */ }
   animRestore = null
-  if (done) { try { done() } catch { /* 收尾失败不影响还原 */ } }
+  log(ar.kind === 'switch'
+    ? '[anim] 切换态固化 ' + ar.to.size + ' 个参数（写入曲线末值）'
+    : '[anim] 残帧固化 ' + ar.to.size + ' 个参数')
+  if (ar.onDone) { try { ar.onDone() } catch { /* 收尾失败不影响还原 */ } }
+}
+
+/** 让当前动作退场：把上一帧真实写入的增量登记成 170ms 淡出，曲线立刻让位。
+ *  没有这一步，增量会在"曲线消失"的那一帧从满值跳到 0 —— 一次 step 边界、
+ *  一次动作顶替，看起来都是"闪一下"。 */
+function endMotion(now = performance.now()) {
+  if (motionLast && motionLast.size) {
+    motionRel = { ids: motionLast, t0: now, ms: MOTION_REL_MS }
+  }
+  motion = null
+  motionLast = null
 }
 
 /** 每帧：把动作的增量加到当前参数上（必须在视线/表情之后） */
 function applyMotion(now) {
-  if (!motion) return
-  // 一次性诊断：动作开演 300ms 时，把每条 track 的参数范围和当前值打出来。
-  // 手臂参数（RArm 等）是物理输出 —— 写入是否真到达渲染、还是被 clamp/跳过，看这行就知道。
-  if (!motion.probed && now - motion.t0 > 300) {
-    motion.probed = true
-    for (const id of Object.keys(motion.tracks)) {
-      const info = stage.param.info(id)
-      log('[motion-probe]', id, info
-        ? `min=${info.min} max=${info.max} default=${info.default} cur=${stage.param.get(id)}`
-        : 'info=null（参数不存在，写入被跳过）')
+  const offs = new Map()
+
+  if (motion) {
+    // 首帧强制从 p=0 起步：playMotion 是在帧外被调用的，第一帧的 elapsed 就等于
+    // 这一帧的 dt（实测抖到 40ms 时，240ms 的动作一上来就吃掉 17% 行程 → "弹"）。
+    // 把 t0 对齐到第一次真正应用的那一帧，曲线从中点起身的问题就没有了。
+    if (!motion.armed) {
+      motion.armed = true
+      motion.t0 = now
+    }
+    // 一次性诊断：动作开演 300ms 时，把每条 track 的参数范围和当前值打出来。
+    // 手臂参数（RArm 等）是物理输出 —— 写入是否真到达渲染、还是被 clamp/跳过，看这行就知道。
+    if (!motion.probed && now - motion.t0 > 300) {
+      motion.probed = true
+      for (const id of Object.keys(motion.tracks)) {
+        const info = stage.param.info(id)
+        log('[motion-probe]', id, info
+          ? `min=${info.min} max=${info.max} default=${info.default} cur=${stage.param.get(id)}`
+          : 'info=null（参数不存在，写入被跳过）')
+      }
+    }
+    const elapsed = now - motion.t0
+    const p = elapsed / motion.ms
+    if (p >= 1) {
+      endMotion(now)
+    } else {
+      // 演出信封的淡入淡出：整体乘一个 smoothstep 包络（毫秒单位）。
+      // 关键帧本身首末多为 0，已经比较平滑；这层是给「有头有尾的整段动作」用的，
+      // 让动作起落和气泡的 150ms 淡入淡出对齐。
+      let env = 1
+      if (motion.fadeIn > 0 && elapsed < motion.fadeIn) {
+        const k = Math.max(0, elapsed / motion.fadeIn)
+        env *= k * k * (3 - 2 * k)
+      }
+      if (motion.fadeOut > 0) {
+        const left = motion.ms - elapsed
+        if (left < motion.fadeOut) {
+          const k = Math.max(0, Math.min(1, left / motion.fadeOut))
+          env *= k * k * (3 - 2 * k)
+        }
+      }
+      for (const id in motion.tracks) {
+        const d = sampleTrack(motion.tracks[id], p)
+        if (!d) continue
+        if (!stage.param.info(id)) continue
+        offs.set(id, d * env)
+      }
     }
   }
-  const p = (now - motion.t0) / motion.ms
-  if (p >= 1) { motion = null; return }
-  // 演出信封的淡入淡出：整体乘一个 smoothstep 包络（毫秒单位）。
-  // 关键帧本身首末多为 0，已经比较平滑；这层是给「有头有尾的整段动作」用的，
-  // 让动作起落和气泡的 150ms 淡入淡出对齐。
-  const elapsed = now - motion.t0
-  let env = 1
-  if (motion.fadeIn > 0 && elapsed < motion.fadeIn) {
-    const k = Math.max(0, elapsed / motion.fadeIn)
-    env *= k * k * (3 - 2 * k)
-  }
-  if (motion.fadeOut > 0) {
-    const left = motion.ms - elapsed
-    if (left < motion.fadeOut) {
-      const k = Math.max(0, Math.min(1, left / motion.fadeOut))
-      env *= k * k * (3 - 2 * k)
+
+  // 上一段动作的残差：smoothstep 收到 0。和本帧新动作**相加**而不是覆盖 ——
+  // 这样「旧的收、新的起」是交叉过渡；直接覆盖等于又把旧的拍掉，跳变照旧。
+  if (motionRel) {
+    const t = (now - motionRel.t0) / motionRel.ms
+    if (t >= 1 || t < 0) {
+      motionRel = null
+    } else {
+      const k = 1 - t
+      const s = k * k * (3 - 2 * k)
+      for (const [id, v] of motionRel.ids) offs.set(id, (offs.get(id) || 0) + v * s)
     }
   }
-  for (const id in motion.tracks) {
-    const d = sampleTrack(motion.tracks[id], p)
-    if (!d) continue
+
+  motionLast = offs.size ? offs : null
+  for (const [id, d] of offs) {
     const info = stage.param.info(id)
     if (!info) continue
     const cur = stage.param.get(id)
     if (cur == null) continue
-    stage.param.set(id, Math.max(info.min, Math.min(info.max, cur + d * env)))
+    stage.param.set(id, Math.max(info.min, Math.min(info.max, cur + d)))
   }
 }
 
@@ -1473,6 +1542,9 @@ function resetToInitial() {
   trackEnabled = false
   bowlState = 'off'
   animRestore = null
+  motion = null           // 复位就是复位：不给动作残差留淡出窗口，否则 reset 后还会动一下
+  motionRel = null
+  motionLast = null
   paramTweens.clear()     // 缓动层一并清空：复位后不该再有旧目标在被写入
   tweenPrev = new Set()
   editExprSnap = null     // 编辑模式中途被 reset：退出时不要再把旧表情还原回来
@@ -1530,6 +1602,130 @@ function scheduleMask() {
 
 /* ------------------------------------------------------------------ 渲染循环 */
 
+/* ------------------------------------------------ 动画遥测（1.0.0 · 调试口）
+ *
+ * 为什么要它：平滑度是「眼睛看得出来、代码查不出来」的东西。掉帧是 dt 尖峰，
+ * 补间断了是某一帧 act 突然归零，两个通道抢同一个参数是 mx 反复大幅跳。
+ * 只对「某一刻」做参数快照（/api/params）看不出这些，必须逐帧。
+ *
+ * 记什么（每帧一条，环形覆盖）：
+ *   t    距本次采集起点的毫秒数
+ *   dt   距上一帧的毫秒数（掉帧 = 明显大于 1000/fpsCap）
+ *   act  本帧所有参数变化量之和（该动的地方没动 = 接近 0；瞬跳 = 远超平时）
+ *   mx   单个参数的最大变化量，arg 是它叫什么（定位「谁在跳」）
+ *   pose/expr/mot  当时的姿势、表情、动作名（把曲线和演出对上号）
+ *
+ * 代价：默认只记 dt（一次减法），打开后才遍历参数表（约 150 次读值/帧，
+ * 相比一帧渲染的开销可以忽略）。采样点固定在 onBeforeUpdate 末尾 ——
+ * 那一刻表情/姿势/动作/物理残帧还原都写完了，读到的是真正要画的姿态。
+ */
+const tele = {
+  on: false,
+  cap: 900,
+  n: 0,
+  t: [], dt: [], act: [], mx: [], arg: [], pose: [], expr: [], mot: [],
+  lastT: 0,
+  primed: false,
+  prevVals: null,
+}
+
+function teleClear(cap) {
+  const c = Math.max(60, Math.min(6000, Number(cap) || tele.cap || 900))
+  tele.cap = c
+  tele.n = 0
+  tele.t.length = 0; tele.dt.length = 0; tele.act.length = 0; tele.mx.length = 0
+  tele.arg.length = 0; tele.pose.length = 0; tele.expr.length = 0; tele.mot.length = 0
+  tele.lastT = 0
+  tele.primed = false
+  tele.prevVals = null
+}
+
+/** 主进程下发的开关：{ on?:boolean, clear?:boolean, cap?:number } */
+function teleSet(o) {
+  if (!o) return
+  if (o.clear) teleClear(o.cap)
+  if (typeof o.on === 'boolean') {
+    tele.on = o.on
+    // 重新打开时不能拿旧值算差，否则第一帧会出现一个假的巨跳
+    tele.prevVals = null
+    tele.primed = false
+    if (o.on) teleClear(o.cap || tele.cap)
+  }
+}
+
+function teleSample(now) {
+  const ids = stage?.param?.ids
+  if (!ids || !ids.length) return
+  const dt = tele.lastT ? now - tele.lastT : 0
+  tele.lastT = now
+
+  let act = 0
+  let mx = 0
+  let arg = ''
+  if (tele.on) {
+    if (!tele.prevVals || tele.prevVals.length !== ids.length) {
+      tele.prevVals = new Float64Array(ids.length)
+      tele.primed = false
+    }
+    if (!tele.primed) {
+      for (let i = 0; i < ids.length; i += 1) tele.prevVals[i] = stage.param.get(ids[i])
+      tele.primed = true
+    } else {
+      const pv = tele.prevVals
+      for (let i = 0; i < ids.length; i += 1) {
+        const v = stage.param.get(ids[i])
+        const d = v > pv[i] ? v - pv[i] : pv[i] - v
+        pv[i] = v
+        if (d > 0) act += d
+        if (d > mx) { mx = d; arg = ids[i] }
+      }
+    }
+  }
+
+  const i = tele.n % tele.cap
+  tele.t[i] = now
+  tele.dt[i] = dt
+  tele.act[i] = act
+  tele.mx[i] = mx
+  tele.arg[i] = arg
+  tele.pose[i] = boundPose || 'default'
+  tele.expr[i] = tapExpr || stateExpr || ''
+  tele.mot[i] = (motion && motion.name) || ''
+  tele.n += 1
+}
+
+function teleDump() {
+  const n = Math.min(tele.n, tele.cap)
+  const start = tele.n - n
+  const t0 = n ? tele.t[start % tele.cap] : 0
+  const frames = []
+  for (let k = 0; k < n; k += 1) {
+    const i = (start + k) % tele.cap
+    frames.push({
+      t: Math.round(tele.t[i] - t0),
+      dt: Math.round(tele.dt[i] * 100) / 100,
+      act: Math.round(tele.act[i] * 10000) / 10000,
+      mx: Math.round(tele.mx[i] * 10000) / 10000,
+      arg: tele.arg[i],
+      pose: tele.pose[i],
+      expr: tele.expr[i],
+      mot: tele.mot[i],
+    })
+  }
+  return {
+    on: tele.on,
+    cap: tele.cap,
+    count: tele.n,
+    returned: frames.length,
+    // 报「实际在跑的帧率上限」而不是配置值：设置页改帧率是运行时生效的，
+    // 配置里那份只在重启后才知道，拿它判断 dt 该是多少会一直判错。
+    fpsCap: Number(stage?.ticker?.maxFPS) || Number(cfg?.perf?.fpsCap) || 0,
+    minimal: !!(cfg?.perf?.minimal),
+    now: Math.round(performance.now()),
+    frames,
+  }
+}
+
 function setupRenderLoop() {
   const perf = cfg.perf || {}
   const fps = Number(perf.fpsCap) || 0
@@ -1554,20 +1750,24 @@ function setupRenderLoop() {
     idleAngles()
     applyMotion(performance.now())
 
-    // 原生动画播完的残帧还原：500ms 补间回播放前，保持到 0.9s 后固化存档。
+    // 原生动画播完的残帧还原：500ms 补间回基准，保持一会儿再固化存档。
+    // pending 的那一步必须在这里解析 —— 只有帧内读到的才是动画真正留下的值。
     if (animRestore) {
       const nowA = performance.now()
-      const t = (nowA - animRestore.t0) / animRestore.ms
-      if (t < 1) {
-        const s = t * t * (3 - 2 * t)
-        for (const [id, v] of animRestore.to) {
-          const a = animRestore.from.get(id) ?? v
-          stage.param.set(id, a + (v - a) * s)
+      if (animRestore.pending) resolveAnimRestore(nowA)
+      if (animRestore) {
+        const t = (nowA - animRestore.t0) / animRestore.ms
+        if (t < 1) {
+          const s = t * t * (3 - 2 * t)
+          for (const [id, v] of animRestore.to) {
+            const a = animRestore.from.get(id) ?? v
+            stage.param.set(id, a + (v - a) * s)
+          }
+        } else if (nowA >= animRestore.holdUntil) {
+          finalizeAnimRestore()
+        } else {
+          for (const [id, v] of animRestore.to) stage.param.set(id, v)
         }
-      } else if (nowA >= animRestore.holdUntil) {
-        finalizeAnimRestore()
-      } else {
-        for (const [id, v] of animRestore.to) stage.param.set(id, v)
       }
     }
 
@@ -1594,6 +1794,10 @@ function setupRenderLoop() {
       sample.bodyX = stage.param.get('ParamBodyAngleX')
       sample.breath = stage.param.get('ParamBreath')
     }
+
+    // 遥测采样：放在这个回调的最后 —— 上面写完的表情/姿势/动作/物理还原
+    // 都已经落进参数表，这里读到的是本帧最终要画的姿态。
+    teleSample(performance.now())
   })
 
   // 角度要在物理**前后各写一次**：
@@ -2130,6 +2334,12 @@ async function boot() {
       list.push({ kind: 'part', id, value: stage.part.get(id) })
     }
     api.dumpParams(list)
+  })
+
+  // 动画遥测（调试口 /api/debug/frames）：开关 + 快照。
+  api.onTelemetry?.((o) => teleSet(o))
+  api.onDumpFrames?.(() => {
+    try { api.dumpFrames(teleDump()) } catch (e) { api.dumpFrames(null) }
   })
 
   // 编辑模式改完尺寸后主进程会通知一次：重设 PIXI 分辨率再重排。
