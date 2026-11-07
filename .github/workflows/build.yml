@@ -1,0 +1,41 @@
+name: build
+
+# 只验证一件事：**拉下来就能构建**。
+#   1) npm ci 顺带校验 package-lock 没坏；
+#   2) 跑渲染包构建，产物存在且大小正常（这是「改了源码但没重建」的兜底）。
+# 构建只用 esbuild，不需要 electron 跑窗口，所以跳过它那 100 MB 的二进制。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: main/deps/package-lock.json
+
+      - name: 安装依赖（跳过 electron 二进制）
+        run: npm --prefix main/deps ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+
+      - name: 构建渲染包
+        run: npm --prefix main/deps run build
+
+      - name: 校验产物
+        shell: pwsh
+        run: |
+          $f = 'main/modules/ui/build/renderer.bundle.js'
+          if (-not (Test-Path $f)) { throw "缺少 $f" }
+          $len = (Get-Item $f).Length
+          Write-Host "renderer.bundle.js = $len bytes"
+          if ($len -lt 1MB) { throw "bundle 只有 $len 字节，像是构建失败" }

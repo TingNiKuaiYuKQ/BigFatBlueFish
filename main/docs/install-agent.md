@@ -14,9 +14,8 @@
 | 4 | 首次启动（控制台） | `cmd /c start.cmd` | `main/runtime/app/endpoint.json` 与 `~/.dsh/live2d/endpoint.json` 出现且端口一致；`GET /api/health` 返回 `ok:true` | 读 `main/runtime/logs/launch.log`；停 |
 | 5 | 生成快捷方式 | `cmd /c start.cmd install` | 根 `launcher.lnk`、桌面/开始菜单快捷方式存在；读回目标为 `C:\Windows\System32\wscript.exe`，参数指向 `main/launcher.vbs` 且 ≤259 字符 | 读 `main/runtime/logs/shortcut-helper.log`；停 |
 | 6 | 安装 DSH 插件（可选） | `node plugins/install.mjs --apply`；按提示在 profile 目录 `pnpm install`；**询问用户后**重启 DSH | `<插件根目录>/pet-bridge` 指向 `plugins/dsh`（根目录默认 `%LOCALAPPDATA%\BigFatBlueFish\Plugin`）；profile 的 `dependencies` 有 `pet-bridge`；重启后 `~/.dsh/live2d/status.json` 出现 | 读 `~/.dsh/live2d/bridge-error.log`；不要删 DSH sessions |
-| 7 | 冒烟测试 | `node 其他/tests/run-all.mjs` | 五套全绿（syntax / menu / sequence / projection / delivery） | 停；按失败的测试文件定位；不要跳过 |
-| 8 | 人工验收 | 双击 `launcher.lnk`；打开菜单/设置/教程；跑一条指令；开省电模式 | 无黑框；托盘在；五个功能可用；无 404 | 停；读 `main/runtime/logs/` |
-| 9 | 回滚 | 停桌宠/DSH；删掉本次新建的 `main/runtime/`、`launcher.lnk`、插件 junction | 删干净后重新从第 1 步开始 | 保留用户数据；删除只走回收站 |
+| 7 | 人工验收 | 双击 `launcher.lnk`；打开菜单/设置/教程；跑一条指令；开省电模式 | 无黑框；托盘在；五个功能可用；无 404 | 停；读 `main/runtime/logs/` |
+| 8 | 回滚 | 停桌宠/DSH；删掉本次新建的 `main/runtime/`、`launcher.lnk`、插件 junction | 删干净后重新从第 1 步开始 | 保留用户数据；删除只走回收站 |
 
 ## Agent 行为约束
 

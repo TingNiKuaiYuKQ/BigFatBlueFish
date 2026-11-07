@@ -154,7 +154,7 @@
 5. **改了代码没反应**
    改 `main/modules/**` 下的 `*.js` / `*.mjs` 之后要重新 `npm --prefix main/deps run build`，再重启。
 6. **窗口在但一片空白**
-   看 `run.log` 的 `[renderer:err]`，先跑 `node 其他/tests/syntax.test.mjs`。
+   看 `run.log` 的 `[renderer:err]` / `[settings:console]`：多半是改了页面没重新 `npm --prefix main/deps run build`。
 
 ## 10. FAQ
 

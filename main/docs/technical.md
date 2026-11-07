@@ -61,14 +61,10 @@ BigFatBlueFish\
 │  ├─ dsh\                   pet-bridge 插件（lib / docs / data）
 │  ├─ workbuddy\             空实现占位
 │  └─ qodercn\               空实现占位
-├─ 其他\                     参考项目 / 测试 / 工具 / 历史笔记（唯一中文目录）
 ├─ launcher.lnk              生成物：双击无黑框启动
 ├─ start.cmd                 控制台启动（排障）+ start.cmd install
 ├─ README.md                 项目简述 + 目录树 + Agent 安装流程
-└─ -bak\                     迁移备份（验收后回收）
 ```
-
-（`其他\reference\` 里的 `airi` / `upstream` / `research` 等是参考项目，不参与运行。）
 
 `config.json`（772 行）是 stage 的全部可调项：端口（`serverPort 12405` + 回退链）、`driver`（enabled / stateFile / endpointFile）、`window`（400×780 / dpiScale / alwaysOnTop / skipTaskbar）、`perf`（fpsCap 120 / textureMax 2048 / minimal / idleFpsBoots）、`stateMap`（会话状态→表情/姿势）、`poses`（4 种）、`expressionExtras` / `expressionParts`（表情补充）、`interact`（右键/左点/编辑模式）、`bubble`（60 字 / 9 s）、`behavior`（行为状态机计时）、`motions`（8 个内置动作）。
 
@@ -385,15 +381,6 @@ pnpm install             # 装 @deepseek-ai/dsh-tools 等依赖
 - **看不见就不画**：托盘隐藏窗口时发 `perf{paused:true}` → `stage.ticker.stop()`，
   显示时 `start()`。透明置顶窗口不会被 Chromium 判成「遮挡」，不主动停就一直空转。
 
-## 8. 测试
-
-- `其他\tests\sequence.test.mjs` —— 序列引擎（`lib\sequence.mjs`）单元测试，离线跑。
-- `其他\tests\projection.test.mjs` —— status.json 投影单元测试（换隔离目录、stub `@deepseek-ai/dsh-tools`，不碰真实 DSH 状态）；含会话标题的四种形状回归（快照对象 / 裸字符串 / null / 历史坏值）。
-- `其他\tests\delivery.test.mjs` —— 投递确认链路：起一个假舞台 HTTP + 假 agent，验证「未确认不 ACK → 已知错误重投 → 完成才 ACK → 未知错误不重投但放弃 → health 计数」整条路径，外加投递消息的 v4 形状（role / id / source.kind，且全程不许出现退休的 `kind:'plugin'`）（约 20 s，比另两套慢）。
-- `其他\tests\syntax.test.mjs` —— 语法体检：所有 .html 的内联 `<script>` 用 `new Function` 校验（普通脚本语义，顶层 await 会报错），`app/*.js` / `lib/*.mjs` / `plugins/dsh/lib/index.js` 走 `node --check`。0.5.6 的「设置页整页空白」（一行注释吞掉代码 → 整块脚本不执行）就是被这层闸抓住的那类错。
-
-五套都要过：`node 其他/tests/run-all.mjs`（syntax / menu / sequence / projection / delivery）。
-
 ---
 
 ## 附：常见坑
@@ -409,9 +396,8 @@ pnpm install             # 装 @deepseek-ai/dsh-tools 等依赖
 9. 从 Git Bash / MSYS 里拉 `start.cmd` 会因为 GBK/UTF-8 编码把中文路径搞坏（静默不起）。改走 ASCII 路径：`powershell Start-Process cmd.exe -ArgumentList '/c','D:\...\start.cmd'`。双击 .cmd 不受影响（shell 自己处理文件名）。
 
 10. **页面「打开了但空白」先看语法**：内联 `<script>` 里一行注释吞掉代码 → 整块脚本一行都不执行，
-    `did-finish-load` 照常触发、日志全是「页面加载完成」。设置/菜单/教程窗口现在都接了
-    `console-message`（level ≥ 2），报错会以 `[settings:console]` 出现在 run.log。改完页面先跑
-    `node 其他/tests/syntax.test.mjs`。
+   `did-finish-load` 照常触发、日志全是「页面加载完成」。设置/菜单/教程窗口现在都接了
+   `console-message`（level ≥ 2），报错会以 `[settings:console]` 出现在 run.log。改完页面先看日志。
 11. **本模型的头部转不了**：`ParamAngleX/Y/Z` 与 `AngleX/Y/Z` 写到 ±30 都没画面反应（眼球参数有效）。
     只有 `ParamBodyAngleZ/X/Y` 会带动整体倾斜/前后。所以 cue 里的「歪头/点头/摇头」实际表现是
     「歪身/身体微动」。排查参数有没有效果，先看 `GET /api/params` 里的 `min`/`max`。

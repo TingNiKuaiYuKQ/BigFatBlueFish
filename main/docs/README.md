@@ -1,6 +1,6 @@
 # 文档索引
 
-> 1.0.0 目录结构：`main/` 主体、`plugins/` 插件、`其他/` 开发资料。所有运行路径以 `main/modules/core/paths.cjs` 为准。
+> 1.0.0 目录结构：`main/` 主体、`plugins/` 插件。所有运行路径以 `main/modules/core/paths.cjs` 为准。
 
 | 文档 | 读者 | 内容 |
 | --- | --- | --- |
@@ -11,6 +11,7 @@
 | [install-agent.md](install-agent.md) | 用户 / 自动化助手 | 让 AI 助手装：每步带成功信号与失败处理 |
 | [commands-examples.md](commands-examples.md) | 用户 | 五种快捷指令类型的完整 JSON 模板 |
 | [images/](images/README.md) | 用户 / 维护者 | 教程配图与截图清单 |
+| [media/](media/) | 用户 | 演示 GIF（README 首屏用）；成片 mp4 在仓库根目录 |
 | [persona-guide.md](persona-guide.md) | 人设作者 | 人设卡与行为规划怎么写 |
 | [config-reference.md](config-reference.md) | 维护者 | `config.json` / `commands.json` 字段说明 |
 | [dsh-api.md](dsh-api.md) | 插件开发者 | DSH 宿主契约的入口索引 |
@@ -22,14 +23,6 @@
 | [modules/commands.md](modules/commands.md) | 维护者 | 指令执行器、校验、审计、驾驶员接口 |
 | [modules/low-power.md](modules/low-power.md) | 维护者 | 省电模式与全屏观察器 |
 | [modules/tutorial.md](modules/tutorial.md) | 维护者 | 教程窗口与首次引导 |
-
-## 跑测试
-
-```bash
-node 其他/tests/run-all.mjs
-```
-
-单套：`syntax` / `menu` / `sequence` / `projection` / `delivery`。全部离线，不需要 DSH 或 Electron。
 
 ## 构建渲染包
 

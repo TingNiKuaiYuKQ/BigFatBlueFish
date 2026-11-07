@@ -138,8 +138,7 @@ ${ok('安装完成。')}接下来两步：
   2. 重启 DSH Desktop
 
 验证：重启后打开 ${dim('~/.dsh/live2d/')}，应出现 status.json；
-      另开一个终端跑 ${dim('node 其他/tests/fake-stage.mjs')}，随便问 DSH 一句话，
-      终端里应依次打出 思考中 → 干活中 → 成功。
+      随便问 DSH 一句话，桌宠应依次变脸：思考中 → 干活中 → 成功。
 
 出问题看 ${dim('~/.dsh/live2d/bridge-error.log')}；不想用了把 bundles 里那行删掉即可。
 `)

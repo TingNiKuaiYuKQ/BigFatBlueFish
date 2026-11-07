@@ -185,7 +185,6 @@ await agent.whenIdle()     // 等完全停稳
 时重投一次（`INFLIGHT_RETRY_MAX=1`）；⑤ 其他错误、超时 120 s、舞台重启判为放弃，记
 `health.dropped` + `lastError`；⑥ `/api/health` 的 plugin 段新增 `confirmed / dropped / inflight`。
 重投条件收得很紧（只认那条错误文案），否则无关回合的失败会造成重复消息。
-回归测试：`其他/tests/delivery.test.mjs`（假舞台 HTTP + 假 agent）。
 
 仍未做：`boundInfo.proactive/freq` 在插件侧已缓存但没参与节流（门控目前全在舞台侧）；
 `agent/request-error` 的宿主级重试（比 turn/end 确认更及时，值得下一步试）。
@@ -253,8 +252,7 @@ await agent.whenIdle()     // 等完全停稳
 **修法**（`lib/index.js` 的 `sendToSession`）：一条完整消息 ——
 `{ role:'user', id: randomUUID(), content:[{type:'text',text}], source:{ kind: fromUser ? 'user' : 'pet-bridge' } }`。
 重投时重新生成 id（旧 id 可能已经进过 pending 列表，复用会被投影判成重复）。
-回归测试：`其他/tests/delivery.test.mjs` 加了 v4 形状断言（role/id/source.kind/content，
-且全程不许出现 `kind:'plugin'`），13 → 17 条。
+回归测试覆盖了 v4 形状断言（role/id/source.kind/content，且全程不许出现 `kind:'plugin'`），13 → 17 条。
 
 ## 7. v0.4 端到端验证记录
 
@@ -268,4 +266,4 @@ inject = ["tools","systemPrompt","sessions","agents"]
 outbox 剩余事件 = 0                                            ← ACK 生效
 ```
 
-harness 位置：作者本机的 `_px/bridge-harness/`（不属于本仓库，仅作对照实验用；你可以用 `其他/tests/fake-stage.mjs` 代替）。
+harness 位置：作者本机的 `_px/bridge-harness/`（不属于本仓库，仅作对照实验用）。

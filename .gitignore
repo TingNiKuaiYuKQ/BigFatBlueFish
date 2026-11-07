@@ -18,16 +18,17 @@ NVIDIA Corporation/
 _scratch/
 
 # 演示视频的中间素材（分段录屏 / 标题卡 / 录制脚本 / 背景板）。
-# 成片 demo.mp4 在仓库根目录，那个要发，不在忽略之列。
+# 成片 demo.mp4 也不入仓（8 MB 的二进制不适合放 git，发 B 站/Release）。
 temp/
+demo.mp4
 
 # 模型：不随仓库分发（版权归原作者，获取方式见 main/model/README.md）
 main/model/runtime/
 main/model/source/
 
-# 开发资料：参考项目的 clone、过程文档、笔记 —— 一律不入仓
-其他/reference/
-其他/notes/
+# 开发资料（参考项目 clone、离线测试、技术探针、过程文档）—— 整个目录不入仓，
+# 也不随发布分发；运行时只用 main/ 与 plugins/。
+其他/
 # 过程文档（计划书 / 优化记录）。这里刻意用 ASCII 通配符：本机 git 对
 # 「v*.计划书.md」这种中文+通配符的组合匹配不上（实测 check-ignore 直接不认），
 # 「v*.md」和「*优化.txt」都能稳定命中，含义也够用。

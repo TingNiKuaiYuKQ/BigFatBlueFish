@@ -15,9 +15,3 @@
 - 收场动画由页面播完再发 `menu:close`；主进程只做 1.8s 兜底。
 - 「表情和姿势」层 8 秒内没有选择就自动收场（`FACES_AUTO_CLOSE_MS`）。
 - 「其他」里有「退下吧」，等价于退出桌宠。
-
-## 测试
-
-```bash
-node 其他/tests/menu.test.mjs
-```

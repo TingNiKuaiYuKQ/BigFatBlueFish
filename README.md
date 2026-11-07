@@ -1,8 +1,6 @@
 # BigFatBlueFish · 开源的 Windows Live2D 桌宠
 
-<!-- 演示 GIF（做视频时生成，放 main/docs/media/demo.gif，≤8 MB）
-<p align="center"><img src="main/docs/media/demo.gif" width="720" alt="演示：右键菜单、换表情、跟随 AI 会话"></p>
--->
+<p align="center"><img src="main/docs/media/demo.gif" width="760" alt="演示：右键菜单三级层叠、换表情、跟随 AI 会话"></p>
 
 一只住在桌面角落的 Live2D 角色：**透明无边框窗口**、始终置顶、不占任务栏、不用管理员权限。
 她的表情和姿势由自己的状态机驱动（呼吸、眨眼、待机小动作），右键就能使唤；
@@ -73,7 +71,6 @@ BigFatBlueFish/
 │  ├─ deps/              依赖实体（node_modules + vendor）
 │  └─ runtime/           运行时写盘：日志、设置、握手镜像（gitignore）
 ├─ plugins/              pet-bridge（DSH 插件）· install.mjs
-├─ 其他/                 tests（离线测试）· tools（探针脚本）
 ├─ start.cmd             控制台启动 / `install` 生成快捷方式
 └─ LICENSE               MIT（代码）
 ```
@@ -83,7 +80,6 @@ BigFatBlueFish/
 ```bash
 npm --prefix main/deps ci          # 装依赖
 npm --prefix main/deps run build   # 改了 main/modules/** 下的 js 就要重建
-node 其他/tests/run-all.mjs        # 五套离线测试：syntax / menu / sequence / projection / delivery
 node plugins/install.mjs           # 预览插件安装路径（加 --apply 才真正写盘）
 ```
 
@@ -97,7 +93,7 @@ node plugins/install.mjs           # 预览插件安装路径（加 --apply 才�
 | 现象 | 先看 |
 | --- | --- |
 | 双击没反应 / 没出现在屏幕上 | `main/runtime/logs/launch.log` 最后几行；确认 Node ≥ 22 |
-| 窗口在但一片空白 | `run.log` 的 `[renderer:err]`；先跑 `node 其他/tests/syntax.test.mjs` |
+| 窗口在但一片空白 | `run.log` 的 `[renderer:err]` / `[settings:console]`；改过页面就先 `npm --prefix main/deps run build` |
 | 提示找不到模型 | `main/model/README.md`（本仓库不带模型） |
 | 一直显示「驾驶员离线」 | `~/.dsh/live2d/endpoint.json` 是否存在；端口与 `run.log` 的 `[server] 监听` 是否一致 |
 
@@ -107,12 +103,23 @@ node plugins/install.mjs           # 预览插件安装路径（加 --apply 才�
 
 分三行写清楚，别混：
 
-1. **代码**（`main/`、`plugins/` 下的源码与文档）：**MIT**，署名 `TingNiKuaiYu`，见 [LICENSE](LICENSE)。
+1. **代码**（`main/`、`plugins/` 下的源码与文档）：**MIT**，署名 `TingNiKuaiYuKQ`，见 [LICENSE](LICENSE)。
 2. **Live2D 模型与美术素材**（`main/model/`）：**不随本仓库分发**，版权归模型原作者，
    获取与授权见 `main/model/README.md`；Cubism Core 另受 Live2D Inc. 自己的许可约束。
 3. **人设文本、文档与截图**：**CC BY 4.0**，转载注明来源即可。
 
-模型作者：B 站 UP 主 **「神宫凉子」**（源码、文档与工程设计：`TingNiKuaiYu`）。
+### 模型信息
+
+> ✦ **模型信息**
+>
+> 模型名称：DeepSeek免费公皮
+> 原画及拆分：神宫凉子
+> Live2D 建模：霓虹猫_NeonNeko
+> 模型来源：神宫凉子免费配布模型
+>
+> 模型版权归原作者所有，本程序不附带模型，请到原作者处获取。
+
+源码、文档与工程设计：`TingNiKuaiYuKQ`。
 
 - 项目主页：<https://github.com/TingNiKuaiYuKQ>
 - 演示视频与更新：B 站 <https://space.bilibili.com/441567702>

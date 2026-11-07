@@ -19,9 +19,3 @@
 ## 行为抑制
 
 省电模式期间 `behavior.stop()`，只保留引擎自带的呼吸/眨眼；退出时 `start()`。待机动作事件带 `prio=1`，驾驶员/用户事件优先。
-
-## 测试
-
-```bash
-node 其他/tests/sequence.test.mjs
-```
