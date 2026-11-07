@@ -114,6 +114,9 @@ node plugins/install.mjs           # 预览插件安装路径（加 --apply 才�
 
 模型作者：B 站 UP 主 **「神宫凉子」**（源码、文档与工程设计：`TingNiKuaiYu`）。
 
+- 项目主页：<https://github.com/TingNiKuaiYuKQ>
+- 演示视频与更新：B 站 <https://space.bilibili.com/441567702>
+
 参考项目（只在本机研究过，不入仓）：[moeru-ai/airi](https://github.com/moeru-ai/airi)、
 [pixi-live2d-display](https://github.com/guansss/pixi-live2d-display)、
 Live2D 官方 Cubism SDK 示例。
