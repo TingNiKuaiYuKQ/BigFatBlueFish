@@ -108,6 +108,8 @@ node plugins/install.mjs           # 预览插件安装路径（加 --apply 才�
    获取与授权见 `main/model/README.md`；Cubism Core 另受 Live2D Inc. 自己的许可约束。
 3. **人设文本、文档与截图**：**CC BY 4.0**，转载注明来源即可。
 
+范围细节（哪三类不在 MIT 之内）写在 [NOTICE.md](NOTICE.md)。
+
 ### 模型信息
 
 > ✦ **模型信息**
