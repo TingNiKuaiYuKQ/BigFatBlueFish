@@ -15,7 +15,7 @@
 | `model` | `dir` / `file` | `dir` 相对 `main/` 解析，默认 `model/runtime` |
 | `poses` | 姿势名 → 参数表 | 切换姿势时 260ms 补间 |
 | `stateMap` | 会话状态 → 表情/姿势 | `thinking` / `working` / `waiting` / `success` / `error` / `result` / `idle` |
-| `idle` | `breath` / `sway` / `blink` / `gaze` / `headGain` | 引擎自带的待机动画 |
+| `idle` | `breath` / `sway` / `blink` / `gaze` / `headGain` | 待机层（呼吸、摇摆、自然眨眼、视线跟随），由渲染层每帧驱动；`blink:false` 关掉眨眼 |
 | `interact` | `longPressMs` / `sweepMs` / `regions` / `menu` | 右键手势、点击区域、菜单树 |
 | `bubble` | `maxChars` / `defaultMs` / `fontSize` | 气泡 |
 | `behavior` | `enabled` / `gazeMinMs` / `smallMin` / `smallMotions` | 行为状态机 |

@@ -40,10 +40,10 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// node_modules/pixi.js/lib/extensions/Extensions.mjs
+// main/deps/node_modules/pixi.js/lib/extensions/Extensions.mjs
 var ExtensionType, normalizeExtension, normalizeExtensionPriority, extensions;
 var init_Extensions = __esm({
-  "node_modules/pixi.js/lib/extensions/Extensions.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/extensions/Extensions.mjs"() {
     "use strict";
     ExtensionType = /* @__PURE__ */ ((ExtensionType2) => {
       ExtensionType2["Application"] = "application";
@@ -313,9 +313,9 @@ var init_Extensions = __esm({
   }
 });
 
-// node_modules/eventemitter3/index.js
+// main/deps/node_modules/eventemitter3/index.js
 var require_eventemitter3 = __commonJS({
-  "node_modules/eventemitter3/index.js"(exports, module) {
+  "main/deps/node_modules/eventemitter3/index.js"(exports, module) {
     "use strict";
     var has = Object.prototype.hasOwnProperty;
     var prefix = "~";
@@ -475,19 +475,19 @@ var require_eventemitter3 = __commonJS({
   }
 });
 
-// node_modules/eventemitter3/index.mjs
+// main/deps/node_modules/eventemitter3/index.mjs
 var import_index, eventemitter3_default;
 var init_eventemitter3 = __esm({
-  "node_modules/eventemitter3/index.mjs"() {
+  "main/deps/node_modules/eventemitter3/index.mjs"() {
     import_index = __toESM(require_eventemitter3(), 1);
     eventemitter3_default = import_index.default;
   }
 });
 
-// node_modules/@pixi/colord/index.mjs
+// main/deps/node_modules/@pixi/colord/index.mjs
 var r, t, n, e, u, a, o, i, s, h, b, g, d, f, c, l, p, v, m, y, N, x, M, H, $, j, w, S, k;
 var init_colord = __esm({
-  "node_modules/@pixi/colord/index.mjs"() {
+  "main/deps/node_modules/@pixi/colord/index.mjs"() {
     r = { grad: 0.9, turn: 360, rad: 360 / (2 * Math.PI) };
     t = function(r2) {
       return "string" == typeof r2 ? r2.length > 0 : "number" == typeof r2;
@@ -653,7 +653,7 @@ var init_colord = __esm({
   }
 });
 
-// node_modules/@pixi/colord/plugins/names.mjs
+// main/deps/node_modules/@pixi/colord/plugins/names.mjs
 function names_default(e2, f2) {
   var a2 = { white: "#ffffff", bisque: "#ffe4c4", blue: "#0000ff", cadetblue: "#5f9ea0", chartreuse: "#7fff00", chocolate: "#d2691e", coral: "#ff7f50", antiquewhite: "#faebd7", aqua: "#00ffff", azure: "#f0ffff", whitesmoke: "#f5f5f5", papayawhip: "#ffefd5", plum: "#dda0dd", blanchedalmond: "#ffebcd", black: "#000000", gold: "#ffd700", goldenrod: "#daa520", gainsboro: "#dcdcdc", cornsilk: "#fff8dc", cornflowerblue: "#6495ed", burlywood: "#deb887", aquamarine: "#7fffd4", beige: "#f5f5dc", crimson: "#dc143c", cyan: "#00ffff", darkblue: "#00008b", darkcyan: "#008b8b", darkgoldenrod: "#b8860b", darkkhaki: "#bdb76b", darkgray: "#a9a9a9", darkgreen: "#006400", darkgrey: "#a9a9a9", peachpuff: "#ffdab9", darkmagenta: "#8b008b", darkred: "#8b0000", darkorchid: "#9932cc", darkorange: "#ff8c00", darkslateblue: "#483d8b", gray: "#808080", darkslategray: "#2f4f4f", darkslategrey: "#2f4f4f", deeppink: "#ff1493", deepskyblue: "#00bfff", wheat: "#f5deb3", firebrick: "#b22222", floralwhite: "#fffaf0", ghostwhite: "#f8f8ff", darkviolet: "#9400d3", magenta: "#ff00ff", green: "#008000", dodgerblue: "#1e90ff", grey: "#808080", honeydew: "#f0fff0", hotpink: "#ff69b4", blueviolet: "#8a2be2", forestgreen: "#228b22", lawngreen: "#7cfc00", indianred: "#cd5c5c", indigo: "#4b0082", fuchsia: "#ff00ff", brown: "#a52a2a", maroon: "#800000", mediumblue: "#0000cd", lightcoral: "#f08080", darkturquoise: "#00ced1", lightcyan: "#e0ffff", ivory: "#fffff0", lightyellow: "#ffffe0", lightsalmon: "#ffa07a", lightseagreen: "#20b2aa", linen: "#faf0e6", mediumaquamarine: "#66cdaa", lemonchiffon: "#fffacd", lime: "#00ff00", khaki: "#f0e68c", mediumseagreen: "#3cb371", limegreen: "#32cd32", mediumspringgreen: "#00fa9a", lightskyblue: "#87cefa", lightblue: "#add8e6", midnightblue: "#191970", lightpink: "#ffb6c1", mistyrose: "#ffe4e1", moccasin: "#ffe4b5", mintcream: "#f5fffa", lightslategray: "#778899", lightslategrey: "#778899", navajowhite: "#ffdead", navy: "#000080", mediumvioletred: "#c71585", powderblue: "#b0e0e6", palegoldenrod: "#eee8aa", oldlace: "#fdf5e6", paleturquoise: "#afeeee", mediumturquoise: "#48d1cc", mediumorchid: "#ba55d3", rebeccapurple: "#663399", lightsteelblue: "#b0c4de", mediumslateblue: "#7b68ee", thistle: "#d8bfd8", tan: "#d2b48c", orchid: "#da70d6", mediumpurple: "#9370db", purple: "#800080", pink: "#ffc0cb", skyblue: "#87ceeb", springgreen: "#00ff7f", palegreen: "#98fb98", red: "#ff0000", yellow: "#ffff00", slateblue: "#6a5acd", lavenderblush: "#fff0f5", peru: "#cd853f", palevioletred: "#db7093", violet: "#ee82ee", teal: "#008080", slategray: "#708090", slategrey: "#708090", aliceblue: "#f0f8ff", darkseagreen: "#8fbc8f", darkolivegreen: "#556b2f", greenyellow: "#adff2f", seagreen: "#2e8b57", seashell: "#fff5ee", tomato: "#ff6347", silver: "#c0c0c0", sienna: "#a0522d", lavender: "#e6e6fa", lightgreen: "#90ee90", orange: "#ffa500", orangered: "#ff4500", steelblue: "#4682b4", royalblue: "#4169e1", turquoise: "#40e0d0", yellowgreen: "#9acd32", salmon: "#fa8072", saddlebrown: "#8b4513", sandybrown: "#f4a460", rosybrown: "#bc8f8f", darksalmon: "#e9967a", lightgoldenrodyellow: "#fafad2", snow: "#fffafa", lightgrey: "#d3d3d3", lightgray: "#d3d3d3", dimgray: "#696969", dimgrey: "#696969", olivedrab: "#6b8e23", olive: "#808000" }, r2 = {};
   for (var d2 in a2) r2[a2[d2]] = d2;
@@ -678,14 +678,14 @@ function names_default(e2, f2) {
   }, "name"]);
 }
 var init_names = __esm({
-  "node_modules/@pixi/colord/plugins/names.mjs"() {
+  "main/deps/node_modules/@pixi/colord/plugins/names.mjs"() {
   }
 });
 
-// node_modules/pixi.js/lib/color/Color.mjs
+// main/deps/node_modules/pixi.js/lib/color/Color.mjs
 var _Color, Color;
 var init_Color = __esm({
-  "node_modules/pixi.js/lib/color/Color.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/color/Color.mjs"() {
     init_colord();
     init_names();
     k([names_default]);
@@ -1464,10 +1464,10 @@ var init_Color = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/culling/cullingMixin.mjs
+// main/deps/node_modules/pixi.js/lib/culling/cullingMixin.mjs
 var cullingMixin;
 var init_cullingMixin = __esm({
-  "node_modules/pixi.js/lib/culling/cullingMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/culling/cullingMixin.mjs"() {
     "use strict";
     cullingMixin = {
       cullArea: null,
@@ -1477,10 +1477,10 @@ var init_cullingMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/misc/const.mjs
+// main/deps/node_modules/pixi.js/lib/maths/misc/const.mjs
 var PI_2, RAD_TO_DEG, DEG_TO_RAD;
 var init_const = __esm({
-  "node_modules/pixi.js/lib/maths/misc/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/misc/const.mjs"() {
     "use strict";
     PI_2 = Math.PI * 2;
     RAD_TO_DEG = 180 / Math.PI;
@@ -1488,10 +1488,10 @@ var init_const = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/point/Point.mjs
+// main/deps/node_modules/pixi.js/lib/maths/point/Point.mjs
 var Point, tempPoint;
 var init_Point = __esm({
-  "node_modules/pixi.js/lib/maths/point/Point.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/point/Point.mjs"() {
     "use strict";
     Point = class _Point {
       /**
@@ -1668,10 +1668,10 @@ var init_Point = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/matrix/Matrix.mjs
+// main/deps/node_modules/pixi.js/lib/maths/matrix/Matrix.mjs
 var Matrix, tempMatrix, identityMatrix;
 var init_Matrix = __esm({
-  "node_modules/pixi.js/lib/maths/matrix/Matrix.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/matrix/Matrix.mjs"() {
     init_const();
     init_Point();
     Matrix = class _Matrix {
@@ -2476,10 +2476,10 @@ var init_Matrix = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/point/ObservablePoint.mjs
+// main/deps/node_modules/pixi.js/lib/maths/point/ObservablePoint.mjs
 var ObservablePoint;
 var init_ObservablePoint = __esm({
-  "node_modules/pixi.js/lib/maths/point/ObservablePoint.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/point/ObservablePoint.mjs"() {
     "use strict";
     ObservablePoint = class _ObservablePoint {
       /**
@@ -2674,7 +2674,7 @@ var init_ObservablePoint = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/data/uid.mjs
+// main/deps/node_modules/pixi.js/lib/utils/data/uid.mjs
 function uid(name = "default") {
   if (uidCache[name] === void 0) {
     uidCache[name] = -1;
@@ -2688,7 +2688,7 @@ function resetUids() {
 }
 var uidCache;
 var init_uid = __esm({
-  "node_modules/pixi.js/lib/utils/data/uid.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/data/uid.mjs"() {
     "use strict";
     uidCache = {
       default: -1
@@ -2696,10 +2696,10 @@ var init_uid = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/logging/deprecation.mjs
+// main/deps/node_modules/pixi.js/lib/utils/logging/deprecation.mjs
 var warnings, v8_0_0, v8_3_4, v8_21_0, v8_22_0, deprecationState, deprecation;
 var init_deprecation = __esm({
-  "node_modules/pixi.js/lib/utils/logging/deprecation.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/logging/deprecation.mjs"() {
     "use strict";
     warnings = /* @__PURE__ */ new Set();
     v8_0_0 = "8.0.0";
@@ -2757,7 +2757,7 @@ Deprecated since v${version}`;
   }
 });
 
-// node_modules/pixi.js/lib/utils/logging/warn.mjs
+// main/deps/node_modules/pixi.js/lib/utils/logging/warn.mjs
 function warn(...args) {
   if (warnCount === maxWarnings) return;
   warnCount++;
@@ -2769,17 +2769,17 @@ function warn(...args) {
 }
 var warnCount, maxWarnings;
 var init_warn = __esm({
-  "node_modules/pixi.js/lib/utils/logging/warn.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/logging/warn.mjs"() {
     "use strict";
     warnCount = 0;
     maxWarnings = 500;
   }
 });
 
-// node_modules/pixi.js/lib/utils/pool/GlobalResourceRegistry.mjs
+// main/deps/node_modules/pixi.js/lib/utils/pool/GlobalResourceRegistry.mjs
 var GlobalResourceRegistry;
 var init_GlobalResourceRegistry = __esm({
-  "node_modules/pixi.js/lib/utils/pool/GlobalResourceRegistry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/pool/GlobalResourceRegistry.mjs"() {
     "use strict";
     GlobalResourceRegistry = {
       /**
@@ -2831,10 +2831,10 @@ var init_GlobalResourceRegistry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/pool/Pool.mjs
+// main/deps/node_modules/pixi.js/lib/utils/pool/Pool.mjs
 var Pool;
 var init_Pool = __esm({
-  "node_modules/pixi.js/lib/utils/pool/Pool.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/pool/Pool.mjs"() {
     "use strict";
     Pool = class {
       /**
@@ -2922,10 +2922,10 @@ var init_Pool = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/pool/PoolGroup.mjs
+// main/deps/node_modules/pixi.js/lib/utils/pool/PoolGroup.mjs
 var PoolGroupClass, BigPool;
 var init_PoolGroup = __esm({
-  "node_modules/pixi.js/lib/utils/pool/PoolGroup.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/pool/PoolGroup.mjs"() {
     init_GlobalResourceRegistry();
     init_Pool();
     PoolGroupClass = class {
@@ -2997,10 +2997,10 @@ var init_PoolGroup = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/cacheAsTextureMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/cacheAsTextureMixin.mjs
 var cacheAsTextureMixin;
 var init_cacheAsTextureMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/cacheAsTextureMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/cacheAsTextureMixin.mjs"() {
     init_deprecation();
     cacheAsTextureMixin = {
       get isCachedAsTexture() {
@@ -3028,7 +3028,7 @@ var init_cacheAsTextureMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/data/removeItems.mjs
+// main/deps/node_modules/pixi.js/lib/utils/data/removeItems.mjs
 function removeItems(arr, startIdx, removeCount) {
   const length2 = arr.length;
   let i2;
@@ -3043,15 +3043,15 @@ function removeItems(arr, startIdx, removeCount) {
   arr.length = len;
 }
 var init_removeItems = __esm({
-  "node_modules/pixi.js/lib/utils/data/removeItems.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/data/removeItems.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/childrenHelperMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/childrenHelperMixin.mjs
 var childrenHelperMixin;
 var init_childrenHelperMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/childrenHelperMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/childrenHelperMixin.mjs"() {
     init_removeItems();
     init_deprecation();
     childrenHelperMixin = {
@@ -3203,10 +3203,10 @@ var init_childrenHelperMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/collectRenderablesMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/collectRenderablesMixin.mjs
 var collectRenderablesMixin;
 var init_collectRenderablesMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/collectRenderablesMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/collectRenderablesMixin.mjs"() {
     "use strict";
     collectRenderablesMixin = {
       collectRenderables(instructionSet, renderer, currentLayer) {
@@ -3247,10 +3247,10 @@ var init_collectRenderablesMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/FilterEffect.mjs
+// main/deps/node_modules/pixi.js/lib/filters/FilterEffect.mjs
 var FilterEffect;
 var init_FilterEffect = __esm({
-  "node_modules/pixi.js/lib/filters/FilterEffect.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/FilterEffect.mjs"() {
     "use strict";
     FilterEffect = class {
       constructor() {
@@ -3268,10 +3268,10 @@ var init_FilterEffect = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/MaskEffectManager.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/MaskEffectManager.mjs
 var MaskEffectManagerClass, MaskEffectManager;
 var init_MaskEffectManager = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/MaskEffectManager.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/MaskEffectManager.mjs"() {
     init_Extensions();
     init_PoolGroup();
     MaskEffectManagerClass = class {
@@ -3312,10 +3312,10 @@ var init_MaskEffectManager = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/effectsMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/effectsMixin.mjs
 var effectsMixin;
 var init_effectsMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/effectsMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/effectsMixin.mjs"() {
     init_FilterEffect();
     init_MaskEffectManager();
     effectsMixin = {
@@ -3404,10 +3404,10 @@ var init_effectsMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/findMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/findMixin.mjs
 var findMixin;
 var init_findMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/findMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/findMixin.mjs"() {
     init_deprecation();
     findMixin = {
       label: null,
@@ -3458,10 +3458,10 @@ var init_findMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/shapes/Rectangle.mjs
+// main/deps/node_modules/pixi.js/lib/maths/shapes/Rectangle.mjs
 var tempPoints, Rectangle;
 var init_Rectangle = __esm({
-  "node_modules/pixi.js/lib/maths/shapes/Rectangle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/shapes/Rectangle.mjs"() {
     init_Point();
     tempPoints = [new Point(), new Point(), new Point(), new Point()];
     Rectangle = class _Rectangle {
@@ -4097,10 +4097,10 @@ var init_Rectangle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/bounds/Bounds.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/bounds/Bounds.mjs
 var defaultMatrix, Bounds;
 var init_Bounds = __esm({
-  "node_modules/pixi.js/lib/scene/container/bounds/Bounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/bounds/Bounds.mjs"() {
     init_Matrix();
     init_Rectangle();
     defaultMatrix = new Matrix();
@@ -4855,10 +4855,10 @@ var init_Bounds = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/bounds/utils/matrixAndBoundsPool.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/bounds/utils/matrixAndBoundsPool.mjs
 var matrixPool, boundsPool;
 var init_matrixAndBoundsPool = __esm({
-  "node_modules/pixi.js/lib/scene/container/bounds/utils/matrixAndBoundsPool.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/bounds/utils/matrixAndBoundsPool.mjs"() {
     init_Matrix();
     init_PoolGroup();
     init_Bounds();
@@ -4867,10 +4867,10 @@ var init_matrixAndBoundsPool = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/getFastGlobalBoundsMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/getFastGlobalBoundsMixin.mjs
 var tempMatrix2, getFastGlobalBoundsMixin;
 var init_getFastGlobalBoundsMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/getFastGlobalBoundsMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/getFastGlobalBoundsMixin.mjs"() {
     init_Matrix();
     init_Bounds();
     init_matrixAndBoundsPool();
@@ -4941,7 +4941,7 @@ var init_getFastGlobalBoundsMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/bounds/getGlobalBounds.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/bounds/getGlobalBounds.mjs
 function getGlobalBounds(target, skipUpdateTransform, bounds) {
   bounds.clear();
   let parentTransform;
@@ -5013,13 +5013,13 @@ function updateTransformBackwards(target, parentTransform) {
   return parentTransform;
 }
 var init_getGlobalBounds = __esm({
-  "node_modules/pixi.js/lib/scene/container/bounds/getGlobalBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/bounds/getGlobalBounds.mjs"() {
     init_Matrix();
     init_matrixAndBoundsPool();
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/multiplyHexColors.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/multiplyHexColors.mjs
 function multiplyHexColors(color1, color2) {
   if (color1 === 16777215 || !color2) return color2;
   if (color2 === 16777215 || !color1) return color1;
@@ -5035,12 +5035,12 @@ function multiplyHexColors(color1, color2) {
   return (r3 << 16) + (g3 << 8) + b3;
 }
 var init_multiplyHexColors = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/multiplyHexColors.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/multiplyHexColors.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/multiplyColors.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/multiplyColors.mjs
 function multiplyColors(localBGRColor, parentBGRColor) {
   if (localBGRColor === WHITE_BGR) {
     return parentBGRColor;
@@ -5052,19 +5052,19 @@ function multiplyColors(localBGRColor, parentBGRColor) {
 }
 var WHITE_BGR;
 var init_multiplyColors = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/multiplyColors.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/multiplyColors.mjs"() {
     init_multiplyHexColors();
     WHITE_BGR = 16777215;
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/getGlobalMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/getGlobalMixin.mjs
 function bgr2rgb(color) {
   return ((color & 255) << 16) + (color & 65280) + (color >> 16 & 255);
 }
 var getGlobalMixin;
 var init_getGlobalMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/getGlobalMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/getGlobalMixin.mjs"() {
     init_Matrix();
     init_getGlobalBounds();
     init_matrixAndBoundsPool();
@@ -5122,7 +5122,7 @@ var init_getGlobalMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/bounds/getLocalBounds.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/bounds/getLocalBounds.mjs
 function getLocalBounds(target, bounds, relativeMatrix) {
   bounds.clear();
   relativeMatrix || (relativeMatrix = Matrix.IDENTITY);
@@ -5171,13 +5171,13 @@ function _getLocalBounds(target, bounds, parentTransform, rootContainer, isRoot)
   matrixPool.return(relativeTransform);
 }
 var init_getLocalBounds = __esm({
-  "node_modules/pixi.js/lib/scene/container/bounds/getLocalBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/bounds/getLocalBounds.mjs"() {
     init_Matrix();
     init_matrixAndBoundsPool();
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/checkChildrenDidChange.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/checkChildrenDidChange.mjs
 function checkChildrenDidChange(container, previousData) {
   const children = container.children;
   for (let i2 = 0; i2 < children.length; i2++) {
@@ -5198,15 +5198,15 @@ function checkChildrenDidChange(container, previousData) {
   return previousData.didChange;
 }
 var init_checkChildrenDidChange = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/checkChildrenDidChange.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/checkChildrenDidChange.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/measureMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/measureMixin.mjs
 var tempMatrix3, measureMixin;
 var init_measureMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/measureMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/measureMixin.mjs"() {
     init_Matrix();
     init_Bounds();
     init_getGlobalBounds();
@@ -5261,10 +5261,10 @@ var init_measureMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/onRenderMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/onRenderMixin.mjs
 var onRenderMixin;
 var init_onRenderMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/onRenderMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/onRenderMixin.mjs"() {
     "use strict";
     onRenderMixin = {
       _onRender: null,
@@ -5289,13 +5289,13 @@ var init_onRenderMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/sortMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/sortMixin.mjs
 function sortChildren(a2, b2) {
   return a2._zIndex - b2._zIndex;
 }
 var sortMixin;
 var init_sortMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/sortMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/sortMixin.mjs"() {
     "use strict";
     sortMixin = {
       _zIndex: 0,
@@ -5327,10 +5327,10 @@ var init_sortMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/container-mixins/toLocalGlobalMixin.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/toLocalGlobalMixin.mjs
 var toLocalGlobalMixin;
 var init_toLocalGlobalMixin = __esm({
-  "node_modules/pixi.js/lib/scene/container/container-mixins/toLocalGlobalMixin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/container-mixins/toLocalGlobalMixin.mjs"() {
     init_Point();
     init_matrixAndBoundsPool();
     toLocalGlobalMixin = {
@@ -5362,10 +5362,10 @@ var init_toLocalGlobalMixin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/instructions/InstructionSet.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/instructions/InstructionSet.mjs
 var InstructionSet;
 var init_InstructionSet = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/instructions/InstructionSet.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/instructions/InstructionSet.mjs"() {
     init_uid();
     InstructionSet = class {
       constructor() {
@@ -5414,7 +5414,7 @@ var init_InstructionSet = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/misc/pow2.mjs
+// main/deps/node_modules/pixi.js/lib/maths/misc/pow2.mjs
 function nextPow2(v2) {
   v2 += v2 === 0 ? 1 : 0;
   --v2;
@@ -5443,12 +5443,12 @@ function log2(v2) {
   return r2 | v2 >> 1;
 }
 var init_pow2 = __esm({
-  "node_modules/pixi.js/lib/maths/misc/pow2.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/misc/pow2.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/definedProps.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/definedProps.mjs
 function definedProps(obj) {
   const result = {};
   for (const key in obj) {
@@ -5459,12 +5459,12 @@ function definedProps(obj) {
   return result;
 }
 var init_definedProps = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/definedProps.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/definedProps.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureStyle.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureStyle.mjs
 function createResourceIdFromString(value) {
   const id3 = idHash[value];
   if (id3 === void 0) {
@@ -5474,7 +5474,7 @@ function createResourceIdFromString(value) {
 }
 var idHash, _TextureStyle, TextureStyle;
 var init_TextureStyle = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureStyle.mjs"() {
     init_eventemitter3();
     init_uid();
     init_deprecation();
@@ -5566,7 +5566,7 @@ var init_TextureStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/TextureSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/TextureSource.mjs
 function resolveViewDimension(options) {
   if (options.viewDimension) return options.viewDimension;
   if (options.depth) return "3d";
@@ -5596,7 +5596,7 @@ function validateTextureShape(options, viewDimension, dimension) {
 }
 var _TextureSource, TextureSource;
 var init_TextureSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/TextureSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/TextureSource.mjs"() {
     init_eventemitter3();
     init_pow2();
     init_definedProps();
@@ -5897,7 +5897,7 @@ var init_TextureSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/matrix/groupD8.mjs
+// main/deps/node_modules/pixi.js/lib/maths/matrix/groupD8.mjs
 function init() {
   for (let i2 = 0; i2 < 16; i2++) {
     const row = [];
@@ -5923,7 +5923,7 @@ function init() {
 }
 var ux, uy, vx, vy, rotationCayley, rotationMatrices, signum, groupD8;
 var init_groupD8 = __esm({
-  "node_modules/pixi.js/lib/maths/matrix/groupD8.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/matrix/groupD8.mjs"() {
     init_Matrix();
     ux = [1, 1, 0, -1, -1, -1, 0, 1, 1, 1, 0, -1, -1, -1, 0, 1];
     uy = [0, 1, 1, 1, 0, -1, -1, -1, 0, 1, 1, 1, 0, -1, -1, -1];
@@ -6216,30 +6216,30 @@ var init_groupD8 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/misc/NOOP.mjs
+// main/deps/node_modules/pixi.js/lib/utils/misc/NOOP.mjs
 var NOOP;
 var init_NOOP = __esm({
-  "node_modules/pixi.js/lib/utils/misc/NOOP.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/misc/NOOP.mjs"() {
     "use strict";
     NOOP = () => {
     };
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/isIntegerFormat.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/isIntegerFormat.mjs
 function isIntegerFormat(format) {
   return format.endsWith("int");
 }
 var init_isIntegerFormat = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/isIntegerFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/isIntegerFormat.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/BufferImageSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/BufferImageSource.mjs
 var BufferImageSource;
 var init_BufferImageSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/BufferImageSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/BufferImageSource.mjs"() {
     init_Extensions();
     init_isIntegerFormat();
     init_TextureSource();
@@ -6323,10 +6323,10 @@ var init_BufferImageSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureMatrix.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureMatrix.mjs
 var tempMat, TextureMatrix;
 var init_TextureMatrix = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureMatrix.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureMatrix.mjs"() {
     init_Matrix();
     tempMat = new Matrix();
     TextureMatrix = class {
@@ -6423,10 +6423,10 @@ var init_TextureMatrix = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/Texture.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/Texture.mjs
 var Texture;
 var init_Texture = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/Texture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/Texture.mjs"() {
     init_eventemitter3();
     init_groupD8();
     init_Rectangle();
@@ -6598,10 +6598,10 @@ var init_Texture = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/ScreenSizeRegistry.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/ScreenSizeRegistry.mjs
 var ScreenSizeRegistry;
 var init_ScreenSizeRegistry = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/ScreenSizeRegistry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/ScreenSizeRegistry.mjs"() {
     "use strict";
     ScreenSizeRegistry = class {
       constructor() {
@@ -6689,7 +6689,7 @@ var init_ScreenSizeRegistry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/TexturePool.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TexturePool.mjs
 function formatId(format) {
   const id3 = formatIds[format];
   if (id3 !== void 0) return id3;
@@ -6702,7 +6702,7 @@ function bucketKey(width, height, antialias, autoGenerateMipmaps, format, scaleM
 }
 var count, maxKeyDimension, scaleBit, formatBit, formatIds, nextFormatId, TexturePoolClass, TexturePool;
 var init_TexturePool = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/TexturePool.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TexturePool.mjs"() {
     init_pow2();
     init_deprecation();
     init_warn();
@@ -6986,10 +6986,10 @@ var init_TexturePool = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/RenderGroup.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/RenderGroup.mjs
 var RenderGroup;
 var init_RenderGroup = __esm({
-  "node_modules/pixi.js/lib/scene/container/RenderGroup.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/RenderGroup.mjs"() {
     init_Matrix();
     init_InstructionSet();
     init_TexturePool();
@@ -7249,7 +7249,7 @@ var init_RenderGroup = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/assignWithIgnore.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/assignWithIgnore.mjs
 function assignWithIgnore(target, options, ignore = {}) {
   for (const key in options) {
     if (!ignore[key] && options[key] !== void 0) {
@@ -7258,15 +7258,15 @@ function assignWithIgnore(target, options, ignore = {}) {
   }
 }
 var init_assignWithIgnore = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/assignWithIgnore.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/assignWithIgnore.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/Container.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/Container.mjs
 var defaultSkew, defaultPivot, defaultScale, defaultOrigin, UPDATE_COLOR, UPDATE_BLEND, UPDATE_VISIBLE, UPDATE_TRANSFORM, Container;
 var init_Container = __esm({
-  "node_modules/pixi.js/lib/scene/container/Container.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/Container.mjs"() {
     init_eventemitter3();
     init_Color();
     init_cullingMixin();
@@ -8250,10 +8250,10 @@ var init_Container = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/ticker/const.mjs
+// main/deps/node_modules/pixi.js/lib/ticker/const.mjs
 var UPDATE_PRIORITY;
 var init_const2 = __esm({
-  "node_modules/pixi.js/lib/ticker/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/ticker/const.mjs"() {
     "use strict";
     UPDATE_PRIORITY = /* @__PURE__ */ ((UPDATE_PRIORITY2) => {
       UPDATE_PRIORITY2[UPDATE_PRIORITY2["INTERACTION"] = 50] = "INTERACTION";
@@ -8266,10 +8266,10 @@ var init_const2 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/ticker/TickerListener.mjs
+// main/deps/node_modules/pixi.js/lib/ticker/TickerListener.mjs
 var TickerListener;
 var init_TickerListener = __esm({
-  "node_modules/pixi.js/lib/ticker/TickerListener.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/ticker/TickerListener.mjs"() {
     "use strict";
     TickerListener = class {
       /**
@@ -8357,10 +8357,10 @@ var init_TickerListener = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/ticker/Ticker.mjs
+// main/deps/node_modules/pixi.js/lib/ticker/Ticker.mjs
 var _Ticker, Ticker;
 var init_Ticker = __esm({
-  "node_modules/pixi.js/lib/ticker/Ticker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/ticker/Ticker.mjs"() {
     init_const2();
     init_TickerListener();
     _Ticker = class _Ticker2 {
@@ -8878,10 +8878,10 @@ var init_Ticker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/dom/CanvasObserver.mjs
+// main/deps/node_modules/pixi.js/lib/dom/CanvasObserver.mjs
 var CanvasObserver;
 var init_CanvasObserver = __esm({
-  "node_modules/pixi.js/lib/dom/CanvasObserver.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/dom/CanvasObserver.mjs"() {
     init_const2();
     init_Ticker();
     CanvasObserver = class {
@@ -8970,10 +8970,10 @@ var init_CanvasObserver = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/FederatedEvent.mjs
+// main/deps/node_modules/pixi.js/lib/events/FederatedEvent.mjs
 var FederatedEvent;
 var init_FederatedEvent = __esm({
-  "node_modules/pixi.js/lib/events/FederatedEvent.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/FederatedEvent.mjs"() {
     init_Point();
     FederatedEvent = class _FederatedEvent {
       /**
@@ -9129,7 +9129,7 @@ var init_FederatedEvent = __esm({
   }
 });
 
-// node_modules/ismobilejs/esm/isMobile.js
+// main/deps/node_modules/ismobilejs/esm/isMobile.js
 function createMatch(userAgent) {
   return function(regex) {
     return regex.test(userAgent);
@@ -9208,7 +9208,7 @@ function isMobile(param) {
 }
 var appleIphone, appleIpod, appleTablet, appleUniversal, androidPhone, androidTablet, amazonPhone, amazonTablet, windowsPhone, windowsTablet, otherBlackBerry, otherBlackBerry10, otherOpera, otherChrome, otherFirefox, isAppleTabletOnIos13;
 var init_isMobile = __esm({
-  "node_modules/ismobilejs/esm/isMobile.js"() {
+  "main/deps/node_modules/ismobilejs/esm/isMobile.js"() {
     appleIphone = /iPhone/i;
     appleIpod = /iPod/i;
     appleTablet = /iPad/i;
@@ -9230,28 +9230,28 @@ var init_isMobile = __esm({
   }
 });
 
-// node_modules/ismobilejs/esm/index.js
+// main/deps/node_modules/ismobilejs/esm/index.js
 var init_esm = __esm({
-  "node_modules/ismobilejs/esm/index.js"() {
+  "main/deps/node_modules/ismobilejs/esm/index.js"() {
     init_isMobile();
     init_isMobile();
   }
 });
 
-// node_modules/pixi.js/lib/utils/browser/isMobile.mjs
+// main/deps/node_modules/pixi.js/lib/utils/browser/isMobile.mjs
 var isMobileCall, isMobile2;
 var init_isMobile2 = __esm({
-  "node_modules/pixi.js/lib/utils/browser/isMobile.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/browser/isMobile.mjs"() {
     init_esm();
     isMobileCall = isMobile.default ?? isMobile;
     isMobile2 = isMobileCall(globalThis.navigator);
   }
 });
 
-// node_modules/pixi.js/lib/accessibility/AccessibilitySystem.mjs
+// main/deps/node_modules/pixi.js/lib/accessibility/AccessibilitySystem.mjs
 var KEY_CODE_TAB, DIV_TOUCH_SIZE, DIV_TOUCH_POS_X, DIV_TOUCH_POS_Y, DIV_TOUCH_ZINDEX, DIV_HOOK_SIZE, DIV_HOOK_POS_X, DIV_HOOK_POS_Y, DIV_HOOK_ZINDEX, _AccessibilitySystem, AccessibilitySystem;
 var init_AccessibilitySystem = __esm({
-  "node_modules/pixi.js/lib/accessibility/AccessibilitySystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/accessibility/AccessibilitySystem.mjs"() {
     init_CanvasObserver();
     init_FederatedEvent();
     init_Extensions();
@@ -9800,10 +9800,10 @@ var init_AccessibilitySystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/accessibility/accessibilityTarget.mjs
+// main/deps/node_modules/pixi.js/lib/accessibility/accessibilityTarget.mjs
 var accessibilityTarget;
 var init_accessibilityTarget = __esm({
-  "node_modules/pixi.js/lib/accessibility/accessibilityTarget.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/accessibility/accessibilityTarget.mjs"() {
     "use strict";
     accessibilityTarget = {
       accessible: false,
@@ -9821,9 +9821,9 @@ var init_accessibilityTarget = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/accessibility/init.mjs
+// main/deps/node_modules/pixi.js/lib/accessibility/init.mjs
 var init_init = __esm({
-  "node_modules/pixi.js/lib/accessibility/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/accessibility/init.mjs"() {
     init_Extensions();
     init_Container();
     init_AccessibilitySystem();
@@ -9833,10 +9833,10 @@ var init_init = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/dom/DOMPipe.mjs
+// main/deps/node_modules/pixi.js/lib/dom/DOMPipe.mjs
 var DOMPipe;
 var init_DOMPipe = __esm({
-  "node_modules/pixi.js/lib/dom/DOMPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/dom/DOMPipe.mjs"() {
     init_Extensions();
     init_CanvasObserver();
     DOMPipe = class {
@@ -9942,10 +9942,10 @@ var init_DOMPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/view/ViewContainer.mjs
+// main/deps/node_modules/pixi.js/lib/scene/view/ViewContainer.mjs
 var ViewContainer;
 var init_ViewContainer = __esm({
-  "node_modules/pixi.js/lib/scene/view/ViewContainer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/view/ViewContainer.mjs"() {
     init_Bounds();
     init_Container();
     ViewContainer = class extends Container {
@@ -10068,10 +10068,10 @@ var init_ViewContainer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/dom/DOMContainer.mjs
+// main/deps/node_modules/pixi.js/lib/dom/DOMContainer.mjs
 var DOMContainer;
 var init_DOMContainer = __esm({
-  "node_modules/pixi.js/lib/dom/DOMContainer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/dom/DOMContainer.mjs"() {
     init_Point();
     init_ViewContainer();
     DOMContainer = class extends ViewContainer {
@@ -10187,19 +10187,19 @@ var init_DOMContainer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/dom/init.mjs
+// main/deps/node_modules/pixi.js/lib/dom/init.mjs
 var init_init2 = __esm({
-  "node_modules/pixi.js/lib/dom/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/dom/init.mjs"() {
     init_Extensions();
     init_DOMPipe();
     extensions.add(DOMPipe);
   }
 });
 
-// node_modules/pixi.js/lib/events/EventTicker.mjs
+// main/deps/node_modules/pixi.js/lib/events/EventTicker.mjs
 var EventsTickerClass, EventsTicker;
 var init_EventTicker = __esm({
-  "node_modules/pixi.js/lib/events/EventTicker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/EventTicker.mjs"() {
     init_const2();
     init_Ticker();
     EventsTickerClass = class {
@@ -10303,10 +10303,10 @@ var init_EventTicker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/FederatedMouseEvent.mjs
+// main/deps/node_modules/pixi.js/lib/events/FederatedMouseEvent.mjs
 var FederatedMouseEvent;
 var init_FederatedMouseEvent = __esm({
-  "node_modules/pixi.js/lib/events/FederatedMouseEvent.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/FederatedMouseEvent.mjs"() {
     init_Point();
     init_FederatedEvent();
     FederatedMouseEvent = class extends FederatedEvent {
@@ -10444,10 +10444,10 @@ var init_FederatedMouseEvent = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/FederatedPointerEvent.mjs
+// main/deps/node_modules/pixi.js/lib/events/FederatedPointerEvent.mjs
 var FederatedPointerEvent;
 var init_FederatedPointerEvent = __esm({
-  "node_modules/pixi.js/lib/events/FederatedPointerEvent.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/FederatedPointerEvent.mjs"() {
     init_FederatedMouseEvent();
     FederatedPointerEvent = class extends FederatedMouseEvent {
       constructor() {
@@ -10478,10 +10478,10 @@ var init_FederatedPointerEvent = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/FederatedWheelEvent.mjs
+// main/deps/node_modules/pixi.js/lib/events/FederatedWheelEvent.mjs
 var FederatedWheelEvent;
 var init_FederatedWheelEvent = __esm({
-  "node_modules/pixi.js/lib/events/FederatedWheelEvent.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/FederatedWheelEvent.mjs"() {
     init_FederatedMouseEvent();
     FederatedWheelEvent = class extends FederatedMouseEvent {
       constructor() {
@@ -10497,10 +10497,10 @@ var init_FederatedWheelEvent = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/EventBoundary.mjs
+// main/deps/node_modules/pixi.js/lib/events/EventBoundary.mjs
 var PROPAGATION_LIMIT, tempHitLocation, tempLocalMapping, EventBoundary;
 var init_EventBoundary = __esm({
-  "node_modules/pixi.js/lib/events/EventBoundary.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/EventBoundary.mjs"() {
     init_eventemitter3();
     init_Point();
     init_warn();
@@ -11415,10 +11415,10 @@ var init_EventBoundary = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/EventSystem.mjs
+// main/deps/node_modules/pixi.js/lib/events/EventSystem.mjs
 var MOUSE_POINTER_ID, TOUCH_TO_POINTER, _EventSystem, EventSystem;
 var init_EventSystem = __esm({
-  "node_modules/pixi.js/lib/events/EventSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/EventSystem.mjs"() {
     init_Extensions();
     init_EventBoundary();
     init_EventTicker();
@@ -12003,10 +12003,10 @@ var init_EventSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/FederatedEventTarget.mjs
+// main/deps/node_modules/pixi.js/lib/events/FederatedEventTarget.mjs
 var FederatedContainer;
 var init_FederatedEventTarget = __esm({
-  "node_modules/pixi.js/lib/events/FederatedEventTarget.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/FederatedEventTarget.mjs"() {
     init_EventSystem();
     init_FederatedEvent();
     FederatedContainer = {
@@ -12102,9 +12102,9 @@ var init_FederatedEventTarget = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/events/init.mjs
+// main/deps/node_modules/pixi.js/lib/events/init.mjs
 var init_init3 = __esm({
-  "node_modules/pixi.js/lib/events/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/events/init.mjs"() {
     init_Extensions();
     init_Container();
     init_EventSystem();
@@ -12114,10 +12114,10 @@ var init_init3 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/LoaderParser.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/LoaderParser.mjs
 var LoaderParserPriority;
 var init_LoaderParser = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/LoaderParser.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/LoaderParser.mjs"() {
     "use strict";
     LoaderParserPriority = /* @__PURE__ */ ((LoaderParserPriority2) => {
       LoaderParserPriority2[LoaderParserPriority2["Low"] = 0] = "Low";
@@ -12128,10 +12128,10 @@ var init_LoaderParser = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/environment-browser/BrowserAdapter.mjs
+// main/deps/node_modules/pixi.js/lib/environment-browser/BrowserAdapter.mjs
 var BrowserAdapter;
 var init_BrowserAdapter = __esm({
-  "node_modules/pixi.js/lib/environment-browser/BrowserAdapter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment-browser/BrowserAdapter.mjs"() {
     "use strict";
     BrowserAdapter = {
       createCanvas: (width, height) => {
@@ -12155,10 +12155,10 @@ var init_BrowserAdapter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/environment/adapter.mjs
+// main/deps/node_modules/pixi.js/lib/environment/adapter.mjs
 var currentAdapter, DOMAdapter;
 var init_adapter = __esm({
-  "node_modules/pixi.js/lib/environment/adapter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment/adapter.mjs"() {
     init_BrowserAdapter();
     currentAdapter = BrowserAdapter;
     DOMAdapter = {
@@ -12180,7 +12180,7 @@ var init_adapter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/path.mjs
+// main/deps/node_modules/pixi.js/lib/utils/path.mjs
 function assertPath(path2) {
   if (typeof path2 !== "string") {
     throw new TypeError(`Path must be a string. Received ${JSON.stringify(path2)}`);
@@ -12264,7 +12264,7 @@ function normalizeStringPosix(path2, allowAboveRoot) {
 }
 var path;
 var init_path = __esm({
-  "node_modules/pixi.js/lib/utils/path.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/path.mjs"() {
     init_adapter();
     path = {
       /**
@@ -12755,10 +12755,10 @@ var init_path = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/utils/convertToList.mjs
+// main/deps/node_modules/pixi.js/lib/assets/utils/convertToList.mjs
 var convertToList;
 var init_convertToList = __esm({
-  "node_modules/pixi.js/lib/assets/utils/convertToList.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/utils/convertToList.mjs"() {
     "use strict";
     convertToList = (input, transform2, forceTransform = false) => {
       if (!Array.isArray(input)) {
@@ -12777,7 +12777,7 @@ var init_convertToList = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/utils/createStringVariations.mjs
+// main/deps/node_modules/pixi.js/lib/assets/utils/createStringVariations.mjs
 function processX(base, ids, depth, result, tags) {
   const id3 = ids[depth];
   for (let i2 = 0; i2 < id3.length; i2++) {
@@ -12806,27 +12806,27 @@ function createStringVariations(string) {
   return tags;
 }
 var init_createStringVariations = __esm({
-  "node_modules/pixi.js/lib/assets/utils/createStringVariations.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/utils/createStringVariations.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/assets/utils/isSingleItem.mjs
+// main/deps/node_modules/pixi.js/lib/assets/utils/isSingleItem.mjs
 var isSingleItem;
 var init_isSingleItem = __esm({
-  "node_modules/pixi.js/lib/assets/utils/isSingleItem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/utils/isSingleItem.mjs"() {
     "use strict";
     isSingleItem = (item) => !Array.isArray(item);
   }
 });
 
-// node_modules/pixi.js/lib/assets/resolver/Resolver.mjs
+// main/deps/node_modules/pixi.js/lib/assets/resolver/Resolver.mjs
 function getUrlExtension(url) {
   return url.split(".").pop().split("?").shift().split("#").shift();
 }
 var Resolver;
 var init_Resolver = __esm({
-  "node_modules/pixi.js/lib/assets/resolver/Resolver.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/resolver/Resolver.mjs"() {
     init_warn();
     init_path();
     init_convertToList();
@@ -13373,10 +13373,10 @@ var init_Resolver = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/utils/copySearchParams.mjs
+// main/deps/node_modules/pixi.js/lib/assets/utils/copySearchParams.mjs
 var copySearchParams;
 var init_copySearchParams = __esm({
-  "node_modules/pixi.js/lib/assets/utils/copySearchParams.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/utils/copySearchParams.mjs"() {
     "use strict";
     copySearchParams = (targetUrl, sourceUrl) => {
       const searchParams = sourceUrl.split("?")[1];
@@ -13388,10 +13388,10 @@ var init_copySearchParams = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/spritesheet/Spritesheet.mjs
+// main/deps/node_modules/pixi.js/lib/spritesheet/Spritesheet.mjs
 var _Spritesheet, Spritesheet;
 var init_Spritesheet = __esm({
-  "node_modules/pixi.js/lib/spritesheet/Spritesheet.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/spritesheet/Spritesheet.mjs"() {
     init_Rectangle();
     init_TextureSource();
     init_Texture();
@@ -13572,7 +13572,7 @@ var init_Spritesheet = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/spritesheet/spritesheetAsset.mjs
+// main/deps/node_modules/pixi.js/lib/spritesheet/spritesheetAsset.mjs
 function getCacheableAssets(keys2, asset, ignoreMultiPack) {
   const out2 = {};
   keys2.forEach((key) => {
@@ -13592,7 +13592,7 @@ function getCacheableAssets(keys2, asset, ignoreMultiPack) {
 }
 var validImages, spritesheetAsset;
 var init_spritesheetAsset = __esm({
-  "node_modules/pixi.js/lib/spritesheet/spritesheetAsset.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/spritesheet/spritesheetAsset.mjs"() {
     init_LoaderParser();
     init_Resolver();
     init_copySearchParams();
@@ -13731,16 +13731,16 @@ var init_spritesheetAsset = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/spritesheet/init.mjs
+// main/deps/node_modules/pixi.js/lib/spritesheet/init.mjs
 var init_init4 = __esm({
-  "node_modules/pixi.js/lib/spritesheet/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/spritesheet/init.mjs"() {
     init_Extensions();
     init_spritesheetAsset();
     extensions.add(spritesheetAsset);
   }
 });
 
-// node_modules/pixi.js/lib/utils/data/updateQuadBounds.mjs
+// main/deps/node_modules/pixi.js/lib/utils/data/updateQuadBounds.mjs
 function updateQuadBounds(bounds, anchor, texture) {
   const { width, height } = texture.orig;
   const trim = texture.trim;
@@ -13759,15 +13759,15 @@ function updateQuadBounds(bounds, anchor, texture) {
   }
 }
 var init_updateQuadBounds = __esm({
-  "node_modules/pixi.js/lib/utils/data/updateQuadBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/data/updateQuadBounds.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite/Sprite.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite/Sprite.mjs
 var Sprite;
 var init_Sprite = __esm({
-  "node_modules/pixi.js/lib/scene/sprite/Sprite.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite/Sprite.mjs"() {
     init_ObservablePoint();
     init_Texture();
     init_updateQuadBounds();
@@ -14098,7 +14098,7 @@ var init_Sprite = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/utils/addMaskBounds.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/utils/addMaskBounds.mjs
 function addMaskBounds(mask2, bounds, skipUpdateTransform) {
   const boundsToMask = tempBounds;
   mask2.measurable = true;
@@ -14108,14 +14108,14 @@ function addMaskBounds(mask2, bounds, skipUpdateTransform) {
 }
 var tempBounds;
 var init_addMaskBounds = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/utils/addMaskBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/utils/addMaskBounds.mjs"() {
     init_Bounds();
     init_getGlobalBounds();
     tempBounds = new Bounds();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/utils/addMaskLocalBounds.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/utils/addMaskLocalBounds.mjs
 function addMaskLocalBounds(mask2, bounds, localRoot) {
   const boundsToMask = boundsPool.get();
   mask2.measurable = true;
@@ -14140,17 +14140,17 @@ function getMatrixRelativeToParent(target, root, matrix) {
   return matrix;
 }
 var init_addMaskLocalBounds = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/utils/addMaskLocalBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/utils/addMaskLocalBounds.mjs"() {
     init_getLocalBounds();
     init_matrixAndBoundsPool();
     init_warn();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMask.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMask.mjs
 var AlphaMask;
 var init_AlphaMask = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMask.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMask.mjs"() {
     init_Extensions();
     init_Sprite();
     init_addMaskBounds();
@@ -14200,10 +14200,10 @@ var init_AlphaMask = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/color/ColorMask.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/color/ColorMask.mjs
 var ColorMask;
 var init_ColorMask = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/color/ColorMask.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/color/ColorMask.mjs"() {
     init_Extensions();
     ColorMask = class {
       constructor(options) {
@@ -14226,10 +14226,10 @@ var init_ColorMask = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/stencil/StencilMask.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/stencil/StencilMask.mjs
 var StencilMask;
 var init_StencilMask = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/stencil/StencilMask.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/stencil/StencilMask.mjs"() {
     init_Extensions();
     init_Container();
     init_addMaskBounds();
@@ -14274,10 +14274,10 @@ var init_StencilMask = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CanvasSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CanvasSource.mjs
 var CanvasSource;
 var init_CanvasSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CanvasSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CanvasSource.mjs"() {
     init_adapter();
     init_Extensions();
     init_TextureSource();
@@ -14337,10 +14337,10 @@ var init_CanvasSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ImageSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ImageSource.mjs
 var ImageSource;
 var init_ImageSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ImageSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ImageSource.mjs"() {
     init_Extensions();
     init_TextureSource();
     ImageSource = class extends TextureSource {
@@ -14357,7 +14357,7 @@ var init_ImageSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/browser/detectVideoAlphaMode.mjs
+// main/deps/node_modules/pixi.js/lib/utils/browser/detectVideoAlphaMode.mjs
 async function detectVideoAlphaMode() {
   promise ?? (promise = (async () => {
     const canvas = DOMAdapter.get().createCanvas(1, 1);
@@ -14403,15 +14403,15 @@ async function detectVideoAlphaMode() {
 }
 var promise;
 var init_detectVideoAlphaMode = __esm({
-  "node_modules/pixi.js/lib/utils/browser/detectVideoAlphaMode.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/browser/detectVideoAlphaMode.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/VideoSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/VideoSource.mjs
 var _VideoSource, VideoSource;
 var init_VideoSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/VideoSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/VideoSource.mjs"() {
     init_Extensions();
     init_Ticker();
     init_detectVideoAlphaMode();
@@ -14736,10 +14736,10 @@ var init_VideoSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/cache/Cache.mjs
+// main/deps/node_modules/pixi.js/lib/assets/cache/Cache.mjs
 var CacheClass, Cache;
 var init_Cache = __esm({
-  "node_modules/pixi.js/lib/assets/cache/Cache.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/cache/Cache.mjs"() {
     init_warn();
     init_convertToList();
     CacheClass = class {
@@ -14840,7 +14840,7 @@ var init_Cache = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/textureFrom.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/textureFrom.mjs
 function autoDetectSource(options = {}) {
   return textureSourceFrom(options);
 }
@@ -14884,7 +14884,7 @@ function textureFrom(id3, skipCache = false) {
 }
 var sources;
 var init_textureFrom = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/textureFrom.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/textureFrom.mjs"() {
     init_Cache();
     init_Extensions();
     init_TextureSource();
@@ -14896,9 +14896,9 @@ var init_textureFrom = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/init.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/init.mjs
 var init_init5 = __esm({
-  "node_modules/pixi.js/lib/rendering/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/init.mjs"() {
     init_Extensions();
     init_AlphaMask();
     init_ColorMask();
@@ -14920,7 +14920,7 @@ var init_init5 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canUseNewCanvasBlendModes.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canUseNewCanvasBlendModes.mjs
 function createColoredCanvas(color) {
   const canvas = DOMAdapter.get().createCanvas(6, 1);
   const context2 = canvas.getContext("2d");
@@ -14954,15 +14954,15 @@ function canUseNewCanvasBlendModes() {
 }
 var canUseNewCanvasBlendModesValue;
 var init_canUseNewCanvasBlendModes = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canUseNewCanvasBlendModes.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canUseNewCanvasBlendModes.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canvasUtils.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canvasUtils.mjs
 var canvasUtils;
 var init_canvasUtils = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canvasUtils.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/utils/canvasUtils.mjs"() {
     init_Color();
     init_adapter();
     init_groupD8();
@@ -15283,13 +15283,13 @@ var init_canvasUtils = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/CanvasPool.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/CanvasPool.mjs
 function bucketKey2(width, height) {
   return (width << 17) + (height << 2);
 }
 var maxKeyDimension2, CanvasPoolClass, CanvasPool;
 var init_CanvasPool = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/CanvasPool.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/CanvasPool.mjs"() {
     init_adapter();
     init_pow2();
     init_deprecation();
@@ -15437,7 +15437,7 @@ var init_CanvasPool = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/misc/getOrientationOfPoints.mjs
+// main/deps/node_modules/pixi.js/lib/maths/misc/getOrientationOfPoints.mjs
 function getOrientationOfPoints(points) {
   const m2 = points.length;
   if (m2 < 6) {
@@ -15457,12 +15457,12 @@ function getOrientationOfPoints(points) {
   return 1;
 }
 var init_getOrientationOfPoints = __esm({
-  "node_modules/pixi.js/lib/maths/misc/getOrientationOfPoints.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/misc/getOrientationOfPoints.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/maths/misc/squaredDistanceToLineSegment.mjs
+// main/deps/node_modules/pixi.js/lib/maths/misc/squaredDistanceToLineSegment.mjs
 function squaredDistanceToLineSegment(x2, y2, x1, y1, x22, y22) {
   const a2 = x2 - x1;
   const b2 = y2 - y1;
@@ -15491,12 +15491,12 @@ function squaredDistanceToLineSegment(x2, y2, x1, y1, x22, y22) {
   return dx * dx + dy * dy;
 }
 var init_squaredDistanceToLineSegment = __esm({
-  "node_modules/pixi.js/lib/maths/misc/squaredDistanceToLineSegment.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/misc/squaredDistanceToLineSegment.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/maths/point/pointInTriangle.mjs
+// main/deps/node_modules/pixi.js/lib/maths/point/pointInTriangle.mjs
 function pointInTriangle(px, py, x1, y1, x2, y2, x3, y3) {
   const v2x = x3 - x1;
   const v2y = y3 - y1;
@@ -15515,15 +15515,15 @@ function pointInTriangle(px, py, x1, y1, x2, y2, x3, y3) {
   return u2 >= 0 && v2 >= 0 && u2 + v2 < 1;
 }
 var init_pointInTriangle = __esm({
-  "node_modules/pixi.js/lib/maths/point/pointInTriangle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/point/pointInTriangle.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/maths/shapes/Circle.mjs
+// main/deps/node_modules/pixi.js/lib/maths/shapes/Circle.mjs
 var Circle;
 var init_Circle = __esm({
-  "node_modules/pixi.js/lib/maths/shapes/Circle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/shapes/Circle.mjs"() {
     init_Rectangle();
     Circle = class _Circle {
       /**
@@ -15695,10 +15695,10 @@ var init_Circle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/shapes/Ellipse.mjs
+// main/deps/node_modules/pixi.js/lib/maths/shapes/Ellipse.mjs
 var Ellipse;
 var init_Ellipse = __esm({
-  "node_modules/pixi.js/lib/maths/shapes/Ellipse.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/shapes/Ellipse.mjs"() {
     init_Rectangle();
     Ellipse = class _Ellipse {
       /**
@@ -15889,10 +15889,10 @@ var init_Ellipse = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/shapes/Polygon.mjs
+// main/deps/node_modules/pixi.js/lib/maths/shapes/Polygon.mjs
 var tempRect, tempRect2, Polygon;
 var init_Polygon = __esm({
-  "node_modules/pixi.js/lib/maths/shapes/Polygon.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/shapes/Polygon.mjs"() {
     init_deprecation();
     init_getOrientationOfPoints();
     init_squaredDistanceToLineSegment();
@@ -16249,10 +16249,10 @@ var init_Polygon = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/shapes/RoundedRectangle.mjs
+// main/deps/node_modules/pixi.js/lib/maths/shapes/RoundedRectangle.mjs
 var isCornerWithinStroke, RoundedRectangle;
 var init_RoundedRectangle = __esm({
-  "node_modules/pixi.js/lib/maths/shapes/RoundedRectangle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/shapes/RoundedRectangle.mjs"() {
     init_Rectangle();
     isCornerWithinStroke = (pX, pY, cornerX, cornerY, radius, strokeWidthInner, strokeWidthOuter) => {
       const dx = pX - cornerX;
@@ -16511,10 +16511,10 @@ var init_RoundedRectangle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/maths/shapes/Triangle.mjs
+// main/deps/node_modules/pixi.js/lib/maths/shapes/Triangle.mjs
 var Triangle;
 var init_Triangle = __esm({
-  "node_modules/pixi.js/lib/maths/shapes/Triangle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/maths/shapes/Triangle.mjs"() {
     init_squaredDistanceToLineSegment();
     init_Rectangle();
     Triangle = class _Triangle {
@@ -16713,7 +16713,7 @@ var init_Triangle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/bounds/getRenderableBounds.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/bounds/getRenderableBounds.mjs
 function getGlobalRenderableBounds(renderables, bounds) {
   bounds.clear();
   const actualMatrix = bounds.matrix;
@@ -16737,13 +16737,13 @@ function getGlobalRenderableBounds(renderables, bounds) {
 }
 var tempProjectionMatrix;
 var init_getRenderableBounds = __esm({
-  "node_modules/pixi.js/lib/scene/container/bounds/getRenderableBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/bounds/getRenderableBounds.mjs"() {
     init_Matrix();
     tempProjectionMatrix = new Matrix();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/utils/getPo2TextureFromSource.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/utils/getPo2TextureFromSource.mjs
 function getPo2TextureFromSource(image, width, height, resolution, autoGenerateMipmaps = false, scaleMode) {
   const bounds = tempBounds2;
   bounds.minX = 0;
@@ -16768,20 +16768,20 @@ function getPo2TextureFromSource(image, width, height, resolution, autoGenerateM
 }
 var tempBounds2;
 var init_getPo2TextureFromSource = __esm({
-  "node_modules/pixi.js/lib/scene/text/utils/getPo2TextureFromSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/utils/getPo2TextureFromSource.mjs"() {
     init_TexturePool();
     init_Bounds();
     tempBounds2 = new Bounds();
   }
 });
 
-// node_modules/pixi.js/lib/filters/CanvasFilterSystem.mjs
+// main/deps/node_modules/pixi.js/lib/filters/CanvasFilterSystem.mjs
 function isCanvasFilterCapable(filter) {
   return typeof filter.getCanvasFilterString === "function";
 }
 var CanvasFilterFrame, CanvasFilterSystem;
 var init_CanvasFilterSystem = __esm({
-  "node_modules/pixi.js/lib/filters/CanvasFilterSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/CanvasFilterSystem.mjs"() {
     init_Extensions();
     init_canvasUtils();
     init_CanvasPool();
@@ -17032,10 +17032,10 @@ var init_CanvasFilterSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/FilterPipe.mjs
+// main/deps/node_modules/pixi.js/lib/filters/FilterPipe.mjs
 var FilterPipe;
 var init_FilterPipe = __esm({
-  "node_modules/pixi.js/lib/filters/FilterPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/FilterPipe.mjs"() {
     init_Extensions();
     FilterPipe = class {
       constructor(renderer) {
@@ -17082,7 +17082,7 @@ var init_FilterPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/utils/createIdFromString.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/utils/createIdFromString.mjs
 function createIdFromString(value, groupId) {
   let id3 = idHash2[value];
   if (id3 === void 0) {
@@ -17095,14 +17095,14 @@ function createIdFromString(value, groupId) {
 }
 var idCounts, idHash2;
 var init_createIdFromString = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/utils/createIdFromString.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/utils/createIdFromString.mjs"() {
     "use strict";
     idCounts = /* @__PURE__ */ Object.create(null);
     idHash2 = /* @__PURE__ */ Object.create(null);
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getTestContext.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getTestContext.mjs
 function getTestContext() {
   if (!context || context?.isContextLost()) {
     const canvas = DOMAdapter.get().createCanvas();
@@ -17112,12 +17112,12 @@ function getTestContext() {
 }
 var context;
 var init_getTestContext = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getTestContext.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getTestContext.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getMaxFragmentPrecision.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getMaxFragmentPrecision.mjs
 function getMaxFragmentPrecision() {
   if (!maxFragmentPrecision) {
     maxFragmentPrecision = "mediump";
@@ -17133,12 +17133,12 @@ function getMaxFragmentPrecision() {
 }
 var maxFragmentPrecision;
 var init_getMaxFragmentPrecision = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getMaxFragmentPrecision.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getMaxFragmentPrecision.mjs"() {
     init_getTestContext();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/addProgramDefines.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/addProgramDefines.mjs
 function addProgramDefines(src, isES300, isFragment) {
   if (isES300) return src;
   if (isFragment) {
@@ -17163,12 +17163,12 @@ function addProgramDefines(src, isES300, isFragment) {
         `;
 }
 var init_addProgramDefines = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/addProgramDefines.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/addProgramDefines.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/ensurePrecision.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/ensurePrecision.mjs
 function ensurePrecision(src, options, isFragment) {
   const maxSupportedPrecision = isFragment ? options.maxSupportedFragmentPrecision : options.maxSupportedVertexPrecision;
   if (src.substring(0, 9) !== "precision") {
@@ -17198,7 +17198,7 @@ function ensureSamplerPrecision(src, dataPrecision) {
 }
 var unqualifiedSamplerPattern, declaredSamplerPattern, defaultSamplerPrecisions;
 var init_ensurePrecision = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/ensurePrecision.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/ensurePrecision.mjs"() {
     "use strict";
     unqualifiedSamplerPattern = /\buniform\s+([iu]?sampler\w+)/g;
     declaredSamplerPattern = /\bprecision\s+\w+\s+([iu]?sampler\w+)\s*;/g;
@@ -17209,19 +17209,19 @@ var init_ensurePrecision = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/insertVersion.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/insertVersion.mjs
 function insertVersion(src, isES300) {
   if (!isES300) return src;
   return `#version 300 es
 ${src}`;
 }
 var init_insertVersion = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/insertVersion.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/insertVersion.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/setProgramName.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/setProgramName.mjs
 function setProgramName(src, { name = `pixi-program` }, isFragment = true) {
   name = name.replace(/\s+/g, "-");
   name += isFragment ? "-fragment" : "-vertex";
@@ -17239,28 +17239,28 @@ ${src}`;
 }
 var fragmentNameCache, VertexNameCache;
 var init_setProgramName = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/setProgramName.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/setProgramName.mjs"() {
     "use strict";
     fragmentNameCache = {};
     VertexNameCache = {};
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/stripVersion.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/stripVersion.mjs
 function stripVersion(src, isES300) {
   if (!isES300) return src;
   return src.replace("#version 300 es", "");
 }
 var init_stripVersion = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/stripVersion.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/preprocessors/stripVersion.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgram.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgram.mjs
 var processes, programCache, _GlProgram, GlProgram;
 var init_GlProgram = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgram.mjs"() {
     init_createIdFromString();
     init_getMaxFragmentPrecision();
     init_addProgramDefines();
@@ -17349,13 +17349,13 @@ var init_GlProgram = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.mjs
 function getAttributeInfoFromFormat(format) {
   return attributeFormatData[format] ?? attributeFormatData.float32;
 }
 var attributeFormatData;
 var init_getAttributeInfoFromFormat = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getAttributeInfoFromFormat.mjs"() {
     "use strict";
     attributeFormatData = {
       uint8x2: { size: 2, stride: 2, normalised: false },
@@ -17392,7 +17392,7 @@ var init_getAttributeInfoFromFormat = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractAttributesFromGpuProgram.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractAttributesFromGpuProgram.mjs
 function parseLocations(str, results) {
   let match;
   while ((match = LOCATION_REGEX.exec(str)) !== null) {
@@ -17439,7 +17439,7 @@ function extractAttributesFromGpuProgram({ source: source8, entryPoint }) {
 }
 var WGSL_TO_VERTEX_TYPES, LOCATION_REGEX;
 var init_extractAttributesFromGpuProgram = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractAttributesFromGpuProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractAttributesFromGpuProgram.mjs"() {
     init_getAttributeInfoFromFormat();
     WGSL_TO_VERTEX_TYPES = {
       f32: "float32",
@@ -17472,7 +17472,7 @@ var init_extractAttributesFromGpuProgram = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractStructAndGroups.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractStructAndGroups.mjs
 function extractStructAndGroups(wgsl2) {
   const linePattern = /(^|[^/])@(group|binding)\(\d+\)[^;]+;/g;
   const groupPattern = /@group\((\d+)\)/;
@@ -17528,15 +17528,15 @@ function extractStructAndGroups(wgsl2) {
   };
 }
 var init_extractStructAndGroups = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractStructAndGroups.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/extractStructAndGroups.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/const.mjs
 var ShaderStage;
 var init_const3 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/const.mjs"() {
     "use strict";
     ShaderStage = /* @__PURE__ */ ((ShaderStage2) => {
       ShaderStage2[ShaderStage2["VERTEX"] = 1] = "VERTEX";
@@ -17547,7 +17547,7 @@ var init_const3 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateGpuLayoutGroups.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateGpuLayoutGroups.mjs
 function getTextureSampleType(type) {
   if (type.endsWith("<u32>")) {
     return "uint";
@@ -17664,12 +17664,12 @@ function generateGpuLayoutGroups({ groups }) {
   return layout2;
 }
 var init_generateGpuLayoutGroups = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateGpuLayoutGroups.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateGpuLayoutGroups.mjs"() {
     init_const3();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateLayoutHash.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateLayoutHash.mjs
 function generateLayoutHash({ groups }) {
   const layout2 = [];
   for (let i2 = 0; i2 < groups.length; i2++) {
@@ -17682,12 +17682,12 @@ function generateLayoutHash({ groups }) {
   return layout2;
 }
 var init_generateLayoutHash = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateLayoutHash.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateLayoutHash.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/removeStructAndGroupDuplicates.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/removeStructAndGroupDuplicates.mjs
 function removeStructAndGroupDuplicates(vertexStructsAndGroups, fragmentStructsAndGroups) {
   const structNameSet = /* @__PURE__ */ new Set();
   const dupeGroupKeySet = /* @__PURE__ */ new Set();
@@ -17709,15 +17709,15 @@ function removeStructAndGroupDuplicates(vertexStructsAndGroups, fragmentStructsA
   return { structs, groups };
 }
 var init_removeStructAndGroupDuplicates = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/removeStructAndGroupDuplicates.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/removeStructAndGroupDuplicates.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuProgram.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuProgram.mjs
 var programCache2, GpuProgram;
 var init_GpuProgram = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuProgram.mjs"() {
     init_createIdFromString();
     init_extractAttributesFromGpuProgram();
     init_extractStructAndGroups();
@@ -17789,10 +17789,10 @@ var init_GpuProgram = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/BindGroup.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/BindGroup.mjs
 var BindGroup;
 var init_BindGroup = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/BindGroup.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/BindGroup.mjs"() {
     init_warn();
     BindGroup = class {
       /**
@@ -17905,10 +17905,10 @@ var init_BindGroup = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/types.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/types.mjs
 var RendererType;
 var init_types = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/types.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/types.mjs"() {
     "use strict";
     RendererType = /* @__PURE__ */ ((RendererType2) => {
       RendererType2[RendererType2["WEBGL"] = 1] = "WEBGL";
@@ -17920,10 +17920,10 @@ var init_types = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/ShaderOverrides.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/ShaderOverrides.mjs
 var ShaderOverrides;
 var init_ShaderOverrides = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/ShaderOverrides.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/ShaderOverrides.mjs"() {
     init_createIdFromString();
     ShaderOverrides = class _ShaderOverrides {
       /**
@@ -17950,10 +17950,10 @@ var init_ShaderOverrides = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/types.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/types.mjs
 var UNIFORM_TYPES_VALUES, UNIFORM_TYPES_MAP;
 var init_types2 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/types.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/types.mjs"() {
     "use strict";
     UNIFORM_TYPES_VALUES = [
       "f32",
@@ -17985,7 +17985,7 @@ var init_types2 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/getDefaultUniformValue.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/getDefaultUniformValue.mjs
 function getDefaultUniformValue(type, size) {
   switch (type) {
     case "f32":
@@ -18038,15 +18038,15 @@ function getDefaultUniformValue(type, size) {
   return null;
 }
 var init_getDefaultUniformValue = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/getDefaultUniformValue.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/getDefaultUniformValue.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/UniformGroup.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/UniformGroup.mjs
 var _UniformGroup, UniformGroup;
 var init_UniformGroup = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/UniformGroup.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/UniformGroup.mjs"() {
     init_eventemitter3();
     init_uid();
     init_createIdFromString();
@@ -18143,10 +18143,10 @@ var init_UniformGroup = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/Shader.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/Shader.mjs
 var Shader;
 var init_Shader = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/Shader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/Shader.mjs"() {
     init_eventemitter3();
     init_uid();
     init_warn();
@@ -18332,10 +18332,10 @@ var init_Shader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/state/State.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/state/State.mjs
 var blendModeIds, STATE_BITS, BLEND, OFFSET, CULLING, DEPTH_TEST, WINDING, DEPTH_MASK, _State, State;
 var init_State = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/state/State.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/state/State.mjs"() {
     "use strict";
     blendModeIds = {
       normal: 0,
@@ -18498,10 +18498,10 @@ var init_State = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/Filter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/Filter.mjs
 var _Filter, Filter;
 var init_Filter = __esm({
-  "node_modules/pixi.js/lib/filters/Filter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/Filter.mjs"() {
     init_GlProgram();
     init_GpuProgram();
     init_Shader();
@@ -18585,34 +18585,34 @@ var init_Filter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/defaultFilter.vert.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/defaultFilter.vert.mjs
 var vertex;
 var init_defaultFilter_vert = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/defaultFilter.vert.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/defaultFilter.vert.mjs"() {
     vertex = "in vec2 aPosition;\nout vec2 vTextureCoord;\n\nuniform vec4 uInputSize;\nuniform vec4 uOutputFrame;\nuniform vec4 uOutputTexture;\n\nvec4 filterVertexPosition( void )\n{\n    vec2 position = aPosition * uOutputFrame.zw + uOutputFrame.xy;\n    \n    position.x = position.x * (2.0 / uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*uOutputTexture.z / uOutputTexture.y) - uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nvec2 filterTextureCoord( void )\n{\n    return aPosition * (uOutputFrame.zw * uInputSize.zw);\n}\n\nvoid main(void)\n{\n    gl_Position = filterVertexPosition();\n    vTextureCoord = filterTextureCoord();\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.frag.mjs
 var fragment;
 var init_passthrough_frag = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.frag.mjs"() {
     fragment = "in vec2 vTextureCoord;\nout vec4 finalColor;\nuniform sampler2D uTexture;\nvoid main() {\n    finalColor = texture(uTexture, vTextureCoord);\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.wgsl.mjs
 var source;
 var init_passthrough_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/passthrough/passthrough.wgsl.mjs"() {
     source = "struct GlobalFilterUniforms {\n  uInputSize: vec4<f32>,\n  uInputPixel: vec4<f32>,\n  uInputClamp: vec4<f32>,\n  uOutputFrame: vec4<f32>,\n  uGlobalFrame: vec4<f32>,\n  uOutputTexture: vec4<f32>,\n};\n\n@group(0) @binding(0) var <uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler: sampler;\n\nstruct VSOutput {\n  @builtin(position) position: vec4<f32>,\n  @location(0) uv: vec2<f32>\n};\n\nfn filterVertexPosition(aPosition: vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0 * gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord(aPosition: vec2<f32>) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\n@vertex\nfn mainVertex(\n  @location(0) aPosition: vec2<f32>,\n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition)\n  );\n}\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n) -> @location(0) vec4<f32> {\n    return textureSample(uTexture, uSampler, uv);\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/passthrough/PassthroughFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/passthrough/PassthroughFilter.mjs
 var PassthroughFilter;
 var init_PassthroughFilter = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/passthrough/PassthroughFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/passthrough/PassthroughFilter.mjs"() {
     init_GlProgram();
     init_GpuProgram();
     init_Filter();
@@ -18640,10 +18640,10 @@ var init_PassthroughFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/buffer/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/const.mjs
 var BufferUsage;
 var init_const4 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/buffer/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/const.mjs"() {
     "use strict";
     BufferUsage = /* @__PURE__ */ ((BufferUsage2) => {
       BufferUsage2[BufferUsage2["MAP_READ"] = 1] = "MAP_READ";
@@ -18662,10 +18662,10 @@ var init_const4 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/buffer/Buffer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/Buffer.mjs
 var Buffer2;
 var init_Buffer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/buffer/Buffer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/Buffer.mjs"() {
     init_eventemitter3();
     init_uid();
     init_const4();
@@ -18796,7 +18796,7 @@ var init_Buffer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/ensureIsBuffer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/ensureIsBuffer.mjs
 function ensureIsBuffer(buffer, index) {
   if (!(buffer instanceof Buffer2)) {
     let usage = index ? BufferUsage.INDEX : BufferUsage.VERTEX;
@@ -18818,13 +18818,13 @@ function ensureIsBuffer(buffer, index) {
   return buffer;
 }
 var init_ensureIsBuffer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/ensureIsBuffer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/ensureIsBuffer.mjs"() {
     init_Buffer();
     init_const4();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getGeometryBounds.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getGeometryBounds.mjs
 function getGeometryBounds(geometry, attributeId, bounds) {
   const attribute = geometry.getAttribute(attributeId);
   if (!attribute) {
@@ -18857,12 +18857,12 @@ function getGeometryBounds(geometry, attributeId, bounds) {
   return bounds;
 }
 var init_getGeometryBounds = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getGeometryBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/getGeometryBounds.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/Geometry.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/Geometry.mjs
 function ensureIsAttribute(attribute) {
   if (attribute instanceof Buffer2 || Array.isArray(attribute) || attribute.BYTES_PER_ELEMENT) {
     attribute = {
@@ -18874,7 +18874,7 @@ function ensureIsAttribute(attribute) {
 }
 var Geometry;
 var init_Geometry = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/Geometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/Geometry.mjs"() {
     init_eventemitter3();
     init_Bounds();
     init_uid();
@@ -19030,10 +19030,10 @@ var init_Geometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/FilterSystem.mjs
+// main/deps/node_modules/pixi.js/lib/filters/FilterSystem.mjs
 var quadGeometry, FilterData, FilterSystem;
 var init_FilterSystem = __esm({
-  "node_modules/pixi.js/lib/filters/FilterSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/FilterSystem.mjs"() {
     init_Extensions();
     init_PassthroughFilter();
     init_Matrix();
@@ -19566,9 +19566,9 @@ var init_FilterSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/init.mjs
+// main/deps/node_modules/pixi.js/lib/filters/init.mjs
 var init_init6 = __esm({
-  "node_modules/pixi.js/lib/filters/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/init.mjs"() {
     init_Extensions();
     init_CanvasFilterSystem();
     init_FilterPipe();
@@ -19578,10 +19578,10 @@ var init_init6 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/environment-browser/browserAll.mjs
+// main/deps/node_modules/pixi.js/lib/environment-browser/browserAll.mjs
 var browserAll_exports = {};
 var init_browserAll = __esm({
-  "node_modules/pixi.js/lib/environment-browser/browserAll.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment-browser/browserAll.mjs"() {
     init_init();
     init_init2();
     init_init3();
@@ -19591,10 +19591,10 @@ var init_browserAll = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/environment-browser/browserExt.mjs
+// main/deps/node_modules/pixi.js/lib/environment-browser/browserExt.mjs
 var browserExt;
 var init_browserExt = __esm({
-  "node_modules/pixi.js/lib/environment-browser/browserExt.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment-browser/browserExt.mjs"() {
     init_Extensions();
     browserExt = {
       extension: {
@@ -19610,20 +19610,20 @@ var init_browserExt = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs
+// main/deps/node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs
 var webworkerAll_exports = {};
 var init_webworkerAll = __esm({
-  "node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment-webworker/webworkerAll.mjs"() {
     init_init4();
     init_init5();
     init_init6();
   }
 });
 
-// node_modules/pixi.js/lib/environment-webworker/webworkerExt.mjs
+// main/deps/node_modules/pixi.js/lib/environment-webworker/webworkerExt.mjs
 var webworkerExt;
 var init_webworkerExt = __esm({
-  "node_modules/pixi.js/lib/environment-webworker/webworkerExt.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment-webworker/webworkerExt.mjs"() {
     init_Extensions();
     webworkerExt = {
       extension: {
@@ -19639,38 +19639,38 @@ var init_webworkerExt = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/blend-template.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/blend-template.frag.mjs
 var blendTemplateFrag;
 var init_blend_template_frag = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/blend-template.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/blend-template.frag.mjs"() {
     blendTemplateFrag = "\nin vec2 vTextureCoord;\nin vec4 vColor;\n\nout vec4 finalColor;\n\nuniform float uBlend;\n\nuniform sampler2D uTexture;\nuniform sampler2D uBackTexture;\n\n{FUNCTIONS}\n\nvoid main()\n{ \n    vec4 back = texture(uBackTexture, vTextureCoord);\n    vec4 front = texture(uTexture, vTextureCoord);\n    float blendedAlpha = front.a + back.a * (1.0 - front.a);\n    \n    {MAIN}\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/blend-template.vert.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/blend-template.vert.mjs
 var blendTemplateVert;
 var init_blend_template_vert = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/blend-template.vert.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/blend-template.vert.mjs"() {
     blendTemplateVert = "in vec2 aPosition;\nout vec2 vTextureCoord;\nout vec2 backgroundUv;\n\nuniform vec4 uInputSize;\nuniform vec4 uOutputFrame;\nuniform vec4 uOutputTexture;\n\nvec4 filterVertexPosition( void )\n{\n    vec2 position = aPosition * uOutputFrame.zw + uOutputFrame.xy;\n    \n    position.x = position.x * (2.0 / uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*uOutputTexture.z / uOutputTexture.y) - uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nvec2 filterTextureCoord( void )\n{\n    return aPosition * (uOutputFrame.zw * uInputSize.zw);\n}\n\nvoid main(void)\n{\n    gl_Position = filterVertexPosition();\n    vTextureCoord = filterTextureCoord();\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/blend-template.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/blend-template.wgsl.mjs
 var blendTemplate;
 var init_blend_template_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/blend-template.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/blend-template.wgsl.mjs"() {
     blendTemplate = "\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct BlendUniforms {\n  uBlend:f32,\n};\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n@group(0) @binding(3) var uBackTexture: texture_2d<f32>;\n\n@group(1) @binding(0) var<uniform> blendUniforms : BlendUniforms;\n\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>\n  };\n\nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\nfn globalTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return  (aPosition.xy / gfu.uGlobalFrame.zw) + (gfu.uGlobalFrame.xy / gfu.uGlobalFrame.zw);  \n}\n  \n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>, \n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition)\n  );\n}\n\n{FUNCTIONS}\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>\n) -> @location(0) vec4<f32> {\n\n\n   var back =  textureSample(uBackTexture, uSampler, uv);\n   var front = textureSample(uTexture, uSampler, uv);\n   var blendedAlpha = front.a + back.a * (1.0 - front.a);\n   \n   var out = vec4<f32>(0.0,0.0,0.0,0.0);\n\n   {MAIN}\n\n   return out;\n}";
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/BlendModeFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/BlendModeFilter.mjs
 function compileBlendModeShader(options) {
   const { source: source8, functions, main } = options;
   return source8.replace("{FUNCTIONS}", functions).replace("{MAIN}", main);
 }
 var BlendModeFilter;
 var init_BlendModeFilter = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/BlendModeFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/BlendModeFilter.mjs"() {
     init_GlProgram();
     init_GpuProgram();
     init_UniformGroup();
@@ -19719,10 +19719,10 @@ var init_BlendModeFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/hls/GLhls.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/hls/GLhls.mjs
 var hslgl;
 var init_GLhls = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/hls/GLhls.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/hls/GLhls.mjs"() {
     "use strict";
     hslgl = `
 	float getLuminosity(vec3 c) {
@@ -19807,10 +19807,10 @@ var init_GLhls = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/hls/GPUhls.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/hls/GPUhls.mjs
 var hslgpu;
 var init_GPUhls = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/hls/GPUhls.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/hls/GPUhls.mjs"() {
     "use strict";
     hslgpu = `
 	fn getLuminosity(c: vec3<f32>) -> f32
@@ -19913,10 +19913,10 @@ var init_GPUhls = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/ColorBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ColorBlend.mjs
 var ColorBlend;
 var init_ColorBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/ColorBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ColorBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     init_GLhls();
@@ -19960,10 +19960,10 @@ var init_ColorBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/ColorBurnBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ColorBurnBlend.mjs
 var ColorBurnBlend;
 var init_ColorBurnBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/ColorBurnBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ColorBurnBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     ColorBurnBlend = class extends BlendModeFilter {
@@ -20023,10 +20023,10 @@ var init_ColorBurnBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/ColorDodgeBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ColorDodgeBlend.mjs
 var ColorDodgeBlend;
 var init_ColorDodgeBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/ColorDodgeBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ColorDodgeBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     ColorDodgeBlend = class extends BlendModeFilter {
@@ -20086,10 +20086,10 @@ var init_ColorDodgeBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/DarkenBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/DarkenBlend.mjs
 var DarkenBlend;
 var init_DarkenBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/DarkenBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/DarkenBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     DarkenBlend = class extends BlendModeFilter {
@@ -20127,10 +20127,10 @@ var init_DarkenBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/DifferenceBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/DifferenceBlend.mjs
 var DifferenceBlend;
 var init_DifferenceBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/DifferenceBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/DifferenceBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     DifferenceBlend = class extends BlendModeFilter {
@@ -20168,10 +20168,10 @@ var init_DifferenceBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/DivideBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/DivideBlend.mjs
 var DivideBlend;
 var init_DivideBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/DivideBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/DivideBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     DivideBlend = class extends BlendModeFilter {
@@ -20230,10 +20230,10 @@ var init_DivideBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/ExclusionBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ExclusionBlend.mjs
 var ExclusionBlend;
 var init_ExclusionBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/ExclusionBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/ExclusionBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     ExclusionBlend = class extends BlendModeFilter {
@@ -20281,10 +20281,10 @@ var init_ExclusionBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/HardLightBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/HardLightBlend.mjs
 var HardLightBlend;
 var init_HardLightBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/HardLightBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/HardLightBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     HardLightBlend = class extends BlendModeFilter {
@@ -20343,10 +20343,10 @@ var init_HardLightBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/HardMixBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/HardMixBlend.mjs
 var HardMixBlend;
 var init_HardMixBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/HardMixBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/HardMixBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     HardMixBlend = class extends BlendModeFilter {
@@ -20404,10 +20404,10 @@ var init_HardMixBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/LightenBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LightenBlend.mjs
 var LightenBlend;
 var init_LightenBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/LightenBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LightenBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     LightenBlend = class extends BlendModeFilter {
@@ -20445,10 +20445,10 @@ var init_LightenBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/LinearBurnBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LinearBurnBlend.mjs
 var LinearBurnBlend;
 var init_LinearBurnBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/LinearBurnBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LinearBurnBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     LinearBurnBlend = class extends BlendModeFilter {
@@ -20508,10 +20508,10 @@ var init_LinearBurnBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/LinearDodgeBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LinearDodgeBlend.mjs
 var LinearDodgeBlend;
 var init_LinearDodgeBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/LinearDodgeBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LinearDodgeBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     LinearDodgeBlend = class extends BlendModeFilter {
@@ -20568,10 +20568,10 @@ var init_LinearDodgeBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/LinearLightBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LinearLightBlend.mjs
 var LinearLightBlend;
 var init_LinearLightBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/LinearLightBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LinearLightBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     LinearLightBlend = class extends BlendModeFilter {
@@ -20647,10 +20647,10 @@ var init_LinearLightBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/LuminosityBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LuminosityBlend.mjs
 var LuminosityBlend;
 var init_LuminosityBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/LuminosityBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/LuminosityBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     init_GLhls();
@@ -20696,10 +20696,10 @@ var init_LuminosityBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/NegationBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/NegationBlend.mjs
 var NegationBlend;
 var init_NegationBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/NegationBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/NegationBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     NegationBlend = class extends BlendModeFilter {
@@ -20747,10 +20747,10 @@ var init_NegationBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/OverlayBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/OverlayBlend.mjs
 var OverlayBlend;
 var init_OverlayBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/OverlayBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/OverlayBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     OverlayBlend = class extends BlendModeFilter {
@@ -20810,10 +20810,10 @@ var init_OverlayBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/PinLightBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/PinLightBlend.mjs
 var PinLightBlend;
 var init_PinLightBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/PinLightBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/PinLightBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     PinLightBlend = class extends BlendModeFilter {
@@ -20873,10 +20873,10 @@ var init_PinLightBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/SaturationBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/SaturationBlend.mjs
 var SaturationBlend;
 var init_SaturationBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/SaturationBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/SaturationBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     init_GLhls();
@@ -20922,10 +20922,10 @@ var init_SaturationBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/SoftLightBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/SoftLightBlend.mjs
 var SoftLightBlend;
 var init_SoftLightBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/SoftLightBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/SoftLightBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     SoftLightBlend = class extends BlendModeFilter {
@@ -20985,10 +20985,10 @@ var init_SoftLightBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/SubtractBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/SubtractBlend.mjs
 var SubtractBlend;
 var init_SubtractBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/SubtractBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/SubtractBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     SubtractBlend = class extends BlendModeFilter {
@@ -21048,10 +21048,10 @@ var init_SubtractBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/advanced-blend-modes/VividLightBlend.mjs
+// main/deps/node_modules/pixi.js/lib/advanced-blend-modes/VividLightBlend.mjs
 var VividLightBlend;
 var init_VividLightBlend = __esm({
-  "node_modules/pixi.js/lib/advanced-blend-modes/VividLightBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/advanced-blend-modes/VividLightBlend.mjs"() {
     init_Extensions();
     init_BlendModeFilter();
     VividLightBlend = class extends BlendModeFilter {
@@ -21131,7 +21131,7 @@ var init_VividLightBlend = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/environment/autoDetectEnvironment.mjs
+// main/deps/node_modules/pixi.js/lib/environment/autoDetectEnvironment.mjs
 async function loadEnvironmentExtensions(skip) {
   if (skip) return;
   for (let i2 = 0; i2 < environments.length; i2++) {
@@ -21147,14 +21147,14 @@ async function autoDetectEnvironment(add) {
 }
 var environments;
 var init_autoDetectEnvironment = __esm({
-  "node_modules/pixi.js/lib/environment/autoDetectEnvironment.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment/autoDetectEnvironment.mjs"() {
     init_Extensions();
     environments = [];
     extensions.handleByNamedList(ExtensionType.Environment, environments);
   }
 });
 
-// node_modules/pixi.js/lib/utils/browser/unsafeEvalSupported.mjs
+// main/deps/node_modules/pixi.js/lib/utils/browser/unsafeEvalSupported.mjs
 function unsafeEvalSupported() {
   if (typeof unsafeEval === "boolean") {
     return unsafeEval;
@@ -21169,12 +21169,12 @@ function unsafeEvalSupported() {
 }
 var unsafeEval;
 var init_unsafeEvalSupported = __esm({
-  "node_modules/pixi.js/lib/utils/browser/unsafeEvalSupported.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/browser/unsafeEvalSupported.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/earcut/src/earcut.js
+// main/deps/node_modules/earcut/src/earcut.js
 function earcut(data, holeIndices, dim = 2) {
   const hasHoles = holeIndices && holeIndices.length;
   const outerLen = hasHoles ? holeIndices[0] * dim : data.length;
@@ -21680,7 +21680,7 @@ function signedArea(data, start, end, dim) {
 }
 var steiners, filteredOut, indexActive, K, blockBBox, numBlocks, blockHead, blockStop, sortArr, sortBuf, zArr, zBuf, counts;
 var init_earcut = __esm({
-  "node_modules/earcut/src/earcut.js"() {
+  "main/deps/node_modules/earcut/src/earcut.js"() {
     steiners = /* @__PURE__ */ new Set();
     filteredOut = false;
     indexActive = false;
@@ -21697,20 +21697,20 @@ var init_earcut = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/utils.mjs
+// main/deps/node_modules/pixi.js/lib/utils/utils.mjs
 var earcut2;
 var init_utils = __esm({
-  "node_modules/pixi.js/lib/utils/utils.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/utils.mjs"() {
     init_earcut();
     init_eventemitter3();
     earcut2 = earcut.default || earcut;
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/const.mjs
 var CLEAR;
 var init_const5 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/const.mjs"() {
     "use strict";
     CLEAR = /* @__PURE__ */ ((CLEAR2) => {
       CLEAR2[CLEAR2["NONE"] = 0] = "NONE";
@@ -21726,10 +21726,10 @@ var init_const5 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/system/SystemRunner.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/system/SystemRunner.mjs
 var SystemRunner;
 var init_SystemRunner = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/system/SystemRunner.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/system/SystemRunner.mjs"() {
     "use strict";
     SystemRunner = class {
       /**
@@ -21824,10 +21824,10 @@ var init_SystemRunner = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/system/AbstractRenderer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/system/AbstractRenderer.mjs
 var defaultRunners, _AbstractRenderer, AbstractRenderer;
 var init_AbstractRenderer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/system/AbstractRenderer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/system/AbstractRenderer.mjs"() {
     init_Color();
     init_autoDetectEnvironment();
     init_Container();
@@ -22174,7 +22174,7 @@ var init_AbstractRenderer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/browser/isWebGLSupported.mjs
+// main/deps/node_modules/pixi.js/lib/utils/browser/isWebGLSupported.mjs
 function isWebGLSupported(failIfMajorPerformanceCaveat) {
   if (_isWebGLSupported !== void 0) return _isWebGLSupported;
   _isWebGLSupported = (() => {
@@ -22205,13 +22205,13 @@ function isWebGLSupported(failIfMajorPerformanceCaveat) {
 }
 var _isWebGLSupported;
 var init_isWebGLSupported = __esm({
-  "node_modules/pixi.js/lib/utils/browser/isWebGLSupported.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/browser/isWebGLSupported.mjs"() {
     init_adapter();
     init_AbstractRenderer();
   }
 });
 
-// node_modules/pixi.js/lib/utils/browser/isWebGPUSupported.mjs
+// main/deps/node_modules/pixi.js/lib/utils/browser/isWebGPUSupported.mjs
 async function isWebGPUSupported(options = {}) {
   if (_isWebGPUSupported !== void 0) return _isWebGPUSupported;
   _isWebGPUSupported = await (async () => {
@@ -22231,12 +22231,12 @@ async function isWebGPUSupported(options = {}) {
 }
 var _isWebGPUSupported;
 var init_isWebGPUSupported = __esm({
-  "node_modules/pixi.js/lib/utils/browser/isWebGPUSupported.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/browser/isWebGPUSupported.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gpu/getTextureBatchBindGroup.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/getTextureBatchBindGroup.mjs
 function getTextureBatchBindGroup(textures, size, maxTextures) {
   let uid3 = 2166136261;
   for (let i2 = 0; i2 < size; i2++) {
@@ -22260,14 +22260,14 @@ function generateTextureBatchBindGroup(textures, size, key, maxTextures) {
 }
 var cachedGroups;
 var init_getTextureBatchBindGroup = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gpu/getTextureBatchBindGroup.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/getTextureBatchBindGroup.mjs"() {
     init_BindGroup();
     init_Texture();
     cachedGroups = {};
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/addBits.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/addBits.mjs
 function addBits(srcParts, parts, name) {
   if (srcParts) {
     for (const i2 in srcParts) {
@@ -22289,12 +22289,12 @@ function addBits(srcParts, parts, name) {
   }
 }
 var init_addBits = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/addBits.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/addBits.mjs"() {
     init_warn();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileHooks.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileHooks.mjs
 function compileHooks(programSrc) {
   const parts = {};
   const partMatches = programSrc.match(findHooksRx)?.map((hook) => hook.replace(/[{()}]/g, "")) ?? [];
@@ -22305,13 +22305,13 @@ function compileHooks(programSrc) {
 }
 var findHooksRx;
 var init_compileHooks = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileHooks.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileHooks.mjs"() {
     "use strict";
     findHooksRx = /\{\{(.*?)\}\}/g;
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileInputs.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileInputs.mjs
 function extractInputs(fragmentSource, out2) {
   let match;
   const regex = /@in\s+([^;]+);/g;
@@ -22339,12 +22339,12 @@ ${finalString}
   return cleanedString;
 }
 var init_compileInputs = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileInputs.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileInputs.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileOutputs.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileOutputs.mjs
 function extractOutputs(fragmentSource, out2) {
   let match;
   const regex = /@out\s+([^;]+);/g;
@@ -22392,12 +22392,12 @@ ${mainEnd}
   return compiledCode;
 }
 var init_compileOutputs = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileOutputs.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/compileOutputs.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/injectBits.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/injectBits.mjs
 function injectBits(templateSrc, fragmentParts) {
   let out2 = templateSrc;
   for (const i2 in fragmentParts) {
@@ -22414,12 +22414,12 @@ ${parts.join("\n")}
   return out2;
 }
 var init_injectBits = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/injectBits.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/injectBits.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/compileHighShader.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/compileHighShader.mjs
 function compileHighShader({
   template,
   bits
@@ -22472,7 +22472,7 @@ function compileBits(vertex5, fragment8, bits) {
 }
 var cacheMap, bitCacheMap, CACHE_UID;
 var init_compileHighShader = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/compileHighShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/compileHighShader.mjs"() {
     init_addBits();
     init_compileHooks();
     init_compileInputs();
@@ -22484,10 +22484,10 @@ var init_compileHighShader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/defaultProgramTemplate.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/defaultProgramTemplate.mjs
 var vertexGPUTemplate, fragmentGPUTemplate, vertexGlTemplate, fragmentGlTemplate;
 var init_defaultProgramTemplate = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/defaultProgramTemplate.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/defaultProgramTemplate.mjs"() {
     "use strict";
     vertexGPUTemplate = /* wgsl */
     `
@@ -22624,10 +22624,10 @@ var init_defaultProgramTemplate = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/shader-bits/globalUniformsBit.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/globalUniformsBit.mjs
 var globalUniformsBit, globalUniformsUBOBitGl, globalUniformsBitGl;
 var init_globalUniformsBit = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/shader-bits/globalUniformsBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/globalUniformsBit.mjs"() {
     "use strict";
     globalUniformsBit = {
       name: "global-uniforms-bit",
@@ -22680,7 +22680,7 @@ var init_globalUniformsBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compileHighShaderToProgram.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compileHighShaderToProgram.mjs
 function compileHighShaderGpuProgram({ bits, name }) {
   const source8 = compileHighShader({
     template: {
@@ -22720,7 +22720,7 @@ function compileHighShaderGlProgram({ bits, name }) {
   });
 }
 var init_compileHighShaderToProgram = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compileHighShaderToProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compileHighShaderToProgram.mjs"() {
     init_GlProgram();
     init_GpuProgram();
     init_compileHighShader();
@@ -22729,10 +22729,10 @@ var init_compileHighShaderToProgram = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/shader-bits/colorBit.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/colorBit.mjs
 var colorBit, colorBitGl;
 var init_colorBit = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/shader-bits/colorBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/colorBit.mjs"() {
     "use strict";
     colorBit = {
       name: "color-bit",
@@ -22771,7 +22771,7 @@ var init_colorBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/shader-bits/generateTextureBatchBit.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/generateTextureBatchBit.mjs
 function generateBindingSrc(maxTextures) {
   const src = [];
   if (maxTextures === 1) {
@@ -22894,17 +22894,17 @@ function generateTextureBatchBitGl(maxTextures) {
 }
 var textureBatchBitGpuCache, textureBatchBitGlCache;
 var init_generateTextureBatchBit = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/shader-bits/generateTextureBatchBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/generateTextureBatchBit.mjs"() {
     "use strict";
     textureBatchBitGpuCache = {};
     textureBatchBitGlCache = {};
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/shader-bits/localUniformBit.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/localUniformBit.mjs
 var localUniformBit, localUniformBitGroup2, localUniformBitGl;
 var init_localUniformBit = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/shader-bits/localUniformBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/localUniformBit.mjs"() {
     "use strict";
     localUniformBit = {
       name: "local-uniform-bit",
@@ -22981,10 +22981,10 @@ var init_localUniformBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/shader-bits/roundPixelsBit.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/roundPixelsBit.mjs
 var roundPixelsBit, roundPixelsBitGl;
 var init_roundPixelsBit = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/shader-bits/roundPixelsBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/roundPixelsBit.mjs"() {
     "use strict";
     roundPixelsBit = {
       name: "round-pixels-bit",
@@ -23017,10 +23017,10 @@ var init_roundPixelsBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/gpu/GpuGraphicsAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/gpu/GpuGraphicsAdaptor.mjs
 var GpuGraphicsAdaptor;
 var init_GpuGraphicsAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/gpu/GpuGraphicsAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/gpu/GpuGraphicsAdaptor.mjs"() {
     init_Extensions();
     init_Matrix();
     init_getTextureBatchBindGroup();
@@ -23120,10 +23120,10 @@ var init_GpuGraphicsAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/shader-bits/textureBit.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/textureBit.mjs
 var textureBit, textureBitGl;
 var init_textureBit = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/shader-bits/textureBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/shader-bits/textureBit.mjs"() {
     "use strict";
     textureBit = {
       name: "texture-bit",
@@ -23200,10 +23200,10 @@ var init_textureBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/gpu/GpuMeshAdapter.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/gpu/GpuMeshAdapter.mjs
 var GpuMeshAdapter;
 var init_GpuMeshAdapter = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/gpu/GpuMeshAdapter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/gpu/GpuMeshAdapter.mjs"() {
     init_Extensions();
     init_Matrix();
     init_compileHighShaderToProgram();
@@ -23272,10 +23272,10 @@ var init_GpuMeshAdapter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gpu/GpuBatchAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/GpuBatchAdaptor.mjs
 var tempState, GpuBatchAdaptor;
 var init_GpuBatchAdaptor = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gpu/GpuBatchAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/GpuBatchAdaptor.mjs"() {
     init_Extensions();
     init_State();
     init_getTextureBatchBindGroup();
@@ -23340,10 +23340,10 @@ var init_GpuBatchAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/CustomRenderPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/CustomRenderPipe.mjs
 var CustomRenderPipe;
 var init_CustomRenderPipe = __esm({
-  "node_modules/pixi.js/lib/scene/container/CustomRenderPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/CustomRenderPipe.mjs"() {
     init_Extensions();
     CustomRenderPipe = class {
       constructor(renderer) {
@@ -23379,10 +23379,10 @@ var init_CustomRenderPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite/BatchableSprite.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite/BatchableSprite.mjs
 var BatchableSprite;
 var init_BatchableSprite = __esm({
-  "node_modules/pixi.js/lib/scene/sprite/BatchableSprite.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite/BatchableSprite.mjs"() {
     "use strict";
     BatchableSprite = class {
       constructor() {
@@ -23416,7 +23416,7 @@ var init_BatchableSprite = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/executeInstructions.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/executeInstructions.mjs
 function executeInstructions(renderGroup, renderer) {
   const instructionSet = renderGroup.instructionSet;
   const instructions = instructionSet.instructions;
@@ -23426,15 +23426,15 @@ function executeInstructions(renderGroup, renderer) {
   }
 }
 var init_executeInstructions = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/executeInstructions.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/executeInstructions.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/RenderGroupPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/RenderGroupPipe.mjs
 var RenderGroupPipe;
 var init_RenderGroupPipe = __esm({
-  "node_modules/pixi.js/lib/scene/container/RenderGroupPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/RenderGroupPipe.mjs"() {
     init_Extensions();
     init_Matrix();
     init_PoolGroup();
@@ -23526,7 +23526,7 @@ var init_RenderGroupPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/clearList.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/clearList.mjs
 function clearList(list, index) {
   index || (index = 0);
   for (let j2 = index; j2 < list.length; j2++) {
@@ -23538,12 +23538,12 @@ function clearList(list, index) {
   }
 }
 var init_clearList = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/clearList.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/clearList.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/updateRenderGroupTransforms.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/updateRenderGroupTransforms.mjs
 function updateRenderGroupTransforms(renderGroup, updateChildRenderGroups = false) {
   updateRenderGroupTransform(renderGroup);
   const childrenToUpdate = renderGroup.childrenToUpdate;
@@ -23648,7 +23648,7 @@ function updateColorBlendVisibility(container, parent, updateFlags) {
 }
 var tempContainer, UPDATE_BLEND_COLOR_VISIBLE;
 var init_updateRenderGroupTransforms = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/updateRenderGroupTransforms.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/updateRenderGroupTransforms.mjs"() {
     init_Container();
     init_clearList();
     init_multiplyColors();
@@ -23657,7 +23657,7 @@ var init_updateRenderGroupTransforms = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/validateRenderables.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/validateRenderables.mjs
 function validateRenderables(renderGroup, renderPipes4) {
   const { list } = renderGroup.childrenRenderablesToUpdate;
   let rebuildRequired = false;
@@ -23674,15 +23674,15 @@ function validateRenderables(renderGroup, renderPipes4) {
   return rebuildRequired;
 }
 var init_validateRenderables = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/validateRenderables.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/validateRenderables.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/RenderGroupSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/RenderGroupSystem.mjs
 var tempMatrix4, RenderGroupSystem;
 var init_RenderGroupSystem = __esm({
-  "node_modules/pixi.js/lib/scene/container/RenderGroupSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/RenderGroupSystem.mjs"() {
     init_Extensions();
     init_Matrix();
     init_TexturePool();
@@ -23832,10 +23832,10 @@ var init_RenderGroupSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite/SpritePipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite/SpritePipe.mjs
 var SpritePipe;
 var init_SpritePipe = __esm({
-  "node_modules/pixi.js/lib/scene/sprite/SpritePipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite/SpritePipe.mjs"() {
     init_Extensions();
     init_BatchableSprite();
     SpritePipe = class {
@@ -23891,20 +23891,20 @@ var init_SpritePipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/const.mjs
+// main/deps/node_modules/pixi.js/lib/utils/const.mjs
 var DATA_URI, VERSION;
 var init_const6 = __esm({
-  "node_modules/pixi.js/lib/utils/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/const.mjs"() {
     init_eventemitter3();
     DATA_URI = /^\s*data:(?:([\w-]+)\/([\w+.-]+))?(?:;charset=([\w-]+))?(?:;(base64))?,(.*)/i;
     VERSION = "8.22.0";
   }
 });
 
-// node_modules/pixi.js/lib/utils/global/globalHooks.mjs
+// main/deps/node_modules/pixi.js/lib/utils/global/globalHooks.mjs
 var ApplicationInitHook, RendererInitHook;
 var init_globalHooks = __esm({
-  "node_modules/pixi.js/lib/utils/global/globalHooks.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/global/globalHooks.mjs"() {
     init_Extensions();
     init_const6();
     ApplicationInitHook = class {
@@ -23937,10 +23937,10 @@ var init_globalHooks = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/data/ViewableBuffer.mjs
+// main/deps/node_modules/pixi.js/lib/utils/data/ViewableBuffer.mjs
 var ViewableBuffer;
 var init_ViewableBuffer = __esm({
-  "node_modules/pixi.js/lib/utils/data/ViewableBuffer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/data/ViewableBuffer.mjs"() {
     "use strict";
     ViewableBuffer = class {
       constructor(sizeOrBuffer) {
@@ -24045,7 +24045,7 @@ var init_ViewableBuffer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/buffer/utils/fastCopy.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/utils/fastCopy.mjs
 function fastCopy(sourceBuffer, destinationBuffer, sourceOffset, byteLength) {
   sourceOffset ?? (sourceOffset = 0);
   byteLength ?? (byteLength = Math.min(sourceBuffer.byteLength - sourceOffset, destinationBuffer.byteLength));
@@ -24060,15 +24060,15 @@ function fastCopy(sourceBuffer, destinationBuffer, sourceOffset, byteLength) {
   }
 }
 var init_fastCopy = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/buffer/utils/fastCopy.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/utils/fastCopy.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/state/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/state/const.mjs
 var BLEND_TO_NPM, STENCIL_MODES;
 var init_const7 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/state/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/state/const.mjs"() {
     "use strict";
     BLEND_TO_NPM = {
       normal: "normal-npm",
@@ -24087,7 +24087,7 @@ var init_const7 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/state/getAdjustedBlendModeBlend.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/state/getAdjustedBlendModeBlend.mjs
 function getAdjustedBlendModeBlend(blendMode, textureSource) {
   if (textureSource.alphaMode === "no-premultiply-alpha") {
     return BLEND_TO_NPM[blendMode] || blendMode;
@@ -24095,12 +24095,12 @@ function getAdjustedBlendModeBlend(blendMode, textureSource) {
   return blendMode;
 }
 var init_getAdjustedBlendModeBlend = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/state/getAdjustedBlendModeBlend.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/state/getAdjustedBlendModeBlend.mjs"() {
     init_const7();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gl/utils/checkMaxIfStatementsInShader.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gl/utils/checkMaxIfStatementsInShader.mjs
 function generateIfTestSrc(maxIfs) {
   let src = "";
   for (let i2 = 0; i2 < maxIfs; ++i2) {
@@ -24136,7 +24136,7 @@ function checkMaxIfStatementsInShader(maxIfs, gl) {
 }
 var fragTemplate;
 var init_checkMaxIfStatementsInShader = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gl/utils/checkMaxIfStatementsInShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gl/utils/checkMaxIfStatementsInShader.mjs"() {
     "use strict";
     fragTemplate = [
       "precision mediump float;",
@@ -24149,7 +24149,7 @@ var init_checkMaxIfStatementsInShader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gl/utils/maxRecommendedTextures.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gl/utils/maxRecommendedTextures.mjs
 function getMaxTexturesPerBatch() {
   if (maxTexturesPerBatchCache) return maxTexturesPerBatchCache;
   const gl = getTestContext();
@@ -24163,17 +24163,17 @@ function getMaxTexturesPerBatch() {
 }
 var maxTexturesPerBatchCache;
 var init_maxRecommendedTextures = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gl/utils/maxRecommendedTextures.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gl/utils/maxRecommendedTextures.mjs"() {
     init_getTestContext();
     init_checkMaxIfStatementsInShader();
     maxTexturesPerBatchCache = null;
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/shared/BatchTextureArray.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/BatchTextureArray.mjs
 var BatchTextureArray;
 var init_BatchTextureArray = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/shared/BatchTextureArray.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/BatchTextureArray.mjs"() {
     "use strict";
     BatchTextureArray = class {
       constructor() {
@@ -24194,7 +24194,7 @@ var init_BatchTextureArray = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/shared/Batcher.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/Batcher.mjs
 function getBatchFromPool() {
   return batchPoolIndex > 0 ? batchPool[--batchPoolIndex] : new Batch();
 }
@@ -24204,7 +24204,7 @@ function returnBatchToPool(batch) {
 }
 var Batch, batchPool, batchPoolIndex, BATCH_TICK, _Batcher, Batcher;
 var init_Batcher = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/shared/Batcher.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/Batcher.mjs"() {
     init_uid();
     init_ViewableBuffer();
     init_deprecation();
@@ -24565,10 +24565,10 @@ var init_Batcher = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/shared/BatchGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/BatchGeometry.mjs
 var placeHolderBufferData, placeHolderIndexData, BatchGeometry;
 var init_BatchGeometry = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/shared/BatchGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/BatchGeometry.mjs"() {
     init_Buffer();
     init_const4();
     init_Geometry();
@@ -24625,7 +24625,7 @@ var init_BatchGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/getBatchSamplersUniformGroup.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/getBatchSamplersUniformGroup.mjs
 function getBatchSamplersUniformGroup(maxTextures) {
   let batchSamplersUniformGroup = batchSamplersUniformGroupHash[maxTextures];
   if (batchSamplersUniformGroup) return batchSamplersUniformGroup;
@@ -24640,16 +24640,16 @@ function getBatchSamplersUniformGroup(maxTextures) {
 }
 var batchSamplersUniformGroupHash;
 var init_getBatchSamplersUniformGroup = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/getBatchSamplersUniformGroup.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/getBatchSamplersUniformGroup.mjs"() {
     init_UniformGroup();
     batchSamplersUniformGroupHash = {};
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/shared/DefaultShader.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/DefaultShader.mjs
 var DefaultShader;
 var init_DefaultShader = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/shared/DefaultShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/DefaultShader.mjs"() {
     init_compileHighShaderToProgram();
     init_colorBit();
     init_generateTextureBatchBit();
@@ -24687,10 +24687,10 @@ var init_DefaultShader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/shared/DefaultBatcher.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/DefaultBatcher.mjs
 var defaultShader, _DefaultBatcher, DefaultBatcher;
 var init_DefaultBatcher = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/shared/DefaultBatcher.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/DefaultBatcher.mjs"() {
     init_Extensions();
     init_Batcher();
     init_BatchGeometry();
@@ -24813,10 +24813,10 @@ var init_DefaultBatcher = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/shared/BatcherPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/BatcherPipe.mjs
 var _BatcherPipe, BatcherPipe;
 var init_BatcherPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/shared/BatcherPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/shared/BatcherPipe.mjs"() {
     init_Extensions();
     init_State();
     init_DefaultBatcher();
@@ -24934,34 +24934,34 @@ var init_BatcherPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/mask/mask.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/mask/mask.frag.mjs
 var fragment2;
 var init_mask_frag = __esm({
-  "node_modules/pixi.js/lib/filters/mask/mask.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/mask/mask.frag.mjs"() {
     fragment2 = "in vec2 vMaskCoord;\nin vec2 vTextureCoord;\n\nuniform sampler2D uTexture;\nuniform sampler2D uMaskTexture;\n\nuniform float uAlpha;\nuniform vec4 uMaskClamp;\nuniform float uInverse;\nuniform float uChannel;\n\nout vec4 finalColor;\n\nvoid main(void)\n{\n    float clip = step(3.5,\n        step(uMaskClamp.x, vMaskCoord.x) +\n        step(uMaskClamp.y, vMaskCoord.y) +\n        step(vMaskCoord.x, uMaskClamp.z) +\n        step(vMaskCoord.y, uMaskClamp.w));\n\n    // TODO look into why this is needed\n    float npmAlpha = uAlpha;\n    vec4 original = texture(uTexture, vTextureCoord);\n    vec4 masky = texture(uMaskTexture, vMaskCoord);\n\n    float a;\n    if (uChannel == 1.0) {\n        a = masky.a * npmAlpha * clip;\n    } else {\n        float alphaMul = 1.0 - npmAlpha * (1.0 - masky.a);\n        a = alphaMul * masky.r * npmAlpha * clip;\n    }\n\n    if (uInverse == 1.0) {\n        a = 1.0 - a;\n    }\n\n    finalColor = original * a;\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/mask/mask.vert.mjs
+// main/deps/node_modules/pixi.js/lib/filters/mask/mask.vert.mjs
 var vertex2;
 var init_mask_vert = __esm({
-  "node_modules/pixi.js/lib/filters/mask/mask.vert.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/mask/mask.vert.mjs"() {
     vertex2 = "in vec2 aPosition;\n\nout vec2 vTextureCoord;\nout vec2 vMaskCoord;\n\n\nuniform vec4 uInputSize;\nuniform vec4 uOutputFrame;\nuniform vec4 uOutputTexture;\nuniform mat3 uFilterMatrix;\n\nvec4 filterVertexPosition(  vec2 aPosition )\n{\n    vec2 position = aPosition * uOutputFrame.zw + uOutputFrame.xy;\n       \n    position.x = position.x * (2.0 / uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*uOutputTexture.z / uOutputTexture.y) - uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nvec2 filterTextureCoord(  vec2 aPosition )\n{\n    return aPosition * (uOutputFrame.zw * uInputSize.zw);\n}\n\nvec2 getFilterCoord( vec2 aPosition )\n{\n    return  ( uFilterMatrix * vec3( filterTextureCoord(aPosition), 1.0)  ).xy;\n}   \n\nvoid main(void)\n{\n    gl_Position = filterVertexPosition(aPosition);\n    vTextureCoord = filterTextureCoord(aPosition);\n    vMaskCoord = getFilterCoord(aPosition);\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/mask/mask.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/mask/mask.wgsl.mjs
 var source2;
 var init_mask_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/mask/mask.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/mask/mask.wgsl.mjs"() {
     source2 = "struct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct MaskUniforms {\n  uFilterMatrix:mat3x3<f32>,\n  uMaskClamp:vec4<f32>,\n  uAlpha:f32,\n  uInverse:f32,\n  uChannel:f32,\n};\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n\n@group(1) @binding(0) var<uniform> filterUniforms : MaskUniforms;\n@group(1) @binding(1) var uMaskTexture: texture_2d<f32>;\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>,\n    @location(1) filterUv : vec2<f32>,\n};\n\nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\nfn globalTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return  (aPosition.xy / gfu.uGlobalFrame.zw) + (gfu.uGlobalFrame.xy / gfu.uGlobalFrame.zw);\n}\n\nfn getFilterCoord(aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return ( filterUniforms.uFilterMatrix * vec3( filterTextureCoord(aPosition), 1.0)  ).xy;\n}\n\nfn getSize() -> vec2<f32>\n{\n  return gfu.uGlobalFrame.zw;\n}\n\n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>,\n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition),\n   getFilterCoord(aPosition)\n  );\n}\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n  @location(1) filterUv: vec2<f32>,\n  @builtin(position) position: vec4<f32>\n) -> @location(0) vec4<f32> {\n\n    var maskClamp = filterUniforms.uMaskClamp;\n    var uAlpha = filterUniforms.uAlpha;\n\n    var clip = step(3.5,\n      step(maskClamp.x, filterUv.x) +\n      step(maskClamp.y, filterUv.y) +\n      step(filterUv.x, maskClamp.z) +\n      step(filterUv.y, maskClamp.w));\n\n    var mask = textureSample(uMaskTexture, uSampler, filterUv);\n    var source = textureSample(uTexture, uSampler, uv);\n\n    var a: f32;\n    if (filterUniforms.uChannel == 1.0) {\n        a = mask.a * uAlpha * clip;\n    } else {\n        var alphaMul = 1.0 - uAlpha * (1.0 - mask.a);\n        a = alphaMul * mask.r * uAlpha * clip;\n    }\n\n    if (filterUniforms.uInverse == 1.0) {\n        a = 1.0 - a;\n    }\n\n    return source * a;\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/mask/MaskFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/mask/MaskFilter.mjs
 var MaskFilter;
 var init_MaskFilter = __esm({
-  "node_modules/pixi.js/lib/filters/mask/MaskFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/mask/MaskFilter.mjs"() {
     init_Matrix();
     init_GlProgram();
     init_GpuProgram();
@@ -25069,10 +25069,10 @@ var init_MaskFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMaskPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMaskPipe.mjs
 var tempBounds3, AlphaMaskEffect, AlphaMaskPipe;
 var init_AlphaMaskPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMaskPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/alpha/AlphaMaskPipe.mjs"() {
     init_Extensions();
     init_FilterEffect();
     init_MaskFilter();
@@ -25267,10 +25267,10 @@ var init_AlphaMaskPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/color/ColorMaskPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/color/ColorMaskPipe.mjs
 var ColorMaskPipe;
 var init_ColorMaskPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/color/ColorMaskPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/color/ColorMaskPipe.mjs"() {
     init_Extensions();
     ColorMaskPipe = class {
       constructor(renderer) {
@@ -25334,10 +25334,10 @@ var init_ColorMaskPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/stencil/StencilMaskPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/stencil/StencilMaskPipe.mjs
 var StencilMaskPipe;
 var init_StencilMaskPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/stencil/StencilMaskPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/stencil/StencilMaskPipe.mjs"() {
     init_Extensions();
     init_const5();
     init_const7();
@@ -25457,10 +25457,10 @@ var init_StencilMaskPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/background/BackgroundSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/background/BackgroundSystem.mjs
 var _BackgroundSystem, BackgroundSystem;
 var init_BackgroundSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/background/BackgroundSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/background/BackgroundSystem.mjs"() {
     init_Color();
     init_Extensions();
     init_warn();
@@ -25543,10 +25543,10 @@ var init_BackgroundSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/blendModes/BlendModePipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/blendModes/BlendModePipe.mjs
 var BLEND_MODE_FILTERS, BlendModePipe;
 var init_BlendModePipe = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/blendModes/BlendModePipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/blendModes/BlendModePipe.mjs"() {
     init_Extensions();
     init_FilterEffect();
     init_RenderGroup();
@@ -25689,10 +25689,10 @@ var init_BlendModePipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/extract/ExtractSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/extract/ExtractSystem.mjs
 var imageTypes, _ExtractSystem, ExtractSystem;
 var init_ExtractSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/extract/ExtractSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/extract/ExtractSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_Container();
@@ -26068,10 +26068,10 @@ var init_ExtractSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderTexture.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderTexture.mjs
 var RenderTexture;
 var init_RenderTexture = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderTexture.mjs"() {
     init_TextureSource();
     init_Texture();
     RenderTexture = class _RenderTexture extends Texture {
@@ -26107,10 +26107,10 @@ var init_RenderTexture = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/extract/GenerateTextureSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/extract/GenerateTextureSystem.mjs
 var tempRect3, tempBounds4, noColor, GenerateTextureSystem;
 var init_GenerateTextureSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/extract/GenerateTextureSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/extract/GenerateTextureSystem.mjs"() {
     init_Color();
     init_Extensions();
     init_Matrix();
@@ -26220,7 +26220,7 @@ var init_GenerateTextureSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/data/clean.mjs
+// main/deps/node_modules/pixi.js/lib/utils/data/clean.mjs
 function cleanHash(hash) {
   let clean = false;
   for (const i2 in hash) {
@@ -26252,15 +26252,15 @@ function cleanArray(arr) {
   return arr;
 }
 var init_clean = __esm({
-  "node_modules/pixi.js/lib/utils/data/clean.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/data/clean.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/GCSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/GCSystem.mjs
 var _GCSystem, GCSystem;
 var init_GCSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/GCSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/GCSystem.mjs"() {
     init_Extensions();
     init_clean();
     _GCSystem = class _GCSystem2 {
@@ -26579,7 +26579,7 @@ var init_GCSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/gpu/colorToUniform.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/gpu/colorToUniform.mjs
 function colorToUniform(rgb, alpha, out2, offset) {
   out2[offset++] = (rgb >> 16 & 255) / 255;
   out2[offset++] = (rgb >> 8 & 255) / 255;
@@ -26594,15 +26594,15 @@ function color32BitToUniform(abgr, out2, offset) {
   out2[offset++] = alpha;
 }
 var init_colorToUniform = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/gpu/colorToUniform.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/gpu/colorToUniform.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/GlobalUniformSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/GlobalUniformSystem.mjs
 var GlobalUniformSystem;
 var init_GlobalUniformSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/GlobalUniformSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/GlobalUniformSystem.mjs"() {
     init_Extensions();
     init_Matrix();
     init_Point();
@@ -26734,10 +26734,10 @@ var init_GlobalUniformSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/SchedulerSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/SchedulerSystem.mjs
 var uid2, SchedulerSystem;
 var init_SchedulerSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/SchedulerSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/SchedulerSystem.mjs"() {
     init_Extensions();
     init_Ticker();
     uid2 = 1;
@@ -26823,7 +26823,7 @@ var init_SchedulerSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/sayHello.mjs
+// main/deps/node_modules/pixi.js/lib/utils/sayHello.mjs
 function sayHello(type) {
   if (saidHello) {
     return;
@@ -26848,17 +26848,17 @@ function sayHello(type) {
 }
 var saidHello;
 var init_sayHello = __esm({
-  "node_modules/pixi.js/lib/utils/sayHello.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/sayHello.mjs"() {
     init_adapter();
     init_const6();
     saidHello = false;
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/startup/HelloSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/startup/HelloSystem.mjs
 var HelloSystem;
 var init_HelloSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/startup/HelloSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/startup/HelloSystem.mjs"() {
     init_Extensions();
     init_sayHello();
     init_types();
@@ -26896,10 +26896,10 @@ var init_HelloSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderableGCSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderableGCSystem.mjs
 var _RenderableGCSystem, RenderableGCSystem;
 var init_RenderableGCSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderableGCSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/RenderableGCSystem.mjs"() {
     init_Extensions();
     init_deprecation();
     _RenderableGCSystem = class _RenderableGCSystem2 {
@@ -26996,10 +26996,10 @@ var init_RenderableGCSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureGCSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureGCSystem.mjs
 var _TextureGCSystem, TextureGCSystem;
 var init_TextureGCSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureGCSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureGCSystem.mjs"() {
     init_Extensions();
     init_deprecation();
     _TextureGCSystem = class _TextureGCSystem2 {
@@ -27121,10 +27121,10 @@ var init_TextureGCSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTarget.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTarget.mjs
 var _RenderTarget, RenderTarget;
 var init_RenderTarget = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTarget.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTarget.mjs"() {
     init_eventemitter3();
     init_uid();
     init_TextureSource();
@@ -27353,7 +27353,7 @@ var init_RenderTarget = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getCanvasTexture.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getCanvasTexture.mjs
 function getCanvasTexture(canvas, options) {
   if (!canvasCache.has(canvas)) {
     const texture = new Texture({
@@ -27378,7 +27378,7 @@ function hasCachedCanvasTexture(canvas) {
 }
 var canvasCache;
 var init_getCanvasTexture = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getCanvasTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getCanvasTexture.mjs"() {
     init_GlobalResourceRegistry();
     init_CanvasSource();
     init_Texture();
@@ -27387,10 +27387,10 @@ var init_getCanvasTexture = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/view/ViewSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/view/ViewSystem.mjs
 var _ViewSystem, ViewSystem;
 var init_ViewSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/view/ViewSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/view/ViewSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_Rectangle();
@@ -27528,10 +27528,10 @@ var init_ViewSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/system/SharedSystems.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/system/SharedSystems.mjs
 var SharedSystems, SharedRenderPipes;
 var init_SharedSystems = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/system/SharedSystems.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/system/SharedSystems.mjs"() {
     init_CustomRenderPipe();
     init_RenderGroupPipe();
     init_RenderGroupSystem();
@@ -27579,10 +27579,10 @@ var init_SharedSystems = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/BindGroupSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/BindGroupSystem.mjs
 var GpuBindGroupEntry, BindGroupSystem;
 var init_BindGroupSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/BindGroupSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/BindGroupSystem.mjs"() {
     init_Extensions();
     GpuBindGroupEntry = class {
       constructor(gpuBindGroup, now) {
@@ -27691,10 +27691,10 @@ var init_BindGroupSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/data/GCManagedHash.mjs
+// main/deps/node_modules/pixi.js/lib/utils/data/GCManagedHash.mjs
 var GCManagedHash;
 var init_GCManagedHash = __esm({
-  "node_modules/pixi.js/lib/utils/data/GCManagedHash.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/data/GCManagedHash.mjs"() {
     "use strict";
     GCManagedHash = class {
       constructor(options) {
@@ -27740,10 +27740,10 @@ var init_GCManagedHash = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/GpuBufferSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/GpuBufferSystem.mjs
 var GpuBufferData, GpuBufferSystem;
 var init_GpuBufferSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/GpuBufferSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/GpuBufferSystem.mjs"() {
     init_Extensions();
     init_GCManagedHash();
     init_fastCopy();
@@ -27837,10 +27837,10 @@ var init_GpuBufferSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuColorMaskSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuColorMaskSystem.mjs
 var GpuColorMaskSystem;
 var init_GpuColorMaskSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuColorMaskSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuColorMaskSystem.mjs"() {
     init_Extensions();
     GpuColorMaskSystem = class {
       constructor(renderer) {
@@ -27866,10 +27866,10 @@ var init_GpuColorMaskSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuDeviceSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuDeviceSystem.mjs
 var tileBasedVendors, GpuDeviceSystem;
 var init_GpuDeviceSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuDeviceSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuDeviceSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_warn();
@@ -27977,10 +27977,10 @@ var init_GpuDeviceSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/RenderBundle.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/RenderBundle.mjs
 var RenderBundle;
 var init_RenderBundle = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/RenderBundle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/RenderBundle.mjs"() {
     "use strict";
     RenderBundle = class {
       /**
@@ -27999,10 +27999,10 @@ var init_RenderBundle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuEncoderSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuEncoderSystem.mjs
 var GpuEncoderSystem;
 var init_GpuEncoderSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuEncoderSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuEncoderSystem.mjs"() {
     init_Extensions();
     init_warn();
     init_RenderBundle();
@@ -28312,10 +28312,10 @@ var init_GpuEncoderSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuLimitsSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuLimitsSystem.mjs
 var GpuLimitsSystem;
 var init_GpuLimitsSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuLimitsSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuLimitsSystem.mjs"() {
     init_Extensions();
     GpuLimitsSystem = class {
       constructor(renderer) {
@@ -28360,10 +28360,10 @@ var init_GpuLimitsSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuStencilSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuStencilSystem.mjs
 var GpuStencilSystem;
 var init_GpuStencilSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuStencilSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuStencilSystem.mjs"() {
     init_Extensions();
     GpuStencilSystem = class {
       constructor(renderer) {
@@ -28403,10 +28403,10 @@ var init_GpuStencilSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/UboSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/UboSystem.mjs
 var UboSystem;
 var init_UboSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/UboSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/UboSystem.mjs"() {
     init_unsafeEvalSupported();
     init_Buffer();
     init_const4();
@@ -28482,7 +28482,7 @@ var init_UboSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboElementsWGSL.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboElementsWGSL.mjs
 function createUboElementsWGSL(uniformData) {
   const uboElements = uniformData.map((data) => ({
     data,
@@ -28510,7 +28510,7 @@ function createUboElementsWGSL(uniformData) {
 }
 var WGSL_ALIGN_SIZE_DATA;
 var init_createUboElementsWGSL = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboElementsWGSL.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboElementsWGSL.mjs"() {
     "use strict";
     WGSL_ALIGN_SIZE_DATA = {
       i32: { align: 4, size: 4 },
@@ -28551,10 +28551,10 @@ var init_createUboElementsWGSL = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uniformParsers.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uniformParsers.mjs
 var uniformParsers;
 var init_uniformParsers = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uniformParsers.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uniformParsers.mjs"() {
     "use strict";
     uniformParsers = [
       // uploading pixi matrix object to mat3
@@ -28670,7 +28670,7 @@ var init_uniformParsers = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/compileBufferSync.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/compileBufferSync.mjs
 function compileBufferSync(uboElements, singleSettersMap, arrayGenerationFunction) {
   const funcFragments = [`
         var v = null;
@@ -28728,12 +28728,12 @@ function compileBufferSync(uboElements, singleSettersMap, arrayGenerationFunctio
   );
 }
 var init_compileBufferSync = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/compileBufferSync.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/compileBufferSync.mjs"() {
     init_uniformParsers();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uboSyncFunctions.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uboSyncFunctions.mjs
 function loopMatrix(col, row) {
   const total = col * row;
   return `
@@ -28744,7 +28744,7 @@ function loopMatrix(col, row) {
 }
 var uboSyncFunctionsSTD40, uboSyncFunctionsWGSL;
 var init_uboSyncFunctions = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uboSyncFunctions.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/shader/utils/uboSyncFunctions.mjs"() {
     "use strict";
     uboSyncFunctionsSTD40 = {
       f32: `
@@ -28827,7 +28827,7 @@ var init_uboSyncFunctions = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateArraySyncWGSL.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateArraySyncWGSL.mjs
 function generateArraySyncWGSL(uboElement, offsetToAdd) {
   const { size, align } = WGSL_ALIGN_SIZE_DATA[uboElement.data.type];
   const remainder = (Math.max(size, align) - size) / 4;
@@ -28851,12 +28851,12 @@ function generateArraySyncWGSL(uboElement, offsetToAdd) {
      `;
 }
 var init_generateArraySyncWGSL = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateArraySyncWGSL.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/generateArraySyncWGSL.mjs"() {
     init_createUboElementsWGSL();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboSyncFunctionWGSL.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboSyncFunctionWGSL.mjs
 function createUboSyncFunctionWGSL(uboElements) {
   return compileBufferSync(
     uboElements,
@@ -28865,17 +28865,17 @@ function createUboSyncFunctionWGSL(uboElements) {
   );
 }
 var init_createUboSyncFunctionWGSL = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboSyncFunctionWGSL.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/utils/createUboSyncFunctionWGSL.mjs"() {
     init_compileBufferSync();
     init_uboSyncFunctions();
     init_generateArraySyncWGSL();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUboSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUboSystem.mjs
 var GpuUboSystem;
 var init_GpuUboSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUboSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUboSystem.mjs"() {
     init_Extensions();
     init_UboSystem();
     init_createUboElementsWGSL();
@@ -28895,10 +28895,10 @@ var init_GpuUboSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/buffer/BufferResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/BufferResource.mjs
 var BufferResource;
 var init_BufferResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/buffer/BufferResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/buffer/BufferResource.mjs"() {
     init_eventemitter3();
     init_uid();
     BufferResource = class extends eventemitter3_default {
@@ -28957,10 +28957,10 @@ var init_BufferResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/UboBatch.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/UboBatch.mjs
 var UboBatch;
 var init_UboBatch = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/UboBatch.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/buffer/UboBatch.mjs"() {
     "use strict";
     UboBatch = class {
       constructor({ minUniformOffsetAlignment: minUniformOffsetAlignment2 }) {
@@ -28999,10 +28999,10 @@ var init_UboBatch = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUniformBatchPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUniformBatchPipe.mjs
 var minUniformOffsetAlignment, GpuUniformBatchPipe;
 var init_GpuUniformBatchPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUniformBatchPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/GpuUniformBatchPipe.mjs"() {
     init_Extensions();
     init_Buffer();
     init_BufferResource();
@@ -29128,7 +29128,7 @@ var init_GpuUniformBatchPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/ensureAttributes.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/ensureAttributes.mjs
 function ensureAttributes(geometry, extractedData) {
   for (const i2 in geometry.attributes) {
     const attribute = geometry.attributes[i2];
@@ -29164,16 +29164,16 @@ function ensureStartAndStride(geometry) {
   }
 }
 var init_ensureAttributes = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/ensureAttributes.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/ensureAttributes.mjs"() {
     init_warn();
     init_getAttributeInfoFromFormat();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStencilModesToPixi.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStencilModesToPixi.mjs
 var GpuStencilModesToPixi;
 var init_GpuStencilModesToPixi = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStencilModesToPixi.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStencilModesToPixi.mjs"() {
     init_const7();
     GpuStencilModesToPixi = [];
     GpuStencilModesToPixi[STENCIL_MODES.NONE] = void 0;
@@ -29226,7 +29226,7 @@ var init_GpuStencilModesToPixi = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/pipeline/PipelineSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/pipeline/PipelineSystem.mjs
 function bakeOverridesIntoSource(source8, overrides) {
   for (const [name, value] of Object.entries(overrides)) {
     const re = new RegExp(
@@ -29258,7 +29258,7 @@ function getBundleStateKey(multiSampleCount, colorTargetCount, depthStencilForma
 }
 var topologyStringToId, emptyOverrides, depthStencilFormatMap, emptyDepthStencilFormatData, colorFormatIds, nextColorFormatId, PipelineSystem;
 var init_PipelineSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/pipeline/PipelineSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/pipeline/PipelineSystem.mjs"() {
     init_Extensions();
     init_warn();
     init_ensureAttributes();
@@ -29647,7 +29647,7 @@ var init_PipelineSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/calculateProjection.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/calculateProjection.mjs
 function calculateProjection(pm, x2, y2, width, height, flipY) {
   const sign2 = flipY ? 1 : -1;
   pm.identity();
@@ -29658,27 +29658,27 @@ function calculateProjection(pm, x2, y2, width, height, flipY) {
   return pm;
 }
 var init_calculateProjection = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/calculateProjection.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/calculateProjection.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/isRenderingToScreen.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/isRenderingToScreen.mjs
 function isRenderingToScreen(renderTarget) {
   if (renderTarget.colorAttachments.length === 0) return false;
   const resource = renderTarget.colorTexture.resource;
   return globalThis.HTMLCanvasElement && resource instanceof HTMLCanvasElement && document.body.contains(resource);
 }
 var init_isRenderingToScreen = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/isRenderingToScreen.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/isRenderingToScreen.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTargetSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTargetSystem.mjs
 var RenderTargetSystem;
 var init_RenderTargetSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTargetSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/renderTarget/RenderTargetSystem.mjs"() {
     init_Matrix();
     init_Rectangle();
     init_deprecation();
@@ -30217,10 +30217,10 @@ var init_RenderTargetSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuMsaaRestore.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuMsaaRestore.mjs
 var GpuMsaaRestore;
 var init_GpuMsaaRestore = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuMsaaRestore.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuMsaaRestore.mjs"() {
     init_TextureSource();
     GpuMsaaRestore = class {
       constructor(renderer) {
@@ -30352,10 +30352,10 @@ var init_GpuMsaaRestore = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTarget.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTarget.mjs
 var GpuRenderTarget;
 var init_GpuRenderTarget = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTarget.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTarget.mjs"() {
     init_const7();
     GpuRenderTarget = class {
       constructor() {
@@ -30373,7 +30373,7 @@ var init_GpuRenderTarget = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetAdaptor.mjs
 function getCanvasContextFormat(format) {
   if (canvasAllowedFormats[format]) return format;
   const preferred = navigator.gpu.getPreferredCanvasFormat();
@@ -30382,7 +30382,7 @@ function getCanvasContextFormat(format) {
 }
 var canvasAllowedFormats, GpuRenderTargetAdaptor;
 var init_GpuRenderTargetAdaptor = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetAdaptor.mjs"() {
     init_warn();
     init_const5();
     init_CanvasSource();
@@ -30778,10 +30778,10 @@ var init_GpuRenderTargetAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetSystem.mjs
 var GpuRenderTargetSystem;
 var init_GpuRenderTargetSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/renderTarget/GpuRenderTargetSystem.mjs"() {
     init_Extensions();
     init_RenderTargetSystem();
     init_GpuRenderTargetAdaptor();
@@ -30799,10 +30799,10 @@ var init_GpuRenderTargetSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuShaderSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuShaderSystem.mjs
 var GpuShaderSystem;
 var init_GpuShaderSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuShaderSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/shader/GpuShaderSystem.mjs"() {
     init_Extensions();
     GpuShaderSystem = class {
       constructor() {
@@ -30839,10 +30839,10 @@ var init_GpuShaderSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuBlendModesToPixi.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuBlendModesToPixi.mjs
 var GpuBlendModesToPixi;
 var init_GpuBlendModesToPixi = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuBlendModesToPixi.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuBlendModesToPixi.mjs"() {
     "use strict";
     GpuBlendModesToPixi = {};
     GpuBlendModesToPixi.normal = {
@@ -30992,10 +30992,10 @@ var init_GpuBlendModesToPixi = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStateSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStateSystem.mjs
 var GpuStateSystem;
 var init_GpuStateSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStateSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/state/GpuStateSystem.mjs"() {
     init_Extensions();
     init_State();
     init_GpuBlendModesToPixi();
@@ -31038,7 +31038,7 @@ var init_GpuStateSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getTexelRangeRects.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getTexelRangeRects.mjs
 function getTexelRangeRects(start, end, width, height, out2) {
   start = Math.max(0, start);
   end = Math.min(end, width * height);
@@ -31066,15 +31066,15 @@ function getTexelRangeRects(start, end, width, height, out2) {
   return count2;
 }
 var init_getTexelRangeRects = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getTexelRangeRects.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getTexelRangeRects.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.mjs
 var tempRects, gpuUploadBufferImageResource;
 var init_gpuUploadBufferImageResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadBufferImageResource.mjs"() {
     init_Rectangle();
     init_getTexelRangeRects();
     tempRects = [new Rectangle(), new Rectangle(), new Rectangle()];
@@ -31118,10 +31118,10 @@ var init_gpuUploadBufferImageResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.mjs
 var blockDataMap, defaultBlockData, gpuUploadCompressedTextureResource;
 var init_gpuUploadCompressedTextureResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCompressedTextureResource.mjs"() {
     "use strict";
     blockDataMap = {
       "bc1-rgba-unorm": { blockBytes: 8, blockWidth: 4, blockHeight: 4 },
@@ -31167,7 +31167,7 @@ var init_gpuUploadCompressedTextureResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCubeTextureResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCubeTextureResource.mjs
 function createGpuUploadCubeTextureResource(uploaders) {
   return {
     type: "cube",
@@ -31184,16 +31184,16 @@ function createGpuUploadCubeTextureResource(uploaders) {
 }
 var FACE_ORDER;
 var init_gpuUploadCubeTextureResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCubeTextureResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadCubeTextureResource.mjs"() {
     "use strict";
     FACE_ORDER = ["right", "left", "top", "bottom", "front", "back"];
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadImageSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadImageSource.mjs
 var gpuUploadImageResource;
 var init_gpuUploadImageSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadImageSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadImageSource.mjs"() {
     init_adapter();
     init_warn();
     gpuUploadImageResource = {
@@ -31224,10 +31224,10 @@ var init_gpuUploadImageSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadVideoSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadVideoSource.mjs
 var gpuUploadVideoResource;
 var init_gpuUploadVideoSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadVideoSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/uploaders/gpuUploadVideoSource.mjs"() {
     init_gpuUploadImageSource();
     gpuUploadVideoResource = {
       type: "video",
@@ -31238,7 +31238,7 @@ var init_gpuUploadVideoSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/Gpu3dMipmapGenerator.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/Gpu3dMipmapGenerator.mjs
 function assertMipmap3dTexture(format, storage) {
   if (!storage) {
     throw new Error("[Gpu3dMipmapGenerator] generating mipmaps for a 3D texture needs storage: true.");
@@ -31249,7 +31249,7 @@ function assertMipmap3dTexture(format, storage) {
 }
 var MIPMAP_3D_FORMATS, WORKGROUP_SIZE, Gpu3dMipmapGenerator;
 var init_Gpu3dMipmapGenerator = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/Gpu3dMipmapGenerator.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/Gpu3dMipmapGenerator.mjs"() {
     "use strict";
     MIPMAP_3D_FORMATS = ["rgba8unorm", "rgba16float"];
     WORKGROUP_SIZE = 4;
@@ -31343,10 +31343,10 @@ var init_Gpu3dMipmapGenerator = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/GpuMipmapGenerator.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/GpuMipmapGenerator.mjs
 var GpuMipmapGenerator;
 var init_GpuMipmapGenerator = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/GpuMipmapGenerator.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/GpuMipmapGenerator.mjs"() {
     "use strict";
     GpuMipmapGenerator = class {
       constructor(device) {
@@ -31506,7 +31506,7 @@ var init_GpuMipmapGenerator = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/GpuTextureSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/GpuTextureSystem.mjs
 function srgbViewFormat(format) {
   return SRGB_CAPABLE.test(format) ? [`${format}-srgb`] : void 0;
 }
@@ -31515,7 +31515,7 @@ function getViewDescriptorKey(viewDescriptor) {
 }
 var GPUTextureGpuData, SRGB_CAPABLE, _GpuTextureSystem, GpuTextureSystem;
 var init_GpuTextureSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/GpuTextureSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/GpuTextureSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_GCManagedHash();
@@ -31815,14 +31815,14 @@ var init_GpuTextureSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs
 var WebGPURenderer_exports = {};
 __export(WebGPURenderer_exports, {
   WebGPURenderer: () => WebGPURenderer
 });
 var DefaultWebGPUSystems, DefaultWebGPUPipes, DefaultWebGPUAdapters, systems, renderPipes, renderPipeAdaptors, loaders, WebGPURenderer;
 var init_WebGPURenderer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/WebGPURenderer.mjs"() {
     init_Extensions();
     init_GpuGraphicsAdaptor();
     init_GpuMeshAdapter();
@@ -31887,10 +31887,10 @@ var init_WebGPURenderer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/gl/GlGraphicsAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/gl/GlGraphicsAdaptor.mjs
 var GlGraphicsAdaptor;
 var init_GlGraphicsAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/gl/GlGraphicsAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/gl/GlGraphicsAdaptor.mjs"() {
     init_Extensions();
     init_Matrix();
     init_compileHighShaderToProgram();
@@ -31965,10 +31965,10 @@ var init_GlGraphicsAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/gl/GlMeshAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/gl/GlMeshAdaptor.mjs
 var GlMeshAdaptor;
 var init_GlMeshAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/gl/GlMeshAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/gl/GlMeshAdaptor.mjs"() {
     init_Extensions();
     init_Matrix();
     init_compileHighShaderToProgram();
@@ -32034,10 +32034,10 @@ var init_GlMeshAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gl/GlBatchAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gl/GlBatchAdaptor.mjs
 var GlBatchAdaptor;
 var init_GlBatchAdaptor = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gl/GlBatchAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gl/GlBatchAdaptor.mjs"() {
     init_Extensions();
     init_State();
     GlBatchAdaptor = class {
@@ -32082,10 +32082,10 @@ var init_GlBatchAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/buffer/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/buffer/const.mjs
 var BUFFER_TYPE;
 var init_const8 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/buffer/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/buffer/const.mjs"() {
     "use strict";
     BUFFER_TYPE = /* @__PURE__ */ ((BUFFER_TYPE2) => {
       BUFFER_TYPE2[BUFFER_TYPE2["ELEMENT_ARRAY_BUFFER"] = 34963] = "ELEMENT_ARRAY_BUFFER";
@@ -32096,10 +32096,10 @@ var init_const8 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBuffer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBuffer.mjs
 var GlBuffer;
 var init_GlBuffer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBuffer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBuffer.mjs"() {
     "use strict";
     GlBuffer = class {
       constructor(buffer, type) {
@@ -32122,10 +32122,10 @@ var init_GlBuffer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBufferSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBufferSystem.mjs
 var GlBufferSystem;
 var init_GlBufferSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBufferSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/buffer/GlBufferSystem.mjs"() {
     init_Extensions();
     init_GCManagedHash();
     init_const4();
@@ -32327,10 +32327,10 @@ var init_GlBufferSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/context/GlContextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/context/GlContextSystem.mjs
 var _GlContextSystem, GlContextSystem;
 var init_GlContextSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/context/GlContextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/context/GlContextSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_warn();
@@ -32600,10 +32600,10 @@ var init_GlContextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/const.mjs
 var GL_FORMATS, GL_TARGETS, GL_WRAP_MODES, GL_TYPES;
 var init_const9 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/const.mjs"() {
     "use strict";
     GL_FORMATS = /* @__PURE__ */ ((GL_FORMATS2) => {
       GL_FORMATS2[GL_FORMATS2["RGBA"] = 6408] = "RGBA";
@@ -32662,13 +32662,13 @@ var init_const9 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/geometry/utils/getGlTypeFromFormat.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/geometry/utils/getGlTypeFromFormat.mjs
 function getGlTypeFromFormat(format) {
   return infoMap[format] ?? infoMap.float32;
 }
 var infoMap;
 var init_getGlTypeFromFormat = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/geometry/utils/getGlTypeFromFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/geometry/utils/getGlTypeFromFormat.mjs"() {
     init_const9();
     infoMap = {
       uint8x2: GL_TYPES.UNSIGNED_BYTE,
@@ -32705,10 +32705,10 @@ var init_getGlTypeFromFormat = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/geometry/GlGeometrySystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/geometry/GlGeometrySystem.mjs
 var topologyToGlMap, GlGeometryGpuData, GlGeometrySystem;
 var init_GlGeometrySystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/geometry/GlGeometrySystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/geometry/GlGeometrySystem.mjs"() {
     init_Extensions();
     init_GCManagedHash();
     init_getAttributeInfoFromFormat();
@@ -33006,10 +33006,10 @@ var init_GlGeometrySystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlBackBufferSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlBackBufferSystem.mjs
 var bigTriangleGeometry, _GlBackBufferSystem, GlBackBufferSystem;
 var init_GlBackBufferSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlBackBufferSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlBackBufferSystem.mjs"() {
     init_Extensions();
     init_warn();
     init_Geometry();
@@ -33147,10 +33147,10 @@ var init_GlBackBufferSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlColorMaskSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlColorMaskSystem.mjs
 var GlColorMaskSystem;
 var init_GlColorMaskSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlColorMaskSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlColorMaskSystem.mjs"() {
     init_Extensions();
     GlColorMaskSystem = class {
       constructor(renderer) {
@@ -33177,10 +33177,10 @@ var init_GlColorMaskSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlEncoderSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlEncoderSystem.mjs
 var GlEncoderSystem;
 var init_GlEncoderSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlEncoderSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlEncoderSystem.mjs"() {
     init_Extensions();
     GlEncoderSystem = class {
       constructor(renderer) {
@@ -33215,10 +33215,10 @@ var init_GlEncoderSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlLimitsSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlLimitsSystem.mjs
 var GlLimitsSystem;
 var init_GlLimitsSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlLimitsSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlLimitsSystem.mjs"() {
     init_Extensions();
     init_checkMaxIfStatementsInShader();
     GlLimitsSystem = class {
@@ -33244,10 +33244,10 @@ var init_GlLimitsSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlStencilSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlStencilSystem.mjs
 var GlStencilSystem;
 var init_GlStencilSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlStencilSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlStencilSystem.mjs"() {
     init_Extensions();
     init_GpuStencilModesToPixi();
     init_const7();
@@ -33340,7 +33340,7 @@ var init_GlStencilSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboElementsSTD40.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboElementsSTD40.mjs
 function createUboElementsSTD40(uniformData) {
   const uboElements = uniformData.map((data) => ({
     data,
@@ -33375,7 +33375,7 @@ function createUboElementsSTD40(uniformData) {
 }
 var WGSL_TO_STD40_SIZE;
 var init_createUboElementsSTD40 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboElementsSTD40.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboElementsSTD40.mjs"() {
     "use strict";
     WGSL_TO_STD40_SIZE = {
       f32: 4,
@@ -33413,7 +33413,7 @@ var init_createUboElementsSTD40 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateArraySyncSTD40.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateArraySyncSTD40.mjs
 function generateArraySyncSTD40(uboElement, offsetToAdd) {
   const rowSize = Math.max(WGSL_TO_STD40_SIZE[uboElement.data.type] / 16, 1);
   const elementSize = uboElement.data.value.length / uboElement.data.size;
@@ -33438,12 +33438,12 @@ function generateArraySyncSTD40(uboElement, offsetToAdd) {
     `;
 }
 var init_generateArraySyncSTD40 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateArraySyncSTD40.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateArraySyncSTD40.mjs"() {
     init_createUboElementsSTD40();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboSyncSTD40.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboSyncSTD40.mjs
 function createUboSyncFunctionSTD40(uboElements) {
   return compileBufferSync(
     uboElements,
@@ -33452,17 +33452,17 @@ function createUboSyncFunctionSTD40(uboElements) {
   );
 }
 var init_createUboSyncSTD40 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboSyncSTD40.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/createUboSyncSTD40.mjs"() {
     init_compileBufferSync();
     init_uboSyncFunctions();
     init_generateArraySyncSTD40();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlUboSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlUboSystem.mjs
 var GlUboSystem;
 var init_GlUboSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlUboSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlUboSystem.mjs"() {
     init_Extensions();
     init_UboSystem();
     init_createUboElementsSTD40();
@@ -33482,10 +33482,10 @@ var init_GlUboSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/GlRenderTarget.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlRenderTarget.mjs
 var GlRenderTarget;
 var init_GlRenderTarget = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/GlRenderTarget.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/GlRenderTarget.mjs"() {
     init_const7();
     GlRenderTarget = class {
       constructor() {
@@ -33503,10 +33503,10 @@ var init_GlRenderTarget = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetAdaptor.mjs
 var GlRenderTargetAdaptor;
 var init_GlRenderTargetAdaptor = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetAdaptor.mjs"() {
     init_Rectangle();
     init_warn();
     init_CanvasSource();
@@ -34029,10 +34029,10 @@ var init_GlRenderTargetAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetSystem.mjs
 var GlRenderTargetSystem;
 var init_GlRenderTargetSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/renderTarget/GlRenderTargetSystem.mjs"() {
     init_Extensions();
     init_RenderTargetSystem();
     init_GlRenderTargetAdaptor();
@@ -34054,10 +34054,10 @@ var init_GlRenderTargetSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureView.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureView.mjs
 var TextureView;
 var init_TextureView = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureView.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureView.mjs"() {
     init_eventemitter3();
     init_uid();
     TextureView = class extends eventemitter3_default {
@@ -34099,7 +34099,7 @@ var init_TextureView = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/GenerateShaderSyncCode.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GenerateShaderSyncCode.mjs
 function generateShaderSyncCode(shader, shaderSystem) {
   const funcFragments = [];
   const headerFragments = [`
@@ -34166,7 +34166,7 @@ function generateShaderSyncCode(shader, shaderSystem) {
   return new Function("r", "s", "sD", functionSource);
 }
 var init_GenerateShaderSyncCode = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/GenerateShaderSyncCode.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GenerateShaderSyncCode.mjs"() {
     init_BufferResource();
     init_UniformGroup();
     init_TextureSource();
@@ -34174,10 +34174,10 @@ var init_GenerateShaderSyncCode = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgramData.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgramData.mjs
 var IGLUniformData, GlProgramData;
 var init_GlProgramData = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgramData.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlProgramData.mjs"() {
     "use strict";
     IGLUniformData = class {
     };
@@ -34206,7 +34206,7 @@ var init_GlProgramData = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/compileShader.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/compileShader.mjs
 function compileShader(gl, type, src) {
   const shader = gl.createShader(type);
   gl.shaderSource(shader, src);
@@ -34214,12 +34214,12 @@ function compileShader(gl, type, src) {
   return shader;
 }
 var init_compileShader = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/compileShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/compileShader.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/defaultValue.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/defaultValue.mjs
 function booleanArray(size) {
   const array = new Array(size);
   for (let i2 = 0; i2 < array.length; i2++) {
@@ -34305,12 +34305,12 @@ function defaultValue(type, size) {
   return null;
 }
 var init_defaultValue = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/defaultValue.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/defaultValue.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapType.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapType.mjs
 function mapType(gl, type) {
   if (!GL_TABLE) {
     const typeNames = Object.keys(GL_TO_GLSL_TYPES);
@@ -34328,7 +34328,7 @@ function mapGlToVertexFormat(gl, type) {
 }
 var GL_TABLE, GL_TO_GLSL_TYPES, GLSL_TO_VERTEX_TYPES;
 var init_mapType = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapType.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapType.mjs"() {
     "use strict";
     GL_TABLE = null;
     GL_TO_GLSL_TYPES = {
@@ -34388,7 +34388,7 @@ var init_mapType = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/extractAttributesFromGlProgram.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/extractAttributesFromGlProgram.mjs
 function extractAttributesFromGlProgram(program, gl, sortAttributes = false) {
   const attributes = {};
   const totalAttributes = gl.getProgramParameter(program, gl.ACTIVE_ATTRIBUTES);
@@ -34424,13 +34424,13 @@ function extractAttributesFromGlProgram(program, gl, sortAttributes = false) {
   return attributes;
 }
 var init_extractAttributesFromGlProgram = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/extractAttributesFromGlProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/extractAttributesFromGlProgram.mjs"() {
     init_getAttributeInfoFromFormat();
     init_mapType();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUboData.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUboData.mjs
 function getUboData(program, gl) {
   if (!gl.ACTIVE_UNIFORM_BLOCKS) return {};
   const uniformBlocks = {};
@@ -34448,12 +34448,12 @@ function getUboData(program, gl) {
   return uniformBlocks;
 }
 var init_getUboData = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUboData.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUboData.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUniformData.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUniformData.mjs
 function getUniformData(program, gl) {
   const uniforms = {};
   const totalUniforms = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
@@ -34474,13 +34474,13 @@ function getUniformData(program, gl) {
   return uniforms;
 }
 var init_getUniformData = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUniformData.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/getUniformData.mjs"() {
     init_defaultValue();
     init_mapType();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/logProgramError.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/logProgramError.mjs
 function logPrettyShaderError(gl, shader) {
   const rawSource = gl.getShaderSource(shader);
   if (rawSource === null) {
@@ -34525,12 +34525,12 @@ function logProgramError(gl, program, vertexShader, fragmentShader) {
   }
 }
 var init_logProgramError = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/logProgramError.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/logProgramError.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/generateProgram.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/generateProgram.mjs
 function generateProgram(gl, program) {
   const glVertShader = compileShader(gl, gl.VERTEX_SHADER, program.vertex);
   const glFragShader = compileShader(gl, gl.FRAGMENT_SHADER, program.fragment);
@@ -34574,7 +34574,7 @@ function generateProgram(gl, program) {
   return glProgram3;
 }
 var init_generateProgram = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/generateProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/generateProgram.mjs"() {
     init_warn();
     init_GlProgramData();
     init_compileShader();
@@ -34586,10 +34586,10 @@ var init_generateProgram = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlShaderSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlShaderSystem.mjs
 var defaultSyncData, GlShaderSystem;
 var init_GlShaderSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlShaderSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlShaderSystem.mjs"() {
     init_Extensions();
     init_GenerateShaderSyncCode();
     init_generateProgram();
@@ -34718,10 +34718,10 @@ var init_GlShaderSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSyncTypes.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSyncTypes.mjs
 var UNIFORM_TO_SINGLE_SETTERS, UNIFORM_TO_ARRAY_SETTERS;
 var init_generateUniformsSyncTypes = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSyncTypes.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSyncTypes.mjs"() {
     "use strict";
     UNIFORM_TO_SINGLE_SETTERS = {
       f32: `if (cv !== v) {
@@ -34840,7 +34840,7 @@ var init_generateUniformsSyncTypes = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSync.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSync.mjs
 function generateUniformsSync(group, uniformData) {
   const funcFragments = [`
         var v = null;
@@ -34892,7 +34892,7 @@ function generateUniformsSync(group, uniformData) {
   return new Function("ud", "uv", "renderer", "syncData", funcFragments.join("\n"));
 }
 var init_generateUniformsSync = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSync.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/utils/generateUniformsSync.mjs"() {
     init_BufferResource();
     init_UniformGroup();
     init_uniformParsers();
@@ -34900,10 +34900,10 @@ var init_generateUniformsSync = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlUniformGroupSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlUniformGroupSystem.mjs
 var GlUniformGroupSystem;
 var init_GlUniformGroupSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlUniformGroupSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/GlUniformGroupSystem.mjs"() {
     init_Extensions();
     init_generateUniformsSync();
     GlUniformGroupSystem = class {
@@ -34987,7 +34987,7 @@ var init_GlUniformGroupSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/state/mapWebGLBlendModesToPixi.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/state/mapWebGLBlendModesToPixi.mjs
 function mapWebGLBlendModesToPixi(gl) {
   const blendMap = {};
   blendMap.normal = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
@@ -35013,15 +35013,15 @@ function mapWebGLBlendModesToPixi(gl) {
   return blendMap;
 }
 var init_mapWebGLBlendModesToPixi = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/state/mapWebGLBlendModesToPixi.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/state/mapWebGLBlendModesToPixi.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/state/GlStateSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/state/GlStateSystem.mjs
 var BLEND2, OFFSET2, CULLING2, DEPTH_TEST2, WINDING2, DEPTH_MASK2, _GlStateSystem, GlStateSystem;
 var init_GlStateSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/state/GlStateSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/state/GlStateSystem.mjs"() {
     init_Extensions();
     init_State();
     init_mapWebGLBlendModesToPixi();
@@ -35256,10 +35256,10 @@ var init_GlStateSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTexture.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTexture.mjs
 var GlTexture;
 var init_GlTexture = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTexture.mjs"() {
     init_const9();
     GlTexture = class {
       constructor(texture) {
@@ -35279,10 +35279,10 @@ var init_GlTexture = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadBufferImageResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadBufferImageResource.mjs
 var tempRects2, glUploadBufferImageResource;
 var init_glUploadBufferImageResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadBufferImageResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadBufferImageResource.mjs"() {
     init_Rectangle();
     init_getTexelRangeRects();
     init_const9();
@@ -35384,10 +35384,10 @@ var init_glUploadBufferImageResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCompressedTextureResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCompressedTextureResource.mjs
 var compressedFormatMap, glUploadCompressedTextureResource;
 var init_glUploadCompressedTextureResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCompressedTextureResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCompressedTextureResource.mjs"() {
     "use strict";
     compressedFormatMap = {
       "bc1-rgba-unorm": true,
@@ -35488,7 +35488,7 @@ var init_glUploadCompressedTextureResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCubeTextureResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCubeTextureResource.mjs
 function createGlUploadCubeTextureResource(uploaders) {
   return {
     id: "cube",
@@ -35519,13 +35519,13 @@ function createGlUploadCubeTextureResource(uploaders) {
 }
 var FACE_ORDER2;
 var init_glUploadCubeTextureResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCubeTextureResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadCubeTextureResource.mjs"() {
     init_const9();
     FACE_ORDER2 = ["right", "left", "top", "bottom", "front", "back"];
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadImageResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadImageResource.mjs
 function uploadImageWebGL2(gl, target, glTexture, textureWidth, textureHeight, resourceWidth, resourceHeight, resource, needsAllocation, resourceFitsTexture) {
   if (!resourceFitsTexture) {
     if (needsAllocation) {
@@ -35627,7 +35627,7 @@ function uploadImageWebGL1(gl, target, glTexture, textureWidth, textureHeight, _
 }
 var glUploadImageResource;
 var init_glUploadImageResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadImageResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadImageResource.mjs"() {
     "use strict";
     glUploadImageResource = {
       id: "image",
@@ -35661,21 +35661,21 @@ var init_glUploadImageResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/browser/isSafari.mjs
+// main/deps/node_modules/pixi.js/lib/utils/browser/isSafari.mjs
 function isSafari() {
   const { userAgent } = DOMAdapter.get().getNavigator();
   return /^((?!chrome|android).)*safari/i.test(userAgent);
 }
 var init_isSafari = __esm({
-  "node_modules/pixi.js/lib/utils/browser/isSafari.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/browser/isSafari.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadVideoResource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadVideoResource.mjs
 var defaultForceAllocation, glUploadVideoResource;
 var init_glUploadVideoResource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadVideoResource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/uploaders/glUploadVideoResource.mjs"() {
     init_isSafari();
     init_glUploadImageResource();
     defaultForceAllocation = isSafari();
@@ -35703,10 +35703,10 @@ var init_glUploadVideoResource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/pixiToGlMaps.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/pixiToGlMaps.mjs
 var scaleModeToGlFilter, mipmapScaleModeToGlFilter, wrapModeToGlAddress, compareModeToGlCompare;
 var init_pixiToGlMaps = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/pixiToGlMaps.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/pixiToGlMaps.mjs"() {
     "use strict";
     scaleModeToGlFilter = {
       linear: 9729,
@@ -35740,7 +35740,7 @@ var init_pixiToGlMaps = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/applyStyleParams.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/applyStyleParams.mjs
 function applyStyleParams(style, gl, mipmaps, anisotropicExt, glFunctionName, firstParam, forceClamp, firstCreation) {
   const castParam = firstParam;
   if (!firstCreation || style.addressModeU !== "repeat" || style.addressModeV !== "repeat" || style.addressModeW !== "repeat") {
@@ -35774,12 +35774,12 @@ function applyStyleParams(style, gl, mipmaps, anisotropicExt, glFunctionName, fi
   }
 }
 var init_applyStyleParams = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/applyStyleParams.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/applyStyleParams.mjs"() {
     init_pixiToGlMaps();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlFormat.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlFormat.mjs
 function mapFormatToGlFormat(gl) {
   return {
     // 8-bit formats
@@ -35834,12 +35834,12 @@ function mapFormatToGlFormat(gl) {
   };
 }
 var init_mapFormatToGlFormat = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlFormat.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlInternalFormat.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlInternalFormat.mjs
 function mapFormatToGlInternalFormat(gl, extensions3) {
   let srgb = {};
   let bgra8unorm = gl.RGBA;
@@ -35972,12 +35972,12 @@ function mapFormatToGlInternalFormat(gl, extensions3) {
   };
 }
 var init_mapFormatToGlInternalFormat = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlInternalFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlInternalFormat.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlType.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlType.mjs
 function mapFormatToGlType(gl) {
   return {
     // 8-bit formats
@@ -36032,12 +36032,12 @@ function mapFormatToGlType(gl) {
   };
 }
 var init_mapFormatToGlType = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlType.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapFormatToGlType.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapViewDimensionToGlTarget.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapViewDimensionToGlTarget.mjs
 function mapViewDimensionToGlTarget(gl) {
   return {
     "2d": gl.TEXTURE_2D,
@@ -36050,12 +36050,12 @@ function mapViewDimensionToGlTarget(gl) {
   };
 }
 var init_mapViewDimensionToGlTarget = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapViewDimensionToGlTarget.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/mapViewDimensionToGlTarget.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/unpremultiplyAlpha.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/unpremultiplyAlpha.mjs
 function unpremultiplyAlpha2(pixels) {
   if (pixels instanceof Uint8ClampedArray) {
     pixels = new Uint8Array(pixels.buffer);
@@ -36072,15 +36072,15 @@ function unpremultiplyAlpha2(pixels) {
   }
 }
 var init_unpremultiplyAlpha = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/unpremultiplyAlpha.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/unpremultiplyAlpha.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTextureSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTextureSystem.mjs
 var BYTES_PER_PIXEL, _GlTextureSystem, GlTextureSystem;
 var init_GlTextureSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTextureSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/GlTextureSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_GCManagedHash();
@@ -36547,14 +36547,14 @@ var init_GlTextureSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs
 var WebGLRenderer_exports = {};
 __export(WebGLRenderer_exports, {
   WebGLRenderer: () => WebGLRenderer
 });
 var DefaultWebGLSystems, DefaultWebGLPipes, DefaultWebGLAdapters, systems2, renderPipes2, renderPipeAdaptors2, loaders2, WebGLRenderer;
 var init_WebGLRenderer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/WebGLRenderer.mjs"() {
     init_Extensions();
     init_GlGraphicsAdaptor();
     init_GlMeshAdaptor();
@@ -36620,17 +36620,17 @@ var init_WebGLRenderer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/const.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/const.mjs
 var closePointEps, curveEps;
 var init_const10 = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/const.mjs"() {
     "use strict";
     closePointEps = 1e-4;
     curveEps = 1e-4;
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildLine.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildLine.mjs
 function square(x2, y2, nx, ny, innerWeight, outerWeight, clockwise, verts) {
   const ix = x2 - nx * innerWeight;
   const iy = y2 - ny * innerWeight;
@@ -36986,14 +36986,14 @@ function buildLine(points, lineStyle, flipAlignment, closed, vertices, indices) 
   }
 }
 var init_buildLine = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildLine.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildLine.mjs"() {
     init_getOrientationOfPoints();
     init_Point();
     init_const10();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/fill/FillGradient.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/fill/FillGradient.mjs
 function addColorStops(gradient, colorStops) {
   for (let i2 = 0; i2 < colorStops.length; i2++) {
     const stop = colorStops[i2];
@@ -37021,7 +37021,7 @@ function ensureGradientOptions(args) {
 }
 var emptyColorStops, _FillGradient, FillGradient;
 var init_FillGradient = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/fill/FillGradient.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/fill/FillGradient.mjs"() {
     init_Color();
     init_adapter();
     init_Matrix();
@@ -37228,13 +37228,13 @@ var init_FillGradient = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/fill/FillPattern.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/fill/FillPattern.mjs
 function isFillPatternOptions(value) {
   return value.texture !== void 0;
 }
 var repetitionMap, FillPattern;
 var init_FillPattern = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/fill/FillPattern.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/fill/FillPattern.mjs"() {
     init_Matrix();
     init_uid();
     repetitionMap = {
@@ -37310,7 +37310,7 @@ var init_FillPattern = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/buildUvs.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/buildUvs.mjs
 function buildUvs(vertices, verticesStride, verticesOffset, uvs, uvsOffset, uvsStride, size, matrix = null) {
   let index = 0;
   verticesOffset *= verticesStride;
@@ -37342,12 +37342,12 @@ function buildSimpleUvs(uvs, uvsOffset, uvsStride, size) {
   }
 }
 var init_buildUvs = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/buildUvs.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/buildUvs.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/transformVertices.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/transformVertices.mjs
 function transformVertices(vertices, m2, offset, stride, size) {
   const a2 = m2.a;
   const b2 = m2.b;
@@ -37368,15 +37368,15 @@ function transformVertices(vertices, m2, offset, stride, size) {
   }
 }
 var init_transformVertices = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/transformVertices.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/utils/transformVertices.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/BatchableGraphics.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/BatchableGraphics.mjs
 var identityMatrix2, BatchableGraphics;
 var init_BatchableGraphics = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/BatchableGraphics.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/BatchableGraphics.mjs"() {
     init_Matrix();
     init_multiplyHexColors();
     identityMatrix2 = new Matrix();
@@ -37444,10 +37444,10 @@ var init_BatchableGraphics = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildCircle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildCircle.mjs
 var buildCircle, buildEllipse, buildRoundedRectangle;
 var init_buildCircle = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildCircle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildCircle.mjs"() {
     init_Extensions();
     buildCircle = {
       extension: {
@@ -37596,7 +37596,7 @@ var init_buildCircle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPixelLine.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPixelLine.mjs
 function buildPixelLine(points, closed, vertices, indices) {
   const eps = closePointEps;
   if (points.length === 0) {
@@ -37622,12 +37622,12 @@ function buildPixelLine(points, closed, vertices, indices) {
   }
 }
 var init_buildPixelLine = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPixelLine.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPixelLine.mjs"() {
     init_const10();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/utils/triangulateWithHoles.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/triangulateWithHoles.mjs
 function triangulateWithHoles(points, holes, vertices, verticesStride, verticesOffset, indices, indicesOffset) {
   const triangles = earcut2(points, holes, 2);
   if (!triangles) {
@@ -37646,15 +37646,15 @@ function triangulateWithHoles(points, holes, vertices, verticesStride, verticesO
   }
 }
 var init_triangulateWithHoles = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/utils/triangulateWithHoles.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/triangulateWithHoles.mjs"() {
     init_utils();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPolygon.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPolygon.mjs
 var emptyArray, buildPolygon;
 var init_buildPolygon = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPolygon.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildPolygon.mjs"() {
     init_Extensions();
     init_triangulateWithHoles();
     emptyArray = [];
@@ -37676,10 +37676,10 @@ var init_buildPolygon = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildRectangle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildRectangle.mjs
 var buildRectangle;
 var init_buildRectangle = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildRectangle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildRectangle.mjs"() {
     init_Extensions();
     buildRectangle = {
       extension: {
@@ -37732,10 +37732,10 @@ var init_buildRectangle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildTriangle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildTriangle.mjs
 var buildTriangle;
 var init_buildTriangle = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildTriangle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildTriangle.mjs"() {
     init_Extensions();
     buildTriangle = {
       extension: {
@@ -37771,7 +37771,7 @@ var init_buildTriangle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/utils/generateTextureFillMatrix.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/generateTextureFillMatrix.mjs
 function generateTextureMatrix(out2, style, shape, matrix) {
   const textureMatrix = style.matrix ? out2.copyFrom(style.matrix).invert() : out2.identity();
   if (style.textureSpace === "local") {
@@ -37821,7 +37821,7 @@ function generateTextureMatrix(out2, style, shape, matrix) {
 }
 var tempTextureMatrix, tempRect4, tempUvMatrix;
 var init_generateTextureFillMatrix = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/utils/generateTextureFillMatrix.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/generateTextureFillMatrix.mjs"() {
     init_Matrix();
     init_Rectangle();
     init_FillGradient();
@@ -37831,7 +37831,7 @@ var init_generateTextureFillMatrix = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/utils/buildContextBatches.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/buildContextBatches.mjs
 function buildContextBatches(context2, gpuContext) {
   const { geometryData, batches } = gpuContext;
   batches.length = 0;
@@ -37971,7 +37971,7 @@ function getHoleArrays(holePrimitives) {
 }
 var shapeBuilders, tempRect5, tempTextureMatrix2;
 var init_buildContextBatches = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/utils/buildContextBatches.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/buildContextBatches.mjs"() {
     init_Extensions();
     init_Matrix();
     init_Rectangle();
@@ -37996,7 +37996,7 @@ var init_buildContextBatches = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsAdaptor.mjs
 function fillTriangles(context2, vertices, indices) {
   context2.beginPath();
   for (let i2 = 0; i2 < indices.length; i2 += 3) {
@@ -38149,7 +38149,7 @@ function getCanvasStyle(style, tint, textureMatrix, currentTransform) {
 }
 var emptyCanvasStyle, tempMatrix5, tempTextureMatrix3, tempGradientMatrix, tempPatternMatrix, tempUvMatrix2, CanvasGraphicsAdaptor;
 var init_CanvasGraphicsAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsAdaptor.mjs"() {
     init_Extensions();
     init_groupD8();
     init_Matrix();
@@ -38347,10 +38347,10 @@ var init_CanvasGraphicsAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/canvas/CanvasBatchAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/canvas/CanvasBatchAdaptor.mjs
 var _CanvasBatchAdaptor, CanvasBatchAdaptor;
 var init_CanvasBatchAdaptor = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/canvas/CanvasBatchAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/canvas/CanvasBatchAdaptor.mjs"() {
     init_Extensions();
     init_groupD8();
     init_Matrix();
@@ -38520,10 +38520,10 @@ var init_CanvasBatchAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/color/CanvasColorMaskPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/color/CanvasColorMaskPipe.mjs
 var CanvasColorMaskPipe;
 var init_CanvasColorMaskPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/color/CanvasColorMaskPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/color/CanvasColorMaskPipe.mjs"() {
     init_Extensions();
     CanvasColorMaskPipe = class {
       constructor(renderer) {
@@ -38582,7 +38582,7 @@ var init_CanvasColorMaskPipe = __esm({
   }
 });
 
-// node_modules/parse-svg-path/dist/index.mjs
+// main/deps/node_modules/parse-svg-path/dist/index.mjs
 function parse(path2) {
   const data = [];
   path2.replace(segment, (_, cmd, args) => {
@@ -38611,7 +38611,7 @@ function parseValues(args) {
 }
 var length, segment, number;
 var init_dist = __esm({
-  "node_modules/parse-svg-path/dist/index.mjs"() {
+  "main/deps/node_modules/parse-svg-path/dist/index.mjs"() {
     length = {
       a: 7,
       c: 6,
@@ -38629,7 +38629,7 @@ var init_dist = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGPath.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGPath.mjs
 function parseSVGPath(svgPath, path2) {
   const commands = parse(svgPath);
   const subpaths = [];
@@ -38840,16 +38840,16 @@ function parseSVGPath(svgPath, path2) {
   return path2;
 }
 var init_parseSVGPath = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGPath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGPath.mjs"() {
     init_dist();
     init_warn();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContextSystem.mjs
 var GpuGraphicsContext, GraphicsContextRenderData, _GraphicsContextSystem, GraphicsContextSystem;
 var init_GraphicsContextSystem = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContextSystem.mjs"() {
     init_Extensions();
     init_getTextureBatchBindGroup();
     init_DefaultBatcher();
@@ -39037,7 +39037,7 @@ var init_GraphicsContextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveBezier.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveBezier.mjs
 function buildAdaptiveBezier(points, sX, sY, cp1x, cp1y, cp2x, cp2y, eX, eY, smoothness) {
   const scale = 1;
   const smoothing = Math.min(
@@ -39158,7 +39158,7 @@ function recursive(x1, y1, x2, y2, x3, y3, x4, y4, points, distanceTolerance, le
 }
 var RECURSION_LIMIT, FLT_EPSILON, PATH_DISTANCE_EPSILON, curveAngleToleranceEpsilon, mAngleTolerance, mCuspLimit;
 var init_buildAdaptiveBezier = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveBezier.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveBezier.mjs"() {
     init_GraphicsContextSystem();
     RECURSION_LIMIT = 8;
     FLT_EPSILON = 11920929e-14;
@@ -39169,7 +39169,7 @@ var init_buildAdaptiveBezier = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveQuadratic.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveQuadratic.mjs
 function buildAdaptiveQuadratic(points, sX, sY, cp1x, cp1y, eX, eY, smoothness) {
   const scale = 1;
   const smoothing = Math.min(
@@ -39226,7 +39226,7 @@ function recursive2(points, x1, y1, x2, y2, x3, y3, distanceTolerance, level) {
 }
 var RECURSION_LIMIT2, FLT_EPSILON2, PATH_DISTANCE_EPSILON2, curveAngleToleranceEpsilon2, mAngleTolerance2;
 var init_buildAdaptiveQuadratic = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveQuadratic.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildAdaptiveQuadratic.mjs"() {
     init_GraphicsContextSystem();
     RECURSION_LIMIT2 = 8;
     FLT_EPSILON2 = 11920929e-14;
@@ -39236,7 +39236,7 @@ var init_buildAdaptiveQuadratic = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArc.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArc.mjs
 function buildArc(points, x2, y2, radius, start, end, clockwise, steps) {
   let dist = Math.abs(start - end);
   if (!clockwise && start > end) {
@@ -39259,12 +39259,12 @@ function buildArc(points, x2, y2, radius, start, end, clockwise, steps) {
   }
 }
 var init_buildArc = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArc.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArc.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcTo.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcTo.mjs
 function buildArcTo(points, x1, y1, x2, y2, radius) {
   const fromX = points[points.length - 2];
   const fromY = points[points.length - 1];
@@ -39305,12 +39305,12 @@ function buildArcTo(points, x1, y1, x2, y2, radius) {
   );
 }
 var init_buildArcTo = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcTo.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcTo.mjs"() {
     init_buildArc();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcToSvg.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcToSvg.mjs
 function approxUnitArc(ang1, ang2) {
   const a1 = ang2 === -1.5707963267948966 ? -0.551915024494 : 4 / 3 * Math.tan(ang2 / 4);
   const a2 = ang2 === 1.5707963267948966 ? 0.551915024494 : a1;
@@ -39400,7 +39400,7 @@ function buildArcToSvg(points, px, py, cx, cy, rx, ry, xAxisRotation = 0, largeA
 }
 var TAU, out, mapToEllipse, vectorAngle, getArcCenter;
 var init_buildArcToSvg = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcToSvg.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/buildCommands/buildArcToSvg.mjs"() {
     init_buildAdaptiveBezier();
     TAU = Math.PI * 2;
     out = {
@@ -39464,7 +39464,7 @@ var init_buildArcToSvg = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/path/roundShape.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/path/roundShape.mjs
 function roundedShapeArc(g2, points, radius) {
   const vecFrom = (p2, pp) => {
     const x2 = pp.x - p2.x;
@@ -39591,15 +39591,15 @@ function roundedShapeQuadraticCurve(g2, points, radius, smoothness) {
   }
 }
 var init_roundShape = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/path/roundShape.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/path/roundShape.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/path/ShapePath.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/path/ShapePath.mjs
 var tempRectangle, ShapePath;
 var init_ShapePath = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/path/ShapePath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/path/ShapePath.mjs"() {
     init_Circle();
     init_Ellipse();
     init_Polygon();
@@ -40138,7 +40138,7 @@ var init_ShapePath = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/path/GraphicsPath.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/path/GraphicsPath.mjs
 function adjustTransform(currentMatrix, transform2) {
   if (currentMatrix) {
     return currentMatrix.prepend(transform2);
@@ -40147,7 +40147,7 @@ function adjustTransform(currentMatrix, transform2) {
 }
 var GraphicsPath;
 var init_GraphicsPath = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/path/GraphicsPath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/path/GraphicsPath.mjs"() {
     init_Point();
     init_uid();
     init_warn();
@@ -40597,18 +40597,18 @@ var init_GraphicsPath = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGFloatAttribute.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGFloatAttribute.mjs
 function parseSVGFloatAttribute(svg, id3, defaultValue2) {
   const value = svg.getAttribute(id3);
   return value ? Number(value) : defaultValue2;
 }
 var init_parseSVGFloatAttribute = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGFloatAttribute.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGFloatAttribute.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGDefinitions.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGDefinitions.mjs
 function parseSVGDefinitions(svg, session) {
   const definitions = svg.querySelectorAll("defs");
   for (let i2 = 0; i2 < definitions.length; i2++) {
@@ -40680,25 +40680,25 @@ function parseRadialGradient(child) {
   });
 }
 var init_parseSVGDefinitions = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGDefinitions.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGDefinitions.mjs"() {
     init_Color();
     init_FillGradient();
     init_parseSVGFloatAttribute();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/extractSvgUrlId.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/extractSvgUrlId.mjs
 function extractSvgUrlId(url) {
   const match = url.match(/url\s*\(\s*['"]?\s*#([^'"\s)]+)\s*['"]?\s*\)/i);
   return match ? match[1] : "";
 }
 var init_extractSvgUrlId = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/extractSvgUrlId.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/extractSvgUrlId.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGStyle.mjs
 function parseSVGStyle(svg, session) {
   const style = svg.getAttribute("style");
   const strokeStyle = {};
@@ -40773,7 +40773,7 @@ function parseAttribute(session, result, id3, value) {
 }
 var styleAttributes;
 var init_parseSVGStyle = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/parseSVGStyle.mjs"() {
     init_Color();
     init_extractSvgUrlId();
     styleAttributes = {
@@ -40806,7 +40806,7 @@ var init_parseSVGStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/fillOperations.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/fillOperations.mjs
 function checkForNestedPattern(subpathsWithArea) {
   if (subpathsWithArea.length <= 2) {
     return true;
@@ -40829,12 +40829,12 @@ function getFillInstructionData(context2, index = 0) {
   return instruction.data;
 }
 var init_fillOperations = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/fillOperations.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/fillOperations.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/pathOperations.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/pathOperations.mjs
 function extractSubpaths(pathData) {
   const parts = pathData.split(/(?=[Mm])/);
   const subpaths = parts.filter((part) => part.trim().length > 0);
@@ -40867,12 +40867,12 @@ function appendSVGPath(pathData, graphicsPath) {
   }
 }
 var init_pathOperations = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/pathOperations.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/utils/pathOperations.mjs"() {
     init_GraphicsPath();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGParser.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGParser.mjs
 function SVGParser(svg, graphicsContext) {
   if (typeof svg === "string") {
     const div = document.createElement("div");
@@ -41056,7 +41056,7 @@ function renderChildren(svg, session, fillStyle, strokeStyle) {
   }
 }
 var init_SVGParser = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGParser.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGParser.mjs"() {
     init_warn();
     init_GraphicsPath();
     init_parseSVGDefinitions();
@@ -41067,7 +41067,7 @@ var init_SVGParser = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/utils/convertFillInputToFillStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/convertFillInputToFillStyle.mjs
 function isColorLike(value) {
   return Color.isColorLike(value);
 }
@@ -41153,7 +41153,7 @@ function toStrokeStyle(value, defaultStyle) {
   };
 }
 var init_convertFillInputToFillStyle = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/utils/convertFillInputToFillStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/convertFillInputToFillStyle.mjs"() {
     init_Color();
     init_Texture();
     init_FillGradient();
@@ -41161,7 +41161,7 @@ var init_convertFillInputToFillStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/utils/getMaxMiterRatio.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/getMaxMiterRatio.mjs
 function getMaxMiterRatio(path2, miterLimit) {
   let maxRatio = 1;
   const shapePrimitives = path2.shapePath.shapePrimitives;
@@ -41203,15 +41203,15 @@ function getMaxMiterRatio(path2, miterLimit) {
   return maxRatio;
 }
 var init_getMaxMiterRatio = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/utils/getMaxMiterRatio.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/getMaxMiterRatio.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContext.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContext.mjs
 var tmpPoint, tempMatrix6, _GraphicsContext, GraphicsContext;
 var init_GraphicsContext = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContext.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/GraphicsContext.mjs"() {
     init_eventemitter3();
     init_Color();
     init_Matrix();
@@ -42040,10 +42040,10 @@ var init_GraphicsContext = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsContextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsContextSystem.mjs
 var CanvasGraphicsContext, CanvasGraphicsContextRenderData, _CanvasGraphicsContextSystem, CanvasGraphicsContextSystem;
 var init_CanvasGraphicsContextSystem = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsContextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsContextSystem.mjs"() {
     init_Extensions();
     init_InstructionSet();
     init_GCManagedHash();
@@ -42178,10 +42178,10 @@ var init_CanvasGraphicsContextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsPipe.mjs
 var CanvasGraphicsPipe;
 var init_CanvasGraphicsPipe = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/canvas/CanvasGraphicsPipe.mjs"() {
     init_Extensions();
     init_State();
     init_GCManagedHash();
@@ -42226,10 +42226,10 @@ var init_CanvasGraphicsPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/GraphicsPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/GraphicsPipe.mjs
 var GraphicsGpuData, GraphicsPipe;
 var init_GraphicsPipe = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/GraphicsPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/GraphicsPipe.mjs"() {
     init_Extensions();
     init_State();
     init_GCManagedHash();
@@ -42367,9 +42367,9 @@ var init_GraphicsPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/init.mjs
 var init_init7 = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/init.mjs"() {
     init_Extensions();
     init_CanvasGraphicsContextSystem();
     init_CanvasGraphicsPipe();
@@ -42382,10 +42382,10 @@ var init_init7 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/Graphics.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/Graphics.mjs
 var Graphics;
 var init_Graphics = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/Graphics.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/Graphics.mjs"() {
     init_deprecation();
     init_ViewContainer();
     init_GraphicsContext();
@@ -43216,7 +43216,7 @@ var init_Graphics = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/stencil/CanvasStencilMaskPipe.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/stencil/CanvasStencilMaskPipe.mjs
 function buildRoundedRectPath2(context2, x2, y2, width, height, radius) {
   radius = Math.max(0, Math.min(radius, Math.min(width, height) / 2));
   context2.moveTo(x2 + radius, y2);
@@ -43325,7 +43325,7 @@ function addHolePaths2(context2, holes) {
 }
 var CanvasStencilMaskPipe;
 var init_CanvasStencilMaskPipe = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/stencil/CanvasStencilMaskPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/stencil/CanvasStencilMaskPipe.mjs"() {
     init_Extensions();
     init_buildLine();
     init_Graphics();
@@ -43467,7 +43467,7 @@ var init_CanvasStencilMaskPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/utils/mapCanvasBlendModesToPixi.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/utils/mapCanvasBlendModesToPixi.mjs
 function mapCanvasBlendModesToPixi() {
   const supportsAdvanced = canUseNewCanvasBlendModes();
   const map = /* @__PURE__ */ Object.create(null);
@@ -43508,16 +43508,16 @@ function mapCanvasBlendModesToPixi() {
 }
 var FALLBACK_BLEND;
 var init_mapCanvasBlendModesToPixi = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/utils/mapCanvasBlendModesToPixi.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/utils/mapCanvasBlendModesToPixi.mjs"() {
     init_canUseNewCanvasBlendModes();
     FALLBACK_BLEND = "source-over";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasContextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasContextSystem.mjs
 var tempMatrix7, CanvasContextSystem;
 var init_CanvasContextSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasContextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasContextSystem.mjs"() {
     init_Color();
     init_Extensions();
     init_Matrix();
@@ -43657,10 +43657,10 @@ var init_CanvasContextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasLimitsSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasLimitsSystem.mjs
 var CanvasLimitsSystem;
 var init_CanvasLimitsSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasLimitsSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasLimitsSystem.mjs"() {
     init_Extensions();
     CanvasLimitsSystem = class {
       constructor() {
@@ -43680,10 +43680,10 @@ var init_CanvasLimitsSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetAdaptor.mjs
 var CanvasRenderTargetAdaptor;
 var init_CanvasRenderTargetAdaptor = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetAdaptor.mjs"() {
     init_Color();
     init_adapter();
     init_warn();
@@ -43849,10 +43849,10 @@ var init_CanvasRenderTargetAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetSystem.mjs
 var CanvasRenderTargetSystem;
 var init_CanvasRenderTargetSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/renderTarget/CanvasRenderTargetSystem.mjs"() {
     init_Extensions();
     init_RenderTargetSystem();
     init_CanvasRenderTargetAdaptor();
@@ -43870,10 +43870,10 @@ var init_CanvasRenderTargetSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/texture/CanvasTextureSystem.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/texture/CanvasTextureSystem.mjs
 var CanvasTextureSystem;
 var init_CanvasTextureSystem = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/texture/CanvasTextureSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/texture/CanvasTextureSystem.mjs"() {
     init_adapter();
     init_Extensions();
     init_canvasUtils();
@@ -43952,14 +43952,14 @@ var init_CanvasTextureSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasRenderer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasRenderer.mjs
 var CanvasRenderer_exports = {};
 __export(CanvasRenderer_exports, {
   CanvasRenderer: () => CanvasRenderer
 });
 var DefaultCanvasSystems, DefaultCanvasPipes, DefaultCanvasAdapters, systems3, renderPipes3, renderPipeAdaptors3, loaders3, CanvasRenderer;
 var init_CanvasRenderer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasRenderer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/canvas/CanvasRenderer.mjs"() {
     init_Extensions();
     init_CustomRenderPipe();
     init_RenderGroupPipe();
@@ -44024,7 +44024,7 @@ var init_CanvasRenderer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/autoDetectRenderer.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/autoDetectRenderer.mjs
 async function autoDetectRenderer(options) {
   let preferredOrder = [];
   if (options.preference) {
@@ -44076,7 +44076,7 @@ async function autoDetectRenderer(options) {
 }
 var renderPriority;
 var init_autoDetectRenderer = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/autoDetectRenderer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/autoDetectRenderer.mjs"() {
     init_isWebGLSupported();
     init_isWebGPUSupported();
     init_AbstractRenderer();
@@ -44084,10 +44084,10 @@ var init_autoDetectRenderer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/app/ResizePlugin.mjs
+// main/deps/node_modules/pixi.js/lib/app/ResizePlugin.mjs
 var ResizePlugin;
 var init_ResizePlugin = __esm({
-  "node_modules/pixi.js/lib/app/ResizePlugin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/app/ResizePlugin.mjs"() {
     init_Extensions();
     ResizePlugin = class {
       /**
@@ -44166,10 +44166,10 @@ var init_ResizePlugin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/app/TickerPlugin.mjs
+// main/deps/node_modules/pixi.js/lib/app/TickerPlugin.mjs
 var TickerPlugin;
 var init_TickerPlugin = __esm({
-  "node_modules/pixi.js/lib/app/TickerPlugin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/app/TickerPlugin.mjs"() {
     init_Extensions();
     init_const2();
     init_Ticker();
@@ -44231,9 +44231,9 @@ var init_TickerPlugin = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/app/init.mjs
+// main/deps/node_modules/pixi.js/lib/app/init.mjs
 var init_init8 = __esm({
-  "node_modules/pixi.js/lib/app/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/app/init.mjs"() {
     init_Extensions();
     init_ResizePlugin();
     init_TickerPlugin();
@@ -44242,10 +44242,10 @@ var init_init8 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/app/Application.mjs
+// main/deps/node_modules/pixi.js/lib/app/Application.mjs
 var _Application, Application;
 var init_Application = __esm({
-  "node_modules/pixi.js/lib/app/Application.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/app/Application.mjs"() {
     init_Extensions();
     init_autoDetectRenderer();
     init_Container();
@@ -44441,10 +44441,10 @@ var init_Application = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontTextParser.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontTextParser.mjs
 var bitmapFontTextParser;
 var init_bitmapFontTextParser = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontTextParser.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontTextParser.mjs"() {
     "use strict";
     bitmapFontTextParser = {
       test(data) {
@@ -44540,10 +44540,10 @@ var init_bitmapFontTextParser = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLParser.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLParser.mjs
 var bitmapFontXMLParser;
 var init_bitmapFontXMLParser = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLParser.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLParser.mjs"() {
     "use strict";
     bitmapFontXMLParser = {
       test(data) {
@@ -44618,10 +44618,10 @@ var init_bitmapFontXMLParser = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLStringParser.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLStringParser.mjs
 var bitmapFontXMLStringParser;
 var init_bitmapFontXMLStringParser = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLStringParser.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/bitmapFontXMLStringParser.mjs"() {
     init_adapter();
     init_bitmapFontXMLParser();
     bitmapFontXMLStringParser = {
@@ -44638,10 +44638,10 @@ var init_bitmapFontXMLStringParser = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapFont.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapFont.mjs
 var AbstractBitmapFont;
 var init_AbstractBitmapFont = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapFont.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapFont.mjs"() {
     init_eventemitter3();
     init_deprecation();
     AbstractBitmapFont = class extends eventemitter3_default {
@@ -44714,7 +44714,7 @@ var init_AbstractBitmapFont = __esm({
   }
 });
 
-// node_modules/tiny-lru/dist/tiny-lru.js
+// main/deps/node_modules/tiny-lru/dist/tiny-lru.js
 function lru(max = 1e3, ttl = 0, resetTtl = false) {
   if (isNaN(max) || max < 0) {
     throw new TypeError("Invalid max value");
@@ -44729,7 +44729,7 @@ function lru(max = 1e3, ttl = 0, resetTtl = false) {
 }
 var LRU;
 var init_tiny_lru = __esm({
-  "node_modules/tiny-lru/dist/tiny-lru.js"() {
+  "main/deps/node_modules/tiny-lru/dist/tiny-lru.js"() {
     LRU = class {
       /**
        * Creates a new LRU cache instance.
@@ -45099,7 +45099,7 @@ var init_tiny_lru = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/utils/parseTaggedText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/parseTaggedText.mjs
 function hasTagStyles(style) {
   return !!style.tagStyles && Object.keys(style.tagStyles).length > 0;
 }
@@ -45198,12 +45198,12 @@ function getPlainText(text, style) {
   return runs.map((run) => run.text).join("");
 }
 var init_parseTaggedText = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/utils/parseTaggedText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/parseTaggedText.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/utils/textTokenization.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/textTokenization.mjs
 function isNewline(char) {
   if (typeof char !== "string") {
     return false;
@@ -45301,7 +45301,7 @@ function getCharacterGroups(token, breakWords, splitFn, canBreakCharsFn) {
 }
 var NEWLINES, NEWLINES_SET, BREAKING_SPACES, BREAKING_SPACES_SET, COLLAPSIBLE_SPACES, COLLAPSIBLE_SPACES_SET, BREAK_AFTER_CHARS, BREAK_AFTER_CHARS_SET, NEWLINE_SPLIT_REGEX, NEWLINE_MATCH_REGEX;
 var init_textTokenization = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/utils/textTokenization.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/textTokenization.mjs"() {
     "use strict";
     NEWLINES = [
       10,
@@ -45366,7 +45366,7 @@ var init_textTokenization = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/utils/measureTaggedText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/measureTaggedText.mjs
 function measureTaggedText(text, style, wordWrap2, context2, measureTextFn, wrapMeasureTextFn, measureFontFn, canBreakCharsFn, wordWrapSplitFn) {
   const runs = parseTaggedText(text, style);
   const shouldCollapseNewlines = collapseNewlines(style.whiteSpace);
@@ -45654,14 +45654,14 @@ function tokenizeTaggedRuns(runs) {
 }
 var NEWLINE_TO_SPACE_REGEX;
 var init_measureTaggedText = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/utils/measureTaggedText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/measureTaggedText.mjs"() {
     init_parseTaggedText();
     init_textTokenization();
     NEWLINE_TO_SPACE_REGEX = /\r\n|\r|\n/g;
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/utils/wordWrap.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/wordWrap.mjs
 function getFromCache(key, letterSpacing, cache, context2, measureTextFn) {
   let width = cache[key];
   if (typeof width !== "number") {
@@ -45754,7 +45754,7 @@ function wordWrap(text, style, canvas, measureTextFn, canBreakWordsFn, canBreakC
 }
 var contextSettings;
 var init_wordWrap = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/utils/wordWrap.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/wordWrap.mjs"() {
     init_textTokenization();
     contextSettings = {
       // TextMetrics requires getImageData readback for measuring fonts.
@@ -45763,10 +45763,10 @@ var init_wordWrap = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/CanvasTextMetrics.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextMetrics.mjs
 var contextSettings2, _CanvasTextMetrics, CanvasTextMetrics;
 var init_CanvasTextMetrics = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/CanvasTextMetrics.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextMetrics.mjs"() {
     init_tiny_lru();
     init_adapter();
     init_measureTaggedText();
@@ -46173,7 +46173,7 @@ var init_CanvasTextMetrics = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/utils/fontStringFromTextStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/fontStringFromTextStyle.mjs
 function fontStringFromTextStyle(style) {
   const fontSizeString = typeof style.fontSize === "number" ? `${style.fontSize}px` : style.fontSize;
   let fontFamilies = style.fontFamily;
@@ -46191,7 +46191,7 @@ function fontStringFromTextStyle(style) {
 }
 var genericFontFamilies;
 var init_fontStringFromTextStyle = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/utils/fontStringFromTextStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/fontStringFromTextStyle.mjs"() {
     "use strict";
     genericFontFamilies = [
       "serif",
@@ -46204,7 +46204,7 @@ var init_fontStringFromTextStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/TextStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/TextStyle.mjs
 function convertV7Tov8Style(style) {
   const oldStyle = style;
   if (typeof oldStyle.dropShadow === "boolean" && oldStyle.dropShadow) {
@@ -46260,7 +46260,7 @@ function convertV7Tov8Style(style) {
 }
 var _TextStyle, TextStyle;
 var init_TextStyle = __esm({
-  "node_modules/pixi.js/lib/scene/text/TextStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/TextStyle.mjs"() {
     init_eventemitter3();
     init_Color();
     init_uid();
@@ -46778,7 +46778,7 @@ var init_TextStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/utils/getCanvasFillStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/getCanvasFillStyle.mjs
 function getCanvasFillStyle(fillStyle, context2, textMetrics, padding = 0, offsetX = 0, offsetY = 0) {
   if (fillStyle.texture === Texture.WHITE && !fillStyle.fill) {
     return Color.shared.setValue(fillStyle.color).setAlpha(fillStyle.alpha ?? 1).toHexa();
@@ -46851,7 +46851,7 @@ function getCanvasFillStyle(fillStyle, context2, textMetrics, padding = 0, offse
 }
 var PRECISION;
 var init_getCanvasFillStyle = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/utils/getCanvasFillStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/utils/getCanvasFillStyle.mjs"() {
     init_Color();
     init_Matrix();
     init_canvasUtils();
@@ -46863,10 +46863,10 @@ var init_getCanvasFillStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/DynamicBitmapFont.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/DynamicBitmapFont.mjs
 var _DynamicBitmapFont, DynamicBitmapFont;
 var init_DynamicBitmapFont = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/DynamicBitmapFont.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/DynamicBitmapFont.mjs"() {
     init_Color();
     init_Rectangle();
     init_CanvasPool();
@@ -47160,7 +47160,7 @@ var init_DynamicBitmapFont = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/utils/getBitmapTextLayout.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/utils/getBitmapTextLayout.mjs
 function getBitmapTextLayout(chars, style, font, trimEnd) {
   const layoutData = {
     width: 0,
@@ -47369,12 +47369,12 @@ function alignJustify(measurementData) {
   }
 }
 var init_getBitmapTextLayout = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/utils/getBitmapTextLayout.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/utils/getBitmapTextLayout.mjs"() {
     init_textTokenization();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/utils/resolveCharacters.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/utils/resolveCharacters.mjs
 function resolveCharacters(chars) {
   if (chars === "") {
     return [];
@@ -47410,15 +47410,15 @@ function resolveCharacters(chars) {
   return result;
 }
 var init_resolveCharacters = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/utils/resolveCharacters.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/utils/resolveCharacters.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/BitmapFontManager.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/BitmapFontManager.mjs
 var fontCount, BitmapFontManagerClass, BitmapFontManager;
 var init_BitmapFontManager = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/BitmapFontManager.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/BitmapFontManager.mjs"() {
     init_tiny_lru();
     init_Cache();
     init_deprecation();
@@ -47582,14 +47582,14 @@ var init_BitmapFontManager = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/BitmapFont.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/BitmapFont.mjs
 var BitmapFont_exports = {};
 __export(BitmapFont_exports, {
   BitmapFont: () => BitmapFont
 });
 var BitmapFont;
 var init_BitmapFont = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/BitmapFont.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/BitmapFont.mjs"() {
     init_groupD8();
     init_Rectangle();
     init_Texture();
@@ -47715,10 +47715,10 @@ var init_BitmapFont = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/asset/loadBitmapFont.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/loadBitmapFont.mjs
 var validExtensions, bitmapFontCachePlugin, loadBitmapFont;
 var init_loadBitmapFont = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/asset/loadBitmapFont.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/asset/loadBitmapFont.mjs"() {
     init_LoaderParser();
     init_copySearchParams();
     init_adapter();
@@ -47800,10 +47800,10 @@ var init_loadBitmapFont = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/BackgroundLoader.mjs
+// main/deps/node_modules/pixi.js/lib/assets/BackgroundLoader.mjs
 var BackgroundLoader;
 var init_BackgroundLoader = __esm({
-  "node_modules/pixi.js/lib/assets/BackgroundLoader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/BackgroundLoader.mjs"() {
     "use strict";
     BackgroundLoader = class {
       /**
@@ -47909,10 +47909,10 @@ var init_BackgroundLoader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/cache/parsers/cacheTextureArray.mjs
+// main/deps/node_modules/pixi.js/lib/assets/cache/parsers/cacheTextureArray.mjs
 var cacheTextureArray;
 var init_cacheTextureArray = __esm({
-  "node_modules/pixi.js/lib/assets/cache/parsers/cacheTextureArray.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/cache/parsers/cacheTextureArray.mjs"() {
     init_Extensions();
     init_Texture();
     cacheTextureArray = {
@@ -47934,7 +47934,7 @@ var init_cacheTextureArray = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/utils/testImageFormat.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/utils/testImageFormat.mjs
 async function testImageFormat(imageData) {
   if ("Image" in globalThis) {
     return new Promise((resolve) => {
@@ -47960,15 +47960,15 @@ async function testImageFormat(imageData) {
   return false;
 }
 var init_testImageFormat = __esm({
-  "node_modules/pixi.js/lib/assets/detections/utils/testImageFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/utils/testImageFormat.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/parsers/detectAvif.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectAvif.mjs
 var detectAvif;
 var init_detectAvif = __esm({
-  "node_modules/pixi.js/lib/assets/detections/parsers/detectAvif.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectAvif.mjs"() {
     init_Extensions();
     init_testImageFormat();
     detectAvif = {
@@ -47986,10 +47986,10 @@ var init_detectAvif = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/parsers/detectDefaults.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectDefaults.mjs
 var imageFormats, detectDefaults;
 var init_detectDefaults = __esm({
-  "node_modules/pixi.js/lib/assets/detections/parsers/detectDefaults.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectDefaults.mjs"() {
     init_Extensions();
     imageFormats = ["png", "jpg", "jpeg"];
     detectDefaults = {
@@ -48004,7 +48004,7 @@ var init_detectDefaults = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/utils/testVideoFormat.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/utils/testVideoFormat.mjs
 function testVideoFormat(mimeType) {
   if (inWorker) {
     return false;
@@ -48014,16 +48014,16 @@ function testVideoFormat(mimeType) {
 }
 var inWorker;
 var init_testVideoFormat = __esm({
-  "node_modules/pixi.js/lib/assets/detections/utils/testVideoFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/utils/testVideoFormat.mjs"() {
     "use strict";
     inWorker = "WorkerGlobalScope" in globalThis && globalThis instanceof globalThis.WorkerGlobalScope;
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/parsers/detectMp4.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectMp4.mjs
 var detectMp4;
 var init_detectMp4 = __esm({
-  "node_modules/pixi.js/lib/assets/detections/parsers/detectMp4.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectMp4.mjs"() {
     init_Extensions();
     init_testVideoFormat();
     detectMp4 = {
@@ -48038,10 +48038,10 @@ var init_detectMp4 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/parsers/detectOgv.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectOgv.mjs
 var detectOgv;
 var init_detectOgv = __esm({
-  "node_modules/pixi.js/lib/assets/detections/parsers/detectOgv.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectOgv.mjs"() {
     init_Extensions();
     init_testVideoFormat();
     detectOgv = {
@@ -48056,10 +48056,10 @@ var init_detectOgv = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/parsers/detectWebm.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectWebm.mjs
 var detectWebm;
 var init_detectWebm = __esm({
-  "node_modules/pixi.js/lib/assets/detections/parsers/detectWebm.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectWebm.mjs"() {
     init_Extensions();
     init_testVideoFormat();
     detectWebm = {
@@ -48074,10 +48074,10 @@ var init_detectWebm = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/detections/parsers/detectWebp.mjs
+// main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectWebp.mjs
 var detectWebp;
 var init_detectWebp = __esm({
-  "node_modules/pixi.js/lib/assets/detections/parsers/detectWebp.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/detections/parsers/detectWebp.mjs"() {
     init_Extensions();
     init_testImageFormat();
     detectWebp = {
@@ -48094,10 +48094,10 @@ var init_detectWebp = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/Loader.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/Loader.mjs
 var _Loader, Loader;
 var init_Loader = __esm({
-  "node_modules/pixi.js/lib/assets/loader/Loader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/Loader.mjs"() {
     init_warn();
     init_path();
     init_convertToList();
@@ -48290,7 +48290,7 @@ ${e2}`);
   }
 });
 
-// node_modules/pixi.js/lib/assets/utils/checkDataUrl.mjs
+// main/deps/node_modules/pixi.js/lib/assets/utils/checkDataUrl.mjs
 function checkDataUrl(url, mimes2) {
   if (Array.isArray(mimes2)) {
     for (const mime of mimes2) {
@@ -48301,12 +48301,12 @@ function checkDataUrl(url, mimes2) {
   return url.startsWith(`data:${mimes2}`);
 }
 var init_checkDataUrl = __esm({
-  "node_modules/pixi.js/lib/assets/utils/checkDataUrl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/utils/checkDataUrl.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/assets/utils/checkExtension.mjs
+// main/deps/node_modules/pixi.js/lib/assets/utils/checkExtension.mjs
 function checkExtension(url, extension) {
   const tempURL = url.split("?")[0];
   const ext = path.extname(tempURL).toLowerCase();
@@ -48316,15 +48316,15 @@ function checkExtension(url, extension) {
   return ext === extension;
 }
 var init_checkExtension = __esm({
-  "node_modules/pixi.js/lib/assets/utils/checkExtension.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/utils/checkExtension.mjs"() {
     init_path();
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/loadJson.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/loadJson.mjs
 var validJSONExtension, validJSONMIME, loadJson;
 var init_loadJson = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/loadJson.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/loadJson.mjs"() {
     init_adapter();
     init_Extensions();
     init_checkDataUrl();
@@ -48352,10 +48352,10 @@ var init_loadJson = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/loadTxt.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/loadTxt.mjs
 var validTXTExtension, validTXTMIME, loadTxt;
 var init_loadTxt = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/loadTxt.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/loadTxt.mjs"() {
     init_adapter();
     init_Extensions();
     init_checkDataUrl();
@@ -48384,7 +48384,7 @@ var init_loadTxt = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/loadWebFont.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/loadWebFont.mjs
 function getFontFamilyName(url) {
   const ext = path.extname(url);
   const name = path.basename(url, ext);
@@ -48411,7 +48411,7 @@ function encodeURIWhenNeeded(uri) {
 }
 var validWeights, validFontExtensions, validFontMIMEs, CSS_IDENT_TOKEN_REGEX, validURICharactersRegex, loadWebFont;
 var init_loadWebFont = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/loadWebFont.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/loadWebFont.mjs"() {
     init_adapter();
     init_Extensions();
     init_warn();
@@ -48503,7 +48503,7 @@ var init_loadWebFont = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/network/getResolutionOfUrl.mjs
+// main/deps/node_modules/pixi.js/lib/utils/network/getResolutionOfUrl.mjs
 function getResolutionOfUrl(url, defaultValue2 = 1) {
   const resolution = Resolver.RETINA_PREFIX?.exec(url);
   if (resolution) {
@@ -48512,12 +48512,12 @@ function getResolutionOfUrl(url, defaultValue2 = 1) {
   return defaultValue2;
 }
 var init_getResolutionOfUrl = __esm({
-  "node_modules/pixi.js/lib/utils/network/getResolutionOfUrl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/network/getResolutionOfUrl.mjs"() {
     init_Resolver();
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/textures/utils/createTexture.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/utils/createTexture.mjs
 function createTexture(source8, loader, url) {
   source8.label = url;
   source8._sourceOrigin = url;
@@ -48546,14 +48546,14 @@ function createTexture(source8, loader, url) {
   return texture;
 }
 var init_createTexture = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/textures/utils/createTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/utils/createTexture.mjs"() {
     init_Texture();
     init_warn();
     init_Cache();
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/textures/loadSVG.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/loadSVG.mjs
 async function loadAsTexture(url, asset, loader, crossOrigin2) {
   const response = await DOMAdapter.get().fetch(url);
   const image = DOMAdapter.get().createImage();
@@ -48588,7 +48588,7 @@ async function loadAsGraphics(url) {
 }
 var validSVGExtension, validSVGMIME, loadSvg;
 var init_loadSVG = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/textures/loadSVG.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/loadSVG.mjs"() {
     init_adapter();
     init_Extensions();
     init_ImageSource();
@@ -48629,10 +48629,10 @@ var init_loadSVG = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/_virtual/checkImageBitmap.worker.mjs
+// main/deps/node_modules/pixi.js/lib/_virtual/checkImageBitmap.worker.mjs
 var WORKER_CODE, WORKER_URL, WorkerInstance;
 var init_checkImageBitmap_worker = __esm({
-  "node_modules/pixi.js/lib/_virtual/checkImageBitmap.worker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/_virtual/checkImageBitmap.worker.mjs"() {
     WORKER_CODE = `(function () {
     'use strict';
 
@@ -48672,10 +48672,10 @@ var init_checkImageBitmap_worker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/_virtual/loadImageBitmap.worker.mjs
+// main/deps/node_modules/pixi.js/lib/_virtual/loadImageBitmap.worker.mjs
 var WORKER_CODE2, WORKER_URL2, WorkerInstance2;
 var init_loadImageBitmap_worker = __esm({
-  "node_modules/pixi.js/lib/_virtual/loadImageBitmap.worker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/_virtual/loadImageBitmap.worker.mjs"() {
     WORKER_CODE2 = '(function () {\n    \'use strict\';\n\n    async function loadImageBitmap(url, alphaMode) {\n      const response = await fetch(url);\n      if (!response.ok) {\n        throw new Error(`[WorkerManager.loadImageBitmap] Failed to fetch ${url}: ${response.status} ${response.statusText}`);\n      }\n      const imageBlob = await response.blob();\n      return alphaMode === "premultiplied-alpha" ? createImageBitmap(imageBlob, { premultiplyAlpha: "none" }) : createImageBitmap(imageBlob);\n    }\n    self.onmessage = async (event) => {\n      try {\n        const imageBitmap = await loadImageBitmap(event.data.data[0], event.data.data[1]);\n        self.postMessage({\n          data: imageBitmap,\n          uuid: event.data.uuid,\n          id: event.data.id\n        }, [imageBitmap]);\n      } catch (e) {\n        self.postMessage({\n          error: e,\n          uuid: event.data.uuid,\n          id: event.data.id\n        });\n      }\n    };\n\n})();\n';
     WORKER_URL2 = null;
     WorkerInstance2 = class {
@@ -48695,10 +48695,10 @@ var init_loadImageBitmap_worker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/workers/WorkerManager.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/workers/WorkerManager.mjs
 var UUID, MAX_WORKERS, WorkerManagerClass, WorkerManager;
 var init_WorkerManager = __esm({
-  "node_modules/pixi.js/lib/assets/loader/workers/WorkerManager.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/workers/WorkerManager.mjs"() {
     init_checkImageBitmap_worker();
     init_loadImageBitmap_worker();
     UUID = 0;
@@ -48866,7 +48866,7 @@ var init_WorkerManager = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/textures/loadTextures.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/loadTextures.mjs
 async function loadImageBitmap(url, asset) {
   const response = await DOMAdapter.get().fetch(url);
   if (!response.ok) {
@@ -48877,7 +48877,7 @@ async function loadImageBitmap(url, asset) {
 }
 var validImageExtensions, validImageMIMEs, loadTextures;
 var init_loadTextures = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/textures/loadTextures.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/loadTextures.mjs"() {
     init_adapter();
     init_Extensions();
     init_ImageSource();
@@ -48949,7 +48949,7 @@ var init_loadTextures = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/loader/parsers/textures/loadVideoTextures.mjs
+// main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/loadVideoTextures.mjs
 function crossOrigin(element, url, crossorigin) {
   if (crossorigin === void 0 && !url.startsWith("data:")) {
     element.crossOrigin = determineCrossOrigin(url);
@@ -49006,7 +49006,7 @@ function getBrowserSupportedVideoExtensions() {
 }
 var potentialVideoExtensions, validVideoExtensions, validVideoMIMEs, loadVideoTextures;
 var init_loadVideoTextures = __esm({
-  "node_modules/pixi.js/lib/assets/loader/parsers/textures/loadVideoTextures.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/loader/parsers/textures/loadVideoTextures.mjs"() {
     init_Extensions();
     init_VideoSource();
     init_detectVideoAlphaMode();
@@ -49106,10 +49106,10 @@ var init_loadVideoTextures = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/resolver/parsers/resolveTextureUrl.mjs
+// main/deps/node_modules/pixi.js/lib/assets/resolver/parsers/resolveTextureUrl.mjs
 var resolveTextureUrl;
 var init_resolveTextureUrl = __esm({
-  "node_modules/pixi.js/lib/assets/resolver/parsers/resolveTextureUrl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/resolver/parsers/resolveTextureUrl.mjs"() {
     init_Extensions();
     init_loadTextures();
     init_Resolver();
@@ -49128,10 +49128,10 @@ var init_resolveTextureUrl = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/resolver/parsers/resolveJsonUrl.mjs
+// main/deps/node_modules/pixi.js/lib/assets/resolver/parsers/resolveJsonUrl.mjs
 var resolveJsonUrl;
 var init_resolveJsonUrl = __esm({
-  "node_modules/pixi.js/lib/assets/resolver/parsers/resolveJsonUrl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/resolver/parsers/resolveJsonUrl.mjs"() {
     init_Extensions();
     init_Resolver();
     init_resolveTextureUrl();
@@ -49147,10 +49147,10 @@ var init_resolveJsonUrl = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/assets/Assets.mjs
+// main/deps/node_modules/pixi.js/lib/assets/Assets.mjs
 var AssetsClass, Assets, assetKeyMap;
 var init_Assets = __esm({
-  "node_modules/pixi.js/lib/assets/Assets.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/assets/Assets.mjs"() {
     init_Extensions();
     init_loadBitmapFont();
     init_warn();
@@ -49886,10 +49886,10 @@ var init_Assets = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/basis/detectBasis.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/basis/detectBasis.mjs
 var detectBasis;
 var init_detectBasis = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/basis/detectBasis.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/basis/detectBasis.mjs"() {
     init_Extensions();
     init_isWebGLSupported();
     init_isWebGPUSupported();
@@ -49909,10 +49909,10 @@ var init_detectBasis = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CompressedSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CompressedSource.mjs
 var CompressedSource;
 var init_CompressedSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CompressedSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CompressedSource.mjs"() {
     init_TextureSource();
     CompressedSource = class extends TextureSource {
       constructor(options) {
@@ -49926,7 +49926,7 @@ var init_CompressedSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.mjs
 function getSupportedGlCompressedTextureFormats() {
   if (supportedGLCompressedTextureFormats) return supportedGLCompressedTextureFormats;
   const canvas = DOMAdapter.get().createCanvas(1, 1);
@@ -50022,12 +50022,12 @@ function getSupportedGlCompressedTextureFormats() {
 }
 var supportedGLCompressedTextureFormats;
 var init_getSupportedGlCompressedTextureFormats = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/texture/utils/getSupportedGlCompressedTextureFormats.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.mjs
 async function getSupportedGPUCompressedTextureFormats() {
   if (supportedGPUCompressedTextureFormats) return supportedGPUCompressedTextureFormats;
   const adapter = await DOMAdapter.get().getNavigator().gpu.requestAdapter();
@@ -50101,12 +50101,12 @@ async function getSupportedGPUCompressedTextureFormats() {
 }
 var supportedGPUCompressedTextureFormats;
 var init_getSupportedGPUCompressedTextureFormats = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gpu/texture/utils/getSupportedGPUCompressedTextureFormats.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.mjs
 async function getSupportedCompressedTextureFormats() {
   if (supportedCompressedTextureFormats !== void 0) return supportedCompressedTextureFormats;
   supportedCompressedTextureFormats = await (async () => {
@@ -50127,7 +50127,7 @@ async function getSupportedCompressedTextureFormats() {
 }
 var supportedCompressedTextureFormats;
 var init_getSupportedCompressedTextureFormats = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedCompressedTextureFormats.mjs"() {
     init_isWebGLSupported();
     init_isWebGPUSupported();
     init_getSupportedGlCompressedTextureFormats();
@@ -50135,7 +50135,7 @@ var init_getSupportedCompressedTextureFormats = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedTextureFormats.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedTextureFormats.mjs
 async function getSupportedTextureFormats() {
   if (supportedTextureFormats !== void 0) return supportedTextureFormats;
   const compressedTextureFormats = await getSupportedCompressedTextureFormats();
@@ -50147,7 +50147,7 @@ async function getSupportedTextureFormats() {
 }
 var nonCompressedFormats, supportedTextureFormats;
 var init_getSupportedTextureFormats = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedTextureFormats.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/utils/getSupportedTextureFormats.mjs"() {
     init_getSupportedCompressedTextureFormats();
     nonCompressedFormats = [
       // 8-bit formats
@@ -50204,10 +50204,10 @@ var init_getSupportedTextureFormats = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/_virtual/basis.worker.mjs
+// main/deps/node_modules/pixi.js/lib/_virtual/basis.worker.mjs
 var WORKER_CODE3, WORKER_URL3, WorkerInstance3;
 var init_basis_worker = __esm({
-  "node_modules/pixi.js/lib/_virtual/basis.worker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/_virtual/basis.worker.mjs"() {
     WORKER_CODE3 = '(function () {\n    \'use strict\';\n\n    function createLevelBuffers(basisTexture, basisTranscoderFormat) {\n      const images = basisTexture.getNumImages();\n      const levels = basisTexture.getNumLevels(0);\n      const success = basisTexture.startTranscoding();\n      if (!success) {\n        throw new Error("startTranscoding failed");\n      }\n      const levelBuffers = [];\n      for (let levelIndex = 0; levelIndex < levels; ++levelIndex) {\n        for (let sliceIndex = 0; sliceIndex < images; ++sliceIndex) {\n          const transcodeSize = basisTexture.getImageTranscodedSizeInBytes(sliceIndex, levelIndex, basisTranscoderFormat);\n          const levelBuffer = new Uint8Array(transcodeSize);\n          const success2 = basisTexture.transcodeImage(levelBuffer, sliceIndex, levelIndex, basisTranscoderFormat, 1, 0);\n          if (!success2) {\n            throw new Error("transcodeImage failed");\n          }\n          levelBuffers.push(levelBuffer);\n        }\n      }\n      return levelBuffers;\n    }\n\n    const gpuFormatToBasisTranscoderFormatMap = {\n      "bc3-rgba-unorm": 3,\n      // cTFBC3_RGBA\n      "bc7-rgba-unorm": 6,\n      // cTFBC7_RGBA,\n      "etc2-rgba8unorm": 1,\n      // cTFETC2_RGBA,\n      "astc-4x4-unorm": 10,\n      // cTFASTC_4x4_RGBA,\n      // Uncompressed\n      rgba8unorm: 13,\n      // cTFRGBA32,\n      rgba4unorm: 16\n      // cTFRGBA4444,\n    };\n    function gpuFormatToBasisTranscoderFormat(transcoderFormat) {\n      const format = gpuFormatToBasisTranscoderFormatMap[transcoderFormat];\n      if (format) {\n        return format;\n      }\n      throw new Error(`Unsupported transcoderFormat: ${transcoderFormat}`);\n    }\n\n    const settings = {\n      jsUrl: "basis/basis_transcoder.js",\n      wasmUrl: "basis/basis_transcoder.wasm"\n    };\n    let basisTranscoderFormat;\n    let basisTranscodedTextureFormat;\n    let basisPromise;\n    async function getBasis() {\n      if (!basisPromise) {\n        const absoluteJsUrl = new URL(settings.jsUrl, location.origin).href;\n        const absoluteWasmUrl = new URL(settings.wasmUrl, location.origin).href;\n        importScripts(absoluteJsUrl);\n        basisPromise = new Promise((resolve) => {\n          BASIS({\n            locateFile: (_file) => absoluteWasmUrl\n          }).then((module) => {\n            module.initializeBasis();\n            resolve(module.BasisFile);\n          });\n        });\n      }\n      return basisPromise;\n    }\n    async function fetchBasisTexture(url, BasisTexture) {\n      const basisResponse = await fetch(url);\n      if (basisResponse.ok) {\n        const basisArrayBuffer = await basisResponse.arrayBuffer();\n        return new BasisTexture(new Uint8Array(basisArrayBuffer));\n      }\n      throw new Error(`Failed to load Basis texture: ${url}`);\n    }\n    const preferredTranscodedFormat = [\n      "bc7-rgba-unorm",\n      "astc-4x4-unorm",\n      "etc2-rgba8unorm",\n      "bc3-rgba-unorm",\n      "rgba8unorm"\n    ];\n    async function load(url) {\n      const BasisTexture = await getBasis();\n      const basisTexture = await fetchBasisTexture(url, BasisTexture);\n      const levelBuffers = createLevelBuffers(basisTexture, basisTranscoderFormat);\n      return {\n        width: basisTexture.getImageWidth(0, 0),\n        height: basisTexture.getImageHeight(0, 0),\n        format: basisTranscodedTextureFormat,\n        resource: levelBuffers,\n        alphaMode: "no-premultiply-alpha"\n      };\n    }\n    async function init(jsUrl, wasmUrl, supportedTextures) {\n      if (jsUrl) settings.jsUrl = jsUrl;\n      if (wasmUrl) settings.wasmUrl = wasmUrl;\n      basisTranscodedTextureFormat = preferredTranscodedFormat.filter((format) => supportedTextures.includes(format))[0];\n      basisTranscoderFormat = gpuFormatToBasisTranscoderFormat(basisTranscodedTextureFormat);\n      await getBasis();\n    }\n    const messageHandlers = {\n      init: async (data) => {\n        const { jsUrl, wasmUrl, supportedTextures } = data;\n        await init(jsUrl, wasmUrl, supportedTextures);\n      },\n      load: async (data) => {\n        try {\n          const textureOptions = await load(data.url);\n          return {\n            type: "load",\n            url: data.url,\n            success: true,\n            textureOptions,\n            transferables: textureOptions.resource?.map((arr) => arr.buffer)\n          };\n        } catch (e) {\n          throw e;\n        }\n      }\n    };\n    self.onmessage = (async (messageEvent) => {\n      const message = messageEvent.data;\n      const response = await messageHandlers[message.type](message);\n      if (response) {\n        self.postMessage(response, response.transferables);\n      }\n    });\n\n})();\n';
     WORKER_URL3 = null;
     WorkerInstance3 = class {
@@ -50227,13 +50227,13 @@ var init_basis_worker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/basis/utils/setBasisTranscoderPath.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/basis/utils/setBasisTranscoderPath.mjs
 function setBasisTranscoderPath(config2) {
   Object.assign(basisTranscoderUrls, config2);
 }
 var basisTranscoderUrls;
 var init_setBasisTranscoderPath = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/basis/utils/setBasisTranscoderPath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/basis/utils/setBasisTranscoderPath.mjs"() {
     "use strict";
     basisTranscoderUrls = {
       jsUrl: "https://cdn.jsdelivr.net/npm/pixi.js/transcoders/basis/basis_transcoder.js",
@@ -50242,7 +50242,7 @@ var init_setBasisTranscoderPath = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/basis/worker/loadBasisOnWorker.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/basis/worker/loadBasisOnWorker.mjs
 function getBasisWorker(supportedTextures) {
   if (!basisWorker) {
     basisWorker = new WorkerInstance3().worker;
@@ -50271,17 +50271,17 @@ function loadBasisOnWorker(url, supportedTextures) {
 }
 var basisWorker, urlHash;
 var init_loadBasisOnWorker = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/basis/worker/loadBasisOnWorker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/basis/worker/loadBasisOnWorker.mjs"() {
     init_basis_worker();
     init_setBasisTranscoderPath();
     urlHash = {};
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/basis/loadBasis.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/basis/loadBasis.mjs
 var loadBasis;
 var init_loadBasis = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/basis/loadBasis.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/basis/loadBasis.mjs"() {
     init_LoaderParser();
     init_createTexture();
     init_checkExtension();
@@ -50322,7 +50322,7 @@ var init_loadBasis = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/basis/utils/createLevelBuffers.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/basis/utils/createLevelBuffers.mjs
 function createLevelBuffers(basisTexture, basisTranscoderFormat) {
   const images = basisTexture.getNumImages();
   const levels = basisTexture.getNumLevels(0);
@@ -50345,12 +50345,12 @@ function createLevelBuffers(basisTexture, basisTranscoderFormat) {
   return levelBuffers;
 }
 var init_createLevelBuffers = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/basis/utils/createLevelBuffers.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/basis/utils/createLevelBuffers.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/basis/utils/gpuFormatToBasisTranscoderFormat.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/basis/utils/gpuFormatToBasisTranscoderFormat.mjs
 function gpuFormatToBasisTranscoderFormat(transcoderFormat) {
   const format = gpuFormatToBasisTranscoderFormatMap[transcoderFormat];
   if (format) {
@@ -50360,7 +50360,7 @@ function gpuFormatToBasisTranscoderFormat(transcoderFormat) {
 }
 var gpuFormatToBasisTranscoderFormatMap;
 var init_gpuFormatToBasisTranscoderFormat = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/basis/utils/gpuFormatToBasisTranscoderFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/basis/utils/gpuFormatToBasisTranscoderFormat.mjs"() {
     "use strict";
     gpuFormatToBasisTranscoderFormatMap = {
       "bc3-rgba-unorm": 3,
@@ -50380,13 +50380,13 @@ var init_gpuFormatToBasisTranscoderFormat = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/dds/const.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/dds/const.mjs
 function fourCCToInt32(value) {
   return value.charCodeAt(0) + (value.charCodeAt(1) << 8) + (value.charCodeAt(2) << 16) + (value.charCodeAt(3) << 24);
 }
 var DDS_HEADER_FIELDS, DDS_DX10_FIELDS, DXGI_FORMAT, D3D10_RESOURCE_DIMENSION, D3DFMT, FOURCC_TO_TEXTURE_FORMAT, DXGI_TO_TEXTURE_FORMAT, DDS, TEXTURE_FORMAT_BLOCK_SIZE;
 var init_const11 = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/dds/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/dds/const.mjs"() {
     "use strict";
     DDS_HEADER_FIELDS = {
       MAGIC: 0,
@@ -50838,7 +50838,7 @@ var init_const11 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/dds/parseDDS.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/dds/parseDDS.mjs
 function parseDDS(arrayBuffer, supportedFormats) {
   const {
     format,
@@ -51006,15 +51006,15 @@ function getUncompressedTextureFormat(header) {
                 bitCount = ${bitCount}, rBitMask = ${rBitMask}, gBitMask = ${gBitMask}, aBitMask = ${aBitMask}`);
 }
 var init_parseDDS = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/dds/parseDDS.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/dds/parseDDS.mjs"() {
     init_const11();
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/dds/loadDDS.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/dds/loadDDS.mjs
 var loadDDS;
 var init_loadDDS = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/dds/loadDDS.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/dds/loadDDS.mjs"() {
     init_LoaderParser();
     init_createTexture();
     init_checkExtension();
@@ -51057,10 +51057,10 @@ var init_loadDDS = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/const.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/const.mjs
 var GL_INTERNAL_FORMAT, INTERNAL_FORMAT_TO_TEXTURE_FORMATS, FILE_IDENTIFIER, FIELDS, FILE_HEADER_SIZE, ENDIANNESS, TYPES_TO_BYTES_PER_COMPONENT, FORMATS_TO_COMPONENTS, TYPES_TO_BYTES_PER_PIXEL, INTERNAL_FORMAT_TO_BYTES_PER_PIXEL, KTX;
 var init_const12 = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/const.mjs"() {
     "use strict";
     GL_INTERNAL_FORMAT = /* @__PURE__ */ ((GL_INTERNAL_FORMAT2) => {
       GL_INTERNAL_FORMAT2[GL_INTERNAL_FORMAT2["RGBA8_SNORM"] = 36759] = "RGBA8_SNORM";
@@ -51681,7 +51681,7 @@ var init_const12 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx/parseKTX.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx/parseKTX.mjs
 function parseKTX(arrayBuffer, supportedFormats) {
   const dataView = new DataView(arrayBuffer);
   if (!validate(dataView)) {
@@ -51807,15 +51807,15 @@ function validate(dataView) {
   return true;
 }
 var init_parseKTX = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx/parseKTX.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx/parseKTX.mjs"() {
     init_const12();
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx/loadKTX.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx/loadKTX.mjs
 var loadKTX;
 var init_loadKTX = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx/loadKTX.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx/loadKTX.mjs"() {
     init_LoaderParser();
     init_createTexture();
     init_checkExtension();
@@ -51858,10 +51858,10 @@ var init_loadKTX = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/_virtual/ktx.worker.mjs
+// main/deps/node_modules/pixi.js/lib/_virtual/ktx.worker.mjs
 var WORKER_CODE4, WORKER_URL4, WorkerInstance4;
 var init_ktx_worker = __esm({
-  "node_modules/pixi.js/lib/_virtual/ktx.worker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/_virtual/ktx.worker.mjs"() {
     WORKER_CODE4 = '(function () {\n    \'use strict\';\n\n    const converters = {\n      rgb8unorm: {\n        convertedFormat: "rgba8unorm",\n        convertFunction: convertRGBtoRGBA\n      },\n      "rgb8unorm-srgb": {\n        convertedFormat: "rgba8unorm-srgb",\n        convertFunction: convertRGBtoRGBA\n      }\n    };\n    function convertFormatIfRequired(textureOptions) {\n      const format = textureOptions.format;\n      if (converters[format]) {\n        const convertFunction = converters[format].convertFunction;\n        const levelBuffers = textureOptions.resource;\n        for (let i = 0; i < levelBuffers.length; i++) {\n          levelBuffers[i] = convertFunction(levelBuffers[i]);\n        }\n        textureOptions.format = converters[format].convertedFormat;\n      }\n    }\n    function convertRGBtoRGBA(levelBuffer) {\n      const pixelCount = levelBuffer.byteLength / 3;\n      const levelBufferWithAlpha = new Uint32Array(pixelCount);\n      for (let i = 0; i < pixelCount; ++i) {\n        levelBufferWithAlpha[i] = levelBuffer[i * 3] + (levelBuffer[i * 3 + 1] << 8) + (levelBuffer[i * 3 + 2] << 16) + 4278190080;\n      }\n      return new Uint8Array(levelBufferWithAlpha.buffer);\n    }\n\n    function createLevelBuffersFromKTX(ktxTexture) {\n      const levelBuffers = [];\n      for (let i = 0; i < ktxTexture.numLevels; i++) {\n        const imageData = ktxTexture.getImageData(i, 0, 0);\n        const levelBuffer = new Uint8Array(imageData.byteLength);\n        levelBuffer.set(imageData);\n        levelBuffers.push(levelBuffer);\n      }\n      return levelBuffers;\n    }\n\n    const glFormatToGPUFormatMap = {\n      6408: "rgba8unorm",\n      32856: "bgra8unorm",\n      //\n      32857: "rgb10a2unorm",\n      33189: "depth16unorm",\n      33190: "depth24plus",\n      33321: "r8unorm",\n      33323: "rg8unorm",\n      33325: "r16float",\n      33326: "r32float",\n      33327: "rg16float",\n      33328: "rg32float",\n      33329: "r8sint",\n      33330: "r8uint",\n      33331: "r16sint",\n      33332: "r16uint",\n      33333: "r32sint",\n      33334: "r32uint",\n      33335: "rg8sint",\n      33336: "rg8uint",\n      33337: "rg16sint",\n      33338: "rg16uint",\n      33339: "rg32sint",\n      33340: "rg32uint",\n      33778: "bc2-rgba-unorm",\n      33779: "bc3-rgba-unorm",\n      34836: "rgba32float",\n      34842: "rgba16float",\n      35056: "depth24plus-stencil8",\n      35898: "rg11b10ufloat",\n      35901: "rgb9e5ufloat",\n      35907: "rgba8unorm-srgb",\n      // bgra8unorm-srgb\n      36012: "depth32float",\n      36013: "depth32float-stencil8",\n      36168: "stencil8",\n      36208: "rgba32uint",\n      36214: "rgba16uint",\n      36220: "rgba8uint",\n      36226: "rgba32sint",\n      36232: "rgba16sint",\n      36238: "rgba8sint",\n      36492: "bc7-rgba-unorm",\n      36756: "r8snorm",\n      36757: "rg8snorm",\n      36759: "rgba8snorm",\n      37496: "etc2-rgba8unorm",\n      37808: "astc-4x4-unorm"\n    };\n    function glFormatToGPUFormat(glInternalFormat) {\n      const format = glFormatToGPUFormatMap[glInternalFormat];\n      if (format) {\n        return format;\n      }\n      throw new Error(`Unsupported glInternalFormat: ${glInternalFormat}`);\n    }\n\n    const vkFormatToGPUFormatMap = {\n      23: "rgb8unorm",\n      // VK_FORMAT_R8G8B8_UNORM\n      37: "rgba8unorm",\n      // VK_FORMAT_R8G8B8A8_UNORM\n      43: "rgba8unorm-srgb"\n      // VK_FORMAT_R8G8B8A8_SRGB\n      // TODO add more!\n    };\n    function vkFormatToGPUFormat(vkFormat) {\n      const format = vkFormatToGPUFormatMap[vkFormat];\n      if (format) {\n        return format;\n      }\n      throw new Error(`Unsupported VkFormat: ${vkFormat}`);\n    }\n\n    function getTextureFormatFromKTXTexture(ktxTexture) {\n      if (ktxTexture.classId === 2) {\n        return vkFormatToGPUFormat(ktxTexture.vkFormat);\n      }\n      return glFormatToGPUFormat(ktxTexture.glInternalformat);\n    }\n\n    const gpuFormatToBasisTranscoderFormatMap = {\n      "bc3-rgba-unorm": "BC3_RGBA",\n      "bc7-rgba-unorm": "BC7_M5_RGBA",\n      "etc2-rgba8unorm": "ETC2_RGBA",\n      "astc-4x4-unorm": "ASTC_4x4_RGBA",\n      // Uncompressed\n      rgba8unorm: "RGBA32",\n      rg11b10ufloat: "R11F_G11F_B10F"\n    };\n    function gpuFormatToKTXBasisTranscoderFormat(transcoderFormat) {\n      const format = gpuFormatToBasisTranscoderFormatMap[transcoderFormat];\n      if (format) {\n        return format;\n      }\n      throw new Error(`Unsupported transcoderFormat: ${transcoderFormat}`);\n    }\n\n    const settings = {\n      jsUrl: "",\n      wasmUrl: ""\n    };\n    let basisTranscoderFormat;\n    let basisTranscodedTextureFormat;\n    let ktxPromise;\n    async function getKTX() {\n      if (!ktxPromise) {\n        const absoluteJsUrl = new URL(settings.jsUrl, location.origin).href;\n        const absoluteWasmUrl = new URL(settings.wasmUrl, location.origin).href;\n        importScripts(absoluteJsUrl);\n        ktxPromise = new Promise((resolve) => {\n          LIBKTX({\n            locateFile: (_file) => absoluteWasmUrl\n          }).then((libktx) => {\n            resolve(libktx);\n          });\n        });\n      }\n      return ktxPromise;\n    }\n    async function fetchKTXTexture(url, ktx) {\n      const ktx2Response = await fetch(url);\n      if (ktx2Response.ok) {\n        const ktx2ArrayBuffer = await ktx2Response.arrayBuffer();\n        return new ktx.ktxTexture(new Uint8Array(ktx2ArrayBuffer));\n      }\n      throw new Error(`Failed to load KTX(2) texture: ${url}`);\n    }\n    const preferredTranscodedFormat = [\n      "bc7-rgba-unorm",\n      "astc-4x4-unorm",\n      "etc2-rgba8unorm",\n      "bc3-rgba-unorm",\n      "rgba8unorm"\n    ];\n    async function load(url) {\n      const ktx = await getKTX();\n      const ktxTexture = await fetchKTXTexture(url, ktx);\n      let format;\n      if (ktxTexture.needsTranscoding) {\n        format = basisTranscodedTextureFormat;\n        const transcodeFormat = ktx.TranscodeTarget[basisTranscoderFormat];\n        const result = ktxTexture.transcodeBasis(transcodeFormat, 0);\n        if (result !== ktx.ErrorCode.SUCCESS) {\n          throw new Error("Unable to transcode basis texture.");\n        }\n      } else {\n        format = getTextureFormatFromKTXTexture(ktxTexture);\n      }\n      const levelBuffers = createLevelBuffersFromKTX(ktxTexture);\n      const textureOptions = {\n        width: ktxTexture.baseWidth,\n        height: ktxTexture.baseHeight,\n        format,\n        mipLevelCount: ktxTexture.numLevels,\n        resource: levelBuffers,\n        alphaMode: "no-premultiply-alpha"\n      };\n      convertFormatIfRequired(textureOptions);\n      return textureOptions;\n    }\n    async function init(jsUrl, wasmUrl, supportedTextures) {\n      if (jsUrl) settings.jsUrl = jsUrl;\n      if (wasmUrl) settings.wasmUrl = wasmUrl;\n      basisTranscodedTextureFormat = preferredTranscodedFormat.filter((format) => supportedTextures.includes(format))[0];\n      basisTranscoderFormat = gpuFormatToKTXBasisTranscoderFormat(basisTranscodedTextureFormat);\n      await getKTX();\n    }\n    const messageHandlers = {\n      init: async (data) => {\n        const { jsUrl, wasmUrl, supportedTextures } = data;\n        await init(jsUrl, wasmUrl, supportedTextures);\n      },\n      load: async (data) => {\n        try {\n          const textureOptions = await load(data.url);\n          return {\n            type: "load",\n            url: data.url,\n            success: true,\n            textureOptions,\n            transferables: textureOptions.resource?.map((arr) => arr.buffer)\n          };\n        } catch (e) {\n          throw e;\n        }\n      }\n    };\n    self.onmessage = (async (messageEvent) => {\n      const message = messageEvent.data;\n      try {\n        const response = await messageHandlers[message.type]?.(message);\n        if (response) {\n          self.postMessage(response, response.transferables);\n        }\n      } catch (err) {\n        self.postMessage({\n          type: "error",\n          err,\n          url: message.url\n        });\n      }\n    });\n\n})();\n';
     WORKER_URL4 = null;
     WorkerInstance4 = class {
@@ -51881,13 +51881,13 @@ var init_ktx_worker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/setKTXTranscoderPath.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/setKTXTranscoderPath.mjs
 function setKTXTranscoderPath(config2) {
   Object.assign(ktxTranscoderUrls, config2);
 }
 var ktxTranscoderUrls;
 var init_setKTXTranscoderPath = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/setKTXTranscoderPath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/setKTXTranscoderPath.mjs"() {
     "use strict";
     ktxTranscoderUrls = {
       jsUrl: "https://cdn.jsdelivr.net/npm/pixi.js/transcoders/ktx/libktx.js",
@@ -51896,7 +51896,7 @@ var init_setKTXTranscoderPath = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/worker/loadKTX2onWorker.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/worker/loadKTX2onWorker.mjs
 function getKTX2Worker(supportedTextures) {
   if (!ktxWorker) {
     ktxWorker = new WorkerInstance4().worker;
@@ -51930,7 +51930,7 @@ function loadKTX2onWorker(url, supportedTextures) {
 }
 var ktxWorker, urlHash2, errorHash;
 var init_loadKTX2onWorker = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/worker/loadKTX2onWorker.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/worker/loadKTX2onWorker.mjs"() {
     init_ktx_worker();
     init_setKTXTranscoderPath();
     urlHash2 = {};
@@ -51938,10 +51938,10 @@ var init_loadKTX2onWorker = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/loadKTX2.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/loadKTX2.mjs
 var loadKTX2;
 var init_loadKTX2 = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/loadKTX2.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/loadKTX2.mjs"() {
     init_LoaderParser();
     init_createTexture();
     init_checkExtension();
@@ -51982,7 +51982,7 @@ var init_loadKTX2 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/convertFormatIfRequired.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/convertFormatIfRequired.mjs
 function convertFormatIfRequired(textureOptions) {
   const format = textureOptions.format;
   if (converters[format]) {
@@ -52004,7 +52004,7 @@ function convertRGBtoRGBA(levelBuffer) {
 }
 var converters;
 var init_convertFormatIfRequired = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/convertFormatIfRequired.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/convertFormatIfRequired.mjs"() {
     "use strict";
     converters = {
       rgb8unorm: {
@@ -52019,7 +52019,7 @@ var init_convertFormatIfRequired = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/createLevelBuffersFromKTX.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/createLevelBuffersFromKTX.mjs
 function createLevelBuffersFromKTX(ktxTexture) {
   const levelBuffers = [];
   for (let i2 = 0; i2 < ktxTexture.numLevels; i2++) {
@@ -52031,12 +52031,12 @@ function createLevelBuffersFromKTX(ktxTexture) {
   return levelBuffers;
 }
 var init_createLevelBuffersFromKTX = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/createLevelBuffersFromKTX.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/createLevelBuffersFromKTX.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/glFormatToGPUFormat.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/glFormatToGPUFormat.mjs
 function glFormatToGPUFormat(glInternalFormat) {
   const format = glFormatToGPUFormatMap[glInternalFormat];
   if (format) {
@@ -52046,7 +52046,7 @@ function glFormatToGPUFormat(glInternalFormat) {
 }
 var glFormatToGPUFormatMap;
 var init_glFormatToGPUFormat = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/glFormatToGPUFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/glFormatToGPUFormat.mjs"() {
     "use strict";
     glFormatToGPUFormatMap = {
       6408: "rgba8unorm",
@@ -52101,7 +52101,7 @@ var init_glFormatToGPUFormat = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/vkFormatToGPUFormat.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/vkFormatToGPUFormat.mjs
 function vkFormatToGPUFormat(vkFormat) {
   const format = vkFormatToGPUFormatMap[vkFormat];
   if (format) {
@@ -52111,7 +52111,7 @@ function vkFormatToGPUFormat(vkFormat) {
 }
 var vkFormatToGPUFormatMap;
 var init_vkFormatToGPUFormat = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/vkFormatToGPUFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/vkFormatToGPUFormat.mjs"() {
     "use strict";
     vkFormatToGPUFormatMap = {
       23: "rgb8unorm",
@@ -52125,7 +52125,7 @@ var init_vkFormatToGPUFormat = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/getTextureFormatFromKTXTexture.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/getTextureFormatFromKTXTexture.mjs
 function getTextureFormatFromKTXTexture(ktxTexture) {
   if (ktxTexture.classId === 2) {
     return vkFormatToGPUFormat(ktxTexture.vkFormat);
@@ -52133,13 +52133,13 @@ function getTextureFormatFromKTXTexture(ktxTexture) {
   return glFormatToGPUFormat(ktxTexture.glInternalformat);
 }
 var init_getTextureFormatFromKTXTexture = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/getTextureFormatFromKTXTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/getTextureFormatFromKTXTexture.mjs"() {
     init_glFormatToGPUFormat();
     init_vkFormatToGPUFormat();
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.mjs
 function gpuFormatToKTXBasisTranscoderFormat(transcoderFormat) {
   const format = gpuFormatToBasisTranscoderFormatMap2[transcoderFormat];
   if (format) {
@@ -52149,7 +52149,7 @@ function gpuFormatToKTXBasisTranscoderFormat(transcoderFormat) {
 }
 var gpuFormatToBasisTranscoderFormatMap2;
 var init_gpuFormatToKTXBasisTranscoderFormat = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/ktx2/utils/gpuFormatToKTXBasisTranscoderFormat.mjs"() {
     "use strict";
     gpuFormatToBasisTranscoderFormatMap2 = {
       "bc3-rgba-unorm": "BC3_RGBA",
@@ -52163,10 +52163,10 @@ var init_gpuFormatToKTXBasisTranscoderFormat = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/shared/resolveCompressedTextureUrl.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/shared/resolveCompressedTextureUrl.mjs
 var validFormats, resolveCompressedTextureUrl;
 var init_resolveCompressedTextureUrl = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/shared/resolveCompressedTextureUrl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/shared/resolveCompressedTextureUrl.mjs"() {
     init_Resolver();
     init_checkExtension();
     init_Extensions();
@@ -52195,7 +52195,7 @@ var init_resolveCompressedTextureUrl = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/compressed-textures/shared/detectCompressed.mjs
+// main/deps/node_modules/pixi.js/lib/compressed-textures/shared/detectCompressed.mjs
 function extractExtensionsForCompressedTextureFormats(formats) {
   const extensions3 = ["basis"];
   const dupeMap = {};
@@ -52221,7 +52221,7 @@ function extractExtensionsForCompressedTextureFormats(formats) {
 }
 var compressedTextureExtensions, detectCompressed;
 var init_detectCompressed = __esm({
-  "node_modules/pixi.js/lib/compressed-textures/shared/detectCompressed.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/compressed-textures/shared/detectCompressed.mjs"() {
     init_Extensions();
     init_getSupportedCompressedTextureFormats();
     init_isWebGLSupported();
@@ -52252,10 +52252,10 @@ var init_detectCompressed = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/culling/Culler.mjs
+// main/deps/node_modules/pixi.js/lib/culling/Culler.mjs
 var tempBounds5, tempMatrix8, tempRectangle2, _Culler, Culler;
 var init_Culler = __esm({
-  "node_modules/pixi.js/lib/culling/Culler.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/culling/Culler.mjs"() {
     init_Matrix();
     init_Rectangle();
     init_Bounds();
@@ -52324,10 +52324,10 @@ var init_Culler = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/culling/CullerPlugin.mjs
+// main/deps/node_modules/pixi.js/lib/culling/CullerPlugin.mjs
 var CullerPlugin;
 var init_CullerPlugin = __esm({
-  "node_modules/pixi.js/lib/culling/CullerPlugin.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/culling/CullerPlugin.mjs"() {
     init_Extensions();
     init_Culler();
     CullerPlugin = class {
@@ -52357,9 +52357,9 @@ var init_CullerPlugin = __esm({
   }
 });
 
-// node_modules/@xmldom/xmldom/lib/conventions.js
+// main/deps/node_modules/@xmldom/xmldom/lib/conventions.js
 var require_conventions = __commonJS({
-  "node_modules/@xmldom/xmldom/lib/conventions.js"(exports) {
+  "main/deps/node_modules/@xmldom/xmldom/lib/conventions.js"(exports) {
     "use strict";
     function find(list, predicate, ac) {
       if (ac === void 0) {
@@ -52502,9 +52502,9 @@ var require_conventions = __commonJS({
   }
 });
 
-// node_modules/@xmldom/xmldom/lib/dom.js
+// main/deps/node_modules/@xmldom/xmldom/lib/dom.js
 var require_dom = __commonJS({
-  "node_modules/@xmldom/xmldom/lib/dom.js"(exports) {
+  "main/deps/node_modules/@xmldom/xmldom/lib/dom.js"(exports) {
     var conventions = require_conventions();
     var find = conventions.find;
     var NAMESPACE = conventions.NAMESPACE;
@@ -54132,9 +54132,9 @@ var require_dom = __commonJS({
   }
 });
 
-// node_modules/@xmldom/xmldom/lib/entities.js
+// main/deps/node_modules/@xmldom/xmldom/lib/entities.js
 var require_entities = __commonJS({
-  "node_modules/@xmldom/xmldom/lib/entities.js"(exports) {
+  "main/deps/node_modules/@xmldom/xmldom/lib/entities.js"(exports) {
     "use strict";
     var freeze = require_conventions().freeze;
     exports.XML_ENTITIES = freeze({
@@ -56275,9 +56275,9 @@ var require_entities = __commonJS({
   }
 });
 
-// node_modules/@xmldom/xmldom/lib/sax.js
+// main/deps/node_modules/@xmldom/xmldom/lib/sax.js
 var require_sax = __commonJS({
-  "node_modules/@xmldom/xmldom/lib/sax.js"(exports) {
+  "main/deps/node_modules/@xmldom/xmldom/lib/sax.js"(exports) {
     var NAMESPACE = require_conventions().NAMESPACE;
     var tagNamePattern = require_conventions().tagNamePattern;
     var S_TAG = 0;
@@ -56867,9 +56867,9 @@ var require_sax = __commonJS({
   }
 });
 
-// node_modules/@xmldom/xmldom/lib/dom-parser.js
+// main/deps/node_modules/@xmldom/xmldom/lib/dom-parser.js
 var require_dom_parser = __commonJS({
-  "node_modules/@xmldom/xmldom/lib/dom-parser.js"(exports) {
+  "main/deps/node_modules/@xmldom/xmldom/lib/dom-parser.js"(exports) {
     var conventions = require_conventions();
     var dom = require_dom();
     var entities = require_entities();
@@ -57083,9 +57083,9 @@ var require_dom_parser = __commonJS({
   }
 });
 
-// node_modules/@xmldom/xmldom/lib/index.js
+// main/deps/node_modules/@xmldom/xmldom/lib/index.js
 var require_lib = __commonJS({
-  "node_modules/@xmldom/xmldom/lib/index.js"(exports) {
+  "main/deps/node_modules/@xmldom/xmldom/lib/index.js"(exports) {
     var dom = require_dom();
     exports.DOMImplementation = dom.DOMImplementation;
     exports.XMLSerializer = dom.XMLSerializer;
@@ -57093,10 +57093,10 @@ var require_lib = __commonJS({
   }
 });
 
-// node_modules/pixi.js/lib/environment-webworker/WebWorkerAdapter.mjs
+// main/deps/node_modules/pixi.js/lib/environment-webworker/WebWorkerAdapter.mjs
 var import_xmldom, WebWorkerAdapter;
 var init_WebWorkerAdapter = __esm({
-  "node_modules/pixi.js/lib/environment-webworker/WebWorkerAdapter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/environment-webworker/WebWorkerAdapter.mjs"() {
     import_xmldom = __toESM(require_lib(), 1);
     WebWorkerAdapter = {
       createCanvas: (width, height) => new OffscreenCanvas(width ?? 0, height ?? 0),
@@ -57115,26 +57115,26 @@ var init_WebWorkerAdapter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/alpha/alpha.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/alpha/alpha.frag.mjs
 var fragment3;
 var init_alpha_frag = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/alpha/alpha.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/alpha/alpha.frag.mjs"() {
     fragment3 = "\nin vec2 vTextureCoord;\n\nout vec4 finalColor;\n\nuniform float uAlpha;\nuniform sampler2D uTexture;\n\nvoid main()\n{\n    finalColor =  texture(uTexture, vTextureCoord) * uAlpha;\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/alpha/alpha.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/alpha/alpha.wgsl.mjs
 var source3;
 var init_alpha_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/alpha/alpha.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/alpha/alpha.wgsl.mjs"() {
     source3 = "struct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct AlphaUniforms {\n  uAlpha:f32,\n};\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n\n@group(1) @binding(0) var<uniform> alphaUniforms : AlphaUniforms;\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>\n  };\n\nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\nfn globalTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return  (aPosition.xy / gfu.uGlobalFrame.zw) + (gfu.uGlobalFrame.xy / gfu.uGlobalFrame.zw);  \n}\n\nfn getSize() -> vec2<f32>\n{\n  return gfu.uGlobalFrame.zw;\n}\n  \n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>, \n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition)\n  );\n}\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n  @builtin(position) position: vec4<f32>\n) -> @location(0) vec4<f32> {\n \n    var sample = textureSample(uTexture, uSampler, uv);\n    \n    return sample * alphaUniforms.uAlpha;\n}";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/alpha/AlphaFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/alpha/AlphaFilter.mjs
 var _AlphaFilter, AlphaFilter;
 var init_AlphaFilter = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/alpha/AlphaFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/alpha/AlphaFilter.mjs"() {
     init_GlProgram();
     init_GpuProgram();
     init_UniformGroup();
@@ -57210,10 +57210,10 @@ var init_AlphaFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/const.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/const.mjs
 var GAUSSIAN_VALUES;
 var init_const13 = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/const.mjs"() {
     "use strict";
     GAUSSIAN_VALUES = {
       5: [0.153388, 0.221461, 0.250301],
@@ -57226,7 +57226,7 @@ var init_const13 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurFragSource.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurFragSource.mjs
 function generateBlurFragSource(kernelSize) {
   const kernel = GAUSSIAN_VALUES[kernelSize];
   const halfLength = kernel.length;
@@ -57245,7 +57245,7 @@ function generateBlurFragSource(kernelSize) {
 }
 var fragTemplate2;
 var init_generateBlurFragSource = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurFragSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurFragSource.mjs"() {
     init_const13();
     fragTemplate2 = [
       "in vec2 vBlurTexCoords[%size%];",
@@ -57260,7 +57260,7 @@ var init_generateBlurFragSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurVertSource.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurVertSource.mjs
 function generateBlurVertSource(kernelSize, x2) {
   const halfLength = Math.ceil(kernelSize / 2);
   let vertSource = vertTemplate;
@@ -57284,7 +57284,7 @@ function generateBlurVertSource(kernelSize, x2) {
 }
 var vertTemplate;
 var init_generateBlurVertSource = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurVertSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurVertSource.mjs"() {
     "use strict";
     vertTemplate = `
     in vec2 aPosition;
@@ -57324,7 +57324,7 @@ var init_generateBlurVertSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurGlProgram.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurGlProgram.mjs
 function generateBlurGlProgram(horizontal, kernelSize) {
   const vertex5 = generateBlurVertSource(kernelSize, horizontal);
   const fragment8 = generateBlurFragSource(kernelSize);
@@ -57335,22 +57335,22 @@ function generateBlurGlProgram(horizontal, kernelSize) {
   });
 }
 var init_generateBlurGlProgram = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurGlProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gl/generateBlurGlProgram.mjs"() {
     init_GlProgram();
     init_generateBlurFragSource();
     init_generateBlurVertSource();
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/gpu/blur-template.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gpu/blur-template.wgsl.mjs
 var source4;
 var init_blur_template_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/gpu/blur-template.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gpu/blur-template.wgsl.mjs"() {
     source4 = "\n\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct BlurUniforms {\n  uStrength:f32,\n};\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n\n@group(1) @binding(0) var<uniform> blurUniforms : BlurUniforms;\n\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    %blur-struct%\n  };\n\nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\nfn globalTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return  (aPosition.xy / gfu.uGlobalFrame.zw) + (gfu.uGlobalFrame.xy / gfu.uGlobalFrame.zw);\n}\n\nfn getSize() -> vec2<f32>\n{\n  return gfu.uGlobalFrame.zw;\n}\n\n\n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>,\n) -> VSOutput {\n\n  let filteredCord = filterTextureCoord(aPosition);\n\n  let pixelStrength = gfu.uInputSize.%dimension% * blurUniforms.uStrength;\n\n  return VSOutput(\n   filterVertexPosition(aPosition),\n    %blur-vertex-out%\n  );\n}\n\n@fragment\nfn mainFragment(\n  @builtin(position) position: vec4<f32>,\n  %blur-fragment-in%\n) -> @location(0) vec4<f32> {\n\n    var   finalColor = vec4(0.0);\n\n    %blur-sampling%\n\n    return finalColor;\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/gpu/generateBlurProgram.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gpu/generateBlurProgram.mjs
 function generateBlurProgram(horizontal, kernelSize) {
   const kernel = GAUSSIAN_VALUES[kernelSize];
   const halfLength = kernel.length;
@@ -57385,17 +57385,17 @@ function generateBlurProgram(horizontal, kernelSize) {
   });
 }
 var init_generateBlurProgram = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/gpu/generateBlurProgram.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/gpu/generateBlurProgram.mjs"() {
     init_GpuProgram();
     init_const13();
     init_blur_template_wgsl();
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/BlurFilterPass.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/BlurFilterPass.mjs
 var _BlurFilterPass, BlurFilterPass;
 var init_BlurFilterPass = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/BlurFilterPass.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/BlurFilterPass.mjs"() {
     init_TexturePool();
     init_types();
     init_Filter();
@@ -57550,10 +57550,10 @@ var init_BlurFilterPass = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/blur/BlurFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/blur/BlurFilter.mjs
 var BlurFilter;
 var init_BlurFilter = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/blur/BlurFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/blur/BlurFilter.mjs"() {
     init_TexturePool();
     init_types();
     init_deprecation();
@@ -57774,26 +57774,26 @@ var init_BlurFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.frag.mjs
 var fragment4;
 var init_colorMatrixFilter_frag = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.frag.mjs"() {
     fragment4 = "\nin vec2 vTextureCoord;\nin vec4 vColor;\n\nout vec4 finalColor;\n\nuniform float uColorMatrix[20];\nuniform float uAlpha;\n\nuniform sampler2D uTexture;\n\nfloat rand(vec2 co)\n{\n    return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);\n}\n\nvoid main()\n{\n    vec4 color = texture(uTexture, vTextureCoord);\n    float randomValue = rand(gl_FragCoord.xy * 0.2);\n    float diff = (randomValue - 0.5) *  0.5;\n\n    if (uAlpha == 0.0) {\n        finalColor = color;\n        return;\n    }\n\n    if (color.a > 0.0) {\n        color.rgb /= color.a;\n    }\n\n    vec4 result;\n\n    result.r = (uColorMatrix[0] * color.r);\n        result.r += (uColorMatrix[1] * color.g);\n        result.r += (uColorMatrix[2] * color.b);\n        result.r += (uColorMatrix[3] * color.a);\n        result.r += uColorMatrix[4];\n\n    result.g = (uColorMatrix[5] * color.r);\n        result.g += (uColorMatrix[6] * color.g);\n        result.g += (uColorMatrix[7] * color.b);\n        result.g += (uColorMatrix[8] * color.a);\n        result.g += uColorMatrix[9];\n\n    result.b = (uColorMatrix[10] * color.r);\n       result.b += (uColorMatrix[11] * color.g);\n       result.b += (uColorMatrix[12] * color.b);\n       result.b += (uColorMatrix[13] * color.a);\n       result.b += uColorMatrix[14];\n\n    result.a = (uColorMatrix[15] * color.r);\n       result.a += (uColorMatrix[16] * color.g);\n       result.a += (uColorMatrix[17] * color.b);\n       result.a += (uColorMatrix[18] * color.a);\n       result.a += uColorMatrix[19];\n\n    vec3 rgb = mix(color.rgb, result.rgb, uAlpha);\n\n    // Premultiply alpha again.\n    rgb *= result.a;\n\n    finalColor = vec4(rgb, result.a);\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.wgsl.mjs
 var source5;
 var init_colorMatrixFilter_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/color-matrix/colorMatrixFilter.wgsl.mjs"() {
     source5 = "struct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct ColorMatrixUniforms {\n  uColorMatrix:array<vec4<f32>, 5>,\n  uAlpha:f32,\n};\n\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n@group(1) @binding(0) var<uniform> colorMatrixUniforms : ColorMatrixUniforms;\n\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>,\n  };\n  \nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>, \n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition),\n  );\n}\n\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n) -> @location(0) vec4<f32> {\n\n\n  var c = textureSample(uTexture, uSampler, uv);\n  \n  if (colorMatrixUniforms.uAlpha == 0.0) {\n    return c;\n  }\n\n \n    // Un-premultiply alpha before applying the color matrix. See issue #3539.\n    if (c.a > 0.0) {\n      c.r /= c.a;\n      c.g /= c.a;\n      c.b /= c.a;\n    }\n\n    var cm = colorMatrixUniforms.uColorMatrix;\n\n\n    var result = vec4<f32>(0.);\n\n    result.r = (cm[0][0] * c.r);\n    result.r += (cm[0][1] * c.g);\n    result.r += (cm[0][2] * c.b);\n    result.r += (cm[0][3] * c.a);\n    result.r += cm[1][0];\n\n    result.g = (cm[1][1] * c.r);\n    result.g += (cm[1][2] * c.g);\n    result.g += (cm[1][3] * c.b);\n    result.g += (cm[2][0] * c.a);\n    result.g += cm[2][1];\n\n    result.b = (cm[2][2] * c.r);\n    result.b += (cm[2][3] * c.g);\n    result.b += (cm[3][0] * c.b);\n    result.b += (cm[3][1] * c.a);\n    result.b += cm[3][2];\n\n    result.a = (cm[3][3] * c.r);\n    result.a += (cm[4][0] * c.g);\n    result.a += (cm[4][1] * c.b);\n    result.a += (cm[4][2] * c.a);\n    result.a += cm[4][3];\n\n    var rgb = mix(c.rgb, result.rgb, colorMatrixUniforms.uAlpha);\n\n    rgb.r *= result.a;\n    rgb.g *= result.a;\n    rgb.b *= result.a;\n\n    return vec4(rgb, result.a);\n}";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/color-matrix/ColorMatrixFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/color-matrix/ColorMatrixFilter.mjs
 var ColorMatrixFilter;
 var init_ColorMatrixFilter = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/color-matrix/ColorMatrixFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/color-matrix/ColorMatrixFilter.mjs"() {
     init_Color();
     init_GlProgram();
     init_GpuProgram();
@@ -59009,34 +59009,34 @@ var init_ColorMatrixFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/displacement/displacement.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/displacement.frag.mjs
 var fragment5;
 var init_displacement_frag = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/displacement/displacement.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/displacement.frag.mjs"() {
     fragment5 = "\nin vec2 vTextureCoord;\nin vec2 vFilterUv;\n\nout vec4 finalColor;\n\nuniform sampler2D uTexture;\nuniform sampler2D uMapTexture;\n\nuniform vec4 uInputClamp;\nuniform highp vec4 uInputSize;\nuniform mat2 uRotation;\nuniform vec2 uScale;\n\nvoid main()\n{\n    vec4 map = texture(uMapTexture, vFilterUv);\n    \n    vec2 offset = uInputSize.zw * (uRotation * (map.xy - 0.5)) * uScale; \n\n    finalColor = texture(uTexture, clamp(vTextureCoord + offset, uInputClamp.xy, uInputClamp.zw));\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/displacement/displacement.vert.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/displacement.vert.mjs
 var vertex3;
 var init_displacement_vert = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/displacement/displacement.vert.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/displacement.vert.mjs"() {
     vertex3 = "in vec2 aPosition;\nout vec2 vTextureCoord;\nout vec2 vFilterUv;\n\n\nuniform vec4 uInputSize;\nuniform vec4 uOutputFrame;\nuniform vec4 uOutputTexture;\n\nuniform mat3 uFilterMatrix;\n\nvec4 filterVertexPosition( void )\n{\n    vec2 position = aPosition * uOutputFrame.zw + uOutputFrame.xy;\n    \n    position.x = position.x * (2.0 / uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*uOutputTexture.z / uOutputTexture.y) - uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nvec2 filterTextureCoord( void )\n{\n    return aPosition * (uOutputFrame.zw * uInputSize.zw);\n}\n\nvec2 getFilterCoord( void )\n{\n  return ( uFilterMatrix * vec3( filterTextureCoord(), 1.0)  ).xy;\n}\n\n\nvoid main(void)\n{\n    gl_Position = filterVertexPosition();\n    vTextureCoord = filterTextureCoord();\n    vFilterUv = getFilterCoord();\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/displacement/displacement.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/displacement.wgsl.mjs
 var source6;
 var init_displacement_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/displacement/displacement.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/displacement.wgsl.mjs"() {
     source6 = "\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct DisplacementUniforms {\n  uFilterMatrix:mat3x3<f32>,\n  uScale:vec2<f32>,\n  uRotation:mat2x2<f32>\n};\n\n\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n\n@group(1) @binding(0) var<uniform> filterUniforms : DisplacementUniforms;\n@group(1) @binding(1) var uMapTexture: texture_2d<f32>;\n@group(1) @binding(2) var uMapSampler : sampler;\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>,\n    @location(1) filterUv : vec2<f32>,\n  };\n\nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\nfn globalTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return  (aPosition.xy / gfu.uGlobalFrame.zw) + (gfu.uGlobalFrame.xy / gfu.uGlobalFrame.zw);  \n}\n\nfn getFilterCoord(aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return ( filterUniforms.uFilterMatrix * vec3( filterTextureCoord(aPosition), 1.0)  ).xy;\n}\n\nfn getSize() -> vec2<f32>\n{\n\n  \n  return gfu.uGlobalFrame.zw;\n}\n  \n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>, \n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition),\n   getFilterCoord(aPosition)\n  );\n}\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n  @location(1) filterUv: vec2<f32>,\n  @builtin(position) position: vec4<f32>\n) -> @location(0) vec4<f32> {\n\n    var map = textureSample(uMapTexture, uMapSampler, filterUv);\n\n    var offset =  gfu.uInputSize.zw * (filterUniforms.uRotation * (map.xy - 0.5)) * filterUniforms.uScale; \n   \n    return textureSample(uTexture, uSampler, clamp(uv + offset, gfu.uInputClamp.xy, gfu.uInputClamp.zw));\n}";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/displacement/DisplacementFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/DisplacementFilter.mjs
 var DisplacementFilter;
 var init_DisplacementFilter = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/displacement/DisplacementFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/displacement/DisplacementFilter.mjs"() {
     init_Matrix();
     init_Point();
     init_GlProgram();
@@ -59148,26 +59148,26 @@ var init_DisplacementFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/noise/noise.frag.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/noise/noise.frag.mjs
 var fragment6;
 var init_noise_frag = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/noise/noise.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/noise/noise.frag.mjs"() {
     fragment6 = "\nin vec2 vTextureCoord;\nin vec4 vColor;\n\nout vec4 finalColor;\n\nuniform float uNoise;\nuniform float uSeed;\nuniform sampler2D uTexture;\n\nfloat rand(vec2 co)\n{\n    return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);\n}\n\nvoid main()\n{\n    vec4 color = texture(uTexture, vTextureCoord);\n    float randomValue = rand(gl_FragCoord.xy * uSeed);\n    float diff = (randomValue - 0.5) *  uNoise;\n\n    // Un-premultiply alpha before applying the color matrix. See issue #3539.\n    if (color.a > 0.0) {\n        color.rgb /= color.a;\n    }\n\n    color.r += diff;\n    color.g += diff;\n    color.b += diff;\n\n    // Premultiply alpha again.\n    color.rgb *= color.a;\n\n    finalColor = color;\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/noise/noise.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/noise/noise.wgsl.mjs
 var source7;
 var init_noise_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/noise/noise.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/noise/noise.wgsl.mjs"() {
     source7 = "\n\nstruct GlobalFilterUniforms {\n  uInputSize:vec4<f32>,\n  uInputPixel:vec4<f32>,\n  uInputClamp:vec4<f32>,\n  uOutputFrame:vec4<f32>,\n  uGlobalFrame:vec4<f32>,\n  uOutputTexture:vec4<f32>,\n};\n\nstruct NoiseUniforms {\n  uNoise:f32,\n  uSeed:f32,\n};\n\n@group(0) @binding(0) var<uniform> gfu: GlobalFilterUniforms;\n@group(0) @binding(1) var uTexture: texture_2d<f32>;\n@group(0) @binding(2) var uSampler : sampler;\n\n@group(1) @binding(0) var<uniform> noiseUniforms : NoiseUniforms;\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>\n  };\n\nfn filterVertexPosition(aPosition:vec2<f32>) -> vec4<f32>\n{\n    var position = aPosition * gfu.uOutputFrame.zw + gfu.uOutputFrame.xy;\n\n    position.x = position.x * (2.0 / gfu.uOutputTexture.x) - 1.0;\n    position.y = position.y * (2.0*gfu.uOutputTexture.z / gfu.uOutputTexture.y) - gfu.uOutputTexture.z;\n\n    return vec4(position, 0.0, 1.0);\n}\n\nfn filterTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n    return aPosition * (gfu.uOutputFrame.zw * gfu.uInputSize.zw);\n}\n\nfn globalTextureCoord( aPosition:vec2<f32> ) -> vec2<f32>\n{\n  return  (aPosition.xy / gfu.uGlobalFrame.zw) + (gfu.uGlobalFrame.xy / gfu.uGlobalFrame.zw);  \n}\n\nfn getSize() -> vec2<f32>\n{\n  return gfu.uGlobalFrame.zw;\n}\n  \n@vertex\nfn mainVertex(\n  @location(0) aPosition : vec2<f32>, \n) -> VSOutput {\n  return VSOutput(\n   filterVertexPosition(aPosition),\n   filterTextureCoord(aPosition)\n  );\n}\n\nfn rand(co:vec2<f32>) -> f32\n{\n  return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);\n}\n\n\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n  @builtin(position) position: vec4<f32>\n) -> @location(0) vec4<f32> {\n\n    var pixelPosition =  globalTextureCoord(position.xy);// / (getSize());//-  gfu.uOutputFrame.xy);\n  \n    \n    var sample = textureSample(uTexture, uSampler, uv);\n    var randomValue =  rand(pixelPosition.xy * noiseUniforms.uSeed);\n    var diff = (randomValue - 0.5) * noiseUniforms.uNoise;\n  \n    // Un-premultiply alpha before applying the color matrix. See issue #3539.\n    if (sample.a > 0.0) {\n      sample.r /= sample.a;\n      sample.g /= sample.a;\n      sample.b /= sample.a;\n    }\n\n    sample.r += diff;\n    sample.g += diff;\n    sample.b += diff;\n\n    // Premultiply alpha again.\n    sample.r *= sample.a;\n    sample.g *= sample.a;\n    sample.b *= sample.a;\n    \n    return sample;\n}";
   }
 });
 
-// node_modules/pixi.js/lib/filters/defaults/noise/NoiseFilter.mjs
+// main/deps/node_modules/pixi.js/lib/filters/defaults/noise/NoiseFilter.mjs
 var _NoiseFilter, NoiseFilter;
 var init_NoiseFilter = __esm({
-  "node_modules/pixi.js/lib/filters/defaults/noise/NoiseFilter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/defaults/noise/NoiseFilter.mjs"() {
     init_GlProgram();
     init_GpuProgram();
     init_UniformGroup();
@@ -59269,18 +59269,18 @@ var init_NoiseFilter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/filters/blend-modes/hsl.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/filters/blend-modes/hsl.wgsl.mjs
 var hsl;
 var init_hsl_wgsl = __esm({
-  "node_modules/pixi.js/lib/filters/blend-modes/hsl.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/filters/blend-modes/hsl.wgsl.mjs"() {
     hsl = "fn getLuminosity(c: vec3<f32>) -> f32 {\n  return 0.3 * c.r + 0.59 * c.g + 0.11 * c.b;\n}\n\nfn setLuminosity(c: vec3<f32>, lum: f32) -> vec3<f32> {\n  let d: f32 = lum - getLuminosity(c);\n  let newColor: vec3<f32> = c.rgb + vec3<f32>(d, d, d);\n\n  // clip back into legal range\n  let newLum: f32 = getLuminosity(newColor);\n  let cMin: f32 = min(newColor.r, min(newColor.g, newColor.b));\n  let cMax: f32 = max(newColor.r, max(newColor.g, newColor.b));\n\n  let t1: f32 = newLum / (newLum - cMin);\n  let t2: f32 = (1.0 - newLum) / (cMax - newLum);\n\n  let finalColor = mix(vec3<f32>(newLum, newLum, newLum), newColor, select(select(1.0, t2, cMax > 1.0), t1, cMin < 0.0));\n\n  return finalColor;\n}\n\nfn getSaturation(c: vec3<f32>) -> f32 {\n  return max(c.r, max(c.g, c.b)) - min(c.r, min(c.g, c.b));\n}\n\n// Set saturation if color components are sorted in ascending order.\nfn setSaturationMinMidMax(cSorted: vec3<f32>, s: f32) -> vec3<f32> {\n  var result: vec3<f32>;\n  if (cSorted.z > cSorted.x) {\n    let newY = (((cSorted.y - cSorted.x) * s) / (cSorted.z - cSorted.x));\n    result = vec3<f32>(0.0, newY, s);\n  } else {\n    result = vec3<f32>(0.0, 0.0, 0.0);\n  }\n  return vec3<f32>(result.x, result.y, result.z);\n}\n\nfn setSaturation(c: vec3<f32>, s: f32) -> vec3<f32> {\n    var result: vec3<f32> = c;\n\n    if (c.r <= c.g && c.r <= c.b) {\n        if (c.g <= c.b) {\n            result = setSaturationMinMidMax(result, s);\n        } else {\n            var temp: vec3<f32> = vec3<f32>(result.r, result.b, result.g);\n            temp = setSaturationMinMidMax(temp, s);\n            result = vec3<f32>(temp.r, temp.b, temp.g);\n        }\n    } else if (c.g <= c.r && c.g <= c.b) {\n        if (c.r <= c.b) {\n            var temp: vec3<f32> = vec3<f32>(result.g, result.r, result.b);\n            temp = setSaturationMinMidMax(temp, s);\n            result = vec3<f32>(temp.g, temp.r, temp.b);\n        } else {\n            var temp: vec3<f32> = vec3<f32>(result.g, result.b, result.r);\n            temp = setSaturationMinMidMax(temp, s);\n            result = vec3<f32>(temp.g, temp.b, temp.r);\n        }\n    } else {\n        if (c.r <= c.g) {\n            var temp: vec3<f32> = vec3<f32>(result.b, result.r, result.g);\n            temp = setSaturationMinMidMax(temp, s);\n            result = vec3<f32>(temp.b, temp.r, temp.g);\n        } else {\n            var temp: vec3<f32> = vec3<f32>(result.b, result.g, result.r);\n            temp = setSaturationMinMidMax(temp, s);\n            result = vec3<f32>(temp.b, temp.g, temp.r);\n        }\n    }\n\n    return result;\n}";
   }
 });
 
-// node_modules/pixi.js/lib/prepare/PrepareBase.mjs
+// main/deps/node_modules/pixi.js/lib/prepare/PrepareBase.mjs
 var _PrepareBase, PrepareBase;
 var init_PrepareBase = __esm({
-  "node_modules/pixi.js/lib/prepare/PrepareBase.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/prepare/PrepareBase.mjs"() {
     init_Container();
     init_const2();
     init_Ticker();
@@ -59394,10 +59394,10 @@ var init_PrepareBase = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/shared/MeshGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/shared/MeshGeometry.mjs
 var _MeshGeometry, MeshGeometry;
 var init_MeshGeometry = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/shared/MeshGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/shared/MeshGeometry.mjs"() {
     init_Buffer();
     init_const4();
     init_Geometry();
@@ -59505,10 +59505,10 @@ var init_MeshGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/shared/BatchableMesh.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/shared/BatchableMesh.mjs
 var BatchableMesh;
 var init_BatchableMesh = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/shared/BatchableMesh.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/shared/BatchableMesh.mjs"() {
     "use strict";
     BatchableMesh = class {
       constructor() {
@@ -59592,10 +59592,10 @@ var init_BatchableMesh = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/shared/MeshPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/shared/MeshPipe.mjs
 var MeshGpuData, MeshPipe;
 var init_MeshPipe = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/shared/MeshPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/shared/MeshPipe.mjs"() {
     init_Extensions();
     init_Matrix();
     init_BindGroup();
@@ -59732,19 +59732,19 @@ var init_MeshPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/init.mjs
 var init_init9 = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/init.mjs"() {
     init_Extensions();
     init_MeshPipe();
     extensions.add(MeshPipe);
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/shared/Mesh.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/shared/Mesh.mjs
 var Mesh;
 var init_Mesh = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/shared/Mesh.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/shared/Mesh.mjs"() {
     init_pointInTriangle();
     init_Geometry();
     init_State();
@@ -59931,10 +59931,10 @@ var init_Mesh = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-animated/AnimatedSprite.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-animated/AnimatedSprite.mjs
 var AnimatedSprite;
 var init_AnimatedSprite = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-animated/AnimatedSprite.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-animated/AnimatedSprite.mjs"() {
     init_Texture();
     init_const2();
     init_Ticker();
@@ -60471,10 +60471,10 @@ var init_AnimatedSprite = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/misc/Transform.mjs
+// main/deps/node_modules/pixi.js/lib/utils/misc/Transform.mjs
 var Transform;
 var init_Transform = __esm({
-  "node_modules/pixi.js/lib/utils/misc/Transform.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/misc/Transform.mjs"() {
     init_Matrix();
     init_ObservablePoint();
     Transform = class {
@@ -60600,10 +60600,10 @@ var init_Transform = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/canvas/CanvasTilingSpritePipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/canvas/CanvasTilingSpritePipe.mjs
 var worldMatrix, patternMatrix, patternRect, CanvasTilingSpritePipe;
 var init_CanvasTilingSpritePipe = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/canvas/CanvasTilingSpritePipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/canvas/CanvasTilingSpritePipe.mjs"() {
     init_Extensions();
     init_Matrix();
     init_Point();
@@ -60698,10 +60698,10 @@ var init_CanvasTilingSpritePipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/shader/tilingBit.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/shader/tilingBit.mjs
 var tilingBit, tilingBitGl;
 var init_tilingBit = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/shader/tilingBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/shader/tilingBit.mjs"() {
     "use strict";
     tilingBit = {
       name: "tiling-bit",
@@ -60817,10 +60817,10 @@ var init_tilingBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/shader/TilingSpriteShader.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/shader/TilingSpriteShader.mjs
 var gpuProgram, glProgram, TilingSpriteShader;
 var init_TilingSpriteShader = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/shader/TilingSpriteShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/shader/TilingSpriteShader.mjs"() {
     init_Matrix();
     init_compileHighShaderToProgram();
     init_localUniformBit();
@@ -60901,10 +60901,10 @@ var init_TilingSpriteShader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/utils/QuadGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/QuadGeometry.mjs
 var QuadGeometry;
 var init_QuadGeometry = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/utils/QuadGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/QuadGeometry.mjs"() {
     init_MeshGeometry();
     QuadGeometry = class extends MeshGeometry {
       constructor() {
@@ -60918,7 +60918,7 @@ var init_QuadGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/utils/setPositions.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/setPositions.mjs
 function setPositions(tilingSprite, positions) {
   const anchorX = tilingSprite.anchor.x;
   const anchorY = tilingSprite.anchor.y;
@@ -60932,12 +60932,12 @@ function setPositions(tilingSprite, positions) {
   positions[7] = (1 - anchorY) * tilingSprite.height;
 }
 var init_setPositions = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/utils/setPositions.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/setPositions.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/utils/applyMatrix.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/applyMatrix.mjs
 function applyMatrix(array, stride, offset, matrix) {
   let index = 0;
   const size = array.length / (stride || 2);
@@ -60958,12 +60958,12 @@ function applyMatrix(array, stride, offset, matrix) {
   }
 }
 var init_applyMatrix = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/utils/applyMatrix.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/applyMatrix.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/utils/setUvs.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/setUvs.mjs
 function setUvs(tilingSprite, uvs) {
   const texture = tilingSprite.texture;
   const width = texture.frame.width;
@@ -60992,16 +60992,16 @@ function setUvs(tilingSprite, uvs) {
   applyMatrix(uvs, 2, 0, textureMatrix);
 }
 var init_setUvs = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/utils/setUvs.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/utils/setUvs.mjs"() {
     init_Matrix();
     init_applyMatrix();
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/TilingSpritePipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/TilingSpritePipe.mjs
 var sharedQuad, TilingSpriteGpuData, TilingSpritePipe;
 var init_TilingSpritePipe = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/TilingSpritePipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/TilingSpritePipe.mjs"() {
     init_Extensions();
     init_getAdjustedBlendModeBlend();
     init_State();
@@ -61157,9 +61157,9 @@ var init_TilingSpritePipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/init.mjs
 var init_init10 = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/init.mjs"() {
     init_Extensions();
     init_CanvasTilingSpritePipe();
     init_TilingSpritePipe();
@@ -61168,10 +61168,10 @@ var init_init10 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-tiling/TilingSprite.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/TilingSprite.mjs
 var _TilingSprite, TilingSprite;
 var init_TilingSprite = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-tiling/TilingSprite.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-tiling/TilingSprite.mjs"() {
     init_Cache();
     init_ObservablePoint();
     init_Texture();
@@ -61645,7 +61645,7 @@ var init_TilingSprite = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/AbstractText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/AbstractText.mjs
 function ensureTextOptions(args, name) {
   let options = args[0] ?? {};
   if (typeof options === "string" || args[1]) {
@@ -61659,7 +61659,7 @@ function ensureTextOptions(args, name) {
 }
 var AbstractText;
 var init_AbstractText = __esm({
-  "node_modules/pixi.js/lib/scene/text/AbstractText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/AbstractText.mjs"() {
     init_ObservablePoint();
     init_deprecation();
     init_ViewContainer();
@@ -62006,7 +62006,7 @@ var init_AbstractText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/canvas/getCanvasBoundingBox.mjs
+// main/deps/node_modules/pixi.js/lib/utils/canvas/getCanvasBoundingBox.mjs
 function ensureInternalCanvas(width, height) {
   if (!_internalCanvas) {
     _internalCanvas = DOMAdapter.get().createCanvas(256, 128);
@@ -62079,7 +62079,7 @@ function getCanvasBoundingBox(...args) {
 }
 var _internalCanvas, _internalContext;
 var init_getCanvasBoundingBox = __esm({
-  "node_modules/pixi.js/lib/utils/canvas/getCanvasBoundingBox.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/canvas/getCanvasBoundingBox.mjs"() {
     init_adapter();
     init_pow2();
     init_Rectangle();
@@ -62088,7 +62088,7 @@ var init_getCanvasBoundingBox = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/CanvasTextGenerator.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextGenerator.mjs
 function countSpaces(text) {
   let count2 = 0;
   for (let i2 = 0; i2 < text.length; i2++) {
@@ -62098,7 +62098,7 @@ function countSpaces(text) {
 }
 var tempRect6, CanvasTextGeneratorClass, CanvasTextGenerator;
 var init_CanvasTextGenerator = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/CanvasTextGenerator.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextGenerator.mjs"() {
     init_Color();
     init_Rectangle();
     init_CanvasPool();
@@ -62579,7 +62579,7 @@ var init_CanvasTextGenerator = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/utils/warnIgnoredTextureStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/utils/warnIgnoredTextureStyle.mjs
 function warnIgnoredTextureStyle(textureStyle) {
   if (warned) return;
   const scaleModeOnly = new TextureStyle({ scaleMode: textureStyle.scaleMode });
@@ -62589,14 +62589,14 @@ function warnIgnoredTextureStyle(textureStyle) {
 }
 var warned;
 var init_warnIgnoredTextureStyle = __esm({
-  "node_modules/pixi.js/lib/scene/text/utils/warnIgnoredTextureStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/utils/warnIgnoredTextureStyle.mjs"() {
     init_TextureStyle();
     init_warn();
     warned = false;
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/utils/updateTextBounds.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/utils/updateTextBounds.mjs
 function updateTextBounds(batchableSprite, text) {
   const { texture, bounds } = batchableSprite;
   const padding = text._style._getFinalPadding();
@@ -62609,25 +62609,25 @@ function updateTextBounds(batchableSprite, text) {
   bounds.maxY -= padding - paddingOffsetY;
 }
 var init_updateTextBounds = __esm({
-  "node_modules/pixi.js/lib/scene/text/utils/updateTextBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/utils/updateTextBounds.mjs"() {
     init_updateQuadBounds();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/BatchableText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/BatchableText.mjs
 var BatchableText;
 var init_BatchableText = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/BatchableText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/BatchableText.mjs"() {
     init_BatchableSprite();
     BatchableText = class extends BatchableSprite {
     };
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/CanvasTextPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextPipe.mjs
 var CanvasTextPipe;
 var init_CanvasTextPipe = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/CanvasTextPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextPipe.mjs"() {
     init_Extensions();
     init_GCManagedHash();
     init_updateTextBounds();
@@ -62731,10 +62731,10 @@ var init_CanvasTextPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/shared/AbstractTextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/shared/AbstractTextSystem.mjs
 var AbstractTextSystem;
 var init_AbstractTextSystem = __esm({
-  "node_modules/pixi.js/lib/scene/text/shared/AbstractTextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/shared/AbstractTextSystem.mjs"() {
     init_TexturePool();
     init_deprecation();
     init_CanvasTextGenerator();
@@ -62912,10 +62912,10 @@ var init_AbstractTextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/canvas/CanvasTextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextSystem.mjs
 var CanvasRendererTextSystem;
 var init_CanvasTextSystem = __esm({
-  "node_modules/pixi.js/lib/scene/text/canvas/CanvasTextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/canvas/CanvasTextSystem.mjs"() {
     init_Extensions();
     init_AbstractTextSystem();
     CanvasRendererTextSystem = class extends AbstractTextSystem {
@@ -62932,10 +62932,10 @@ var init_CanvasTextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/shared/GpuTextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/shared/GpuTextSystem.mjs
 var CanvasTextSystem;
 var init_GpuTextSystem = __esm({
-  "node_modules/pixi.js/lib/scene/text/shared/GpuTextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/shared/GpuTextSystem.mjs"() {
     init_Extensions();
     init_AbstractTextSystem();
     CanvasTextSystem = class extends AbstractTextSystem {
@@ -62953,9 +62953,9 @@ var init_GpuTextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/init.mjs
 var init_init11 = __esm({
-  "node_modules/pixi.js/lib/scene/text/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/init.mjs"() {
     init_Extensions();
     init_CanvasTextPipe();
     init_CanvasTextSystem();
@@ -62966,10 +62966,10 @@ var init_init11 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/Text.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/Text.mjs
 var Text;
 var init_Text = __esm({
-  "node_modules/pixi.js/lib/scene/text/Text.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/Text.mjs"() {
     init_TextureSource();
     init_TextureStyle();
     init_AbstractText();
@@ -63021,10 +63021,10 @@ var init_Text = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/prepare/PrepareQueue.mjs
+// main/deps/node_modules/pixi.js/lib/prepare/PrepareQueue.mjs
 var PrepareQueue;
 var init_PrepareQueue = __esm({
-  "node_modules/pixi.js/lib/prepare/PrepareQueue.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/prepare/PrepareQueue.mjs"() {
     init_TextureSource();
     init_Texture();
     init_Container();
@@ -63096,7 +63096,7 @@ var init_PrepareQueue = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapTextPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapTextPipe.mjs
 function syncWithProxy(container, proxy) {
   proxy.groupTransform = container.groupTransform;
   proxy.groupColorAlpha = container.groupColorAlpha;
@@ -63110,7 +63110,7 @@ function syncWithProxy(container, proxy) {
 }
 var BitmapTextGraphics, AbstractBitmapTextPipe;
 var init_AbstractBitmapTextPipe = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapTextPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/AbstractBitmapTextPipe.mjs"() {
     init_Cache();
     init_GCManagedHash();
     init_Graphics();
@@ -63241,10 +63241,10 @@ var init_AbstractBitmapTextPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/CanvasBitmapTextPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/CanvasBitmapTextPipe.mjs
 var CanvasBitmapTextPipe;
 var init_CanvasBitmapTextPipe = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/CanvasBitmapTextPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/CanvasBitmapTextPipe.mjs"() {
     init_Extensions();
     init_AbstractBitmapTextPipe();
     CanvasBitmapTextPipe = class extends AbstractBitmapTextPipe {
@@ -63261,10 +63261,10 @@ var init_CanvasBitmapTextPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/localUniformMSDFBit.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/localUniformMSDFBit.mjs
 var localUniformMSDFBit, localUniformMSDFBitGl;
 var init_localUniformMSDFBit = __esm({
-  "node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/localUniformMSDFBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/localUniformMSDFBit.mjs"() {
     "use strict";
     localUniformMSDFBit = {
       name: "local-uniform-msdf-bit",
@@ -63366,10 +63366,10 @@ var init_localUniformMSDFBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/mSDFBit.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/mSDFBit.mjs
 var mSDFBit, mSDFBitGl;
 var init_mSDFBit = __esm({
-  "node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/mSDFBit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/sdfShader/shader-bits/mSDFBit.mjs"() {
     "use strict";
     mSDFBit = {
       name: "msdf-bit",
@@ -63446,10 +63446,10 @@ var init_mSDFBit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/sdfShader/SdfShader.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/sdfShader/SdfShader.mjs
 var gpuProgram2, glProgram2, SdfShader;
 var init_SdfShader = __esm({
-  "node_modules/pixi.js/lib/scene/text/sdfShader/SdfShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/sdfShader/SdfShader.mjs"() {
     init_Matrix();
     init_compileHighShaderToProgram();
     init_colorBit();
@@ -63501,10 +63501,10 @@ var init_SdfShader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/GpuBitmapTextPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/GpuBitmapTextPipe.mjs
 var BitmapTextPipe;
 var init_GpuBitmapTextPipe = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/GpuBitmapTextPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/GpuBitmapTextPipe.mjs"() {
     init_Extensions();
     init_SdfShader();
     init_AbstractBitmapTextPipe();
@@ -63523,9 +63523,9 @@ var init_GpuBitmapTextPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/init.mjs
 var init_init12 = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/init.mjs"() {
     init_Extensions();
     init_CanvasBitmapTextPipe();
     init_GpuBitmapTextPipe();
@@ -63534,10 +63534,10 @@ var init_init12 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/BitmapText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/BitmapText.mjs
 var BitmapText;
 var init_BitmapText = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/BitmapText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/BitmapText.mjs"() {
     init_warn();
     init_AbstractText();
     init_TextStyle();
@@ -63629,7 +63629,7 @@ var init_BitmapText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/textStyleToCSS.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/textStyleToCSS.mjs
 function textStyleToCSS(style) {
   const stroke = style._stroke;
   const fill = style._fill;
@@ -63695,7 +63695,7 @@ function tagStyleToCSS(tagStyles, out2) {
 }
 var templates, transform;
 var init_textStyleToCSS = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/textStyleToCSS.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/textStyleToCSS.mjs"() {
     init_Color();
     init_TextStyle();
     templates = {
@@ -63728,10 +63728,10 @@ var init_textStyleToCSS = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/HTMLTextStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextStyle.mjs
 var HTMLTextStyle;
 var init_HTMLTextStyle = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/HTMLTextStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextStyle.mjs"() {
     init_warn();
     init_TextStyle();
     init_textStyleToCSS();
@@ -63996,10 +63996,10 @@ var init_HTMLTextStyle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/HTMLTextRenderData.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextRenderData.mjs
 var nssvg, nsxhtml, HTMLTextRenderData;
 var init_HTMLTextRenderData = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/HTMLTextRenderData.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextRenderData.mjs"() {
     init_adapter();
     nssvg = "http://www.w3.org/2000/svg";
     nsxhtml = "http://www.w3.org/1999/xhtml";
@@ -64036,7 +64036,7 @@ var init_HTMLTextRenderData = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/measureHtmlText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/measureHtmlText.mjs
 function measureHtmlText(text, style, fontStyleCSS, htmlTextRenderData) {
   htmlTextRenderData || (htmlTextRenderData = tempHTMLTextRenderData || (tempHTMLTextRenderData = new HTMLTextRenderData()));
   const { domElement, styleElement, svgRoot } = htmlTextRenderData;
@@ -64064,15 +64064,15 @@ function measureHtmlText(text, style, fontStyleCSS, htmlTextRenderData) {
 }
 var tempHTMLTextRenderData;
 var init_measureHtmlText = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/measureHtmlText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/measureHtmlText.mjs"() {
     init_HTMLTextRenderData();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/BatchableHTMLText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/BatchableHTMLText.mjs
 var BatchableHTMLText;
 var init_BatchableHTMLText = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/BatchableHTMLText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/BatchableHTMLText.mjs"() {
     init_BatchableSprite();
     BatchableHTMLText = class extends BatchableSprite {
       constructor() {
@@ -64091,10 +64091,10 @@ var init_BatchableHTMLText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/HTMLTextPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextPipe.mjs
 var HTMLTextPipe;
 var init_HTMLTextPipe = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/HTMLTextPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextPipe.mjs"() {
     init_Extensions();
     init_Texture();
     init_GCManagedHash();
@@ -64219,7 +64219,7 @@ var init_HTMLTextPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/extractFontFamilies.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/extractFontFamilies.mjs
 function extractFontFamilies(text, style) {
   const fontFamily = style.fontFamily;
   const fontFamilies = [];
@@ -64252,12 +64252,12 @@ function extractFontFamilies(text, style) {
   return fontFamilies;
 }
 var init_extractFontFamilies = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/extractFontFamilies.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/extractFontFamilies.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/loadFontAsBase64.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/loadFontAsBase64.mjs
 async function loadFontAsBase64(url) {
   const response = await DOMAdapter.get().fetch(url);
   const blob = await response.blob();
@@ -64270,12 +64270,12 @@ async function loadFontAsBase64(url) {
   return dataSrc;
 }
 var init_loadFontAsBase64 = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/loadFontAsBase64.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/loadFontAsBase64.mjs"() {
     init_adapter();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/loadFontCSS.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/loadFontCSS.mjs
 async function loadFontCSS(style, url) {
   const dataSrc = await loadFontAsBase64(url);
   return `@font-face {
@@ -64286,12 +64286,12 @@ async function loadFontCSS(style, url) {
     }`;
 }
 var init_loadFontCSS = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/loadFontCSS.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/loadFontCSS.mjs"() {
     init_loadFontAsBase64();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/getFontCss.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/getFontCss.mjs
 async function getFontCss(fontFamilies) {
   const fontPromises = fontFamilies.filter((fontFamily) => Cache.has(`${fontFamily}-and-url`)).map((fontFamily) => {
     if (!FontStylePromiseCache.has(fontFamily)) {
@@ -64325,14 +64325,14 @@ async function getFontCss(fontFamilies) {
 }
 var FontStylePromiseCache;
 var init_getFontCss = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/getFontCss.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/getFontCss.mjs"() {
     init_Cache();
     init_loadFontCSS();
     FontStylePromiseCache = /* @__PURE__ */ new Map();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/getSVGUrl.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/getSVGUrl.mjs
 function getSVGUrl(text, style, resolution, fontCSS, htmlTextData) {
   const { domElement, styleElement, svgRoot } = htmlTextData;
   domElement.innerHTML = `<style>${style.cssStyle}</style><div style='padding:0;'>${text}</div>`;
@@ -64344,12 +64344,12 @@ function getSVGUrl(text, style, resolution, fontCSS, htmlTextData) {
   return new XMLSerializer().serializeToString(svgRoot);
 }
 var init_getSVGUrl = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/getSVGUrl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/getSVGUrl.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/getTemporaryCanvasFromImage.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/getTemporaryCanvasFromImage.mjs
 function getTemporaryCanvasFromImage(image, resolution) {
   const canvasAndContext = CanvasPool.getOptimalCanvasAndContext(
     image.width,
@@ -64362,12 +64362,12 @@ function getTemporaryCanvasFromImage(image, resolution) {
   return canvasAndContext;
 }
 var init_getTemporaryCanvasFromImage = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/getTemporaryCanvasFromImage.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/getTemporaryCanvasFromImage.mjs"() {
     init_CanvasPool();
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/utils/loadSVGImage.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/utils/loadSVGImage.mjs
 function loadSVGImage(image, url, delay) {
   return new Promise(async (resolve) => {
     if (delay) {
@@ -64381,15 +64381,15 @@ function loadSVGImage(image, url, delay) {
   });
 }
 var init_loadSVGImage = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/utils/loadSVGImage.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/utils/loadSVGImage.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/HTMLTextSystem.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextSystem.mjs
 var HTMLTextSystem;
 var init_HTMLTextSystem = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/HTMLTextSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLTextSystem.mjs"() {
     init_Extensions();
     init_CanvasPool();
     init_TexturePool();
@@ -64547,9 +64547,9 @@ var init_HTMLTextSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/init.mjs
 var init_init13 = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/init.mjs"() {
     init_Extensions();
     init_HTMLTextPipe();
     init_HTMLTextSystem();
@@ -64558,10 +64558,10 @@ var init_init13 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-html/HTMLText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLText.mjs
 var HTMLText;
 var init_HTMLText = __esm({
-  "node_modules/pixi.js/lib/scene/text-html/HTMLText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-html/HTMLText.mjs"() {
     init_TextureSource();
     init_TextureStyle();
     init_AbstractText();
@@ -64641,10 +64641,10 @@ var init_HTMLText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/prepare/PrepareUpload.mjs
+// main/deps/node_modules/pixi.js/lib/prepare/PrepareUpload.mjs
 var PrepareUpload;
 var init_PrepareUpload = __esm({
-  "node_modules/pixi.js/lib/prepare/PrepareUpload.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/prepare/PrepareUpload.mjs"() {
     init_TextureSource();
     init_GraphicsContext();
     init_Text();
@@ -64703,10 +64703,10 @@ var init_PrepareUpload = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/prepare/PrepareSystem.mjs
+// main/deps/node_modules/pixi.js/lib/prepare/PrepareSystem.mjs
 var PrepareSystem;
 var init_PrepareSystem = __esm({
-  "node_modules/pixi.js/lib/prepare/PrepareSystem.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/prepare/PrepareSystem.mjs"() {
     init_Extensions();
     init_PrepareUpload();
     PrepareSystem = class extends PrepareUpload {
@@ -64729,7 +64729,7 @@ var init_PrepareSystem = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gpu/generateGPULayout.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/generateGPULayout.mjs
 function generateGPULayout(maxTextures) {
   const gpuLayout = [];
   let bindIndex = 0;
@@ -64756,12 +64756,12 @@ function generateGPULayout(maxTextures) {
   return gpuLayout;
 }
 var init_generateGPULayout = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gpu/generateGPULayout.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/generateGPULayout.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/batcher/gpu/generateLayout.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/generateLayout.mjs
 function generateLayout(maxTextures) {
   const layout2 = {};
   let bindIndex = 0;
@@ -64772,12 +64772,12 @@ function generateLayout(maxTextures) {
   return layout2;
 }
 var init_generateLayout = __esm({
-  "node_modules/pixi.js/lib/rendering/batcher/gpu/generateLayout.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/batcher/gpu/generateLayout.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/formatShader.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/formatShader.mjs
 function formatShader(shader) {
   const spl = shader.split(/([\n{}])/g).map((a2) => a2.trim()).filter((a2) => a2.length);
   let indent = "";
@@ -64794,15 +64794,15 @@ function formatShader(shader) {
   return formatted;
 }
 var init_formatShader = __esm({
-  "node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/formatShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/high-shader/compiler/utils/formatShader.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/mask/scissor/ScissorMask.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/mask/scissor/ScissorMask.mjs
 var ScissorMask;
 var init_ScissorMask = __esm({
-  "node_modules/pixi.js/lib/rendering/mask/scissor/ScissorMask.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/mask/scissor/ScissorMask.mjs"() {
     init_addMaskBounds();
     init_addMaskLocalBounds();
     ScissorMask = class {
@@ -64835,7 +64835,7 @@ var init_ScissorMask = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/migrateFragmentFromV7toV8.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/migrateFragmentFromV7toV8.mjs
 function migrateFragmentFromV7toV8(fragmentShader) {
   fragmentShader = fragmentShader.replaceAll("texture2D", "texture").replaceAll("gl_FragColor", "finalColor").replaceAll("varying", "in");
   fragmentShader = `
@@ -64845,18 +64845,18 @@ function migrateFragmentFromV7toV8(fragmentShader) {
   return fragmentShader;
 }
 var init_migrateFragmentFromV7toV8 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/migrateFragmentFromV7toV8.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/migrateFragmentFromV7toV8.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapSize.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapSize.mjs
 function mapSize(type) {
   return GLSL_TO_SIZE[type];
 }
 var GLSL_TO_SIZE;
 var init_mapSize = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapSize.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/gl/shader/program/mapSize.mjs"() {
     "use strict";
     GLSL_TO_SIZE = {
       float: 1,
@@ -64883,10 +64883,10 @@ var init_mapSize = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/geometry/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/const.mjs
 var DEPRECATED_DRAW_MODES, DRAW_MODES;
 var init_const14 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/geometry/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/geometry/const.mjs"() {
     init_deprecation();
     DEPRECATED_DRAW_MODES = {
       POINTS: "point-list",
@@ -64904,10 +64904,10 @@ var init_const14 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/const.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/const.mjs
 var DEPRECATED_WRAP_MODES, WRAP_MODES, DEPRECATED_SCALE_MODES, SCALE_MODES;
 var init_const15 = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/const.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/const.mjs"() {
     init_deprecation();
     DEPRECATED_WRAP_MODES = /* @__PURE__ */ ((DEPRECATED_WRAP_MODES2) => {
       DEPRECATED_WRAP_MODES2["CLAMP"] = "clamp-to-edge";
@@ -64935,10 +64935,10 @@ var init_const15 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CubeTextureSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CubeTextureSource.mjs
 var CubeTextureSource;
 var init_CubeTextureSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CubeTextureSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/CubeTextureSource.mjs"() {
     init_warn();
     init_TextureSource();
     CubeTextureSource = class _CubeTextureSource extends TextureSource {
@@ -65035,7 +65035,7 @@ var init_CubeTextureSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/CubeTexture.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/CubeTexture.mjs
 function getCubeCacheKey(faceIds, options) {
   const opts = options ? { ...options } : {};
   delete opts.label;
@@ -65046,7 +65046,7 @@ function getCubeCacheKey(faceIds, options) {
 }
 var faceKeys, CubeTexture;
 var init_CubeTexture = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/CubeTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/CubeTexture.mjs"() {
     init_eventemitter3();
     init_Cache();
     init_uid();
@@ -65118,7 +65118,7 @@ var init_CubeTexture = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ExternalSource.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ExternalSource.mjs
 function getPlaceholder(renderer) {
   var _a;
   if (renderer.type === RendererType.WEBGPU) {
@@ -65141,7 +65141,7 @@ function getPlaceholder(renderer) {
 }
 var placeholderGl, placeholderGpu, ExternalSource;
 var init_ExternalSource = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ExternalSource.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/sources/ExternalSource.mjs"() {
     init_uid();
     init_GlTexture();
     init_GpuTextureSystem();
@@ -65243,10 +65243,10 @@ var init_ExternalSource = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureUvs.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureUvs.mjs
 var TextureUvs;
 var init_TextureUvs = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureUvs.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/texture/TextureUvs.mjs"() {
     init_groupD8();
     TextureUvs = class {
       constructor() {
@@ -65313,7 +65313,7 @@ var init_TextureUvs = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/rendering/renderers/shared/utils/parseFunctionBody.mjs
+// main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/utils/parseFunctionBody.mjs
 function parseFunctionBody(fn) {
   const fnStr = fn.toString();
   const bodyStart = fnStr.indexOf("{");
@@ -65324,26 +65324,26 @@ function parseFunctionBody(fn) {
   return fnStr.slice(bodyStart + 1, bodyEnd).trim();
 }
 var init_parseFunctionBody = __esm({
-  "node_modules/pixi.js/lib/rendering/renderers/shared/utils/parseFunctionBody.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/rendering/renderers/shared/utils/parseFunctionBody.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/bounds/getFastGlobalBounds.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/bounds/getFastGlobalBounds.mjs
 function getFastGlobalBounds(target, bounds) {
   deprecation("8.7.0", "Use container.getFastGlobalBounds() instead");
   return target.getFastGlobalBounds(true, bounds);
 }
 var init_getFastGlobalBounds = __esm({
-  "node_modules/pixi.js/lib/scene/container/bounds/getFastGlobalBounds.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/bounds/getFastGlobalBounds.mjs"() {
     init_deprecation();
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/RenderContainer.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/RenderContainer.mjs
 var RenderContainer;
 var init_RenderContainer = __esm({
-  "node_modules/pixi.js/lib/scene/container/RenderContainer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/RenderContainer.mjs"() {
     init_ViewContainer();
     RenderContainer = class extends ViewContainer {
       /**
@@ -65379,19 +65379,19 @@ var init_RenderContainer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/collectAllRenderables.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/collectAllRenderables.mjs
 function collectAllRenderables(container, instructionSet, rendererOrPipes) {
   deprecation("8.7.0", "Please use container.collectRenderables instead.");
   const renderer = rendererOrPipes.renderPipes ? rendererOrPipes : rendererOrPipes.batch.renderer;
   return container.collectRenderables(instructionSet, renderer, null);
 }
 var init_collectAllRenderables = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/collectAllRenderables.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/collectAllRenderables.mjs"() {
     init_deprecation();
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/updateLocalTransform.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/updateLocalTransform.mjs
 function updateLocalTransform(lt, container) {
   const scale = container._scale;
   const pivot = container._pivot;
@@ -65408,12 +65408,12 @@ function updateLocalTransform(lt, container) {
   lt.ty = position._y - (px * lt.b + py * lt.d);
 }
 var init_updateLocalTransform = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/updateLocalTransform.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/updateLocalTransform.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/container/utils/updateWorldTransform.mjs
+// main/deps/node_modules/pixi.js/lib/scene/container/utils/updateWorldTransform.mjs
 function updateWorldTransform(local, parent, world) {
   const lta = local.a;
   const ltb = local.b;
@@ -65433,12 +65433,12 @@ function updateWorldTransform(local, parent, world) {
   world.ty = lttx * ptb + ltty * ptd + parent.ty;
 }
 var init_updateWorldTransform = __esm({
-  "node_modules/pixi.js/lib/scene/container/utils/updateWorldTransform.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/container/utils/updateWorldTransform.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGDefinitions.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGDefinitions.mjs
 function buildColorStops(colorStops) {
   return colorStops.map((stop) => {
     const hex = Color.shared.setValue(stop.color).toHex();
@@ -65447,7 +65447,7 @@ function buildColorStops(colorStops) {
 }
 var SVGDefsCollector;
 var init_buildSVGDefinitions = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGDefinitions.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGDefinitions.mjs"() {
     init_Color();
     init_FillGradient();
     SVGDefsCollector = class {
@@ -65507,7 +65507,7 @@ var init_buildSVGDefinitions = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGPath.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGPath.mjs
 function buildSVGPath(path2, precision = 2, flatten = false) {
   if (path2.instructions.some((inst) => COMPLEX_ACTIONS.has(inst.action))) {
     return buildFromShapePrimitives(path2, precision, flatten);
@@ -65741,7 +65741,7 @@ function buildFromShapePrimitives(path2, precision, flatten) {
 }
 var PI2, COMPLEX_ACTIONS;
 var init_buildSVGPath = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGPath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGPath.mjs"() {
     "use strict";
     PI2 = Math.PI * 2;
     COMPLEX_ACTIONS = /* @__PURE__ */ new Set([
@@ -65755,7 +65755,7 @@ var init_buildSVGPath = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGStyle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGStyle.mjs
 function buildSVGFillAttributes(style, defs) {
   const gradRef = defs.addStyle(style);
   const parts = [];
@@ -65793,12 +65793,12 @@ function buildSVGStrokeAttributes(style, defs) {
   return parts.join(" ");
 }
 var init_buildSVGStyle = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGStyle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/buildSVGStyle.mjs"() {
     init_Color();
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGExporter.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGExporter.mjs
 function graphicsContextToSvg(source8, precision = 2) {
   const context2 = source8 instanceof GraphicsContext ? source8 : source8.context;
   const defs = new SVGDefsCollector();
@@ -65842,7 +65842,7 @@ function graphicsContextToSvg(source8, precision = 2) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w2}" height="${h2}" viewBox="${x2} ${y2} ${w2} ${h2}">${defsBlock}${body}</svg>`;
 }
 var init_SVGExporter = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGExporter.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/svg/SVGExporter.mjs"() {
     init_GraphicsContext();
     init_buildSVGDefinitions();
     init_buildSVGPath();
@@ -65850,7 +65850,7 @@ var init_SVGExporter = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/graphics/shared/utils/buildGeometryFromPath.mjs
+// main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/buildGeometryFromPath.mjs
 function buildGeometryFromPath(options) {
   if (options instanceof GraphicsPath) {
     options = {
@@ -65899,7 +65899,7 @@ function buildGeometryFromPath(options) {
   return geometry;
 }
 var init_buildGeometryFromPath = __esm({
-  "node_modules/pixi.js/lib/scene/graphics/shared/utils/buildGeometryFromPath.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/graphics/shared/utils/buildGeometryFromPath.mjs"() {
     init_buildUvs();
     init_transformVertices();
     init_MeshGeometry();
@@ -65908,10 +65908,10 @@ var init_buildGeometryFromPath = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/layers/RenderLayer.mjs
+// main/deps/node_modules/pixi.js/lib/scene/layers/RenderLayer.mjs
 var _RenderLayer, RenderLayer;
 var init_RenderLayer = __esm({
-  "node_modules/pixi.js/lib/scene/layers/RenderLayer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/layers/RenderLayer.mjs"() {
     init_warn();
     init_Container();
     _RenderLayer = class _RenderLayer2 extends Container {
@@ -66300,10 +66300,10 @@ var init_RenderLayer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-plane/PlaneGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-plane/PlaneGeometry.mjs
 var _PlaneGeometry, PlaneGeometry;
 var init_PlaneGeometry = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-plane/PlaneGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-plane/PlaneGeometry.mjs"() {
     init_deprecation();
     init_MeshGeometry();
     _PlaneGeometry = class _PlaneGeometry2 extends MeshGeometry {
@@ -66380,7 +66380,7 @@ var init_PlaneGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-perspective/utils/applyProjectiveTransformationToPlane.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/utils/applyProjectiveTransformationToPlane.mjs
 function applyProjectiveTransformationToPlane(width, height, geometry, transformationMatrix) {
   const buffer = geometry.buffers[0];
   const vertices = buffer.data;
@@ -66410,12 +66410,12 @@ function applyProjectiveTransformationToPlane(width, height, geometry, transform
   buffer.update();
 }
 var init_applyProjectiveTransformationToPlane = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-perspective/utils/applyProjectiveTransformationToPlane.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/utils/applyProjectiveTransformationToPlane.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-perspective/utils/compute2DProjections.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/utils/compute2DProjections.mjs
 function computeAdjugate(out2, matrix) {
   const a00 = matrix[0];
   const a01 = matrix[1];
@@ -66543,7 +66543,7 @@ function compute2DProjection(out2, x1s, y1s, x1d, y1d, x2s, y2s, x2d, y2d, x3s, 
 }
 var tempMatrix9, tempVec, tempVec2, tempSourceMatrix, tempDestinationMatrix;
 var init_compute2DProjections = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-perspective/utils/compute2DProjections.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/utils/compute2DProjections.mjs"() {
     "use strict";
     tempMatrix9 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     tempVec = [0, 0, 0];
@@ -66553,10 +66553,10 @@ var init_compute2DProjections = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-perspective/PerspectivePlaneGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/PerspectivePlaneGeometry.mjs
 var PerspectivePlaneGeometry;
 var init_PerspectivePlaneGeometry = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-perspective/PerspectivePlaneGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/PerspectivePlaneGeometry.mjs"() {
     init_PlaneGeometry();
     init_applyProjectiveTransformationToPlane();
     init_compute2DProjections();
@@ -66640,10 +66640,10 @@ var init_PerspectivePlaneGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-perspective/PerspectiveMesh.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/PerspectiveMesh.mjs
 var _PerspectiveMesh, PerspectiveMesh;
 var init_PerspectiveMesh = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-perspective/PerspectiveMesh.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-perspective/PerspectiveMesh.mjs"() {
     init_Texture();
     init_definedProps();
     init_Mesh();
@@ -66780,10 +66780,10 @@ var init_PerspectiveMesh = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-plane/MeshPlane.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-plane/MeshPlane.mjs
 var MeshPlane;
 var init_MeshPlane = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-plane/MeshPlane.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-plane/MeshPlane.mjs"() {
     init_definedProps();
     init_Mesh();
     init_PlaneGeometry();
@@ -66861,10 +66861,10 @@ var init_MeshPlane = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-simple/RopeGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-simple/RopeGeometry.mjs
 var _RopeGeometry, RopeGeometry;
 var init_RopeGeometry = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-simple/RopeGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-simple/RopeGeometry.mjs"() {
     init_MeshGeometry();
     _RopeGeometry = class _RopeGeometry2 extends MeshGeometry {
       /**
@@ -67010,10 +67010,10 @@ var init_RopeGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-simple/MeshRope.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-simple/MeshRope.mjs
 var _MeshRope, MeshRope;
 var init_MeshRope = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-simple/MeshRope.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-simple/MeshRope.mjs"() {
     init_definedProps();
     init_Mesh();
     init_RopeGeometry();
@@ -67056,10 +67056,10 @@ var init_MeshRope = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh-simple/MeshSimple.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh-simple/MeshSimple.mjs
 var MeshSimple;
 var init_MeshSimple = __esm({
-  "node_modules/pixi.js/lib/scene/mesh-simple/MeshSimple.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh-simple/MeshSimple.mjs"() {
     init_definedProps();
     init_Mesh();
     init_MeshGeometry();
@@ -67125,22 +67125,22 @@ var init_MeshSimple = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/mesh/shared/getTextureDefaultMatrix.mjs
+// main/deps/node_modules/pixi.js/lib/scene/mesh/shared/getTextureDefaultMatrix.mjs
 function getTextureDefaultMatrix(texture, out2) {
   const { width, height } = texture.frame;
   out2.scale(1 / width, 1 / height);
   return out2;
 }
 var init_getTextureDefaultMatrix = __esm({
-  "node_modules/pixi.js/lib/scene/mesh/shared/getTextureDefaultMatrix.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/mesh/shared/getTextureDefaultMatrix.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerAdaptor.mjs
 var CanvasParticleContainerAdaptor;
 var init_CanvasParticleContainerAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerAdaptor.mjs"() {
     init_canvasUtils();
     CanvasParticleContainerAdaptor = class {
       execute(particleContainerPipe, container) {
@@ -67193,7 +67193,7 @@ var init_CanvasParticleContainerAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/utils/createIndicesForQuads.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/utils/createIndicesForQuads.mjs
 function createIndicesForQuads(size, outBuffer = null) {
   const totalIndices = size * 6;
   if (totalIndices > 65535) {
@@ -67215,12 +67215,12 @@ function createIndicesForQuads(size, outBuffer = null) {
   return outBuffer;
 }
 var init_createIndicesForQuads = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/utils/createIndicesForQuads.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/utils/createIndicesForQuads.mjs"() {
     "use strict";
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/utils/generateParticleUpdateFunction.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/utils/generateParticleUpdateFunction.mjs
 function generateParticleUpdateFunction(properties) {
   return {
     dynamicUpdate: generateUpdateFunction(properties, true),
@@ -67258,12 +67258,12 @@ function generateUpdateFunction(properties, dynamic) {
   return new Function("ps", "f32v", "u32v", functionSource);
 }
 var init_generateParticleUpdateFunction = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/utils/generateParticleUpdateFunction.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/utils/generateParticleUpdateFunction.mjs"() {
     init_getAttributeInfoFromFormat();
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/ParticleBuffer.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/ParticleBuffer.mjs
 function getParticleSyncKey(properties) {
   const keyGen = [];
   for (const key in properties) {
@@ -67274,7 +67274,7 @@ function getParticleSyncKey(properties) {
 }
 var ParticleBuffer;
 var init_ParticleBuffer = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/ParticleBuffer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/ParticleBuffer.mjs"() {
     init_Buffer();
     init_const4();
     init_Geometry();
@@ -67396,34 +67396,34 @@ var init_ParticleBuffer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.frag.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.frag.mjs
 var fragment7;
 var init_particles_frag = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.frag.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.frag.mjs"() {
     fragment7 = "varying vec2 vUV;\nvarying vec4 vColor;\n\nuniform sampler2D uTexture;\n\nvoid main(void){\n    vec4 color = texture2D(uTexture, vUV) * vColor;\n    gl_FragColor = color;\n}";
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.vert.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.vert.mjs
 var vertex4;
 var init_particles_vert = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.vert.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.vert.mjs"() {
     vertex4 = "attribute vec2 aVertex;\nattribute vec2 aUV;\nattribute vec4 aColor;\n\nattribute vec2 aPosition;\nattribute float aRotation;\n\nuniform mat3 uTranslationMatrix;\nuniform float uRound;\nuniform vec2 uResolution;\nuniform vec4 uColor;\n\nvarying vec2 vUV;\nvarying vec4 vColor;\n\nvec2 roundPixels(vec2 position, vec2 targetSize)\n{       \n    return (floor(((position * 0.5 + 0.5) * targetSize) + 0.5) / targetSize) * 2.0 - 1.0;\n}\n\nvoid main(void){\n    float cosRotation = cos(aRotation);\n    float sinRotation = sin(aRotation);\n    float x = aVertex.x * cosRotation - aVertex.y * sinRotation;\n    float y = aVertex.x * sinRotation + aVertex.y * cosRotation;\n\n    vec2 v = vec2(x, y);\n    v = v + aPosition;\n\n    gl_Position = vec4((uTranslationMatrix * vec3(v, 1.0)).xy, 0.0, 1.0);\n\n    if(uRound == 1.0)\n    {\n        gl_Position.xy = roundPixels(gl_Position.xy, uResolution);\n    }\n\n    vUV = aUV;\n    vColor = vec4(aColor.rgb * aColor.a, aColor.a) * uColor;\n}\n";
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.wgsl.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.wgsl.mjs
 var wgsl;
 var init_particles_wgsl = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.wgsl.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/particles.wgsl.mjs"() {
     wgsl = "\nstruct ParticleUniforms {\n  uTranslationMatrix:mat3x3<f32>,\n  uColor:vec4<f32>,\n  uRound:f32,\n  uResolution:vec2<f32>,\n};\n\nfn roundPixels(position: vec2<f32>, targetSize: vec2<f32>) -> vec2<f32>\n{\n  return (floor(((position * 0.5 + 0.5) * targetSize) + 0.5) / targetSize) * 2.0 - 1.0;\n}\n\n@group(0) @binding(0) var<uniform> uniforms: ParticleUniforms;\n\n@group(1) @binding(0) var uTexture: texture_2d<f32>;\n@group(1) @binding(1) var uSampler : sampler;\n\nstruct VSOutput {\n    @builtin(position) position: vec4<f32>,\n    @location(0) uv : vec2<f32>,\n    @location(1) color : vec4<f32>,\n  };\n@vertex\nfn mainVertex(\n  @location(0) aVertex: vec2<f32>,\n  @location(1) aPosition: vec2<f32>,\n  @location(2) aUV: vec2<f32>,\n  @location(3) aColor: vec4<f32>,\n  @location(4) aRotation: f32,\n) -> VSOutput {\n  \n   let v = vec2(\n       aVertex.x * cos(aRotation) - aVertex.y * sin(aRotation),\n       aVertex.x * sin(aRotation) + aVertex.y * cos(aRotation)\n   ) + aPosition;\n\n   var position = vec4((uniforms.uTranslationMatrix * vec3(v, 1.0)).xy, 0.0, 1.0);\n\n   if(uniforms.uRound == 1.0) {\n       position = vec4(roundPixels(position.xy, uniforms.uResolution), position.zw);\n   }\n\n    let vColor = vec4(aColor.rgb * aColor.a, aColor.a) * uniforms.uColor;\n\n  return VSOutput(\n   position,\n   aUV,\n   vColor,\n  );\n}\n\n@fragment\nfn mainFragment(\n  @location(0) uv: vec2<f32>,\n  @location(1) color: vec4<f32>,\n  @builtin(position) position: vec4<f32>,\n) -> @location(0) vec4<f32> {\n\n    var sample = textureSample(uTexture, uSampler, uv) * color;\n   \n    return sample;\n}";
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/shader/ParticleShader.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/ParticleShader.mjs
 var ParticleShader;
 var init_ParticleShader = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/shader/ParticleShader.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/shader/ParticleShader.mjs"() {
     init_Color();
     init_Matrix();
     init_GlProgram();
@@ -67472,10 +67472,10 @@ var init_ParticleShader = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainerPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainerPipe.mjs
 var ParticleContainerPipe;
 var init_ParticleContainerPipe = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainerPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainerPipe.mjs"() {
     init_Extensions();
     init_Matrix();
     init_UniformGroup();
@@ -67576,10 +67576,10 @@ var init_ParticleContainerPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerPipe.mjs
 var CanvasParticleContainerPipe;
 var init_CanvasParticleContainerPipe = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/canvas/CanvasParticleContainerPipe.mjs"() {
     init_Extensions();
     init_ParticleContainerPipe();
     init_CanvasParticleContainerAdaptor();
@@ -67597,10 +67597,10 @@ var init_CanvasParticleContainerPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerAdaptor.mjs
 var GlParticleContainerAdaptor;
 var init_GlParticleContainerAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerAdaptor.mjs"() {
     "use strict";
     GlParticleContainerAdaptor = class {
       execute(particleContainerPipe, container) {
@@ -67622,10 +67622,10 @@ var init_GlParticleContainerAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerPipe.mjs
 var GlParticleContainerPipe;
 var init_GlParticleContainerPipe = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/gl/GlParticleContainerPipe.mjs"() {
     init_Extensions();
     init_GlParticleContainerAdaptor();
     init_ParticleContainerPipe();
@@ -67643,10 +67643,10 @@ var init_GlParticleContainerPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerAdaptor.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerAdaptor.mjs
 var GpuParticleContainerAdaptor;
 var init_GpuParticleContainerAdaptor = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerAdaptor.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerAdaptor.mjs"() {
     "use strict";
     GpuParticleContainerAdaptor = class {
       execute(particleContainerPipe, container) {
@@ -67667,10 +67667,10 @@ var init_GpuParticleContainerAdaptor = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerPipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerPipe.mjs
 var GpuParticleContainerPipe;
 var init_GpuParticleContainerPipe = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerPipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/gpu/GpuParticleContainerPipe.mjs"() {
     init_Extensions();
     init_GpuParticleContainerAdaptor();
     init_ParticleContainerPipe();
@@ -67688,10 +67688,10 @@ var init_GpuParticleContainerPipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/Particle.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/Particle.mjs
 var _Particle, Particle;
 var init_Particle = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/Particle.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/Particle.mjs"() {
     init_Color();
     init_Texture();
     init_getGlobalMixin();
@@ -67803,10 +67803,10 @@ var init_Particle = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/particleData.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/particleData.mjs
 var particleData;
 var init_particleData = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/particleData.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/particleData.mjs"() {
     "use strict";
     particleData = {
       vertex: {
@@ -67927,9 +67927,9 @@ var init_particleData = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/init.mjs
 var init_init14 = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/init.mjs"() {
     init_Extensions();
     init_CanvasParticleContainerPipe();
     init_GlParticleContainerPipe();
@@ -67940,10 +67940,10 @@ var init_init14 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainer.mjs
+// main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainer.mjs
 var emptyBounds, _ParticleContainer, ParticleContainer;
 var init_ParticleContainer = __esm({
-  "node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainer.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/particle-container/shared/ParticleContainer.mjs"() {
     init_Bounds();
     init_ViewContainer();
     init_particleData();
@@ -68329,7 +68329,7 @@ var init_ParticleContainer = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-nine-slice/canvas/CanvasNineSliceSpritePipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/canvas/CanvasNineSliceSpritePipe.mjs
 function setSpans(spans, s0, n0, s1, n1, s2, n22) {
   spans[0][0] = s0;
   spans[0][1] = n0;
@@ -68340,7 +68340,7 @@ function setSpans(spans, s0, n0, s1, n1, s2, n22) {
 }
 var colsSrc, rowsSrc, colsDst, rowsDst, CanvasNineSliceSpritePipe;
 var init_CanvasNineSliceSpritePipe = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-nine-slice/canvas/CanvasNineSliceSpritePipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/canvas/CanvasNineSliceSpritePipe.mjs"() {
     init_Extensions();
     init_canvasUtils();
     init_getGlobalMixin();
@@ -68500,10 +68500,10 @@ var init_CanvasNineSliceSpritePipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceGeometry.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceGeometry.mjs
 var _NineSliceGeometry, NineSliceGeometry;
 var init_NineSliceGeometry = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceGeometry.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceGeometry.mjs"() {
     init_PlaneGeometry();
     _NineSliceGeometry = class _NineSliceGeometry2 extends PlaneGeometry {
       constructor(options = {}) {
@@ -68621,10 +68621,10 @@ var init_NineSliceGeometry = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSpritePipe.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSpritePipe.mjs
 var NineSliceSpriteGpuData, NineSliceSpritePipe;
 var init_NineSliceSpritePipe = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSpritePipe.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSpritePipe.mjs"() {
     init_Extensions();
     init_GCManagedHash();
     init_BatchableMesh();
@@ -68695,9 +68695,9 @@ var init_NineSliceSpritePipe = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-nine-slice/init.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/init.mjs
 var init_init15 = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-nine-slice/init.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/init.mjs"() {
     init_Extensions();
     init_CanvasNineSliceSpritePipe();
     init_NineSliceSpritePipe();
@@ -68706,10 +68706,10 @@ var init_init15 = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSprite.mjs
+// main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSprite.mjs
 var _NineSliceSprite, NineSliceSprite, NineSlicePlane;
 var init_NineSliceSprite = __esm({
-  "node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSprite.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/sprite-nine-slice/NineSliceSprite.mjs"() {
     init_ObservablePoint();
     init_Texture();
     init_deprecation();
@@ -69116,7 +69116,7 @@ var init_NineSliceSprite = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-bitmap/utils/bitmapTextSplit.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-bitmap/utils/bitmapTextSplit.mjs
 function bitmapTextSplit(options) {
   const { text, style, chars: existingChars } = options;
   const textStyle = style;
@@ -69177,7 +69177,7 @@ function bitmapTextSplit(options) {
   return { chars, lines, words };
 }
 var init_bitmapTextSplit = __esm({
-  "node_modules/pixi.js/lib/scene/text-bitmap/utils/bitmapTextSplit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-bitmap/utils/bitmapTextSplit.mjs"() {
     init_Container();
     init_CanvasTextMetrics();
     init_BitmapFontManager();
@@ -69186,10 +69186,10 @@ var init_bitmapTextSplit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-split/AbstractSplitText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-split/AbstractSplitText.mjs
 var AbstractSplitText;
 var init_AbstractSplitText = __esm({
-  "node_modules/pixi.js/lib/scene/text-split/AbstractSplitText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-split/AbstractSplitText.mjs"() {
     init_Container();
     init_TextStyle();
     AbstractSplitText = class extends Container {
@@ -69459,10 +69459,10 @@ var init_AbstractSplitText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-split/SplitBitmapText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-split/SplitBitmapText.mjs
 var _SplitBitmapText, SplitBitmapText;
 var init_SplitBitmapText = __esm({
-  "node_modules/pixi.js/lib/scene/text-split/SplitBitmapText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-split/SplitBitmapText.mjs"() {
     init_warn();
     init_TextStyle();
     init_bitmapTextSplit();
@@ -69546,7 +69546,7 @@ var init_SplitBitmapText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/utils/canvasTextSplit.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/utils/canvasTextSplit.mjs
 function getAlignmentOffset(alignment, lineWidth, largestLine) {
   switch (alignment) {
     case "center":
@@ -69832,7 +69832,7 @@ function canvasTaggedTextSplitFromRuns(measuredText, textStyle, existingChars, t
 }
 var whitespaceRegex;
 var init_canvasTextSplit = __esm({
-  "node_modules/pixi.js/lib/scene/text/utils/canvasTextSplit.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/utils/canvasTextSplit.mjs"() {
     init_Matrix();
     init_Container();
     init_FillGradient();
@@ -69843,10 +69843,10 @@ var init_canvasTextSplit = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text-split/SplitText.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text-split/SplitText.mjs
 var _SplitText, SplitText;
 var init_SplitText = __esm({
-  "node_modules/pixi.js/lib/scene/text-split/SplitText.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text-split/SplitText.mjs"() {
     init_TextStyle();
     init_canvasTextSplit();
     init_AbstractSplitText();
@@ -69922,7 +69922,7 @@ var init_SplitText = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/scene/text/utils/generateTextStyleKey.mjs
+// main/deps/node_modules/pixi.js/lib/scene/text/utils/generateTextStyleKey.mjs
 function generateTextStyleKey(style) {
   const key = [];
   let index = 0;
@@ -69971,7 +69971,7 @@ function addDropShadowKey(dropShadow, key, index) {
 }
 var valuesToIterateForKeys;
 var init_generateTextStyleKey = __esm({
-  "node_modules/pixi.js/lib/scene/text/utils/generateTextStyleKey.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/scene/text/utils/generateTextStyleKey.mjs"() {
     init_Color();
     valuesToIterateForKeys = [
       "align",
@@ -69995,7 +69995,7 @@ var init_generateTextStyleKey = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/utils/logging/logDebugTexture.mjs
+// main/deps/node_modules/pixi.js/lib/utils/logging/logDebugTexture.mjs
 async function logDebugTexture(texture, renderer, size = 200) {
   const base64 = await renderer.extract.base64(texture);
   if (renderer.type !== RendererType.CANVAS) {
@@ -70012,12 +70012,12 @@ async function logDebugTexture(texture, renderer, size = 200) {
   console.log("%c ", style);
 }
 var init_logDebugTexture = __esm({
-  "node_modules/pixi.js/lib/utils/logging/logDebugTexture.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/logging/logDebugTexture.mjs"() {
     init_types();
   }
 });
 
-// node_modules/pixi.js/lib/utils/logging/logScene.mjs
+// main/deps/node_modules/pixi.js/lib/utils/logging/logScene.mjs
 function logScene(container, depth = 0, data = { color: "#000000" }) {
   if (container.renderGroup) {
     data.color = colors[colorTick++];
@@ -70059,7 +70059,7 @@ function logRenderGroupScene(renderGroup, depth = 0, data = { index: 0, color: "
 }
 var colors, colorTick;
 var init_logScene = __esm({
-  "node_modules/pixi.js/lib/utils/logging/logScene.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/utils/logging/logScene.mjs"() {
     init_Sprite();
     colors = [
       "#000080",
@@ -70087,7 +70087,7 @@ var init_logScene = __esm({
   }
 });
 
-// node_modules/pixi.js/lib/index.mjs
+// main/deps/node_modules/pixi.js/lib/index.mjs
 var lib_exports = {};
 __export(lib_exports, {
   AbstractBitmapFont: () => AbstractBitmapFont,
@@ -70844,7 +70844,7 @@ __export(lib_exports, {
   wrapModeToGlAddress: () => wrapModeToGlAddress
 });
 var init_lib = __esm({
-  "node_modules/pixi.js/lib/index.mjs"() {
+  "main/deps/node_modules/pixi.js/lib/index.mjs"() {
     init_browserExt();
     init_webworkerExt();
     init_Extensions();
@@ -71464,7 +71464,7 @@ var init_lib = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/instance.mjs
+// main/deps/node_modules/@pixi/sound/lib/instance.mjs
 function setInstance(sound2) {
   instance = sound2;
   return sound2;
@@ -71474,14 +71474,14 @@ function getInstance() {
 }
 var instance;
 var init_instance = __esm({
-  "node_modules/@pixi/sound/lib/instance.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/instance.mjs"() {
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/Filter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/Filter.mjs
 var Filter2;
 var init_Filter2 = __esm({
-  "node_modules/@pixi/sound/lib/filters/Filter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/Filter.mjs"() {
     Filter2 = class {
       /**
        * @param {AudioNode} destination - The audio node to use as the destination for the input AudioNode
@@ -71517,10 +71517,10 @@ var init_Filter2 = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/DistortionFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/DistortionFilter.mjs
 var DistortionFilter;
 var init_DistortionFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/DistortionFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/DistortionFilter.mjs"() {
     init_instance();
     init_Filter2();
     DistortionFilter = class extends Filter2 {
@@ -71565,10 +71565,10 @@ var init_DistortionFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/webaudio/WebAudioUtils.mjs
+// main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioUtils.mjs
 var WebAudioUtils;
 var init_WebAudioUtils = __esm({
-  "node_modules/@pixi/sound/lib/webaudio/WebAudioUtils.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioUtils.mjs"() {
     init_instance();
     WebAudioUtils = class {
       /**
@@ -71592,10 +71592,10 @@ var init_WebAudioUtils = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/EqualizerFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/EqualizerFilter.mjs
 var _EqualizerFilter, EqualizerFilter;
 var init_EqualizerFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/EqualizerFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/EqualizerFilter.mjs"() {
     init_instance();
     init_WebAudioUtils();
     init_Filter2();
@@ -71836,10 +71836,10 @@ var init_EqualizerFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/MonoFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/MonoFilter.mjs
 var MonoFilter;
 var init_MonoFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/MonoFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/MonoFilter.mjs"() {
     init_instance();
     init_Filter2();
     MonoFilter = class extends Filter2 {
@@ -71864,10 +71864,10 @@ var init_MonoFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/ReverbFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/ReverbFilter.mjs
 var ReverbFilter;
 var init_ReverbFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/ReverbFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/ReverbFilter.mjs"() {
     init_instance();
     init_Filter2();
     ReverbFilter = class extends Filter2 {
@@ -71954,10 +71954,10 @@ var init_ReverbFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/StereoFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/StereoFilter.mjs
 var StereoFilter;
 var init_StereoFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/StereoFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/StereoFilter.mjs"() {
     init_instance();
     init_WebAudioUtils();
     init_Filter2();
@@ -72004,10 +72004,10 @@ var init_StereoFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/StreamFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/StreamFilter.mjs
 var StreamFilter;
 var init_StreamFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/StreamFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/StreamFilter.mjs"() {
     init_instance();
     init_Filter2();
     StreamFilter = class extends Filter2 {
@@ -72033,10 +72033,10 @@ var init_StreamFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/TelephoneFilter.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/TelephoneFilter.mjs
 var TelephoneFilter;
 var init_TelephoneFilter = __esm({
-  "node_modules/@pixi/sound/lib/filters/TelephoneFilter.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/TelephoneFilter.mjs"() {
     init_instance();
     init_WebAudioUtils();
     init_Filter2();
@@ -72070,7 +72070,7 @@ var init_TelephoneFilter = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/filters/index.mjs
+// main/deps/node_modules/@pixi/sound/lib/filters/index.mjs
 var filters_exports = {};
 __export(filters_exports, {
   DistortionFilter: () => DistortionFilter,
@@ -72083,7 +72083,7 @@ __export(filters_exports, {
   TelephoneFilter: () => TelephoneFilter
 });
 var init_filters = __esm({
-  "node_modules/@pixi/sound/lib/filters/index.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/filters/index.mjs"() {
     init_DistortionFilter();
     init_EqualizerFilter();
     init_Filter2();
@@ -72095,10 +72095,10 @@ var init_filters = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioContext.mjs
+// main/deps/node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioContext.mjs
 var HTMLAudioContext;
 var init_HTMLAudioContext = __esm({
-  "node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioContext.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioContext.mjs"() {
     init_lib();
     HTMLAudioContext = class extends eventemitter3_default {
       constructor() {
@@ -72161,10 +72161,10 @@ var init_HTMLAudioContext = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioInstance.mjs
+// main/deps/node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioInstance.mjs
 var id, _HTMLAudioInstance, HTMLAudioInstance;
 var init_HTMLAudioInstance = __esm({
-  "node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioInstance.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioInstance.mjs"() {
     init_lib();
     id = 0;
     _HTMLAudioInstance = class extends eventemitter3_default {
@@ -72416,10 +72416,10 @@ var init_HTMLAudioInstance = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioMedia.mjs
+// main/deps/node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioMedia.mjs
 var HTMLAudioMedia;
 var init_HTMLAudioMedia = __esm({
-  "node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioMedia.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/htmlaudio/HTMLAudioMedia.mjs"() {
     init_lib();
     init_HTMLAudioInstance();
     HTMLAudioMedia = class extends eventemitter3_default {
@@ -72538,7 +72538,7 @@ var init_HTMLAudioMedia = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/htmlaudio/index.mjs
+// main/deps/node_modules/@pixi/sound/lib/htmlaudio/index.mjs
 var htmlaudio_exports = {};
 __export(htmlaudio_exports, {
   HTMLAudioContext: () => HTMLAudioContext,
@@ -72546,17 +72546,17 @@ __export(htmlaudio_exports, {
   HTMLAudioMedia: () => HTMLAudioMedia
 });
 var init_htmlaudio = __esm({
-  "node_modules/@pixi/sound/lib/htmlaudio/index.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/htmlaudio/index.mjs"() {
     init_HTMLAudioContext();
     init_HTMLAudioInstance();
     init_HTMLAudioMedia();
   }
 });
 
-// node_modules/@pixi/sound/lib/SoundSprite.mjs
+// main/deps/node_modules/@pixi/sound/lib/SoundSprite.mjs
 var SoundSprite;
 var init_SoundSprite = __esm({
-  "node_modules/@pixi/sound/lib/SoundSprite.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/SoundSprite.mjs"() {
     SoundSprite = class {
       /**
        * @param parent - The parent sound
@@ -72590,7 +72590,7 @@ var init_SoundSprite = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/utils/supported.mjs
+// main/deps/node_modules/@pixi/sound/lib/utils/supported.mjs
 function validateFormats(typeOverrides) {
   const overrides = {
     m4a: "audio/mp4",
@@ -72611,7 +72611,7 @@ function validateFormats(typeOverrides) {
 }
 var extensions2, mimes, supported;
 var init_supported = __esm({
-  "node_modules/@pixi/sound/lib/utils/supported.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/utils/supported.mjs"() {
     extensions2 = [
       "ogg",
       "oga",
@@ -72634,13 +72634,13 @@ var init_supported = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/webaudio/WebAudioInstance.mjs
+// main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioInstance.mjs
 function positiveModulo(value, length2) {
   return (value % length2 + length2) % length2;
 }
 var id2, WebAudioInstance;
 var init_WebAudioInstance = __esm({
-  "node_modules/@pixi/sound/lib/webaudio/WebAudioInstance.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioInstance.mjs"() {
     init_lib();
     init_WebAudioUtils();
     id2 = 0;
@@ -72974,10 +72974,10 @@ var init_WebAudioInstance = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/Filterable.mjs
+// main/deps/node_modules/@pixi/sound/lib/Filterable.mjs
 var Filterable;
 var init_Filterable = __esm({
-  "node_modules/@pixi/sound/lib/Filterable.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/Filterable.mjs"() {
     Filterable = class {
       /**
        * @param input - The source audio node
@@ -73030,10 +73030,10 @@ var init_Filterable = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/webaudio/WebAudioNodes.mjs
+// main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioNodes.mjs
 var _WebAudioNodes, WebAudioNodes;
 var init_WebAudioNodes = __esm({
-  "node_modules/@pixi/sound/lib/webaudio/WebAudioNodes.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioNodes.mjs"() {
     init_Filterable();
     init_WebAudioUtils();
     _WebAudioNodes = class extends Filterable {
@@ -73108,10 +73108,10 @@ var init_WebAudioNodes = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/webaudio/WebAudioMedia.mjs
+// main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioMedia.mjs
 var WebAudioMedia;
 var init_WebAudioMedia = __esm({
-  "node_modules/@pixi/sound/lib/webaudio/WebAudioMedia.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioMedia.mjs"() {
     init_lib();
     init_WebAudioInstance();
     init_WebAudioNodes();
@@ -73242,10 +73242,10 @@ var init_WebAudioMedia = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/Sound.mjs
+// main/deps/node_modules/@pixi/sound/lib/Sound.mjs
 var _Sound, Sound;
 var init_Sound = __esm({
-  "node_modules/@pixi/sound/lib/Sound.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/Sound.mjs"() {
     init_lib();
     init_HTMLAudioMedia();
     init_instance();
@@ -73615,10 +73615,10 @@ var init_Sound = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/webaudio/WebAudioContext.mjs
+// main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioContext.mjs
 var WebAudioContext;
 var init_WebAudioContext = __esm({
-  "node_modules/@pixi/sound/lib/webaudio/WebAudioContext.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/webaudio/WebAudioContext.mjs"() {
     init_lib();
     init_Filterable();
     WebAudioContext = class _WebAudioContext extends Filterable {
@@ -73832,10 +73832,10 @@ var init_WebAudioContext = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/SoundLibrary.mjs
+// main/deps/node_modules/@pixi/sound/lib/SoundLibrary.mjs
 var SoundLibrary;
 var init_SoundLibrary = __esm({
-  "node_modules/@pixi/sound/lib/SoundLibrary.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/SoundLibrary.mjs"() {
     init_HTMLAudioContext();
     init_Sound();
     init_WebAudioContext();
@@ -74210,7 +74210,7 @@ var init_SoundLibrary = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/utils/playOnce.mjs
+// main/deps/node_modules/@pixi/sound/lib/utils/playOnce.mjs
 function playOnce(url, callback) {
   const alias = `alias${PLAY_ID++}`;
   getInstance().add(alias, {
@@ -74237,13 +74237,13 @@ function playOnce(url, callback) {
 }
 var PLAY_ID;
 var init_playOnce = __esm({
-  "node_modules/@pixi/sound/lib/utils/playOnce.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/utils/playOnce.mjs"() {
     init_instance();
     PLAY_ID = 0;
   }
 });
 
-// node_modules/@pixi/sound/lib/utils/render.mjs
+// main/deps/node_modules/@pixi/sound/lib/utils/render.mjs
 function render(sound2, options) {
   const canvas = document.createElement("canvas");
   options = {
@@ -74284,13 +74284,13 @@ function render(sound2, options) {
   return textureSource;
 }
 var init_render = __esm({
-  "node_modules/@pixi/sound/lib/utils/render.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/utils/render.mjs"() {
     init_lib();
     init_WebAudioMedia();
   }
 });
 
-// node_modules/@pixi/sound/lib/utils/sineTone.mjs
+// main/deps/node_modules/@pixi/sound/lib/utils/sineTone.mjs
 function sineTone(hertz = 200, seconds = 1) {
   const sound2 = Sound.from({
     singleInstance: true
@@ -74319,13 +74319,13 @@ function sineTone(hertz = 200, seconds = 1) {
   return sound2;
 }
 var init_sineTone = __esm({
-  "node_modules/@pixi/sound/lib/utils/sineTone.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/utils/sineTone.mjs"() {
     init_Sound();
     init_WebAudioMedia();
   }
 });
 
-// node_modules/@pixi/sound/lib/utils/index.mjs
+// main/deps/node_modules/@pixi/sound/lib/utils/index.mjs
 var utils_exports = {};
 __export(utils_exports, {
   PLAY_ID: () => PLAY_ID,
@@ -74338,7 +74338,7 @@ __export(utils_exports, {
   validateFormats: () => validateFormats
 });
 var init_utils2 = __esm({
-  "node_modules/@pixi/sound/lib/utils/index.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/utils/index.mjs"() {
     init_playOnce();
     init_render();
     init_sineTone();
@@ -74346,7 +74346,7 @@ var init_utils2 = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/webaudio/index.mjs
+// main/deps/node_modules/@pixi/sound/lib/webaudio/index.mjs
 var webaudio_exports = {};
 __export(webaudio_exports, {
   WebAudioContext: () => WebAudioContext,
@@ -74356,7 +74356,7 @@ __export(webaudio_exports, {
   WebAudioUtils: () => WebAudioUtils
 });
 var init_webaudio = __esm({
-  "node_modules/@pixi/sound/lib/webaudio/index.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/webaudio/index.mjs"() {
     init_WebAudioContext();
     init_WebAudioInstance();
     init_WebAudioMedia();
@@ -74365,10 +74365,10 @@ var init_webaudio = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/soundAsset.mjs
+// main/deps/node_modules/@pixi/sound/lib/soundAsset.mjs
 var getAliases, soundAsset;
 var init_soundAsset = __esm({
-  "node_modules/@pixi/sound/lib/soundAsset.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/soundAsset.mjs"() {
     init_lib();
     init_instance();
     init_Sound();
@@ -74435,7 +74435,7 @@ var init_soundAsset = __esm({
   }
 });
 
-// node_modules/@pixi/sound/lib/index.mjs
+// main/deps/node_modules/@pixi/sound/lib/index.mjs
 var lib_exports2 = {};
 __export(lib_exports2, {
   Filter: () => Filter2,
@@ -74452,7 +74452,7 @@ __export(lib_exports2, {
 });
 var sound;
 var init_lib2 = __esm({
-  "node_modules/@pixi/sound/lib/index.mjs"() {
+  "main/deps/node_modules/@pixi/sound/lib/index.mjs"() {
     init_filters();
     init_htmlaudio();
     init_instance();
@@ -74468,7 +74468,7 @@ var init_lib2 = __esm({
   }
 });
 
-// node_modules/untitled-pixi-live2d-engine/dist/cubism.es.js
+// main/deps/node_modules/untitled-pixi-live2d-engine/dist/cubism.es.js
 var cubism_es_exports = {};
 __export(cubism_es_exports, {
   Constant: () => Constant,
@@ -75563,7 +75563,7 @@ function releaseMoc() {
 }
 var __defProp2, __defProps, __getOwnPropDescs, __getOwnPropSymbols, __hasOwnProp2, __propIsEnum, __pow, __defNormalProp, __spreadValues, __spreadProps, __publicField, __async, _csmVector, csmVector, iterator$1, Live2DCubismFramework$w, csmString, Live2DCubismFramework$v, CubismId, Live2DCubismFramework$u, CubismIdManager, Live2DCubismFramework$t, CubismMatrix44, Live2DCubismFramework$s, csmRect, Live2DCubismFramework$r, CubismRenderer, CubismBlendMode, CubismTextureColor, CubismClippingContext, Live2DCubismFramework$q, CSM_LOG_LEVEL_VERBOSE, CSM_LOG_LEVEL_DEBUG, CSM_LOG_LEVEL_INFO, CSM_LOG_LEVEL_WARNING, CSM_LOG_LEVEL_ERROR, CSM_LOG_LEVEL_OFF, CSM_LOG_LEVEL, CubismFrameworkConfig, CubismLogPrint, CubismLogPrintIn, CSM_ASSERT, CubismLogDebug, CubismLogInfo, CubismLogWarning, CubismLogError, CubismDebug, Live2DCubismFramework$p, csmPair, _csmMap, csmMap, iterator2, Live2DCubismFramework$o, CubismJsonExtension, CSM_JSON_ERROR_TYPE_MISMATCH, CSM_JSON_ERROR_INDEX_OF_BOUNDS, Value$1, CubismJson, JsonFloat, JsonBoolean, JsonString, JsonError, JsonNullvalue, JsonArray, JsonMap, Live2DCubismFramework$n, s_isStarted, s_isInitialized, s_option, s_cubismIdManager, Constant, CubismFramework, Option, LogLevel, Live2DCubismFramework$m, LOGICAL_WIDTH, LOGICAL_HEIGHT, LOG_LEVEL_VERBOSE, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_NONE, config, VERSION2, logger, SCHEME_RE, ExpressionManager, EPSILON, MAX_SPEED, ACCELERATION_TIME, FocusController, ModelSettings, MotionPriority, MotionState, TAG$2, VOLUME, SOUND_ALIAS_PREFIX, soundId, pixiSoundPromise, configuredLibraries, SoundManager, MotionPreloadStrategy, MotionManager, tempBounds6, InternalModel, TAG$1, NetworkError, _XHRLoader, XHRLoader, Live2DLoader, CubismLegacyModelSettings, DEFAULT_LOD_SCALE_THRESHOLD, DEFAULT_LOD_TEXTURE_SIZE_THRESHOLD, TAG, urlToJSON, jsonToSettings, waitUntilReady, setupOptionals, setupEssentials, createInternalModel, _FileLoader, FileLoader, _Live2DFactory, Live2DFactory, _Automator, Automator, Live2DTransform, tempPoint2, tempMatrix$1, tempWorldMatrix, tempDrawableBounds, tempModelBounds, live2DPluginFallbackWarned, Live2DPipe, Live2DPlugin, Live2DModel, CubismVector2, Live2DCubismFramework$l, _CubismMath, CubismMath, Live2DCubismFramework$k, ACubismMotion, Live2DCubismFramework$j, ExpressionKeyFadeIn, ExpressionKeyFadeOut, ExpressionKeyParameters, ExpressionKeyId, ExpressionKeyValue, ExpressionKeyBlend, BlendValueAdd, BlendValueMultiply, BlendValueOverwrite, DefaultFadeTime, _CubismExpressionMotion, CubismExpressionMotion, ExpressionBlendType, ExpressionParameter, Live2DCubismFramework$i, CubismMotionQueueEntry, Live2DCubismFramework$h, CubismMotionQueueManager, InvalidMotionQueueEntryHandleValue, Live2DCubismFramework$g, CubismExpressionManager, CubismMotionCurveTarget, CubismMotionSegmentType, CubismMotionPoint, CubismMotionSegment, CubismMotionCurve, CubismMotionEvent, CubismMotionData, Live2DCubismFramework$f, Meta$1, Duration, Loop, AreBeziersRestricted, CurveCount, Fps$1, TotalSegmentCount, TotalPointCount, Curves, Target, Id$2, FadeInTime, FadeOutTime, Segments, UserData, UserDataCount, TotalUserDataSize, Time, Value2, CubismMotionJson, EvaluationOptionFlag, Live2DCubismFramework$e, EffectNameEyeBlink, EffectNameLipSync, TargetNameModel, TargetNameParameter, TargetNamePartOpacity, IdNameOpacity, UseOldBeziersCurveMotion, CubismMotion, Live2DCubismFramework$d, CubismMotionManager, ParallelMotionManager, CubismParallelMotionManager, CubismDefaultParameterId, Live2DCubismFramework$c, CubismBreath, BreathParameterData, Live2DCubismFramework$b, _CubismEyeBlink, CubismEyeBlink, EyeState, Live2DCubismFramework$a, ColorChannelCount, ClippingMaskMaxCountOnDefault, ClippingMaskMaxCountOnMultiRenderTexture, CubismClippingManager, s_instance, ShaderCount, CubismShader_WebGL, CubismShaderManager_WebGL, CubismShaderSet, ShaderNames, vertexShaderSrcSetupMask, fragmentShaderSrcsetupMask, vertexShaderSrc, vertexShaderSrcMasked, fragmentShaderSrcPremultipliedAlpha, fragmentShaderSrcMaskPremultipliedAlpha, fragmentShaderSrcMaskInvertedPremultipliedAlpha, Live2DCubismFramework$9, s_viewport, s_fbo, CubismClippingManager_WebGL, CubismRenderTextureResource, CubismClippingContext_WebGL, CubismRendererProfile_WebGL, CubismRenderer_WebGL, Live2DCubismFramework$8, tempMatrix10, DEFAULT_MASKS_PER_RENDER_TEXTURE, MASKS_PER_RENDER_TEXTURE, HIGH_PRECISION_MASK_UNIQUE_MASK_SET_THRESHOLD, HIGH_PRECISION_MASK_MASKED_DRAWABLE_THRESHOLD, HIGH_PRECISION_MASK_MAX_MASKS_PER_DRAWABLE_THRESHOLD, HIGH_PRECISION_MASK_MASKED_VERTEX_THRESHOLD, HIGH_PRECISION_MASK_VERTEX_RATIO_THRESHOLD, HIGH_PRECISION_MASK_VERTEX_RATIO_DRAWABLE_THRESHOLD, layoutKeyMap, CubismInternalModel, ICubismModelSetting, Live2DCubismFramework$7, FrequestNode, CubismModelSettingJson, Live2DCubismFramework$6, defaultEyeBlinkParameters, CubismModelSettings, startupPromise, startupRetries, cubismMemory, Epsilon, DefaultFadeInSeconds, FadeIn, Link, Groups, Id$1, CubismPose, PartData, Live2DCubismFramework$5, ParameterRepeatData, DrawableColorData, PartColorData, DrawableCullingData, CubismModel, Live2DCubismFramework$4, CubismMoc, Live2DCubismFramework$3, CubismPhysicsTargetType, CubismPhysicsSource, PhysicsJsonEffectiveForces, CubismPhysicsParameter, CubismPhysicsNormalization, CubismPhysicsParticle, CubismPhysicsSubRig, CubismPhysicsInput, CubismPhysicsOutput, CubismPhysicsRig, Live2DCubismFramework$2, Position, X, Y, Angle, Type, Id, Meta, EffectiveForces, TotalInputCount, TotalOutputCount, PhysicsSettingCount, Gravity, Wind, VertexCount, Fps, PhysicsSettings, Normalization, Minimum, Maximum, Default, Reflect2, Weight, Input, Source, Output, Scale, VertexIndex, Destination, Vertices, Mobility, Delay, Radius, Acceleration, CubismPhysicsJson, Live2DCubismFramework$1, PhysicsTypeTagX, PhysicsTypeTagY, PhysicsTypeTagAngle, AirResistance, MaximumWeight, MovementThreshold, MaxDeltaTime, CubismPhysics, Options, PhysicsOutput, Live2DCubismFramework;
 var init_cubism_es = __esm({
-  "node_modules/untitled-pixi-live2d-engine/dist/cubism.es.js"() {
+  "main/deps/node_modules/untitled-pixi-live2d-engine/dist/cubism.es.js"() {
     init_lib();
     __defProp2 = Object.defineProperty;
     __defProps = Object.defineProperties;
@@ -90441,7 +90441,7 @@ var init_cubism_es = __esm({
   }
 });
 
-// ../modules/ui/engine.js
+// main/modules/ui/engine.js
 var MotionPriority2 = { NONE: 0, IDLE: 1, NORMAL: 2, FORCE: 3 };
 var CORE_GLOBAL = "Live2DCubismCore";
 var DEFAULT_CORE = "/vendor/live2dcubismcore.min.js";
@@ -90508,7 +90508,7 @@ async function createStage(o2 = {}) {
   container.appendChild(app.canvas);
   log3("app ready", app.screen.width, app.screen.height);
   log3("model load start", modelUrl);
-  const model = await engine.Live2DModel.from(modelUrl, { autoHitTest: false, autoFocus: false });
+  const model = await engine.Live2DModel.from(modelUrl, { autoHitTest: false, autoFocus: false, eyeBlink: false });
   log3("model load done", model.internalModel?.originalWidth, model.internalModel?.originalHeight);
   model.anchor.set(0.5, 0.5);
   app.stage.addChild(model);
@@ -90835,7 +90835,7 @@ async function createStage(o2 = {}) {
   };
 }
 
-// ../modules/ui/interact.js
+// main/modules/ui/interact.js
 var NS = "http://www.w3.org/2000/svg";
 function buildSweep(root) {
   const svg = document.createElementNS(NS, "svg");
@@ -91349,7 +91349,7 @@ function setupInteract(o2) {
   };
 }
 
-// ../modules/behavior/cues.mjs
+// main/modules/behavior/cues.mjs
 var S2 = (where) => where === "\u53F3" ? -1 : 1;
 function keys(str) {
   return str.trim().split(/\s+/).map((k2) => {
@@ -91715,7 +91715,7 @@ function createCueEngine(h2) {
   };
 }
 
-// ../modules/ui/renderer.js
+// main/modules/ui/renderer.js
 var $2 = (id3) => document.getElementById(id3);
 var stageEl = $2("stage");
 var bubbleEl = $2("bubble");
@@ -92070,7 +92070,11 @@ var TRANSIENT_PARAMS = /* @__PURE__ */ new Set([
   "ParamBodyAngleZ",
   "ParamEyeBallX",
   "ParamEyeBallY",
-  "ParamBreath"
+  "ParamBreath",
+  // 眨眼每帧临时乘一下，不能让它进基准：万一初始快照正好拍在闭眼那一帧，
+  // 之后每次还原都会把眼睛按闭上（见下方 blinkTick）。
+  "ParamEyeLOpen",
+  "ParamEyeROpen"
 ]);
 function liveParamIds() {
   const skip = new Set(TRANSIENT_PARAMS);
@@ -92603,6 +92607,64 @@ function idleTick() {
     stage.param.set("ParamEyeBallY", gazeState.eyeY * g2);
   }
 }
+var BLINK = {
+  close: 90,
+  // 闭眼
+  hold: 70,
+  // 保持闭合
+  open: 130,
+  // 睁开
+  gapMin: 2400,
+  // 两次眨眼间隔（自然眨眼大约 2~7 秒一次）
+  gapMax: 7e3,
+  doubleP: 0.12,
+  // 偶尔连眨两下
+  doubleGap: 150
+};
+var BLINK_TOTAL = BLINK.close + BLINK.hold + BLINK.open;
+var blinkState = { t0: 0, nextAt: 0, queued: false, n: 0, armed: false };
+var smooth01 = (x2) => {
+  const k2 = Math.min(1, Math.max(0, x2));
+  return k2 * k2 * (3 - 2 * k2);
+};
+function blinkArm(now) {
+  const gap = blinkState.queued ? BLINK.doubleGap : BLINK.gapMin + Math.random() * (BLINK.gapMax - BLINK.gapMin);
+  blinkState.queued = false;
+  blinkState.nextAt = now + gap;
+}
+function blinkTick(now) {
+  const idle = cfg.idle || {};
+  if (idle.blink === false) return;
+  if (!stage?.param?.has?.("ParamEyeLOpen")) return;
+  if (!blinkState.armed) {
+    blinkState.armed = true;
+    blinkState.nextAt = now + 900 + Math.random() * 1800;
+    log("[blink] \u81EA\u7136\u7728\u773C\u5DF2\u542F\u7528\uFF082.4~7.0s \u4E00\u6B21\uFF0C12% \u8FDE\u7728\u4E24\u4E0B\uFF09");
+    return;
+  }
+  if (blinkState.t0) {
+    const el = now - blinkState.t0;
+    if (el >= BLINK_TOTAL) {
+      blinkState.t0 = 0;
+      blinkArm(now);
+      return;
+    }
+    let f2 = 0;
+    if (el < BLINK.close) f2 = 1 - smooth01(el / BLINK.close);
+    else if (el < BLINK.close + BLINK.hold) f2 = 0;
+    else f2 = smooth01((el - BLINK.close - BLINK.hold) / BLINK.open);
+    for (const id3 of ["ParamEyeLOpen", "ParamEyeROpen"]) {
+      const cur = stage.param.get(id3);
+      if (cur != null) stage.param.set(id3, cur * f2);
+    }
+    return;
+  }
+  if (now >= blinkState.nextAt) {
+    blinkState.t0 = now;
+    blinkState.n += 1;
+    blinkState.queued = Math.random() < BLINK.doubleP;
+  }
+}
 function idleAngles() {
   const idle = cfg.idle || {};
   const t2 = (performance.now() - idleT0) / 1e3;
@@ -93107,6 +93169,7 @@ function setupRenderLoop() {
         }
       }
     }
+    blinkTick(performance.now());
     if (!baseInitial && !poseAnim && stage.param?.ids?.length) {
       const skip0 = liveParamIds();
       baseInitial = /* @__PURE__ */ new Map();

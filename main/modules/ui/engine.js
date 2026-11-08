@@ -104,8 +104,10 @@ export async function createStage(o = {}) {
   log('app ready', app.screen.width, app.screen.height)
 
   // autoHitTest / autoFocus 关掉：指针交给上层（视线强度、遮挡穿透都要自己算），不让内核抢
+  // eyeBlink 也关掉：内核这套在这只模型上实测不触发（逐帧遥测里眼参数从不变），
+  // 眨眼的唯一实现是渲染层的 blinkTick —— 两边都开的话将来修好了会变成「眨两下」。
   log('model load start', modelUrl)
-  const model = await engine.Live2DModel.from(modelUrl, { autoHitTest: false, autoFocus: false })
+  const model = await engine.Live2DModel.from(modelUrl, { autoHitTest: false, autoFocus: false, eyeBlink: false })
   log('model load done', model.internalModel?.originalWidth, model.internalModel?.originalHeight)
   model.anchor.set(0.5, 0.5)
   app.stage.addChild(model)

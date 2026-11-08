@@ -531,6 +531,9 @@ const TRANSIENT_PARAMS = new Set([
   'ParamAngleX', 'ParamAngleY', 'ParamAngleZ',
   'ParamBodyAngleX', 'ParamBodyAngleY', 'ParamBodyAngleZ',
   'ParamEyeBallX', 'ParamEyeBallY', 'ParamBreath',
+  // 眨眼每帧临时乘一下，不能让它进基准：万一初始快照正好拍在闭眼那一帧，
+  // 之后每次还原都会把眼睛按闭上（见下方 blinkTick）。
+  'ParamEyeLOpen', 'ParamEyeROpen',
 ])
 
 /** 当前不该被基准还原碰的参数集合：活层每帧重写的（瞬态 + 姿势 + 表情） */
@@ -1137,6 +1140,92 @@ function idleTick() {
     // 眼珠不是物理输出，直接写
     stage.param.set('ParamEyeBallX', gazeState.eyeX * g)
     stage.param.set('ParamEyeBallY', gazeState.eyeY * g)
+  }
+}
+
+/* ---------------- 自然眨眼（自己驱动，不吃内核那套） ----------------
+ *
+ * 为什么不用引擎自带的 CubismEyeBlink：这套模型上它一次都不触发 ——
+ * 打开逐帧遥测（POST /api/debug/frames {"on":true}）跑 12 秒，
+ * frames[].arg 里从来没有 ParamEyeLOpen/ParamEyeROpen，眼睛全程不闭。
+ * 与其去猜内核里哪一步把 effectIds 吃掉了，不如自己驱动：
+ * 间隔、连眨、低帧率下的可见性都能调，还能被人设卡 / 调试口验证。
+ *
+ * 两条硬约束（改的时候别踩）：
+ *   ① 只在「正在闭」的那一小段写参数，且用**乘法**（当前值 × 睁眼程度）。
+ *      「闭眼」「半睁」这类表情和 cue 的基准值靠乘法保住，不会被眨眼抹成 0 或 1。
+ *   ② 眨眼结束后**立刻停止写入**。引擎每帧末尾 loadParameters() 会把参数还原成
+ *      存档值，不写就自动回到表情给的那个值 —— 这一条保证了「眨完不闪一下」。
+ *
+ * 时长按 24 帧（省电）也算得过：一次 290ms ≈ 7 帧，闭着的那 70ms 至少覆盖 1~2 帧，
+ * 不会像 100ms 的短眨那样整帧被跳过。
+ */
+const BLINK = {
+  close: 90,        // 闭眼
+  hold: 70,         // 保持闭合
+  open: 130,        // 睁开
+  gapMin: 2400,     // 两次眨眼间隔（自然眨眼大约 2~7 秒一次）
+  gapMax: 7000,
+  doubleP: 0.12,    // 偶尔连眨两下
+  doubleGap: 150,
+}
+const BLINK_TOTAL = BLINK.close + BLINK.hold + BLINK.open
+const blinkState = { t0: 0, nextAt: 0, queued: false, n: 0, armed: false }
+
+const smooth01 = (x) => {
+  const k = Math.min(1, Math.max(0, x))
+  return k * k * (3 - 2 * k)
+}
+
+/** 排下一次眨眼。queued = 上一次是「连眨」的第一下，紧跟着再来一次 */
+function blinkArm(now) {
+  const gap = blinkState.queued
+    ? BLINK.doubleGap
+    : BLINK.gapMin + Math.random() * (BLINK.gapMax - BLINK.gapMin)
+  blinkState.queued = false
+  blinkState.nextAt = now + gap
+}
+
+/**
+ * 每帧最后调用（表情 / cue / 动作还原都写完之后）。
+ * 帧外读参数不可靠，所以「现在该不该闭」一律用 performance.now() 现算。
+ */
+function blinkTick(now) {
+  const idle = cfg.idle || {}
+  if (idle.blink === false) return
+  if (!stage?.param?.has?.('ParamEyeLOpen')) return
+
+  if (!blinkState.armed) {
+    blinkState.armed = true
+    // 启动头几秒先别眨：模型刚出来那会儿镜头还没站稳，一上来就闭眼显得怪
+    blinkState.nextAt = now + 900 + Math.random() * 1800
+    log('[blink] 自然眨眼已启用（2.4~7.0s 一次，12% 连眨两下）')
+    return
+  }
+
+  if (blinkState.t0) {
+    const el = now - blinkState.t0
+    if (el >= BLINK_TOTAL) {
+      // 睁开了：从这一帧起不碰眼睛参数（见上面约束 ②）
+      blinkState.t0 = 0
+      blinkArm(now)
+      return
+    }
+    let f = 0
+    if (el < BLINK.close) f = 1 - smooth01(el / BLINK.close)
+    else if (el < BLINK.close + BLINK.hold) f = 0
+    else f = smooth01((el - BLINK.close - BLINK.hold) / BLINK.open)
+    for (const id of ['ParamEyeLOpen', 'ParamEyeROpen']) {
+      const cur = stage.param.get(id)
+      if (cur != null) stage.param.set(id, cur * f)
+    }
+    return
+  }
+
+  if (now >= blinkState.nextAt) {
+    blinkState.t0 = now
+    blinkState.n += 1
+    blinkState.queued = Math.random() < BLINK.doubleP
   }
 }
 
@@ -1770,6 +1859,10 @@ function setupRenderLoop() {
         }
       }
     }
+
+    // 自然眨眼：放在所有层之后 —— 表情、cue、动作残帧还原都写完了，
+    // 这时候叠上去的闭眼才是这一帧真正要画的样子。
+    blinkTick(performance.now())
 
     // 帧内采样：参数在每帧 coreModel.update 之后会被重置回存档值，
     // 所以「帧外读参数」永远是默认值。要验证写没写进去，只能在帧内最后一刻读。

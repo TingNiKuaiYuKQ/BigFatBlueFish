@@ -1117,7 +1117,14 @@ async function main() {
       }
     },
     // 省电模式（原「低打扰」）：手动开关 + 状态查询（设置页/验收脚本用）
-    lowState: () => ({ on: !!lowInterrupt, source: lowMachine.source, auto: !!runtimeSettings?.autoLowInterrupt }),
+    // opacity 两项是给验收读的：气泡是独立窗口，光看主窗口的 0.5 看不出气泡有没有跟上。
+    lowState: () => ({
+      on: !!lowInterrupt,
+      source: lowMachine.source,
+      auto: !!runtimeSettings?.autoLowInterrupt,
+      opacity: win && !win.isDestroyed() ? win.getOpacity() : null,
+      bubbleOpacity: bubbleWin && !bubbleWin.isDestroyed() ? bubbleWin.getOpacity() : null,
+    }),
     setLow: (on) => { setLowInterrupt(!!on, 'api'); return { on: !!lowInterrupt } },
     // 快捷指令（0.5.3）：数据 + 执行 + 确认，全在这一组里
     commands: {
@@ -1598,6 +1605,8 @@ async function main() {
     })
     bubbleWin.setAlwaysOnTop(true, 'screen-saver')
     bubbleWin.setIgnoreMouseEvents(true)   // 气泡永远不挡鼠标
+    // 省电模式下新建的气泡也要淡一半（已存在的那扇由 apply 改）
+    try { if (lowInterrupt) bubbleWin.setOpacity(0.5) } catch { /* 个别环境不支持就按 1 走 */ }
     bubbleWin.on('closed', () => { bubbleWin = null })
     bubbleWin.loadURL(`${server.url}/ui/bubble.html`)
     return bubbleWin
@@ -2134,8 +2143,13 @@ async function main() {
   /**
    * 省电模式（原「低打扰」，0.5.7 改名）：状态机在 low-power/lowinterrupt.mjs，这里只负责把状态变成效果。
    *
-   * 效果四件事：透明度 50%（setOpacity 实测线性）、帧率降到 12、行为状态机停摆、
-   * 气泡与驾驶员事件抑制。退出时全部按进入前保存的值恢复。
+   * 效果三件事：角色与气泡都 50% 透明（setOpacity 实测线性）、帧率降到 24、
+   * 驾驶员事件一律丢弃（主动说话固定 0%）。**行为不停** —— 省电不等于定格，
+   * 她照常眨眼、照常东张西望（1 档小动作），只是帧率低、整个人淡一半。
+   *
+   * 历史：0.5.7 曾在这里 behavior.stop()，结果省电时整个人站着不动、连表情都不换，
+   * 看着像卡死了。现在改成「降帧保活」：低帧率本身已经是省电的大头，
+   * 小动作一小时的次数本来就只有几十次，CPU/GPU 成本可以忽略。
    */
   const lowMachine = lowLib.createLowInterrupt({
     log,
@@ -2148,6 +2162,11 @@ async function main() {
       try {
         if (win && !win.isDestroyed()) win.setOpacity(on ? 0.5 : (Number(saved.opacity) || 1))
       } catch (e) { log('[low] 设置透明度失败：' + (e && e.message)) }
+      // 气泡是独立窗口，不跟主窗口的 setOpacity 走 —— 不单独设置的话，
+      // 角色淡了一半、气泡还是满不透明，看着像贴在玻璃上的纸条。
+      try {
+        if (bubbleWin && !bubbleWin.isDestroyed()) bubbleWin.setOpacity(on ? 0.5 : 1)
+      } catch (e) { log('[low] 气泡透明度失败：' + (e && e.message)) }
       // 帧率：渲染层 ticker.maxFPS（0 = 不限）
       try {
         win?.webContents?.send('pet:action', {
@@ -2155,13 +2174,10 @@ async function main() {
         })
         win?.webContents?.send('pet:action', { kind: 'low-interrupt', on, at: Date.now() })
       } catch { /* 渲染层没起来 */ }
-      // 行为状态机：省电期间连 idle 小动作都停下（只保留引擎自带的呼吸/眨眼）
-      try {
-        if (on) behavior?.stop()
-        else behavior?.start()
-      } catch (e) { log('[low] 行为状态机切换失败：' + (e && e.message)) }
+      // 行为状态机**不**停：省电模式要的是「安静」而不是「定格」。
+      // 主动说话那一路由 gateAndPush 里的 lowInterrupt 分支固定 0%，与这里无关。
       rebuildTrayMenu()
-      log('[low] 效果已' + (on ? '应用' : '撤销') + '（来源 ' + src + '）')
+      log('[low] 效果已' + (on ? '应用' : '撤销') + '（来源 ' + src + '）', on ? `帧率 ${LOW_FPS}` : '')
     },
   })
 
